@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+
+  --color-ink: #1d1d1d;
+  --color-cream: #f1ece6;
+  --color-muted: #6a6560;
+  --color-muted-serif: #5f5a55;
+  --color-line: #ddd5cc;
+  --color-stepper: #e6e0d9;
+  --color-checkbox: #8a847e;
+  --color-forest: #2f6b4f;
+  --color-star: #d9b630;
+  --color-vatican-soft: #fdf8e6;
+  --color-rome-soft: #fdf1e7;
+  --color-terracotta: #dc9a72;
+  --color-terracotta-deep: #93421f;
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

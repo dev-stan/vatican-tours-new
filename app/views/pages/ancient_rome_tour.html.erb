@@ -1,0 +1,274 @@
+<% content_for :title, "Ancient Rome Walking Tour — Vatican Tours Inc" %>
+
+<% highlights = [
+  { title: "Straight into the Colosseum", body: "Priority passes take you past the ticket queue and into the arena’s first tier in minutes." },
+  { title: "The Roman Forum", body: "Walk the Sacred Way past the Senate House and the temple where Caesar was cremated." },
+  { title: "Palatine Hill", body: "Climb to the ruins of the imperial palaces and the view the emperors woke up to." },
+  { title: "Guides who know the ground", body: "Licensed archaeologists and historians who have dug, studied, and argued over these stones." },
+  { title: "Small group, or just you", body: "Group tours cap at 12 guests. Go private and the route bends to your questions." },
+  { title: "Stories, not dates", body: "Gladiators, fires, and political murders — the people who made the ruins matter." }
+] %>
+
+<% included = [
+  "Priority entry to the Colosseum",
+  "Roman Forum and Palatine Hill access",
+  "Licensed expert guide",
+  "Headsets so you hear every word"
+] %>
+
+<% excluded = [
+  "Colosseum underground and arena floor",
+  "Hotel pickup and drop-off",
+  "Food and drinks"
+] %>
+
+<% good_to_know = [
+  { label: "Meeting point", body: "Outside the Colosseo metro station exit on Via dei Fori Imperiali. Your guide will hold a Vatican Tours Inc sign." },
+  { label: "Bring ID", body: "Colosseum tickets are issued in each guest’s name and checked at the gate. Bring a passport or ID card." },
+  { label: "Walking", body: "About 3 km on uneven ancient paving with some steps and slopes. Comfortable shoes are a must." },
+  { label: "Accessibility", body: "The Colosseum has a lift to the first tier; the Forum and Palatine are steep in places. Contact us for an adapted private route." },
+  { label: "Cancellation", body: "Full refund if you cancel at least 24 hours before your start time." }
+] %>
+
+<% gallery = [
+  { image: "tours/colloseum.webp", alt: "The Colosseum from the outside", width: "w-[420px]" },
+  { image: "tours/roman_ruins.webp", alt: "Columns and ruins of the Roman Forum", width: "w-[380px]" },
+  { image: "tours/colloseum_underground.webp", alt: "Inside the Colosseum’s arena", width: "w-[380px]" }
+] %>
+
+<% clock_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>'.html_safe %>
+
+<%# Header %>
+<header class="mx-auto flex max-w-[1180px] items-center px-6 py-4">
+  <%= link_to root_path, class: "flex items-center gap-3" do %>
+    <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] border-ink font-serif text-base">V</span>
+    <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
+  <% end %>
+</header>
+
+<%# Quick facts %>
+<div class="bg-terracotta">
+  <ul class="no-scrollbar mx-auto flex h-[68px] max-w-[1180px] items-center overflow-x-auto px-6 text-base whitespace-nowrap">
+    <li class="flex items-center gap-4">
+      <span class="flex size-10 items-center justify-center rounded-full bg-white/35">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4"/><path d="M10.5 2.7a2.5 2.5 0 0 1 0 4.6"/><path d="M12.3 10.3c1.1.6 1.9 1.8 2.2 3.7"/></svg>
+      </span>
+      Private or Group
+    </li>
+    <li class="mx-7 h-7 w-px shrink-0 bg-ink/25" aria-hidden="true"></li>
+    <li class="flex items-center gap-2.5"><%= clock_icon %> 3 hrs</li>
+    <li class="mx-7 h-7 w-px shrink-0 bg-ink/25" aria-hidden="true"></li>
+    <li class="flex items-center gap-2.5">
+      <svg width="14" height="16" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>
+      Rome
+    </li>
+    <li class="mx-7 h-7 w-px shrink-0 bg-ink/25" aria-hidden="true"></li>
+    <li class="flex items-center gap-2.5">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>
+      Live guide in English, Spanish, or French
+    </li>
+  </ul>
+</div>
+
+<div class="mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] px-6 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-14"
+     data-controller="booking"
+     data-booking-pricing-value="<%= @booking.to_json %>"
+     data-booking-today-value="<%= Date.current.iso8601 %>"
+     data-booking-save-key-value="saved:ancient-rome-walking-tour"
+     data-booking-confirm-url-value="<%= ancient_rome_booked_path %>">
+
+  <%# Tour details %>
+  <div class="pt-10 pb-16 lg:pt-20 lg:pb-28">
+    <nav aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
+        <li><%= link_to "Home", root_path, class: "hover:text-ink" %></li>
+        <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+        <li><%= link_to "Rome", root_path, class: "hover:text-ink" %></li>
+        <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+        <li class="text-ink" aria-current="page">Ancient Rome Walking Tour</li>
+      </ol>
+    </nav>
+
+    <p class="mt-7 text-sm font-semibold tracking-[.16em] text-terracotta-deep uppercase">Ancient Rome Walking Tour</p>
+    <h1 class="mt-6 font-serif text-[clamp(34px,4.4vw,50px)] leading-[1.1] font-medium tracking-[-.5px] text-pretty">
+      Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
+    </h1>
+
+    <%# Highlights %>
+    <section class="mt-20 lg:mt-24" aria-labelledby="highlights-heading">
+      <h2 id="highlights-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">Tour Highlights</h2>
+      <div class="mt-12 grid gap-x-14 gap-y-10 sm:grid-cols-2">
+        <% highlights.each do |highlight| %>
+          <div>
+            <h3 class="text-[17px] font-semibold"><%= highlight[:title] %></h3>
+            <p class="mt-3 text-base leading-[1.5]"><%= highlight[:body] %></p>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <%# Pitch %>
+    <section class="mt-16 flex items-center gap-10 rounded-[24px] bg-terracotta px-8 py-10 sm:px-11">
+      <div class="flex-1">
+        <h2 class="font-serif text-[30px] leading-[1.1] font-normal italic">Two Thousand Years, Three Hours</h2>
+        <p class="mt-5 text-base leading-[1.5]">
+          The Colosseum, the Forum, and the Palatine sit side by side, but most visitors see them as three separate queues. We walk them as one story — from the hut where Romulus lived to the arena where emperors bought the crowd’s loyalty.
+        </p>
+      </div>
+      <span class="hidden size-[90px] shrink-0 items-center justify-center rounded-full border-2 border-ink sm:flex" aria-hidden="true">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 34V17a14 14 0 0 1 28 0v17"/><path d="M12 34V18a7 7 0 0 1 14 0v16"/><path d="M2 34h34"/></svg>
+      </span>
+    </section>
+
+    <%# Gallery %>
+    <div class="no-scrollbar mt-14 -mr-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pr-6 lg:mr-0 lg:pr-0" role="group" aria-label="Tour photos" tabindex="0">
+      <% gallery.each do |photo| %>
+        <%= image_tag photo[:image], alt: photo[:alt], loading: "lazy",
+              class: "h-[240px] max-w-[85%] shrink-0 snap-start rounded-[16px] object-cover sm:h-[320px] #{photo[:width]}" %>
+      <% end %>
+    </div>
+
+    <%# Details %>
+    <section class="mt-20" aria-labelledby="details-heading">
+      <h2 id="details-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">The Finer Details</h2>
+      <div class="mt-8 space-y-6 text-base leading-[1.65]">
+        <p>The Colosseum draws more visitors than any other site in Italy, and the ticket line can swallow your whole morning. Your priority pass takes you through the reserved entrance, so the first thing you see is the arena, not the back of someone’s hat.</p>
+        <p>Inside, your guide walks you around the first tier to explain how 50,000 Romans were seated, fed, and kept in line. Then you cross the Arch of Constantine and climb the Palatine Hill, where the first Romans built their huts and later emperors built palaces on top of them.</p>
+        <p>The tour ends in the Roman Forum, the political heart of the empire. Walk the Sacred Way past the Senate House and the Temple of Vesta, then stay as long as you like — your ticket is valid for the rest of the day.</p>
+      </div>
+    </section>
+
+    <%# Included %>
+    <section class="mt-20" aria-labelledby="included-heading">
+      <h2 id="included-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">What’s Included</h2>
+      <div class="mt-8 grid gap-x-14 gap-y-4 text-base leading-[1.4] sm:grid-cols-2">
+        <ul class="space-y-4">
+          <% included.each do |item| %>
+            <li class="flex gap-4">
+              <svg class="mt-1 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>
+              <span><span class="sr-only">Included: </span><%= item %></span>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="space-y-4 text-muted">
+          <% excluded.each do |item| %>
+            <li class="flex gap-4">
+              <svg class="mt-1 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg>
+              <span><span class="sr-only">Not included: </span><%= item %></span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+
+    <%# Good to know %>
+    <section class="mt-20" aria-labelledby="know-heading">
+      <h2 id="know-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">Good to Know</h2>
+      <dl>
+        <% good_to_know.each do |row| %>
+          <div class="grid gap-2 border-b border-line py-5 sm:grid-cols-[35%_1fr] sm:gap-6">
+            <dt class="text-base font-semibold"><%= row[:label] %></dt>
+            <dd class="text-base leading-[1.5]"><%= row[:body] %></dd>
+          </div>
+        <% end %>
+      </dl>
+    </section>
+  </div>
+
+  <%# Booking card %>
+  <aside class="pb-28 lg:pt-7" aria-label="Book this tour">
+    <div class="sticky scroll-mt-6 rounded-[22px] bg-white p-[26px] transition-[top] duration-200" data-booking-target="card">
+      <div class="grid grid-cols-2 rounded-full bg-stepper p-1 text-sm" role="group" aria-label="Tour type">
+        <% { "group" => "Small Group", "private" => "Private" }.each do |mode, label| %>
+          <button type="button" class="cursor-pointer rounded-full py-2 transition-colors aria-pressed:bg-white aria-pressed:shadow-[0_1px_3px_rgba(0,0,0,.1)]"
+                  aria-pressed="<%= mode == "group" %>" data-mode="<%= mode %>"
+                  data-booking-target="mode" data-action="booking#selectMode"><%= label %></button>
+        <% end %>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-2 text-[15px] text-muted">
+        <span data-booking-target="fromPrice">Starting from US$<%= @booking[:group][:adult] %></span>
+        <span class="flex items-center gap-3"><span class="tracking-[2px] text-star" aria-hidden="true">★★★★★</span>286 Reviews</span>
+      </div>
+
+      <div class="mt-5 space-y-5 border-b border-line pb-6">
+        <% [ [ "adults", "Adults" ], [ "children", "Children" ] ].each do |guest, label| %>
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <p id="<%= guest %>-label" class="text-base"><%= label %></p>
+              <p class="mt-0.5 text-[13px] text-muted" data-booking-target="<%= guest %>Note"></p>
+            </div>
+            <div class="flex items-center" role="group" aria-labelledby="<%= guest %>-label">
+              <button type="button" class="flex size-[34px] cursor-pointer items-center justify-center rounded-[6px] bg-stepper text-lg transition-opacity disabled:cursor-default disabled:opacity-40"
+                      aria-label="Remove one <%= label.downcase.singularize %>" data-step="down"
+                      data-booking-target="step" data-booking-guest-param="<%= guest %>" data-action="booking#decrement">–</button>
+              <span class="w-[38px] text-center text-lg" aria-live="polite" data-booking-target="count" data-guest="<%= guest %>"></span>
+              <button type="button" class="flex size-[34px] cursor-pointer items-center justify-center rounded-[6px] bg-stepper text-lg transition-opacity disabled:cursor-default disabled:opacity-40"
+                      aria-label="Add one <%= label.downcase.singularize %>" data-step="up"
+                      data-booking-target="step" data-booking-guest-param="<%= guest %>" data-action="booking#increment">+</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%# Calendar %>
+      <div class="mt-6 rounded-[20px] border border-line px-3 pt-4 pb-2">
+        <div class="flex items-center justify-between px-2">
+          <button type="button" class="flex size-8 cursor-pointer items-center justify-center rounded-full hover:bg-stepper disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent"
+                  aria-label="Previous month" data-booking-target="prev" data-action="booking#previousMonth">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+          </button>
+          <p class="text-[17px]" aria-live="polite" data-booking-target="month"></p>
+          <button type="button" class="flex size-8 cursor-pointer items-center justify-center rounded-full hover:bg-stepper disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent"
+                  aria-label="Next month" data-booking-target="next" data-action="booking#nextMonth">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+        <div class="mt-4 grid grid-cols-7 text-center text-[13px] text-muted" aria-hidden="true">
+          <% %w[Sun Mon Tue Wed Thu Fri Sat].each do |day| %><span><%= day %></span><% end %>
+        </div>
+        <div class="mt-2 grid grid-cols-7" data-booking-target="days"></div>
+      </div>
+
+      <p class="mt-7 border-b border-line pb-4 text-[15px] font-medium tracking-[.12em] uppercase" aria-live="polite" data-booking-target="dateLabel"></p>
+
+      <%# Start times %>
+      <p id="times-label" class="mt-5 text-base">Start times</p>
+      <div class="mt-3 space-y-2.5" role="group" aria-labelledby="times-label">
+        <% @slots.each_with_index do |slot, i| %>
+          <button type="button" class="flex h-[52px] w-full cursor-pointer items-center gap-3 rounded-[12px] border border-line bg-white px-4 text-base transition-colors hover:border-ink/40 aria-pressed:border-terracotta-deep aria-pressed:bg-rome-soft"
+                  aria-pressed="<%= i == 1 %>" data-time="<%= slot[:time] %>"
+                  data-booking-target="slot" data-action="booking#selectSlot">
+            <%= clock_icon %>
+            <%= slot[:time] %>
+            <% if slot[:note] %><span class="ml-auto text-[13px] text-terracotta-deep"><%= slot[:note] %></span><% end %>
+          </button>
+        <% end %>
+      </div>
+
+      <div class="mt-6 flex items-baseline justify-between border-t border-line pt-6">
+        <span class="text-[15px] text-muted" data-booking-target="totalLabel"></span>
+        <span class="text-[24px] font-semibold" aria-live="polite" data-booking-target="total"></span>
+      </div>
+
+      <button type="button" class="mt-5 h-[52px] w-full cursor-pointer rounded-full bg-ink text-base text-white transition-colors hover:bg-black" data-action="booking#book">Book Now</button>
+      <p class="mt-3 text-center text-[13px] text-muted">Free cancellation up to 24 hours before the tour</p>
+
+      <button type="button" class="group mt-4 flex cursor-pointer items-center gap-3 text-base"
+              aria-pressed="false" data-booking-target="save" data-action="booking#toggleSave">
+        <svg class="group-aria-pressed:hidden" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg>
+        <svg class="hidden group-aria-pressed:block" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>
+        Save for Later
+      </button>
+    </div>
+  </aside>
+
+  <%# Mobile booking bar, hidden while the card itself is on screen %>
+  <div class="fixed inset-x-0 bottom-0 z-10 flex items-center justify-between gap-4 border-t border-line bg-white px-6 py-3 transition-transform duration-300 lg:hidden" data-booking-target="bar">
+    <div>
+      <p class="text-[17px] font-semibold" data-booking-target="barTotal"></p>
+      <p class="text-[13px] text-muted" data-booking-target="barDate"></p>
+    </div>
+    <button type="button" class="h-12 cursor-pointer rounded-full bg-ink px-7 text-base text-white" data-action="booking#reveal">Choose a time</button>
+  </div>
+</div>

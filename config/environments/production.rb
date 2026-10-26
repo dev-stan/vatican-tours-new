@@ -78,6 +78,8 @@ Rails.application.configure do
 
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
+  config.hosts << "jacketless-zahra-ungravitational.ngrok-free.dev"
+  config.hosts << "jacketless-zahra-ungravitational.ngrok-free.dev"
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
