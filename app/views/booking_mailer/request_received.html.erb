@@ -1,10 +1,12 @@
-<p>Dear <%= @booking.name %>,</p>
+<p>Dear Visitor,</p>
 
-<p>Thank you for your booking request with Vatican Tours Inc.</p>
+<p>Thank you for booking with us.</p>
 
-<p><strong>Your booking is not confirmed yet.</strong> We’re checking availability and will email you within 12 hours to confirm your place and send payment details. Nothing has been charged.</p>
+<p>As some of our services sell out quickly, we would like to double-check availability for your requested date and time.</p>
 
-<p><a href="<%= @status_url %>">Check the status of your booking</a> at any time.</p>
+<p>We will reconfirm your booking by the end of the day today.</p>
+
+<p>Thank you for your patience.</p>
 
 <h3>Your request</h3>
 <%= render "summary" %>
@@ -21,6 +23,9 @@
   <% end %>
 <% end %>
 
-<p>Need to change or cancel your request? Just reply to this email and quote your reference.</p>
-
-<p>Talk soon,<br>Vatican Tours Inc</p>
+<p>Kind regards,<br>
+Francesca Conti<br>
+Booking Office<br>
+Vatican Tours Inc.<br>
+<a href="mailto:tours@vaticantoursinc.com">tours@vaticantoursinc.com</a><br>
+<a href="tel:+393343486561">+39 334 348 6561</a></p>

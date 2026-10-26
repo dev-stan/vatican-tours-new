@@ -52,7 +52,7 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
         .update!(attributes.merge(position: position))
   end
 
-  attach_photos(tour, data["photos"])
+  attach_photos(tour, data.fetch("photos", []))
 
   days = data.fetch("days", Departures::Generator::DAYS).map(&:to_sym)
   created = { "group" => data.fetch("capacity", 12), "private" => 1 }.sum do |kind, capacity|

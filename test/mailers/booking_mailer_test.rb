@@ -6,7 +6,7 @@ class BookingMailerTest < ActionMailer::TestCase
     @when = departures(:group_nearly_full).starts_at.to_fs(:tour)
   end
 
-  test "request receipt goes to the customer and says it is not confirmed" do
+  test "request receipt goes to the customer and says we will reconfirm" do
     mail = BookingMailer.request_received(@booking)
 
     assert_equal [ "maria@example.com" ], mail.to
@@ -19,9 +19,8 @@ class BookingMailerTest < ActionMailer::TestCase
       assert_includes body, "2 × Adult"
       assert_includes body, "€130"
       assert_includes body, "Outside the Colosseo metro station"
-      assert_match(/not confirmed yet/i, body)
-      assert_includes body, "within 12 hours"
-      assert_includes body, "http://example.com/tours/#{@booking.tour.slug}/booked/"
+      assert_includes body, "We will reconfirm your booking by the end of the day today."
+      assert_includes body, "Francesca Conti"
     end
   end
 

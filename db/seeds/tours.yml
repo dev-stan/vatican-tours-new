@@ -1,7 +1,7 @@
 # The tour catalogue, loaded by db/seeds.rb. Edit here, then run bin/rails db:seed.
 #
 # hours:       tour length (decimals allowed, e.g. 2.5)
-# photos:      files in app/assets/images/tours; the first one is the card image
+# photos:      files in app/assets/images/tours; the first one is the card image (optional)
 # description: paragraphs separated by a blank line; the first is the pitch
 # prices:      euros. Adult (18+) and child (6–17) group tickets, private group price for up to max_guests.
 #              Infants (0–5) go free. Every tour also gets a cancellation fact.
@@ -905,3 +905,568 @@
   times: ["07:00"]
   days: [tue, wed, thu, fri, sat, sun]
   capacity: 10
+
+- slug: essential-florence-part-one-academy
+  title: Essential Florence Part One with Academy
+  tagline: The David and the City Around Him
+  headline: Michelangelo’s David, Renaissance art, and Florence’s historic heart.
+  location: Florence
+  hours: 3
+  meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
+  languages: [en, es, fr, it]
+  tags: [with_kids, wheelchair]
+  description: |
+    Florence is small enough to cross in twenty minutes and dense enough to fill a lifetime. The first part of our Essential Florence series starts where most visitors want to begin: face to face with Michelangelo’s David.
+
+    Your timed entry takes you straight into the Accademia Gallery. Before the David, your guide stops at the Prisoners, the unfinished figures that seem to fight their way out of the marble, and explains how a 26-year-old turned a block other sculptors had given up on into the symbol of a city.
+
+    Back outside, we walk down to the Duomo and the Baptistery, past the workshops and palaces of the Medici quarter, and finish in Piazza della Signoria, where the copy of the David stands on the spot Michelangelo’s original was first unveiled.
+  highlights:
+    Michelangelo’s David: Reserved entry to the Accademia, with time to circle the statue and see it from every side.
+    The Prisoners: Michelangelo’s unfinished figures, and what they reveal about how he carved.
+    The Duomo and Baptistery: Brunelleschi’s dome and Ghiberti’s Gates of Paradise from the best angles.
+    Piazza della Signoria: Florence’s civic heart, ringed by statues and the Palazzo Vecchio.
+  included:
+    - Reserved entry to the Accademia Gallery
+    - Licensed Florence guide
+    - Headsets so you hear every word
+  excluded:
+    - Entry to the Duomo, dome, and Baptistery interiors
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Piazza San Marco, by the statue of General Manfredo Fanti. Your guide will hold a Vatican Tours Inc sign.
+    Closed Mondays: The Accademia is closed on Mondays, so this tour doesn’t run then.
+    Walking: About 2 km on flat, paved streets. The Accademia is fully step-free.
+  prices: { adult: 69, child: 45, private: 420, max_guests: 8 }
+  times: ["09:00", "14:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+
+- slug: essential-florence-part-two-uffizi
+  title: Essential Florence Part Two with Uffizi
+  tagline: Landmarks and Masterpieces
+  headline: Florence’s iconic landmarks and the Uffizi’s Renaissance masterpieces.
+  location: Florence
+  hours: 3
+  meeting_point: Piazza della Repubblica, under the arch on the western side of the square
+  languages: [en, es, fr, it]
+  tags: [with_kids, wheelchair]
+  description: |
+    The second part of Essential Florence joins the city’s great public spaces to the gallery the Medici built to show them off. It works on its own, or as the follow-up to Part One.
+
+    We start in Piazza della Repubblica, the old Roman forum, and walk past Orsanmichele, the grain market turned church whose niches hold statues by Donatello and Verrocchio. From Piazza della Signoria it’s a few steps to the Uffizi, where your reserved entry skips the queue that wraps around the courtyard.
+
+    Inside, your guide picks a route through the highlights: Giotto’s Madonna, Botticelli’s Birth of Venus and Primavera, Leonardo’s Annunciation, and Michelangelo’s only finished panel painting in Florence. The tour ends at the windows above the Arno, looking out at the Ponte Vecchio.
+  highlights:
+    The Uffizi without the queue: Reserved entry and a route through the rooms that matter most.
+    Botticelli: The Birth of Venus and Primavera, explained by someone who knows their story.
+    Orsanmichele: A church built from a grain market, with statues by Florence’s greatest sculptors.
+    The Ponte Vecchio view: The Arno and the old bridge from the Uffizi’s top-floor windows.
+  included:
+    - Reserved entry to the Uffizi Gallery
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Vasari Corridor
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Piazza della Repubblica, under the arch on the western side of the square.
+    Closed Mondays: The Uffizi is closed on Mondays, so this tour doesn’t run then.
+    Bring ID: Uffizi tickets are named. Bring a passport or ID card.
+  prices: { adult: 75, child: 49, private: 450, max_guests: 8 }
+  times: ["09:30", "14:30"]
+  days: [tue, wed, thu, fri, sat, sun]
+
+- slug: essential-florence-part-three-oltrarno
+  title: Essential Florence Part Three, Oltrarno
+  tagline: Across the River
+  headline: Florence revealed — the Oltrarno and Masaccio’s frescoes.
+  location: Florence
+  hours: 3
+  meeting_point: Ponte Santa Trinita, at the corner with Via Maggio
+  languages: [en, it, fr]
+  tags: [with_kids]
+  description: |
+    Across the Arno, Florence slows down. The Oltrarno is the city of artisans: gilders, framers, and leather workers in workshops that have been passed down for generations, around squares where locals still outnumber visitors.
+
+    Our walk starts at Ponte Santa Trinita and winds through Santo Spirito, Brunelleschi’s last church, before reaching Santa Maria del Carmine and the Brancacci Chapel. Here Masaccio painted the frescoes that taught the Renaissance how to paint people with weight, shadow, and feeling, and every artist who came after, Michelangelo included, came to copy them.
+
+    We finish with a stop in an artisan workshop and a walk along Via Maggio, Florence’s street of antique dealers, ending near Palazzo Pitti.
+  highlights:
+    The Brancacci Chapel: Masaccio’s frescoes, the starting point of Renaissance painting.
+    Santo Spirito: Brunelleschi’s last church, and the piazza where the Oltrarno meets for an aperitivo.
+    Artisan workshops: A visit to a family workshop still working the old way.
+    Via Maggio: Palaces, antique shops, and the quieter side of Florence.
+  included:
+    - Reserved entry to the Brancacci Chapel
+    - Licensed Florence guide
+    - Artisan workshop visit
+  excluded:
+    - Palazzo Pitti and Boboli Gardens entry
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Ponte Santa Trinita, at the corner with Via Maggio on the Oltrarno side.
+    Chapel visits: Brancacci Chapel visits are timed and limited to small groups. When the chapel is closed, we visit the frescoes of Santa Felicita instead.
+    Walking: About 3 km on flat streets with cobblestones in places.
+  prices: { adult: 65, child: 39, private: 390, max_guests: 8 }
+  times: ["09:30", "15:00"]
+
+- slug: essential-florence-part-four-grand-masters
+  title: Essential Florence Part Four, Grand Masters
+  tagline: Giotto, Fra Angelico, and Donatello
+  headline: Florence revealed — Giotto, Fra Angelico, and Donatello.
+  location: Florence
+  hours: 3
+  meeting_point: Piazza San Marco, at the steps of the Church of San Marco
+  languages: [en, it, de]
+  tags: []
+  description: |
+    The last part of Essential Florence is for travellers who’ve seen the David and the Uffizi and want to understand where it all came from. Three masters, three buildings, and a hundred years of art history in a morning.
+
+    We begin at the Convent of San Marco, where Fra Angelico painted a fresco in each friar’s cell to help them pray. His Annunciation at the top of the stairs is one of the most quietly moving paintings in Italy.
+
+    From there we cross to the Bargello, the old city prison turned sculpture museum, to see Donatello’s bronze David, the first free-standing nude since antiquity. We end in Santa Croce, where Giotto’s frescoes of St. Francis sit a few steps from the tombs of Michelangelo and Galileo.
+  highlights:
+    Fra Angelico at San Marco: The frescoed cells and the Annunciation at the top of the stairs.
+    Donatello at the Bargello: The bronze David and the sculpture that came before Michelangelo.
+    Giotto at Santa Croce: The frescoes that broke with the Middle Ages.
+    Tombs of the greats: Michelangelo, Galileo, and Machiavelli under one roof.
+  included:
+    - Entry to San Marco, the Bargello, and Santa Croce
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Piazza San Marco, at the steps of the Church of San Marco.
+    Opening days: San Marco and the Bargello close on some Mondays and Sundays. When one is closed, we adjust the route and let you know in advance.
+    Dress code: Santa Croce is a church. Shoulders and knees must be covered.
+  prices: { adult: 69, child: 45, private: 420, max_guests: 8 }
+  times: ["09:00"]
+
+- slug: academy-self-guided-skip-the-line
+  title: Skip-the-Line Self-Guided Visit of the Academy
+  tagline: The David at Your Own Pace
+  headline: The David and the Accademia at your own pace, with a secured timed entrance.
+  location: Florence
+  hours: 2
+  meeting_point: Via Ricasoli 58, at the Accademia’s reserved-entry door
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, with_kids, wheelchair]
+  description: |
+    Some visitors want a guide. Others want to stand in front of the David for as long as they like. This is for the second kind: a secured, timed entry to the Accademia Gallery, and the rest is up to you.
+
+    Tickets for the Accademia sell out weeks ahead in high season, and the walk-up queue on Via Ricasoli can take hours. We book your time slot in advance and meet you at the reserved-entry door with your tickets, so you walk in at your time.
+
+    Inside, follow our short printed guide or simply wander: the Prisoners, the David, the gallery of Florentine painting, and the museum of musical instruments with its Stradivarius.
+  highlights:
+    Secured timed entry: Tickets booked ahead and handed to you at the door.
+    Your own pace: Stay with the David as long as you like.
+    A printed guide: A short route through the gallery’s highlights, in your language.
+    The Prisoners: Michelangelo’s unfinished figures, on the way to the David.
+  included:
+    - Reserved, timed Accademia ticket
+    - Host to meet you at the entrance
+    - Printed guide to the gallery
+  excluded:
+    - Guide inside the gallery
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Via Ricasoli 58, at the Accademia’s reserved-entry door. Our host will be there 15 minutes before your slot.
+    Closed Mondays: The Accademia is closed on Mondays.
+    Arrive on time: Timed slots can’t be moved on the day. Late arrivals may not be admitted.
+  prices: { adult: 35, child: 19, private: 240, max_guests: 8 }
+  times: ["08:30", "10:00", "11:30", "13:00", "14:30", "16:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 20
+
+- slug: david-and-uffizi-small-group
+  title: David in Academy and Masterpieces of Uffizi
+  tagline: Two Museums, One Morning
+  headline: The best of two museums in one morning.
+  location: Florence
+  hours: 3
+  meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
+  languages: [en, es, fr]
+  tags: [wheelchair]
+  description: |
+    Florence’s two great museums sit fifteen minutes apart, and most visitors spend a whole day queuing for them. This tour puts both in one morning, with reserved entry to each and a guide who knows exactly where to go.
+
+    We start at the Accademia as the doors open, while the gallery is at its quietest, for the Prisoners and Michelangelo’s David. Then a short walk past the Duomo brings us to the Uffizi.
+
+    In the Uffizi your guide leads you through the essentials: Giotto, Botticelli’s Birth of Venus and Primavera, Leonardo, Raphael, and Caravaggio. It’s a full morning, but you’ll leave having seen the best of Renaissance Florence.
+  highlights:
+    The David at opening time: The Accademia at its quietest.
+    The Uffizi’s essentials: Botticelli, Leonardo, Raphael, and Caravaggio.
+    No queues: Reserved entry at both museums.
+    Small group: No more than 12 guests, with headsets.
+  included:
+    - Reserved entry to the Accademia and the Uffizi
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Piazza San Marco, by the statue of General Manfredo Fanti, 15 minutes before the start.
+    Closed Mondays: Both museums are closed on Mondays.
+    Bring ID: Museum tickets are named. Bring a passport or ID card.
+  prices: { adult: 99, child: 65, private: 590, max_guests: 8 }
+  times: ["08:15"]
+  days: [tue, wed, thu, fri, sat, sun]
+
+- slug: uffizi-self-guided-skip-the-line
+  title: Skip-the-Line Self-Guided Visit of the Uffizi
+  tagline: The Uffizi on Your Own Terms
+  headline: The masterpieces of the Uffizi at your own pace, with a secured timed entrance.
+  location: Florence
+  hours: 2
+  meeting_point: Piazzale degli Uffizi, at the reserved-entry door 1
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, with_kids, wheelchair]
+  description: |
+    The Uffizi is one of the most visited museums in the world, and the queue under its arcades shows it. Skip it with a timed ticket booked ahead, then explore the galleries at whatever pace suits you.
+
+    Our host meets you at the reserved entrance with your tickets and a short printed guide to the collection. Spend an hour with Botticelli or walk the whole east wing; your ticket lets you stay until closing.
+  highlights:
+    Secured timed entry: Tickets booked ahead and handed to you at the door.
+    Botticelli rooms: The Birth of Venus and Primavera, as long as you like.
+    A printed guide: The collection’s highlights, room by room.
+    River views: The windows over the Arno and the Ponte Vecchio.
+  included:
+    - Reserved, timed Uffizi ticket
+    - Host to meet you at the entrance
+    - Printed guide to the gallery
+  excluded:
+    - Guide inside the gallery
+    - Vasari Corridor
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazzale degli Uffizi, at the reserved-entry door 1. Our host will be there 15 minutes before your slot.
+    Closed Mondays: The Uffizi is closed on Mondays.
+    Arrive on time: Timed slots can’t be moved on the day. Late arrivals may not be admitted.
+  prices: { adult: 39, child: 19, private: 260, max_guests: 8 }
+  times: ["08:45", "10:00", "11:30", "13:00", "14:30", "16:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 20
+
+- slug: uffizi-masterpieces-small-group
+  title: Masterpieces of Uffizi Small Group
+  tagline: The Renaissance in Ten Rooms
+  headline: Botticelli, Leonardo, and other Renaissance masters in the Uffizi.
+  location: Florence
+  hours: 2
+  meeting_point: Piazza della Signoria, by the Fountain of Neptune
+  languages: [en, es, fr, it]
+  tags: [with_kids, wheelchair]
+  description: |
+    The Uffizi holds more Renaissance masterpieces than anywhere else on earth, and the rooms go on for nearly a kilometre. This two-hour tour picks the paintings that changed art and tells the story that links them.
+
+    From Giotto’s gold-ground Madonna to Botticelli’s Birth of Venus, Leonardo’s Annunciation, Michelangelo’s Doni Tondo, and Titian’s Venus of Urbino, your guide follows the Renaissance as it unfolds room by room.
+  highlights:
+    Botticelli: The Birth of Venus and Primavera.
+    Leonardo da Vinci: The Annunciation and the unfinished Adoration of the Magi.
+    Michelangelo: The Doni Tondo, his only finished panel painting in Florence.
+    Small group: No more than 12 guests, with headsets.
+  included:
+    - Reserved entry to the Uffizi
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Vasari Corridor
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza della Signoria, by the Fountain of Neptune.
+    Closed Mondays: The Uffizi is closed on Mondays.
+    Stay on: Your ticket is valid until closing, so you can keep exploring after the tour.
+  prices: { adult: 69, child: 45, private: 390, max_guests: 8 }
+  times: ["09:00", "11:00", "14:00", "16:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+
+- slug: vip-uffizi-and-vasari-corridor
+  title: VIP Uffizi and Vasari Corridor
+  tagline: The Medici’s Private Passage
+  headline: Uffizi treasures and an exclusive passage through the Vasari Corridor.
+  location: Florence
+  hours: 2.5
+  meeting_point: Piazza della Signoria, by the Fountain of Neptune
+  languages: [en, es, fr]
+  tags: [wheelchair]
+  description: |
+    In 1565 Cosimo I de’ Medici had Vasari build a private corridor so he could walk from his offices in the Uffizi to his home in Palazzo Pitti without mixing with the people of Florence. Almost a kilometre long, it runs over the shops of the Ponte Vecchio and across the Arno.
+
+    This tour begins with the highlights of the Uffizi, then enters the corridor, where visits are limited to a handful of small groups a day. Through its small round windows you’ll see the Ponte Vecchio and the river as the Medici saw them, and come out in the Boboli Gardens.
+  highlights:
+    The Vasari Corridor: The Medici’s elevated passage over the Ponte Vecchio, open to few visitors.
+    Uffizi highlights: Botticelli, Leonardo, and Michelangelo before the corridor.
+    Over the Arno: The river and the bridge through the corridor’s windows.
+    Very small groups: No more than 8 guests.
+  included:
+    - Reserved Uffizi and Vasari Corridor entry
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Palazzo Pitti entry
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza della Signoria, by the Fountain of Neptune, 15 minutes before the start.
+    Closed Mondays: The Uffizi and the corridor are closed on Mondays.
+    Ends in Boboli: The tour ends at the Boboli Gardens, a 10-minute walk from the Ponte Vecchio.
+  prices: { adult: 149, child: 99, private: 890, max_guests: 8 }
+  times: ["10:00", "14:30"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: vip-duomo-terraces-and-brunelleschi-dome
+  title: VIP Duomo Tour, Secret Terraces and Brunelleschi Dome
+  tagline: On the Roof of Florence
+  headline: Hidden terraces and Brunelleschi’s Dome, with stunning views of Florence.
+  location: Florence
+  hours: 2
+  meeting_point: Piazza del Duomo, at the Porta della Mandorla on the cathedral’s north side
+  languages: [en, es, it]
+  tags: [active]
+  description: |
+    Brunelleschi’s Dome was the largest in the world when it was finished in 1436, and nobody is quite sure how he built it without a wooden frame. This tour takes you inside the cathedral’s structure to find out.
+
+    With a guide and special access, you climb to the terraces along the cathedral’s roof, closed to regular visitors, with views straight down into the nave and out across the city. Then you continue up between the dome’s two shells, past Vasari’s Last Judgment frescoes, to the lantern at the top and the best view in Florence.
+  highlights:
+    The secret terraces: Walk the cathedral roof, closed to regular visitors.
+    Inside the dome: Climb between Brunelleschi’s two shells and see how it was built.
+    The Last Judgment: Vasari’s fresco, up close from the inner gallery.
+    The view from the top: All of Florence, and the hills beyond.
+  included:
+    - Reserved terrace and dome access
+    - Licensed Florence guide
+    - Headsets
+  excluded:
+    - Giotto’s Bell Tower
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza del Duomo, at the Porta della Mandorla on the cathedral’s north side.
+    Climbing: 463 steps, some in narrow passages. Not suitable for anyone with heart conditions, vertigo, or claustrophobia, or for children under 8.
+    Dress code: Shoulders and knees must be covered.
+    Closed Sundays: The dome climb doesn’t run on Sundays or religious holidays.
+  prices: { adult: 119, child: 79, private: 690, max_guests: 8 }
+  times: ["09:00", "11:30", "15:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 10
+
+- slug: tuscan-classic-towns-villages-countryside
+  title: "Tuscan Classic: Towns, Villages & Countryside"
+  tagline: Siena, San Gimignano, and the Hills Between
+  headline: A must-do day trip from Florence for first-time visitors to Tuscany.
+  location: Tuscany
+  hours: 8
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, es, fr, it]
+  tags: [with_kids]
+  description: |
+    If you only have one day to see the Tuscan countryside, this is the day. Your driver collects you in Florence and heads south through the hills to three towns that each show a different side of medieval Tuscany.
+
+    First is Monteriggioni, a tiny village still enclosed by its 13th-century walls. Then Siena: walk into the shell-shaped Piazza del Campo, where the Palio horse race is run, and on to the striped marble Cathedral.
+
+    After lunch, the road climbs to San Gimignano, the town of towers, for a gelato from one of Italy’s most famous gelaterias and the view over the valley before the drive back to Florence.
+  highlights:
+    Siena: Piazza del Campo and the striped marble Cathedral.
+    San Gimignano: Medieval towers and views across the Val d’Elsa.
+    Monteriggioni: A walled village straight out of a storybook.
+    Your own driver: A comfortable car and a route that bends to your interests.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private air-conditioned car and driver
+    - Licensed guide in Siena
+  excluded:
+    - Lunch
+    - Siena Cathedral entry
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence. Siena is about an hour’s drive.
+    Pace: Mostly short walks in town centers, with some steep streets in Siena and San Gimignano.
+    Lunch: Your driver will suggest a trattoria; lunch is at your own expense.
+  prices: { adult: 169, child: 109, private: 990, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 8
+
+- slug: tuscan-classic-winery-tour-and-tasting
+  title: Tuscan Classic with a Winery Tour and Tasting
+  tagline: Hill Towns and a Cellar Door
+  headline: The best of Tuscany and a private winery visit.
+  location: Tuscany
+  hours: 8
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, es, fr, it]
+  tags: [wine]
+  description: |
+    The classic Tuscan day with a glass in hand. We keep the highlights, Siena and San Gimignano, and add a private visit to a family winery in the hills between them.
+
+    Start with Siena’s Piazza del Campo and Cathedral, then drive into the countryside for a tour of the vineyard and cellars with the family who runs them. Lunch is at the winery, with a tasting of their Chianti and Vernaccia alongside local cheese and cured meats.
+
+    The afternoon ends in San Gimignano, among its medieval towers, before the drive back to Florence.
+  highlights:
+    A private winery visit: Vineyard and cellar tour with the family who makes the wine.
+    Tasting lunch: Chianti and Vernaccia with Tuscan cheese and salumi.
+    Siena: Piazza del Campo and the striped Cathedral.
+    San Gimignano: The town of towers above the vines.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private air-conditioned car and driver
+    - Winery tour and tasting lunch
+    - Licensed guide in Siena
+  excluded:
+    - Siena Cathedral entry
+    - Wine to take home
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence.
+    Wine tasting: Guests under 18 get juice and local snacks instead of wine.
+    Dietary needs: Let us know about allergies or vegetarian diets when you book.
+  prices: { adult: 219, child: 129, private: 1290, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 8
+
+- slug: serious-wine-maker-brunello-and-chianti
+  title: "A Serious Wine Maker: Brunello and Chianti"
+  tagline: For People Who Read the Label
+  headline: Private winery visits with local sommeliers, for serious wine lovers.
+  location: Tuscany
+  hours: 8
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, it, de]
+  tags: [wine]
+  description: |
+    This is not a tasting-room day. It’s a day with the people who make the wine, led by a sommelier who can talk clones, soils, and vintages as easily as the view.
+
+    In the morning we visit a Chianti Classico estate for a walk through the vines and a barrel tasting in the cellar. Then the road runs south to Montalcino, where Brunello is made from Sangiovese alone and aged for at least five years before release.
+
+    Lunch is at a Montalcino estate, paired with a vertical tasting of their Brunello across several vintages. Expect to come home knowing more about Tuscan wine than most wine lists.
+  highlights:
+    Chianti Classico: A barrel tasting with the winemaker in the cellar.
+    Brunello di Montalcino: A vertical tasting across several vintages.
+    A sommelier at your side: Your guide is a qualified sommelier, not just a driver.
+    Lunch among the vines: A paired lunch at a Montalcino estate.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private car, driver, and sommelier guide
+    - Two private winery visits and tastings
+    - Paired lunch
+  excluded:
+    - Wine to take home or ship
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence. Montalcino is about two hours’ drive.
+    Adults only: This is a wine-focused day, recommended for guests 18 and over.
+    Shipping: Most estates can ship wine home for you; ask the winery on the day.
+  prices: { adult: 289, child: 149, private: 1690, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 6
+
+- slug: short-chianti-day-lunch-and-winery
+  title: Short Chianti Day with Lunch and Winery Visit
+  tagline: A Lazy Afternoon in Chianti
+  headline: Lazy time with beautiful vistas, good wine, and a Tuscan lunch.
+  location: Tuscany
+  hours: 5
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, es, fr, it]
+  tags: [wine]
+  description: |
+    Not everyone wants an eight-hour day. This one is half the length and twice as relaxed: a scenic drive into the Chianti hills, a winery visit, and a long Tuscan lunch.
+
+    We drive the Via Chiantigiana through Greve and Panzano, stopping for the views, then visit a small family winery for a cellar tour and tasting. Lunch follows on the terrace, with pasta, local olive oil, and their wine, and you’re back in Florence by mid-afternoon.
+  highlights:
+    The Chianti road: Vineyards, olive groves, and cypress-lined hills.
+    A family winery: Cellar tour and tasting with the people who make it.
+    A long Tuscan lunch: Home cooking on a terrace above the vines.
+    Back by afternoon: Plenty of time left for Florence.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private air-conditioned car and driver
+    - Winery tour and tasting
+    - Lunch with wine
+  excluded:
+    - Wine to take home
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence. Greve is about 40 minutes away.
+    Wine tasting: Guests under 18 get juice and local snacks instead of wine.
+    Dietary needs: Let us know about allergies or vegetarian diets when you book.
+  prices: { adult: 159, child: 89, private: 890, max_guests: 6 }
+  times: ["10:30"]
+  capacity: 8
+
+- slug: lucca-pisa-and-leaning-tower
+  title: Lucca, Pisa and Leaning Tower
+  tagline: Walls, Towers, and the Field of Miracles
+  headline: Pisa’s iconic Leaning Tower and Lucca’s charm on a memorable day trip.
+  location: Tuscany
+  hours: 8
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, es, fr, it, pt]
+  tags: [with_kids]
+  description: |
+    Two cities an hour west of Florence, and two very different days out. Pisa is the famous one; Lucca is the one people fall in love with.
+
+    In Pisa, your guide walks you across the Field of Miracles, the green lawn that holds the Cathedral, the Baptistery, and the Leaning Tower, and explains why it leans and why it hasn’t fallen. There’s time for the photo everyone takes, and an optional climb to the top.
+
+    In the afternoon we drive to Lucca, still wrapped in its Renaissance walls. Walk or cycle along the tree-lined ramparts, then explore the oval Piazza dell’Anfiteatro, built inside a Roman amphitheatre, before the drive back to Florence.
+  highlights:
+    The Leaning Tower: The Field of Miracles with a guide, and time for the photo.
+    Lucca’s walls: A walk or bike ride along the tree-lined Renaissance ramparts.
+    Piazza dell’Anfiteatro: An oval square built inside a Roman arena.
+    Your own driver: Door-to-door from your Florence hotel.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private air-conditioned car and driver
+    - Licensed guide in Pisa
+  excluded:
+    - Leaning Tower climb (can be added when booking)
+    - Lunch
+    - Bike rental in Lucca
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence. Pisa is about an hour’s drive.
+    Tower climb: Children under 8 can’t climb the Leaning Tower. Climb slots are limited, so add them when you book.
+    Pace: Mostly flat walking; Lucca is easy with strollers.
+  prices: { adult: 169, child: 109, private: 990, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 8
+
+- slug: cinque-terre-adventure
+  title: Cinque Terre Adventure
+  tagline: Five Villages on the Riviera
+  headline: Colorful seaside villages, breathtaking coastal views, and the charm of the Italian Riviera.
+  location: Tuscany
+  hours: 8
+  meeting_point: Pickup from your hotel in central Florence
+  languages: [en, es, it, de]
+  tags: [active]
+  description: |
+    Five fishing villages painted in every shade of the sunset, stacked on cliffs above the Ligurian Sea. The Cinque Terre is just across the Tuscan border, and it makes for an unforgettable day.
+
+    Your driver takes you to La Spezia, where the local train links the villages along the coast. With your guide, you’ll explore Riomaggiore’s harbour, Manarola’s famous viewpoint, and Vernazza’s little square on the sea, with time for focaccia and a swim in summer.
+
+    Weather permitting, part of the route is by boat, the best way to see the villages from the water. Fitter travellers can walk one of the coastal paths between two villages.
+  highlights:
+    Five villages: Riomaggiore, Manarola, Vernazza, and their neighbours on the cliffs.
+    The coastal path: An optional hike between villages with sea views all the way.
+    By boat: The villages from the water, weather permitting.
+    Ligurian food: Focaccia, pesto, and fresh seafood by the harbour.
+  included:
+    - Hotel pickup and drop-off in Florence
+    - Private air-conditioned car and driver
+    - Cinque Terre train pass
+    - Licensed local guide
+  excluded:
+    - Boat tickets
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Florence. La Spezia is about two hours’ drive.
+    Walking: Lots of steps and steep lanes in the villages. Wear comfortable shoes.
+    Weather: Boats don’t run in rough seas. Your guide will adjust the route on the day.
+  prices: { adult: 199, child: 129, private: 1190, max_guests: 6 }
+  times: ["07:30"]
+  capacity: 8
