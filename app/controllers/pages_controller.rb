@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   LOCATIONS = [
-    "All Locations", "Vatican City", "Rome", "Rome Day Trips", "Rome Transfers", "Florence", "Tuscany",
-    "Umbria", "Naples and Amalfi Coast", "Pompeii", "Puglia and Basilicata", "Venice", "Milan and Lake Como", "Sicily"
+    "All Locations", "Vatican City", "Rome", "Rome Day Trips", "Florence", "Tuscany", "Umbria",
+    "Naples, Pompeii and Amalfi Coast", "Puglia and Basilicata", "Venice", "Milan and Lake Como", "Sicily"
   ].freeze
 
   CATEGORIES = [
@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     "All Locations" => "Italy",
     "Vatican City" => "Vatican",
     "Rome Day Trips" => "Rome",
-    "Rome Transfers" => "Rome"
+    "Naples, Pompeii and Amalfi Coast" => "Naples"
   }.freeze
 
   HERO_SUBTITLES = {
@@ -22,12 +22,10 @@ class PagesController < ApplicationController
     "Vatican City" => "Skip-the-line access to the Museums, Sistine Chapel, and St. Peter’s",
     "Rome" => "Ancient ruins, Baroque piazzas, and the lanes between them",
     "Rome Day Trips" => "Easy escapes from Rome to hill towns, villas, and the coast",
-    "Rome Transfers" => "Private drivers between airports, ports, and your hotel",
     "Florence" => "Renaissance masterpieces, Medici palaces, and the Duomo up close",
     "Tuscany" => "Vineyards, cypress roads, and medieval hill towns",
     "Umbria" => "Assisi, Orvieto, and the quiet green heart of Italy",
-    "Naples and Amalfi Coast" => "Pizza, cliffside villages, and the bluest water in Italy",
-    "Pompeii" => "Walk the streets of a Roman city frozen in time",
+    "Naples, Pompeii and Amalfi Coast" => "Pizza, Roman ruins, and cliffside villages above the bluest water in Italy",
     "Puglia and Basilicata" => "Trulli, cave towns, and olive groves running to the sea",
     "Venice" => "Canals, St. Mark’s, and the quiet islands of the lagoon",
     "Milan and Lake Como" => "The Last Supper, fashion streets, and lakeside villas",
@@ -40,12 +38,10 @@ class PagesController < ApplicationController
     "Vatican City" => "Sacred art, Renaissance grandeur, and the treasures of Vatican City.",
     "Rome" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
     "Rome Day Trips" => "Easy escapes from Rome to hill towns, villas, and the coast.",
-    "Rome Transfers" => "Private drivers between airports, ports, and your hotel.",
     "Florence" => "Renaissance masterpieces, Medici palaces, and the David up close.",
     "Tuscany" => "Vineyards, cypress roads, and medieval hill towns.",
     "Umbria" => "Olive groves, hilltop towns, and the green heart of Italy.",
-    "Naples and Amalfi Coast" => "Pizza, cliffside villages, and the bluest water in Italy.",
-    "Pompeii" => "Ancient streets, volcanic ash, and the shadow of Vesuvius.",
+    "Naples, Pompeii and Amalfi Coast" => "Ancient streets, volcanic ash, and cliffside villages above the sea.",
     "Puglia and Basilicata" => "Whitewashed towns, stone-carved cities, and rugged landscapes.",
     "Venice" => "Canals, St. Mark’s, and the quiet islands of the lagoon.",
     "Milan and Lake Como" => "The Last Supper, fashion streets, and lakeside villas.",

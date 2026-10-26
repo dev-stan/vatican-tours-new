@@ -608,7 +608,7 @@
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, it]
   tags: []
-  photos: [roman_ruins.webp, herculaneum.webp, ostia_antica.webp]
+  photos: [oplontis.webp, herculaneum.webp, ostia_antica.webp]
   description: |
     In AD 79, Vesuvius buried Pompeii in a single afternoon. The town that came out of the ash two thousand years later still has its bakeries, bars, brothels, and election slogans painted on the walls.
 
@@ -685,7 +685,7 @@
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr]
   tags: [active]
-  photos: [appian_way.webp, herculaneum.webp, positano.webp]
+  photos: [vesuvius.webp, herculaneum.webp, positano.webp]
   description: |
     Stand on the rim of the volcano in the morning, and walk the streets it destroyed in the afternoon. This is the full story of AD 79, from the crater down.
 
@@ -800,7 +800,7 @@
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, pt]
   tags: []
-  photos: [roman_piazza.webp, countryside_palace.webp, vineyard.webp]
+  photos: [assisi.webp, countryside_palace.webp, vineyard.webp]
   description: |
     Two hours north of Rome, Umbria is all olive groves, pink stone towns, and quiet roads. At its center is Assisi, home of St. Francis and one of the great pilgrimage sites of Europe.
 
