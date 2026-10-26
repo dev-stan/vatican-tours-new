@@ -1,0 +1,64 @@
+<% in_three_days = 3.days.from_now.to_date %>
+group_open:
+  tour: ancient_rome
+  kind: group
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 9).to_fs(:db) %>
+  capacity: 12
+  seats_booked: 0
+  status: open
+
+group_nearly_full:
+  tour: ancient_rome
+  kind: group
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 10, 30).to_fs(:db) %>
+  capacity: 12
+  seats_booked: 10
+  status: open
+
+group_closed:
+  tour: ancient_rome
+  kind: group
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 13).to_fs(:db) %>
+  capacity: 12
+  seats_booked: 0
+  status: closed
+
+group_past:
+  tour: ancient_rome
+  kind: group
+  starts_at: <%= 2.days.ago.to_fs(:db) %>
+  capacity: 12
+  seats_booked: 0
+  status: open
+
+group_tomorrow_within_cutoff:
+  tour: ancient_rome
+  kind: group
+  starts_at: <%= 12.hours.from_now.to_fs(:db) %>
+  capacity: 12
+  seats_booked: 0
+  status: open
+
+private_open:
+  tour: ancient_rome
+  kind: private
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 9).to_fs(:db) %>
+  capacity: 1
+  seats_booked: 0
+  status: open
+
+food_private_open:
+  tour: food_tour
+  kind: private
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 18).to_fs(:db) %>
+  capacity: 1
+  seats_booked: 0
+  status: open
+
+draft_group_open:
+  tour: draft_tour
+  kind: group
+  starts_at: <%= Time.zone.local(in_three_days.year, in_three_days.month, in_three_days.day, 9).to_fs(:db) %>
+  capacity: 30
+  seats_booked: 0
+  status: open

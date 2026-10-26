@@ -1,0 +1,11 @@
+confirmed:
+  tour: ancient_rome
+  departure: group_nearly_full
+  reference: VTI-AAAA
+  name: Maria Rossi
+  email: maria@example.com
+  phone: "+39 333 1234567"
+  status: confirmed
+  guests: 3
+  total_cents: 17500
+  tickets: [{"ticket_type_id": <%= ActiveRecord::FixtureSet.identify(:adult) %>, "name": "Adult", "quantity": 2, "unit_price_cents": 6500}, {"ticket_type_id": <%= ActiveRecord::FixtureSet.identify(:child) %>, "name": "Child", "quantity": 1, "unit_price_cents": 4500}]

@@ -1,0 +1,26 @@
+<p>Dear <%= @booking.name %>,</p>
+
+<p>Thank you for your booking request with Vatican Tours Inc.</p>
+
+<p><strong>Your booking is not confirmed yet.</strong> We’re checking availability and will email you within 12 hours to confirm your place and send payment details. Nothing has been charged.</p>
+
+<p><a href="<%= @status_url %>">Check the status of your booking</a> at any time.</p>
+
+<h3>Your request</h3>
+<%= render "summary" %>
+
+<% if @tour.meeting_point.present? %>
+  <h3>Meeting point</h3>
+  <p><%= @tour.meeting_point %></p>
+<% end %>
+
+<% if @tour.tour_facts.any? %>
+  <h3>Good to know</h3>
+  <% @tour.tour_facts.each do |fact| %>
+    <p><strong><%= fact.label %>:</strong> <%= fact.body %></p>
+  <% end %>
+<% end %>
+
+<p>Need to change or cancel your request? Just reply to this email and quote your reference.</p>
+
+<p>Talk soon,<br>Vatican Tours Inc</p>

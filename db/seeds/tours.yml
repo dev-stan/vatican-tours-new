@@ -1,0 +1,907 @@
+# The tour catalogue, loaded by db/seeds.rb. Edit here, then run bin/rails db:seed.
+#
+# hours:       tour length (decimals allowed, e.g. 2.5)
+# photos:      files in app/assets/images/tours; the first one is the card image
+# description: paragraphs separated by a blank line; the first is the pitch
+# prices:      euros. Adult (18+) and child (6–17) group tickets, private group price for up to max_guests.
+#              Infants (0–5) go free. Every tour also gets a cancellation fact.
+# times:       Rome start times, for both group and private departures
+# days:        weekdays the tour runs (default: every day)
+# capacity:    seats on a group departure (default 12)
+
+- slug: ancient-rome-walking-tour
+  title: Ancient Rome Walking Tour
+  tagline: Two Thousand Years, Three Hours
+  headline: Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
+  location: Rome
+  hours: 3
+  meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
+  languages: [en, es, fr]
+  tags: [wheelchair, with_kids]
+  photos: [colloseum.webp, roman_ruins.webp, colloseum_underground.webp]
+  description: |
+    The Colosseum, the Forum, and the Palatine sit side by side, but most visitors see them as three separate queues. We walk them as one story — from the hut where Romulus lived to the arena where emperors bought the crowd’s loyalty.
+
+    The Colosseum draws more visitors than any other site in Italy, and the ticket line can swallow your whole morning. Your priority pass takes you through the reserved entrance, so the first thing you see is the arena, not the back of someone’s hat.
+
+    Inside, your guide walks you around the first tier to explain how 50,000 Romans were seated, fed, and kept in line. Then you cross the Arch of Constantine and climb the Palatine Hill, where the first Romans built their huts and later emperors built palaces on top of them.
+
+    The tour ends in the Roman Forum, the political heart of the empire. Walk the Sacred Way past the Senate House and the Temple of Vesta, then stay as long as you like — your ticket is valid for the rest of the day.
+  highlights:
+    Straight into the Colosseum: Priority passes take you past the ticket queue and into the arena’s first tier in minutes.
+    The Roman Forum: Walk the Sacred Way past the Senate House and the temple where Caesar was cremated.
+    Palatine Hill: Climb to the ruins of the imperial palaces and the view the emperors woke up to.
+    Guides who know the ground: Licensed archaeologists and historians who have dug, studied, and argued over these stones.
+    Small group, or just you: Group tours cap at 12 guests. Go private and the route bends to your questions.
+    Stories, not dates: Gladiators, fires, and political murders — the people who made the ruins matter.
+  included:
+    - Priority entry to the Colosseum
+    - Roman Forum and Palatine Hill access
+    - Licensed expert guide
+    - Headsets so you hear every word
+  excluded:
+    - Colosseum underground and arena floor
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Outside the Colosseo metro station exit on Via dei Fori Imperiali. Your guide will hold a Vatican Tours Inc sign.
+    Bring ID: Colosseum tickets are issued in each guest’s name and checked at the gate. Bring a passport or ID card.
+    Walking: About 3 km on uneven ancient paving with some steps and slopes. Comfortable shoes are a must.
+    Accessibility: The Colosseum has a lift to the first tier; the Forum and Palatine are steep in places. Contact us for an adapted private route.
+  prices: { adult: 65, child: 45, private: 390, max_guests: 8 }
+  times: ["09:00", "10:30", "13:00", "14:30", "16:00"]
+
+- slug: ancient-rome-in-depth-underground-colosseum
+  title: Ancient Rome in Depth with Underground Colosseum
+  tagline: Below the Arena Floor
+  headline: In-depth archaeological sites with a cappuccino break
+  location: Rome
+  hours: 5
+  meeting_point: Piazza del Colosseo, by the newsstand opposite the Colosseo metro exit
+  languages: [en, es, de]
+  tags: [active]
+  photos: [colloseum_underground.webp, colloseum.webp, roman_ruins.webp]
+  description: |
+    Most visitors see the Colosseum from the stands. We take you underneath it, into the tunnels where gladiators waited and animals were hoisted into the light, then out onto the reconstructed arena floor to look back up at 50,000 empty seats.
+
+    The underground hypogeum opens only to small groups with a licensed guide, and tickets go months ahead. We hold our own allocation, so your group walks straight from the security check down the stairs and into the passages beneath the sand.
+
+    After a cappuccino break in a café the locals actually use, the tour continues through the Roman Forum and up onto the Palatine Hill. With five hours instead of three, there is time for the House of Augustus, the Stadium of Domitian, and the questions most tours rush past.
+  highlights:
+    The hypogeum: Walk the tunnels and lift shafts beneath the arena, closed to visitors without a guided ticket.
+    The arena floor: Stand where the gladiators fought and look up at the tiers from below.
+    A proper coffee break: Half an hour in a neighborhood café, cappuccino and cornetto on us.
+    Forum and Palatine at leisure: Five hours means the House of Augustus and the corners other groups skip.
+  included:
+    - Underground and arena floor access
+    - Roman Forum and Palatine Hill entry
+    - Archaeologist guide
+    - Cappuccino and pastry
+    - Headsets
+  excluded:
+    - Lunch
+    - Hotel pickup
+  facts:
+    Meeting point: Piazza del Colosseo, by the newsstand opposite the Colosseo metro exit. Please arrive 15 minutes early for the security check.
+    Bring ID: Underground tickets are named and checked against a passport or ID card at the gate.
+    Walking: About 5 km with steep steps underground and on the Palatine. Not suitable for wheelchairs or strollers.
+  prices: { adult: 119, child: 89, private: 690, max_guests: 8 }
+  times: ["08:30", "12:30"]
+  capacity: 10
+
+- slug: old-rome-walking-tour
+  title: Old Rome Walking Tour
+  tagline: Rome Between the Monuments
+  headline: Centro storico, where locals outnumber tourists
+  location: Rome
+  hours: 3
+  meeting_point: Piazza di Spagna, at the foot of the Spanish Steps by the Barcaccia fountain
+  languages: [en, es, fr, it]
+  tags: [with_kids]
+  photos: [piazza_navona.webp, pantheon.webp, bernini_fountain.webp]
+  description: |
+    The famous sights of the centro storico sit a few minutes apart, linked by lanes most visitors never walk down. This tour strings them together the way Romans do — from the Spanish Steps to the Trevi Fountain, the Pantheon, and Piazza Navona, by way of the side streets in between.
+
+    Your guide shows you where a pope dug up a Roman aqueduct to feed the Trevi, why the Pantheon’s dome has stood for 1,900 years without steel, and how Piazza Navona keeps the shape of the stadium beneath it.
+
+    Along the way you will stop at an artisan bookbinder, a 400-year-old pharmacy, and the bar that serves Rome’s best espresso standing up. By the end you will know the old city well enough to find your way back for dinner.
+  highlights:
+    Trevi without the crush: We time the stop to miss the tour-bus waves, so there is room to toss your coin.
+    Inside the Pantheon: Stand under the oculus of the best-preserved building of ancient Rome.
+    Piazza Navona: Bernini’s Fountain of the Four Rivers, and the Roman stadium hidden under the square.
+    Rome’s back lanes: Artisan workshops, hidden courtyards, and the coffee bar the guides use.
+  included:
+    - Licensed local guide
+    - Pantheon entry
+    - Espresso stop
+    - Headsets for groups over six
+  excluded:
+    - Hotel pickup
+    - Lunch
+  facts:
+    Meeting point: Piazza di Spagna, at the foot of the Spanish Steps by the Barcaccia fountain. Look for the Vatican Tours Inc sign.
+    Dress code: The Pantheon is a working church. Shoulders and knees should be covered.
+    Walking: About 3.5 km on cobblestones, mostly flat. Strollers are fine.
+  prices: { adult: 49, child: 35, private: 320, max_guests: 8 }
+  times: ["09:30", "14:00", "17:00"]
+
+- slug: old-rome-by-golf-cart
+  title: Old Rome by Golf Cart
+  tagline: All of Rome, None of the Blisters
+  headline: Top sights without walking; good for limited mobility
+  location: Rome
+  hours: 2
+  meeting_point: Pickup from your hotel or apartment in central Rome
+  languages: [en, es, it, pt]
+  tags: [with_kids, wheelchair]
+  photos: [golf_cart.webp, pantheon.webp, piazza_navona.webp]
+  description: |
+    Electric golf carts are allowed where coaches and taxis are not, so in two hours you glide through the lanes of the centro storico and stop at the places that matter — with a seat waiting every time your legs have had enough.
+
+    Your driver-guide picks you up from your door and loops through the Trevi Fountain, the Pantheon, Piazza Navona, the Jewish Ghetto, and up to the Gianicolo terrace for the widest view over the domes of the city.
+
+    It is the easiest way to see Rome with young children, grandparents, or anyone short on time. Carts take six guests and fold-up wheelchairs ride along in the back.
+  highlights:
+    Door-to-door: Pickup and drop-off at your hotel or apartment anywhere in the historic center.
+    Gianicolo terrace: The best free view of Rome, reached without climbing a single step.
+    Ten sights in two hours: Trevi, Pantheon, Navona, the Ghetto, Campo de’ Fiori, and more.
+    Easy on everyone: Step-in seats, shade overhead, and room for a folding wheelchair or stroller.
+  included:
+    - Electric golf cart with driver-guide
+    - Hotel pickup and drop-off in central Rome
+    - Bottled water
+  excluded:
+    - Entry to monuments
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from the door of your hotel or apartment in central Rome. Send us the address after booking.
+    Accessibility: Guests need to step into the cart with a little help. Folding wheelchairs fit in the back.
+    Weather: Carts have a roof and rain covers. In heavy storms we reschedule at no cost.
+  prices: { adult: 89, child: 59, private: 420, max_guests: 5 }
+  times: ["09:00", "11:00", "15:00", "17:00"]
+  capacity: 6
+
+- slug: rome-night-walk
+  title: Night Walk
+  tagline: Rome After Dark
+  headline: Evening stroll through Rome’s streets and squares
+  location: Rome
+  hours: 2.5
+  meeting_point: Piazza del Popolo, in front of the twin churches
+  languages: [en, es, it]
+  tags: [with_kids]
+  photos: [trevi_night.webp, piazza_navona.webp, pantheon.webp]
+  description: |
+    Once the day-trippers leave and the floodlights come on, the centro storico turns back into a neighborhood. Fountains sound louder, piazzas fill with Romans on their evening passeggiata, and the monuments glow amber against the dark.
+
+    The walk starts in Piazza del Popolo and winds down Via del Corso to the Trevi Fountain, lit up and finally quiet enough to hear. From there it is a short stroll to the Pantheon and on to Piazza Navona, where street artists set up under Bernini’s fountain.
+
+    Halfway through we stop for gelato at a family-run gelateria — one of the few in town that still makes every flavor in the back room. It is a relaxed, unhurried way to spend your first or last evening in Rome.
+  highlights:
+    Trevi by night: Floodlit, and far quieter than at noon.
+    Artisan gelato: A cone from a family gelateria that makes every flavor on site.
+    The evening passeggiata: Join the Romans out for their after-dinner stroll.
+    Photo stops: Your guide knows the angles for the best night shots.
+  included:
+    - Local guide
+    - Artisan gelato
+    - Headsets for groups over six
+  excluded:
+    - Dinner
+    - Hotel drop-off
+  facts:
+    Meeting point: Piazza del Popolo, in front of the twin churches at the end of Via del Corso.
+    Walking: About 3 km, flat and well lit. Fine for children and strollers.
+    Ending: The tour ends in Piazza Navona, a short walk from plenty of restaurants. Your guide is happy to recommend one.
+  prices: { adult: 45, child: 30, private: 280, max_guests: 8 }
+  times: ["19:30", "21:00"]
+  capacity: 14
+
+- slug: appian-way-and-catacombs
+  title: Appian Way and the Catacombs Tour
+  tagline: The Queen of Roads
+  headline: Catacombs visit and walk on the Appian Way
+  location: Rome
+  hours: 3
+  meeting_point: Porta San Sebastiano, at the start of the Appian Way
+  languages: [en, es, fr, de]
+  tags: [with_kids]
+  photos: [appian_way.webp, roman_ruins.webp, ostia_antica.webp]
+  description: |
+    The Appian Way left Rome in 312 BC and ran all the way to the heel of Italy. Its first miles are still paved with the original basalt stones, lined with umbrella pines, tombs, and the entrances to the underground cemeteries where early Christians buried their dead.
+
+    We start at Porta San Sebastiano, the best-preserved gate in the Aurelian Walls, and walk the old road past the tomb of Cecilia Metella and the ruins of the Circus of Maxentius.
+
+    Then we go underground. The Catacombs of San Callisto run for twenty kilometers on four levels, with chapels, frescoes, and the crypt of nine third-century popes. A specialist guide leads you through the galleries, and you come out blinking into the countryside a short walk from where you started.
+  highlights:
+    The original Roman road: Walk on basalt stones laid more than two thousand years ago.
+    Catacombs of San Callisto: Four levels of underground galleries and the Crypt of the Popes.
+    Tomb of Cecilia Metella: The grandest tomb on the road, later turned into a medieval fortress.
+    Countryside in the city: Umbrella pines, sheep, and silence twenty minutes from the Colosseum.
+  included:
+    - Catacombs entry with specialist guide
+    - Licensed local guide on the Appian Way
+    - Bottled water
+  excluded:
+    - Transport to the meeting point
+    - Food and drinks
+  facts:
+    Meeting point: Porta San Sebastiano, at the start of the Appian Way. Bus 118 from the Colosseum stops right outside.
+    Inside the catacombs: The galleries are cool (around 15°C all year), narrow, and lit. Bring a light layer.
+    Walking: About 4 km, partly on uneven ancient paving. The catacombs have stairs and are not wheelchair accessible.
+  prices: { adult: 59, child: 39, private: 360, max_guests: 8 }
+  times: ["09:30", "14:30"]
+  days: [mon, tue, thu, fri, sat, sun]
+
+- slug: rome-baroque-walking-tour
+  title: Rome Baroque Walking Tour
+  tagline: Marble That Moves
+  headline: Caravaggio, Bernini, Borromini and the Borghese Gallery
+  location: Rome
+  hours: 3
+  meeting_point: Entrance of the Borghese Gallery, Piazzale Scipione Borghese
+  languages: [en, fr, it]
+  tags: []
+  photos: [borghese_gallery.webp, bernini_fountain.webp, piazza_navona.webp]
+  description: |
+    In the 1600s, a handful of artists remade Rome in marble and light. Bernini carved stone so it looked like skin, Borromini bent walls into waves, and Caravaggio painted saints with dirty feet. This tour takes you to their best work.
+
+    We start in the Borghese Gallery, where reservations are timed and capped. Your guide leads you to Bernini’s Apollo and Daphne and Rape of Proserpina, then to the room of Caravaggios collected by the cardinal who couldn’t stop buying them.
+
+    From there we walk through the Pincio gardens to the Caravaggios in Santa Maria del Popolo, then on to Borromini’s spiraling San Ivo and Bernini’s Fountain of the Four Rivers — and the rivalry between the two men that shaped the whole city.
+  highlights:
+    Borghese Gallery: Reserved entry to see Bernini’s sculptures and six Caravaggios up close.
+    Apollo and Daphne: The moment a woman turns into a tree, carved in marble by a 24-year-old.
+    Santa Maria del Popolo: Two Caravaggios hanging in the chapel they were painted for.
+    Bernini versus Borromini: The rivalry behind the façades of Piazza Navona.
+  included:
+    - Reserved Borghese Gallery entry
+    - Art historian guide
+    - Headsets
+  excluded:
+    - Hotel pickup
+    - Food and drinks
+  facts:
+    Meeting point: Entrance of the Borghese Gallery, Piazzale Scipione Borghese. Arrive 20 minutes early; entry times are strict.
+    Bags: The gallery doesn’t allow bags larger than a handbag. The free cloakroom is next to the entrance.
+    Walking: About 3 km, including a gentle downhill through the Villa Borghese gardens.
+  prices: { adult: 79, child: 55, private: 450, max_guests: 8 }
+  times: ["09:00", "13:00", "15:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+
+- slug: jewish-rome-walking-tour
+  title: Jewish Rome Walking Tour
+  tagline: Two Thousand Years by the Tiber
+  headline: The Jewish Ghetto and its history
+  location: Rome
+  hours: 3
+  meeting_point: Largo 16 Ottobre 1943, in front of the Great Synagogue
+  languages: [en, es, it]
+  tags: [wheelchair]
+  photos: [jewish_ghetto.webp, roman_piazza.webp, roman_ruins.webp]
+  description: |
+    Rome has the oldest Jewish community in Europe, here since before the Colosseum was built. Their story is told in the stones of a few streets by the Tiber, the area that was walled off as the Ghetto from 1555 until 1870.
+
+    Your guide walks you through the old Ghetto, past the Portico d’Ottavia and the Theater of Marcellus, and over to Tiber Island. Along the way you hear about life behind the walls, the raid of 16 October 1943, and the community that rebuilt itself afterward.
+
+    The tour ends with a visit to the Great Synagogue and the Jewish Museum of Rome, followed by time to try carciofi alla giudia — deep-fried artichokes — in one of the kosher restaurants on Via del Portico d’Ottavia.
+  highlights:
+    The Great Synagogue: Inside the square-domed temple built after the Ghetto walls came down.
+    Jewish Museum of Rome: Two thousand years of Roman Jewish history, ritual silver, and textiles.
+    Portico d’Ottavia: The Roman colonnade at the heart of the old Ghetto.
+    Roman Jewish cooking: Your guide’s favorite spots for carciofi alla giudia and ricotta tart.
+  included:
+    - Synagogue and Jewish Museum entry
+    - Licensed local guide
+    - Headsets
+  excluded:
+    - Lunch
+    - Hotel pickup
+  facts:
+    Meeting point: Largo 16 Ottobre 1943, in front of the Great Synagogue.
+    Security: The synagogue has airport-style security. Bring a passport or ID card and leave large bags at your hotel.
+    Closed days: The synagogue and museum are closed on Saturdays and Jewish holidays, so the tour doesn’t run then.
+  prices: { adult: 55, child: 39, private: 340, max_guests: 8 }
+  times: ["10:00", "14:30"]
+  days: [sun, mon, tue, wed, thu, fri]
+
+- slug: rome-underground-for-smart-kids
+  title: Rome Underground for Smart Kids
+  tagline: Dig Down Through Time
+  headline: Rome’s ancient sights, made fun for kids
+  location: Rome
+  hours: 3
+  meeting_point: In front of the Basilica of San Clemente, Via Labicana 95
+  languages: [en, es, fr, de]
+  tags: [with_kids]
+  photos: [roman_ruins.webp, colloseum_underground.webp, colloseum.webp]
+  description: |
+    Rome is a layer cake: every century built on top of the last. This tour turns the city into a dig site for kids, going down three levels below street level to find what the Romans left behind.
+
+    It starts at the Basilica of San Clemente, where a twelfth-century church sits on top of a fourth-century church, which sits on top of a Roman house and a temple to the god Mithras. Kids follow the sound of an underground river that still runs below it all.
+
+    Then it’s on to the Colosseum valley for a gladiator-school session: how they trained, what they ate, and who actually won. Every child gets an explorer’s map and a sticker for each level they reach.
+  highlights:
+    Three levels down: Medieval church, early basilica, and a Roman house with a secret temple.
+    The underground river: Hear a Roman water channel still rushing beneath the city.
+    Gladiator school: Real stories of training, food, and fame, told for curious minds.
+    Explorer’s kit: A map, a mission, and stickers to collect along the way.
+  included:
+    - San Clemente underground entry
+    - Family specialist guide
+    - Explorer’s map and kit for each child
+  excluded:
+    - Colosseum interior
+    - Snacks and drinks
+  facts:
+    Meeting point: In front of the Basilica of San Clemente, Via Labicana 95, five minutes’ walk from the Colosseum.
+    Best ages: Designed for kids aged 6 to 12, though younger siblings are welcome.
+    Underground: Steep stairs and narrow passages. Strollers can be left at the entrance.
+  prices: { adult: 59, child: 39, private: 360, max_guests: 8 }
+  times: ["09:30", "14:30"]
+
+- slug: angels-and-demons-tour
+  title: On the Path of Angels and Demons Tour
+  tagline: Follow the Path of Illumination
+  headline: Rome’s hidden clues from Dan Brown’s novel
+  location: Rome
+  hours: 3
+  meeting_point: Piazza del Popolo, at the obelisk
+  languages: [en, es, de]
+  tags: []
+  photos: [bernini_fountain.webp, piazza_navona.webp, pantheon.webp]
+  description: |
+    In Angels and Demons, Robert Langdon races across Rome following four altars of science hidden in Bernini’s sculptures. The churches, fountains, and statues are all real, and you can follow the same trail in an afternoon.
+
+    Your guide starts at Santa Maria del Popolo and the Chigi Chapel, where the first clue is hidden, then follows the Path of Illumination to Santa Maria della Vittoria and Bernini’s Ecstasy of St. Teresa.
+
+    The trail ends at the Fountain of the Four Rivers in Piazza Navona and the Pantheon. Along the way you’ll learn where fact ends and fiction begins — and why the real history of the Illuminati is stranger than the novel.
+  highlights:
+    The Chigi Chapel: Where Langdon finds the first altar of science.
+    Ecstasy of St. Teresa: Bernini’s most theatrical sculpture, and the novel’s altar of fire.
+    Fountain of the Four Rivers: The water altar in the heart of Piazza Navona.
+    Fact versus fiction: Bernini, the Illuminati, and what Dan Brown changed.
+  included:
+    - Licensed local guide
+    - Entry to all churches on the route
+    - Headsets
+  excluded:
+    - Transport between sights
+    - Food and drinks
+  facts:
+    Meeting point: Piazza del Popolo, at the Egyptian obelisk in the center of the square.
+    Dress code: The route visits four working churches. Cover shoulders and knees.
+    Walking: About 4 km with a short metro ride between the second and third stops.
+  prices: { adult: 55, child: 39, private: 340, max_guests: 8 }
+  times: ["10:00", "15:00"]
+
+- slug: rome-photography-tour
+  title: Rome through the Lens with a Photographer
+  tagline: Golden Hour in the Eternal City
+  headline: Photo walk with a professional photographer
+  location: Rome
+  hours: 3
+  meeting_point: Top of the Spanish Steps, in front of Trinità dei Monti
+  languages: [en, it, fr]
+  tags: []
+  photos: [roman_piazza.webp, trevi_night.webp, piazza_navona.webp]
+  description: |
+    Rome is one of the most photographed cities on earth, and most of those photos look the same. Walk it with a working photographer and you will come home with pictures that don’t.
+
+    Tours start at sunrise or before sunset, when the light turns gold and the crowds thin out. Your photographer leads you from the Spanish Steps through the backstreets of the Tridente to the Trevi Fountain and Piazza Navona, teaching composition, light, and the settings that matter.
+
+    Bring any camera, from a phone to a full-frame kit. The group stays small, so there is time for one-on-one advice at every stop, and you get a short edit of your best shots by email the next day.
+  highlights:
+    Golden hour: Shoot in the softest light of the day, before the crowds or as the sun sets.
+    A pro at your side: Hands-on tips on framing, light, and settings for any camera.
+    Secret angles: Rooftop views and quiet corners the guidebooks don’t mention.
+    Edited shots: Your photographer sends you edits of your five best photos.
+  included:
+    - Professional photographer guide
+    - Editing of your five best photos
+    - Bottled water
+  excluded:
+    - Camera equipment
+    - Hotel pickup
+  facts:
+    Meeting point: Top of the Spanish Steps, in front of the church of Trinità dei Monti.
+    Any camera: Phones are welcome. If you bring a camera, bring a charged spare battery.
+    Group size: No more than six photographers per group.
+  prices: { adult: 85, child: 55, private: 420, max_guests: 6 }
+  times: ["07:00", "17:30"]
+  capacity: 6
+
+- slug: rome-all-the-sights
+  title: Rome, All the Sights Walking Tour
+  tagline: The Whole City in a Day
+  headline: Old and Ancient Rome at a slow pace with a lunch break
+  location: Rome
+  hours: 6
+  meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
+  languages: [en, es, fr, de, pt]
+  tags: [active]
+  photos: [pantheon.webp, colloseum.webp, trevi_night.webp]
+  description: |
+    If you have one full day in Rome, this is the tour. It covers the Colosseum, the Forum, and the old city at a pace that leaves time to look, sit, and eat properly in between.
+
+    The morning is Ancient Rome: priority entry to the Colosseum, the Roman Forum, and the Capitoline Hill with its view over the ruins. Then we stop for a long Roman lunch of pasta and wine in a trattoria in Monti.
+
+    The afternoon is Old Rome: the Pantheon, Piazza Navona, Campo de’ Fiori, and the Trevi Fountain, with a gelato stop on the way. You finish with a full picture of the city and a list of places to come back to.
+  highlights:
+    Colosseum and Forum: Priority entry and the full story of Ancient Rome.
+    A real Roman lunch: Pasta, wine, and dessert at a trattoria in the Monti district.
+    The centro storico: Pantheon, Navona, Campo de’ Fiori, and the Trevi Fountain.
+    An unhurried pace: Six hours with breaks, so nobody gets left behind.
+  included:
+    - Priority Colosseum, Forum, and Palatine entry
+    - Three-course lunch with wine
+    - Gelato
+    - Licensed guide and headsets
+  excluded:
+    - Hotel pickup
+    - Gratuities
+  facts:
+    Meeting point: Outside the Colosseo metro station exit on Via dei Fori Imperiali.
+    Bring ID: Colosseum tickets are named and checked at the gate. Bring a passport or ID card.
+    Walking: About 8 km over the day with plenty of breaks. Wear comfortable shoes.
+  prices: { adult: 109, child: 79, private: 650, max_guests: 8 }
+  times: ["09:00"]
+
+- slug: tivoli-and-hadrians-villa
+  title: Tivoli Gardens and Hadrian’s Villa
+  tagline: Where Emperors and Cardinals Escaped
+  headline: Tivoli’s grand gardens and Hadrian’s vast villa
+  location: Rome Day Trips
+  hours: 6
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, es, it]
+  tags: []
+  photos: [villa_deste.webp, countryside_palace.webp, roman_ruins.webp]
+  description: |
+    Thirty kilometers east of Rome, the town of Tivoli has been the city’s summer retreat for two thousand years. Emperor Hadrian built a private city here, and fifteen centuries later a cardinal built the most extravagant water garden in Europe.
+
+    Your driver collects you from your hotel and heads first to Hadrian’s Villa, a sprawling complex of palaces, baths, and pools that the emperor designed himself. Walk the Canopus, a long pool lined with statues, and the island retreat where he went to be alone.
+
+    After lunch in Tivoli, we cross town to Villa d’Este. Its terraced gardens hold hundreds of fountains, from the Hundred Fountains walk to the Organ Fountain, which still plays music using only water pressure.
+  highlights:
+    Hadrian’s Villa: An emperor’s private city of palaces, baths, and statue-lined pools.
+    Villa d’Este: A Renaissance garden with hundreds of fountains cascading down the hillside.
+    The Organ Fountain: Water-powered music, performed several times a day.
+    Door-to-door: A private air-conditioned car to and from your hotel.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Entry to Hadrian’s Villa and Villa d’Este
+    - Licensed guide at both sites
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome. We confirm the exact time the day before.
+    Lunch: There’s a lunch break in Tivoli’s old town. Your guide will recommend a trattoria.
+    Walking: About 5 km over gravel paths and garden steps. Villa d’Este has many stairs.
+  prices: { adult: 139, child: 99, private: 780, max_guests: 8 }
+  times: ["08:30"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: ostia-antica-and-cerveteri
+  title: Ostia Antica and Etruscan Cerveteri by Car
+  tagline: Rome’s Port and the Etruscan Dead
+  headline: Ancient Ostia and Cerveteri’s Etruscan heritage
+  location: Rome Day Trips
+  hours: 6
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, fr, de]
+  tags: []
+  photos: [ostia_antica.webp, roman_ruins.webp, appian_way.webp]
+  description: |
+    Pompeii gets the crowds, but Ostia Antica was Rome’s own harbor town, and it’s nearly as well preserved. Pair it with the Etruscan necropolis of Cerveteri and you get two civilizations in one day, without long drives.
+
+    In Ostia, walk the main street past warehouses, apartment blocks, bakeries, and a theater that still hosts summer plays. Mosaics in the Square of the Corporations show where each shipping company kept its office.
+
+    After lunch, we drive up the coast to Cerveteri, a UNESCO site where the Etruscans built their tombs like houses, complete with carved beds, chairs, and tools. Walking the streets of the necropolis feels like visiting a town that is still waiting for its people.
+  highlights:
+    Ostia Antica: Rome’s harbor town, with mosaics, taverns, and a working theater.
+    The Square of the Corporations: Shipping company offices, each marked by its own mosaic.
+    Banditaccia Necropolis: Etruscan tombs carved like homes, with beds and chairs in stone.
+    Two sites, one easy drive: Air-conditioned car and short transfers between stops.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Entry to Ostia Antica and Cerveteri
+    - Archaeologist guide
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome. We confirm the time the day before.
+    Lunch: There’s a seafood lunch stop on the coast at Ladispoli. Your guide can book a table.
+    Walking: About 6 km on uneven ground, much of it unshaded. Bring a hat and water in summer.
+  prices: { adult: 129, child: 89, private: 740, max_guests: 8 }
+  times: ["08:30"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: rome-countryside-palaces-and-gardens
+  title: Palaces and Gardens of Rome Countryside
+  tagline: The Cardinals’ Country Houses
+  headline: Elegant palaces and gardens in the Roman countryside
+  location: Rome Day Trips
+  hours: 8
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, it, fr]
+  tags: []
+  photos: [countryside_palace.webp, villa_deste.webp, vineyard.webp]
+  description: |
+    Renaissance cardinals spent their summers in the hills of Lazio, and they built palaces there to rival anything in Rome. Few tourists make the trip, so the rooms and gardens are often empty.
+
+    The day starts at Palazzo Farnese in Caprarola, a pentagon-shaped palace with a spiral staircase wide enough for a horse and painted rooms covered in maps of the known world.
+
+    After lunch in a country trattoria, we visit Villa Lante in Bagnaia. Its formal garden is a waterworks, with a water chain, a stone table with a channel in the middle for cooling wine, and fountains that step down the hill to the village.
+  highlights:
+    Palazzo Farnese: A pentagonal palace with frescoed map rooms and a grand spiral staircase.
+    Villa Lante: One of the finest Renaissance gardens in Italy, built around running water.
+    A country lunch: A long lunch of local dishes in a family-run trattoria.
+    Away from the crowds: Quiet rooms and gardens, a world away from Rome’s queues.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Entry to Palazzo Farnese and Villa Lante
+    - Three-course lunch with wine
+    - Art historian guide
+  excluded:
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome. The drive takes about an hour each way.
+    Walking: Gentle, with some garden steps and the palace staircase.
+    Dietary needs: Let us know in the booking notes, and the trattoria will adapt your lunch.
+  prices: { adult: 149, child: 99, private: 850, max_guests: 8 }
+  times: ["08:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: roman-hills-and-winery
+  title: Roman Hills and Winery Visit
+  tagline: Frascati in the Glass
+  headline: Roman hills and a local winery
+  location: Rome Day Trips
+  hours: 6
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, es, it, de]
+  tags: [wine, food_and_cooking]
+  photos: [vineyard.webp, countryside_palace.webp, villa_deste.webp]
+  description: |
+    The Castelli Romani, the volcanic hills south of Rome, are where Romans go on weekends to eat and drink. The wine is crisp, the porchetta is famous, and the views stretch all the way back to the dome of St. Peter’s.
+
+    The day starts in Castel Gandolfo, the pope’s summer town above Lake Albano. Then we drive the lake road to Nemi, known for wild strawberries, and on to a family winery for a cellar tour and tasting of their Frascati whites and local reds.
+
+    Lunch is a long fraschetta-style meal in Ariccia: porchetta, cheese, cured meats, and house wine at shared tables. You head back to Rome full, relaxed, and with a bottle or two under your arm.
+  highlights:
+    A family winery: Cellar tour and tasting of four wines with the winemaker.
+    Porchetta in Ariccia: Lunch at a traditional fraschetta, the local trattoria.
+    Lake Albano: Views from Castel Gandolfo, the pope’s summer residence.
+    Nemi: A tiny village on a crater lake, famous for wild strawberries.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Winery tour and tasting of four wines
+    - Fraschetta lunch with wine
+    - Local guide
+  excluded:
+    - Wine to take home
+    - Gratuities
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome.
+    Wine tasting: Guests under 18 get grape juice and local snacks instead of wine.
+    Shipping: The winery ships cases to most countries if you’d rather not carry bottles home.
+  prices: { adult: 129, child: 69, private: 720, max_guests: 8 }
+  times: ["09:30"]
+  capacity: 8
+
+- slug: pompeii-and-oplontis
+  title: Pompeii and Oplontis, the Excavations
+  tagline: A City Stopped Mid-Sentence
+  headline: Pompeii’s ancient streets and Oplontis’ Roman villa
+  location: Rome Day Trips
+  hours: 10
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, fr, it]
+  tags: []
+  photos: [roman_ruins.webp, herculaneum.webp, ostia_antica.webp]
+  description: |
+    In AD 79, Vesuvius buried Pompeii in a single afternoon. The town that came out of the ash two thousand years later still has its bakeries, bars, brothels, and election slogans painted on the walls.
+
+    We take the high-speed train from Rome to Naples, where a driver takes you to the excavations. Your archaeologist guide leads you through the Forum, the baths, and the House of the Faun, and the casts of the people who didn’t escape.
+
+    After lunch, we visit Oplontis, a short drive away. The Villa of Poppaea, thought to belong to Nero’s wife, has some of the finest wall paintings in the Roman world, and you will probably have it to yourselves.
+  highlights:
+    Pompeii with an archaeologist: The Forum, the baths, the brothel, and the best-preserved houses.
+    Villa of Poppaea: Painted rooms and gardens in the villa of Nero’s second wife.
+    Fast train both ways: Rome to Naples in 70 minutes, seats reserved.
+    Lunch near the ruins: A Neapolitan pizza lunch near the excavations.
+  included:
+    - High-speed train tickets, Rome to Naples and back
+    - Private transfers in Naples
+    - Entry to Pompeii and Oplontis
+    - Archaeologist guide
+    - Pizza lunch
+  excluded:
+    - Hotel pickup in Rome
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    Bring ID: Train tickets and site entries are named. Bring a passport or ID card.
+    Walking: About 6 km on uneven Roman paving, with little shade. Bring a hat, sunscreen, and water.
+  prices: { adult: 189, child: 129, private: 1290, max_guests: 8 }
+  times: ["07:15"]
+  capacity: 10
+
+- slug: pompeii-herculaneum-oplontis
+  title: Pompeii, Herculaneum, Oplontis
+  tagline: Three Towns Under the Ash
+  headline: Three remarkably preserved sites beneath Vesuvius
+  location: Rome Day Trips
+  hours: 10
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, de]
+  tags: []
+  photos: [herculaneum.webp, roman_ruins.webp, ostia_antica.webp]
+  description: |
+    Vesuvius buried three very different places in AD 79: a busy town, a wealthy seaside resort, and a luxury villa. Seeing all three in one day shows how differently the eruption treated each.
+
+    Herculaneum comes first, before the heat. Buried under twenty meters of volcanic mud rather than ash, it kept its wooden beams, furniture, and even food. Then it’s on to Oplontis and the painted Villa of Poppaea.
+
+    After a pizza lunch, the afternoon is Pompeii: the Forum, the theaters, and the great houses, guided by an archaeologist who knows which streets to take to avoid the crowds.
+  highlights:
+    Herculaneum: Wooden beams, upper floors, and carbonized food, preserved under volcanic mud.
+    Villa of Poppaea: Some of the finest Roman wall paintings anywhere.
+    Pompeii’s highlights: The Forum, the theaters, and the House of the Vettii.
+    One easy day: Fast train and private transfers so you spend your time on the sites.
+  included:
+    - High-speed train tickets, Rome to Naples and back
+    - Private transfers in Naples
+    - Entry to all three sites
+    - Archaeologist guide
+    - Pizza lunch
+  excluded:
+    - Hotel pickup in Rome
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    Bring ID: Train tickets and site entries are named. Bring a passport or ID card.
+    Closed days: Herculaneum is closed on Wednesdays, so this tour doesn’t run then.
+  prices: { adult: 209, child: 139, private: 1390, max_guests: 8 }
+  times: ["07:15"]
+  days: [mon, tue, thu, fri, sat, sun]
+  capacity: 10
+
+- slug: pompeii-herculaneum-vesuvius
+  title: Pompeii, Herculaneum and Vesuvius
+  tagline: Up the Volcano, Down Through History
+  headline: Ancient ruins beneath Vesuvius
+  location: Rome Day Trips
+  hours: 10
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, fr]
+  tags: [active]
+  photos: [appian_way.webp, herculaneum.webp, positano.webp]
+  description: |
+    Stand on the rim of the volcano in the morning, and walk the streets it destroyed in the afternoon. This is the full story of AD 79, from the crater down.
+
+    After the fast train to Naples, a driver takes you up the slopes of Vesuvius. A volcanologist guide leads the 30-minute climb to the crater rim, where steam still rises from the rocks and the whole Bay of Naples spreads out below.
+
+    Back down, you visit Herculaneum, with its wooden houses preserved by volcanic mud, then Pompeii, the town buried under ash. By the end of the day you’ll understand exactly what happened, minute by minute.
+  highlights:
+    The crater rim: Climb to the top of Vesuvius with a volcanologist guide.
+    Herculaneum: Preserved wood, upper floors, and the boathouses where people sheltered.
+    Pompeii: The Forum, the bakeries, and the plaster casts of the victims.
+    The Bay of Naples: Views from Capri to Sorrento from 1,170 meters up.
+  included:
+    - High-speed train tickets, Rome to Naples and back
+    - Private transfers in Naples
+    - Vesuvius National Park, Herculaneum, and Pompeii entry
+    - Volcanologist and archaeologist guides
+    - Packed lunch
+  excluded:
+    - Hotel pickup in Rome
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    The climb: A 30-minute walk up a steep gravel path to the crater. Sturdy shoes are essential.
+    Weather: In high winds the Vesuvius trail closes, and we replace the climb with Oplontis.
+  prices: { adult: 219, child: 149, private: 1450, max_guests: 8 }
+  times: ["07:00"]
+  capacity: 10
+
+- slug: pompeii-amalfi-coast-positano
+  title: Pompeii, Amalfi Coast and Positano
+  tagline: Ruins in the Morning, Sea in the Afternoon
+  headline: Pompeii’s ruins and Positano’s colorful coastal streets
+  location: Rome Day Trips
+  hours: 10
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, it, pt]
+  tags: []
+  photos: [positano.webp, capri_coastline.webp, herculaneum.webp]
+  description: |
+    Two of southern Italy’s great sights in one day: the ruins of Pompeii and the cliffside town of Positano, linked by one of the most beautiful roads in the world.
+
+    The morning is Pompeii, with an archaeologist guide and the town’s best houses, baths, and streets. After lunch, your driver takes the Amalfi Coast road, hairpin after hairpin above the sea, with photo stops at the best viewpoints.
+
+    You have free time in Positano to walk its steep lanes, browse the linen shops, or swim from the beach below the pastel houses, before the drive back to Naples for the evening train to Rome.
+  highlights:
+    Pompeii: A guided walk through the best of the excavations.
+    The Amalfi Coast road: Cliffs, lemon groves, and sea views at every bend.
+    Free time in Positano: Shop, swim, or sit with a spritz above the beach.
+    Fast train both ways: Rome to Naples in 70 minutes.
+  included:
+    - High-speed train tickets, Rome to Naples and back
+    - Private driver for the day
+    - Pompeii entry with archaeologist guide
+    - Lunch with a view
+  excluded:
+    - Hotel pickup in Rome
+    - Drinks in Positano
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    Swimming: Bring swimwear in summer. Positano’s main beach has changing rooms.
+    The coast road: The road is winding. If you get carsick, sit up front and let us know when you book.
+  prices: { adult: 199, child: 139, private: 1390, max_guests: 8 }
+  times: ["07:00"]
+  capacity: 8
+
+- slug: pompeii-sorrento-capri
+  title: Pompeii, Sorrento, Capri
+  tagline: The Bay of Naples in a Day
+  headline: Pompeii’s ruins, Sorrento’s coast, and Capri’s island charm
+  location: Rome Day Trips
+  hours: 12
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, fr, de]
+  tags: []
+  photos: [capri_coastline.webp, positano.webp, herculaneum.webp]
+  description: |
+    A long, full day around the Bay of Naples: Pompeii, the lemon groves of Sorrento, and a boat trip around the island of Capri.
+
+    It starts early with the fast train to Naples and a guided morning in Pompeii. Then it’s on to Sorrento for lunch on a terrace above the sea, and a fast ferry to Capri.
+
+    On Capri, a private boat takes you around the island, past the Faraglioni rocks and into the grottoes, before free time in the Piazzetta. The last ferry and the evening train bring you back to Rome late, tired, and very happy.
+  highlights:
+    Pompeii: A guided morning in the most famous Roman town.
+    Sorrento: Lunch on a terrace with a view of Vesuvius across the bay.
+    Around Capri by boat: The Faraglioni, the Green Grotto, and the island’s cliffs from the water.
+    The Piazzetta: Free time in Capri’s tiny, elegant main square.
+  included:
+    - High-speed train tickets, Rome to Naples and back
+    - Private transfers and ferries
+    - Pompeii entry with archaeologist guide
+    - Boat trip around Capri
+    - Lunch in Sorrento
+  excluded:
+    - Blue Grotto entry
+    - Hotel pickup in Rome
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    Sea conditions: Boats around Capri depend on the weather. If the sea is rough, we replace the boat trip with a visit to Anacapri.
+    A long day: You’ll be back at Roma Termini around 19:00. Wear comfortable shoes and bring a light jacket for the ferry.
+  prices: { adult: 249, child: 179, private: 1690, max_guests: 8 }
+  times: ["06:45"]
+  capacity: 8
+
+- slug: assisi-and-umbria
+  title: Assisi and Umbria
+  tagline: The Green Heart of Italy
+  headline: Assisi’s historic landmarks and Umbria’s hill towns
+  location: Rome Day Trips
+  hours: 8
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, es, it, pt]
+  tags: []
+  photos: [roman_piazza.webp, countryside_palace.webp, vineyard.webp]
+  description: |
+    Two hours north of Rome, Umbria is all olive groves, pink stone towns, and quiet roads. At its center is Assisi, home of St. Francis and one of the great pilgrimage sites of Europe.
+
+    Your guide starts at the Basilica of St. Francis, two churches stacked on top of each other, with Giotto’s frescoes of the saint’s life in the upper church and his tomb below. Then we walk up through the medieval town to the Piazza del Comune and the Basilica of St. Clare.
+
+    After lunch with Umbrian truffles and local wine, we drive to Spello, a flower-filled hill town with Roman gates and Pinturicchio’s frescoes, before heading back to Rome.
+  highlights:
+    Basilica of St. Francis: Giotto’s frescoes and the saint’s tomb.
+    Medieval Assisi: Pink stone lanes, the Roman Temple of Minerva, and St. Clare’s church.
+    Umbrian lunch: Truffle pasta and Sagrantino wine.
+    Spello: A flower-filled hill town with Pinturicchio’s masterpiece.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Local guide in Assisi and Spello
+    - Umbrian lunch with wine
+  excluded:
+    - Gratuities
+    - Donations at the basilicas
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome. The drive takes about two hours each way.
+    Dress code: The basilicas are places of worship. Cover shoulders and knees; silence is requested in the lower church.
+    Walking: Assisi is built on a hillside, with steep lanes and steps.
+  prices: { adult: 159, child: 109, private: 890, max_guests: 8 }
+  times: ["08:00"]
+  capacity: 8
+
+- slug: tuscany-villages-and-countryside
+  title: Tuscany, Villages and Countryside
+  tagline: Cypress Roads and Brunello
+  headline: Tuscany’s medieval villages and rolling countryside
+  location: Rome Day Trips
+  hours: 8
+  meeting_point: Pickup from your hotel in central Rome
+  languages: [en, es, de, it]
+  tags: [wine]
+  photos: [vineyard.webp, florence_duomo.webp, countryside_palace.webp]
+  description: |
+    The Val d’Orcia is the Tuscany of postcards: cypress-lined roads, golden hills, and stone villages on every ridge. It’s also an easy day trip from Rome.
+
+    Our first stop is Pienza, the ideal Renaissance town built by a pope in his home village, and famous for its pecorino cheese. Then we drive the valley road, stopping at the chapel of the Madonna di Vitaleta and the best viewpoints.
+
+    Lunch is at a farm in Montepulciano, with a tasting of Vino Nobile in cellars dug into the hill. The last stop is Montalcino, home of Brunello, one of Italy’s most famous red wines, before the drive back to Rome.
+  highlights:
+    Pienza: A Renaissance village famous for pecorino and its views over the valley.
+    The Val d’Orcia: Cypress roads and rolling hills, a UNESCO World Heritage landscape.
+    Montepulciano: Vino Nobile in medieval cellars carved into the hill.
+    Montalcino: A Brunello tasting in the town that made it famous.
+  included:
+    - Hotel pickup and drop-off in Rome
+    - Air-conditioned vehicle
+    - Two wine tastings
+    - Farm lunch with local wine
+    - Local guide
+  excluded:
+    - Gratuities
+    - Wine to take home
+  facts:
+    Pickup: Your driver collects you from your hotel in central Rome. The drive is about two and a half hours each way.
+    Wine tasting: Guests under 18 get juice and local snacks instead of wine.
+    Pace: Mostly short walks in town centers, with some steep streets in Montepulciano.
+  prices: { adult: 169, child: 109, private: 950, max_guests: 8 }
+  times: ["07:30"]
+  capacity: 8
+
+- slug: florence-chianti-siena
+  title: Florence, Chianti, Siena, Renaissance Marvels
+  tagline: The Best of Tuscany from Rome
+  headline: Florence’s Renaissance treasures, Chianti’s countryside, and Siena’s medieval beauty
+  location: Rome Day Trips
+  hours: 12
+  meeting_point: Roma Termini station, in front of the FRECCIALounge
+  languages: [en, es, fr, pt]
+  tags: [wine]
+  photos: [florence_duomo.webp, vineyard.webp, countryside_palace.webp]
+  description: |
+    Three Tuscan icons in one day: the Renaissance art of Florence, the vineyards of Chianti, and the medieval city of Siena. It’s a long day, but the fast train makes it possible.
+
+    You reach Florence in ninety minutes. Your guide takes you into the Accademia to see Michelangelo’s David, then on a walk past the Duomo, Giotto’s bell tower, Piazza della Signoria, and the Ponte Vecchio.
+
+    After lunch, your driver takes the Chianti road south, stopping at a winery for a tasting, and on to Siena. Walk through its shell-shaped Piazza del Campo and into the striped Cathedral before the evening train back to Rome.
+  highlights:
+    Michelangelo’s David: Reserved entry to the Accademia Gallery.
+    Florence’s center: The Duomo, Piazza della Signoria, and the Ponte Vecchio.
+    Chianti: A cellar visit and tasting at a family vineyard.
+    Siena: Piazza del Campo and the striped marble Cathedral.
+  included:
+    - High-speed train tickets, Rome to Florence and back
+    - Private driver from Florence to Siena
+    - Reserved Accademia and Siena Cathedral entry
+    - Wine tasting in Chianti
+    - Licensed guides in Florence and Siena
+  excluded:
+    - Lunch
+    - Hotel pickup in Rome
+    - Gratuities
+  facts:
+    Meeting point: Roma Termini station, in front of the FRECCIALounge, 20 minutes before departure.
+    Bring ID: Train tickets and museum reservations are named. Bring a passport or ID card.
+    A long day: You’ll be back at Roma Termini around 19:30. The Accademia is closed on Mondays, so the tour doesn’t run then.
+  prices: { adult: 229, child: 159, private: 1590, max_guests: 8 }
+  times: ["07:00"]
+  days: [tue, wed, thu, fri, sat, sun]
+  capacity: 10

@@ -1,0 +1,48 @@
+adult:
+  tour: ancient_rome
+  kind: group
+  name: Adult
+  min_age: 18
+  price_cents: 6500
+  position: 0
+
+child:
+  tour: ancient_rome
+  kind: group
+  name: Child
+  min_age: 6
+  max_age: 17
+  price_cents: 4500
+  position: 1
+
+infant:
+  tour: ancient_rome
+  kind: group
+  name: Infant
+  min_age: 0
+  max_age: 5
+  price_cents: 0
+  position: 2
+
+private_group:
+  tour: ancient_rome
+  kind: private
+  name: Private group
+  max_guests: 8
+  price_cents: 39000
+  position: 3
+
+food_private:
+  tour: food_tour
+  kind: private
+  name: Private group
+  max_guests: 6
+  price_cents: 50000
+  position: 0
+
+draft_adult:
+  tour: draft_tour
+  kind: group
+  name: Adult
+  min_age: 18
+  price_cents: 5000

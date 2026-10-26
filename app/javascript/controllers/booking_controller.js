@@ -1,27 +1,35 @@
 import { Controller } from "@hotwired/stimulus"
-import { Turbo } from "@hotwired/turbo-rails"
 
 const DAY_LABEL = { weekday: "long", month: "long", day: "numeric", year: "numeric" }
-const MONTHS_AHEAD = 11
+// Group departures with this many seats or fewer say how many are left.
+const FEW_LEFT = 4
+const CLOCK_ICON = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>`
 
-// Tour page booking card: group/private toggle, guest steppers, a month calendar, start-time
-// slots and a running total. On wide screens the card sticks like Airbnb's: a card taller than
+// Tour page booking card: group/private toggle, guest steppers, a calendar and start times built from
+// the tour's bookable departures, and a running total. Book Now expands the contact form, which Turbo
+// submits to BookingsController. On wide screens the card sticks like Airbnb's: a card taller than
 // the window scrolls until its bottom is in view, then holds there.
 export default class extends Controller {
   static targets = [
-    "card", "mode", "fromPrice", "count", "step", "adultsNote", "childrenNote",
-    "month", "prev", "next", "days", "dateLabel", "slot", "total", "totalLabel", "save",
+    "card", "mode", "fromPrice", "count", "step", "note",
+    "month", "prev", "next", "days", "dateLabel", "slots", "total", "totalLabel", "save",
+    "bookButton", "details", "form", "fields", "name", "submitTotal",
     "bar", "barTotal", "barDate"
   ]
-  static values = { pricing: Object, today: String, saveKey: String, confirmUrl: String }
+  static values = { options: Object, today: String, saveKey: String }
 
   connect() {
+    this.options = this.optionsValue
     this.mode = "group"
-    this.guests = { adults: 2, children: 0 }
+    this.adult = this.tickets.find(ticket => ticket.adult)
+    this.guests = Object.fromEntries(this.tickets.map(ticket => [ticket.id, ticket === this.adult ? Math.min(2, this.maxGuests) : 0]))
     this.today = parseDate(this.todayValue)
-    this.date = this.nextOpenDay(this.today)
-    this.month = firstOfMonth(this.date)
+    this.month = firstOfMonth(this.today)
+    this.date = null
+    this.departure = null
 
+    // A page restored from Turbo's cache may still have the form open, or busy from the last submit.
+    this.collapseDetails()
     this.saveTarget.setAttribute("aria-pressed", this.readSaved())
     this.render()
 
@@ -50,23 +58,24 @@ export default class extends Controller {
 
   selectMode(event) {
     this.mode = event.currentTarget.dataset.mode
-    // Private parties have a lower cap; drop children first, then adults.
-    const max = this.pricing.max_guests
-    while (this.guests.adults + this.guests.children > max) {
-      if (this.guests.children > 0) this.guests.children--
-      else this.guests.adults--
+    // Private parties have a lower cap; drop infants, then children, then adults.
+    const dropOrder = [...this.tickets].reverse()
+    while (this.partySize > this.maxGuests) {
+      const ticket = dropOrder.find(ticket => this.guests[ticket.id] > this.minimum(ticket.id))
+      if (!ticket) break
+      this.guests[ticket.id]--
     }
     this.render()
   }
 
   increment(event) {
-    if (this.guests.adults + this.guests.children < this.pricing.max_guests) this.guests[event.params.guest]++
+    if (this.partySize < this.maxGuests) this.guests[event.params.guest]++
     this.render()
   }
 
   decrement(event) {
-    const guest = event.params.guest
-    this.guests[guest] = Math.max(guest === "adults" ? 1 : 0, this.guests[guest] - 1)
+    const id = event.params.guest
+    this.guests[id] = Math.max(this.minimum(id), this.guests[id] - 1)
     this.render()
   }
 
@@ -82,13 +91,13 @@ export default class extends Controller {
 
   selectDate(event) {
     this.date = parseDate(event.currentTarget.dataset.date)
-    this.renderCalendar()
-    this.renderSummary()
+    this.render()
   }
 
   selectSlot(event) {
-    this.slotTargets.forEach(slot => slot.setAttribute("aria-pressed", slot === event.currentTarget))
-    this.renderSummary()
+    const id = Number(event.currentTarget.dataset.departureId)
+    this.departure = this.departuresOn(this.date).find(departure => departure.id === id)
+    this.render()
   }
 
   toggleSave() {
@@ -98,13 +107,18 @@ export default class extends Controller {
   }
 
   book() {
-    const slot = this.slotTargets.find(slot => slot.getAttribute("aria-pressed") === "true")
-    if (!slot) return this.slotTargets[0]?.focus()
+    if (!this.departure) return
+    this.detailsTarget.inert = false
+    this.detailsTarget.dataset.expanded = ""
+    this.bookButtonTarget.hidden = true
+    this.nameTarget.focus()
+  }
 
-    const params = new URLSearchParams({
-      mode: this.mode, ...this.guests, date: formatDate(this.date), time: slot.dataset.time
-    })
-    Turbo.visit(`${this.confirmUrlValue}?${params}`)
+  collapseDetails() {
+    this.detailsTarget.inert = true
+    delete this.detailsTarget.dataset.expanded
+    this.bookButtonTarget.hidden = false
+    this.formTarget.removeAttribute("aria-busy")
   }
 
   reveal() {
@@ -114,30 +128,40 @@ export default class extends Controller {
   // Rendering
 
   render() {
+    this.ensureSelection()
+
     const group = this.mode === "group"
-    const { adult, child, price, max_guests } = this.pricing
-    const total = this.guests.adults + this.guests.children
+    const max = this.maxGuests
+    const size = this.partySize
 
     this.modeTargets.forEach(button => button.setAttribute("aria-pressed", button.dataset.mode === this.mode))
-    this.fromPriceTarget.textContent = group ? `Starting from ${money(adult)}` : `${money(price)} per group`
-    this.adultsNoteTarget.textContent = group ? `Age 18+ · ${money(adult)}` : `Age 18+ · up to ${max_guests} guests`
-    this.childrenNoteTarget.textContent = group ? `Age 6–17 · ${money(child)} · under 6 free` : "Age 0–17 · included"
+    this.fromPriceTarget.textContent = group ? `Starting from ${money(this.adult.price_cents)}` : `${money(this.options.private.price_cents)} per group`
+
+    this.noteTargets.forEach(note => {
+      const ticket = this.ticket(note.dataset.guest)
+      const detail = group ? (ticket.price_cents ? money(ticket.price_cents) : "free")
+        : ticket === this.adult ? (Number.isFinite(max) && `up to ${max} guests`) : "included"
+      note.textContent = [ticket.ages, detail].filter(Boolean).join(" · ")
+    })
 
     this.countTargets.forEach(count => count.textContent = this.guests[count.dataset.guest])
     this.stepTargets.forEach(button => {
-      const guest = button.dataset.bookingGuestParam
-      button.disabled = button.dataset.step === "up" ? total >= max_guests : this.guests[guest] <= (guest === "adults" ? 1 : 0)
+      const id = button.dataset.bookingGuestParam
+      button.disabled = button.dataset.step === "up" ? size >= max : this.guests[id] <= this.minimum(id)
     })
 
     this.renderCalendar()
+    this.renderSlots()
     this.renderSummary()
+    this.renderFields()
   }
 
   renderCalendar() {
     const year = this.month.getFullYear()
     const month = this.month.getMonth()
     const thisMonth = firstOfMonth(this.today)
-    const lastMonth = new Date(thisMonth.getFullYear(), thisMonth.getMonth() + MONTHS_AHEAD, 1)
+    const lastDay = Object.keys(this.departures).sort().at(-1)
+    const lastMonth = lastDay ? firstOfMonth(parseDate(lastDay)) : thisMonth
 
     this.monthTarget.textContent = this.month.toLocaleDateString("en-US", { month: "long", year: "numeric" })
     this.prevTarget.disabled = this.month <= thisMonth
@@ -150,8 +174,8 @@ export default class extends Controller {
     let html = ""
     for (let day = start; day <= end; day = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1)) {
       const inMonth = day.getMonth() === month
-      const open = inMonth && this.isOpen(day)
-      const selected = open && sameDay(day, this.date)
+      const open = inMonth && this.openDays.has(formatDate(day))
+      const selected = open && this.date && sameDay(day, this.date)
 
       if (!open) {
         html += `<span class="flex h-12 items-start justify-center pt-1 text-[15px] text-[#c4bdb5]" aria-hidden="${!inMonth}">
@@ -169,38 +193,121 @@ export default class extends Controller {
     this.daysTarget.innerHTML = html
   }
 
+  renderSlots() {
+    const departures = this.departuresOn(this.date)
+    if (!departures.length) {
+      this.slotsTarget.innerHTML = `<p class="text-[15px] text-muted">No start times left for a party of ${this.partySize}. Try fewer guests or the other tour type.</p>`
+      return
+    }
+
+    const group = this.mode === "group"
+    this.slotsTarget.innerHTML = departures.map(departure => {
+      const fits = this.fits(departure)
+      const note = departure.seats_left === 0 ? (group ? "Sold out" : "Booked")
+        : group && (!fits || departure.seats_left <= FEW_LEFT) ? `Only ${departure.seats_left} left` : ""
+
+      return `<button type="button" class="flex h-[52px] w-full cursor-pointer items-center gap-3 rounded-[12px] border border-line bg-white px-4 text-base transition-colors hover:border-ink/40 aria-pressed:border-terracotta-deep aria-pressed:bg-rome-soft disabled:cursor-default disabled:text-muted disabled:hover:border-line"
+        aria-pressed="${departure.id === this.departure?.id}" data-departure-id="${departure.id}"
+        data-action="booking#selectSlot" ${fits ? "" : "disabled"}>
+        ${CLOCK_ICON} ${departure.time}
+        ${note ? `<span class="ml-auto text-[13px] text-terracotta-deep">${note}</span>` : ""}
+      </button>`
+    }).join("")
+  }
+
   renderSummary() {
     const group = this.mode === "group"
-    const { adults, children } = this.guests
-    const guests = adults + children
-    const amount = group ? adults * this.pricing.adult + children * this.pricing.child : this.pricing.price
-    const slot = this.slotTargets.find(slot => slot.getAttribute("aria-pressed") === "true")
+    const size = this.partySize
+    const amount = this.amount
 
-    this.dateLabelTarget.textContent = this.date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })
-    this.totalLabelTarget.textContent = group ? `Total · ${plural(guests, "ticket")}` : `Total · private, ${plural(guests, "guest")}`
+    this.dateLabelTarget.textContent = this.date
+      ? this.date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })
+      : "No dates available"
+    this.totalLabelTarget.textContent = group ? `Total · ${plural(size, "ticket")}` : `Total · private, ${plural(size, "guest")}`
     this.totalTarget.textContent = money(amount)
+    this.submitTotalTarget.textContent = money(amount)
+    this.bookButtonTarget.disabled = !this.departure
 
     if (this.hasBarTotalTarget) {
       this.barTotalTarget.textContent = money(amount)
-      this.barDateTarget.textContent = [this.date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }), slot?.dataset.time].filter(Boolean).join(" · ")
+      this.barDateTarget.textContent = this.date
+        ? [this.date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }), this.departure?.time].filter(Boolean).join(" · ")
+        : "No dates available"
+    }
+  }
+
+  // Hidden inputs carrying the selection, in the shape Bookings::Create takes.
+  renderFields() {
+    const fields = { "booking[departure_id]": this.departure?.id ?? "" }
+    if (this.mode === "group") {
+      this.tickets.forEach(ticket => { if (this.guests[ticket.id] > 0) fields[`booking[tickets][${ticket.id}]`] = this.guests[ticket.id] })
+    } else {
+      fields[`booking[tickets][${this.options.private.ticket_id}]`] = 1
+      fields["booking[guests]"] = this.partySize
+    }
+
+    this.fieldsTarget.replaceChildren(...Object.entries(fields).map(([name, value]) =>
+      Object.assign(document.createElement("input"), { type: "hidden", name, value })))
+  }
+
+  // Keeps the chosen date and departure valid for the current mode and party size: moves to the next
+  // open day if the date no longer has room, and prefers the same start time on the new date.
+  ensureSelection() {
+    const days = Object.keys(this.departures).filter(day => this.departures[day].some(departure => this.fits(departure))).sort()
+    this.openDays = new Set(days)
+
+    const key = this.date && formatDate(this.date)
+    if (!this.openDays.has(key)) {
+      const day = days.find(day => day >= (key ?? formatDate(this.today))) ?? days[0]
+      this.date = day ? parseDate(day) : null
+      if (this.date) this.month = firstOfMonth(this.date)
+    }
+
+    const fitting = this.departuresOn(this.date).filter(departure => this.fits(departure))
+    if (!fitting.some(departure => departure.id === this.departure?.id)) {
+      this.departure = fitting.find(departure => departure.time === this.departure?.time) ?? fitting[0] ?? null
     }
   }
 
   // Helpers
 
-  get pricing() {
-    return this.pricingValue[this.mode]
+  get tickets() {
+    return this.options.group.tickets
   }
 
-  isOpen(day) {
-    const key = formatDate(day).slice(5)
-    return day >= this.today && !this.pricingValue.closed.includes(key)
+  ticket(id) {
+    return this.tickets.find(ticket => ticket.id === Number(id))
   }
 
-  nextOpenDay(from) {
-    let day = from
-    while (!this.isOpen(day)) day = new Date(day.getFullYear(), day.getMonth(), day.getDate() + 1)
-    return day
+  // One adult is always on the booking; every other ticket can go to zero.
+  minimum(id) {
+    return Number(id) === this.adult?.id ? 1 : 0
+  }
+
+  get maxGuests() {
+    return this.options[this.mode].max_guests ?? Infinity
+  }
+
+  get partySize() {
+    return Object.values(this.guests).reduce((sum, count) => sum + count, 0)
+  }
+
+  get amount() {
+    if (this.mode === "private") return this.options.private.price_cents
+    return this.tickets.reduce((sum, ticket) => sum + this.guests[ticket.id] * ticket.price_cents, 0)
+  }
+
+  get departures() {
+    return this.options[this.mode].departures
+  }
+
+  departuresOn(date) {
+    return (date && this.departures[formatDate(date)]) || []
+  }
+
+  // A private departure is one slot for the whole party.
+  fits(departure) {
+    return departure.seats_left >= (this.mode === "group" ? this.partySize : 1)
   }
 
   readSaved() {
@@ -225,8 +332,9 @@ function sameDay(a, b) {
   return formatDate(a) === formatDate(b)
 }
 
-function money(amount) {
-  return `US$${amount.toLocaleString("en-US")}`
+function money(cents) {
+  const fraction = cents % 100 ? 2 : 0
+  return `€${(cents / 100).toLocaleString("en-US", { minimumFractionDigits: fraction, maximumFractionDigits: fraction })}`
 }
 
 function plural(count, word) {

@@ -1,0 +1,222 @@
+<%# The guest can come back to this page; it follows the status the manager sets in the admin. %>
+<% guest_email = tag.span(@booking.email, class: "font-medium text-white") %>
+<% page = {
+  "pending" => {
+    title: "Booking Request Received", icon: :clock, eyebrow: "Request received · Not yet confirmed",
+    heading: "Thank You,", heading_em: "We’re On It",
+    lead: safe_join([ "Your booking isn’t confirmed yet. Within 12 hours we’ll email ", guest_email, " to confirm your place and send payment details." ]),
+    pill: "Awaiting confirmation", pill_class: "bg-terracotta text-ink",
+    stub: "Nothing to pay yet. Payment details come with your confirmation."
+  },
+  "confirmed" => {
+    title: "Booking Confirmed", icon: :check, eyebrow: "Booking confirmed",
+    heading: "Thank You,", heading_em: "See You in Rome",
+    lead: safe_join([ "Your place is confirmed. We’ve emailed your confirmation and payment details to ", guest_email, "." ]),
+    pill: "Confirmed", pill_class: "bg-forest text-white",
+    stub: "Payment details are in your confirmation email."
+  },
+  "cancelled" => {
+    title: "Booking Cancelled", icon: :cross, eyebrow: "Booking cancelled",
+    heading: "This Booking", heading_em: "Was Cancelled",
+    lead: "Nothing is due for this booking. If you think this is a mistake, reply to any of our emails, or pick another date below.",
+    pill: "Cancelled", pill_class: "bg-ink/10 text-ink",
+    stub: "Nothing is due for this booking."
+  }
+}.fetch(@booking.status) %>
+
+<% content_for :title, "#{page[:title]} — Vatican Tours Inc" %>
+
+<% private_tour = @departure.kind_private? %>
+
+<% guests = private_tour ? pluralize(@booking.guests, "guest") :
+     @booking.ticket_lines.map { |line| pluralize(line[:quantity], line[:name].downcase) }.to_sentence %>
+
+<% details = [
+  { label: "Date", value: @departure.starts_at.strftime("%A, %B %-d") },
+  { label: "Start time", value: @departure.starts_at.strftime("%-l:%M %p") },
+  { label: "Tour type", value: private_tour ? "Private" : "Small Group" },
+  { label: "Guests", value: guests },
+  { label: "Requested by", value: @booking.name },
+  { label: "Reference", value: @booking.reference }
+] %>
+
+<% request_steps = [
+  { title: "Request received", body: "We have your request under reference #{@booking.reference}. Nothing has been charged.", done: true },
+  @booking.confirmed? ?
+    { title: "Place confirmed", body: "We’ve confirmed your place and emailed payment details to #{@booking.email}.", done: true } :
+    { title: "We confirm within 12 hours", body: "We check availability and email #{@booking.email} to confirm your place. Keep an eye on your spam folder." },
+  { title: "Pay to complete your booking", body: "Your confirmation email includes payment details. Your booking is complete once you’ve paid." }
+] %>
+
+<% next_steps = @tour.tour_facts.map { |fact| { title: fact.label, body: fact.body } }.presence || [
+  { title: "Meet your guide", body: @tour.meeting_point.present? ?
+      "#{@tour.meeting_point}, 15 minutes before your start time. Look for the Vatican Tours Inc sign." :
+      "Your confirmation email tells you where to meet, 15 minutes before your start time." },
+  { title: "Plans change?", body: "Cancel at least 24 hours before your start time for a full refund." }
+] %>
+
+<% hero_photo, ticket_photo = @tour.photos.first, @tour.photos.second || @tour.photos.first %>
+
+<% clock_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>'.html_safe %>
+<% pin_icon = '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>'.html_safe %>
+<% check_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>'.html_safe %>
+
+<%# Hero %>
+<section class="relative flex min-h-[440px] flex-col bg-[#3a3a36] bg-cover bg-[center_40%] bg-no-repeat text-white md:min-h-[500px]"
+         <% if hero_photo %>style="background-image: url('<%= url_for(hero_photo) %>')"<% end %>>
+  <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,22,28,.55),rgba(18,22,28,.45)_50%,rgba(18,22,28,.7))]"></div>
+
+  <header class="relative mx-auto flex w-full max-w-[1180px] items-center px-6 py-4">
+    <%= link_to root_path, class: "flex items-center gap-3 text-white" do %>
+      <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] border-white font-serif text-base">V</span>
+      <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
+    <% end %>
+  </header>
+
+  <div class="relative my-auto flex flex-col items-center px-6 pt-8 pb-28 text-center sm:pt-4 sm:pb-32">
+    <span class="flex size-12 items-center justify-center rounded-full ring-[6px] ring-white/10 <%= page[:icon] == :check ? "bg-forest" : "bg-white/15" %>" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+        <% if page[:icon] == :check %><path d="M2.5 8.5l3.5 3.5 7.5-8"/>
+        <% elsif page[:icon] == :cross %><path d="M4 4l8 8M12 4l-8 8"/>
+        <% else %><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/>
+        <% end %>
+      </svg>
+    </span>
+    <p class="mt-6 text-[13px] font-semibold tracking-[.18em] text-white/85 uppercase"><%= page[:eyebrow] %></p>
+    <h1 class="mt-3 font-serif text-[clamp(40px,6vw,76px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
+      <%= page[:heading] %> <em class="font-normal max-sm:block"><%= page[:heading_em] %></em>
+    </h1>
+    <p class="mt-5 max-w-[540px] text-[17px] leading-[1.5] text-pretty text-white/90"><%= page[:lead] %></p>
+    <% if @booking.cancelled? %>
+      <%= link_to "Choose another date", tour_path(@tour), class: "mt-8 flex h-[52px] items-center rounded-full bg-white px-8 text-base text-ink transition-colors hover:bg-white/90" %>
+    <% end %>
+  </div>
+</section>
+
+<%# Booking ticket, overlapping the hero %>
+<section class="relative mx-auto -mt-16 max-w-[880px] sm:-mt-24 px-6" aria-labelledby="ticket-heading">
+  <article class="overflow-hidden rounded-[24px] bg-white shadow-[0_24px_60px_-24px_rgba(40,25,10,.4)] sm:grid sm:grid-cols-[280px_minmax(0,1fr)]">
+    <div class="relative h-44 bg-terracotta sm:h-auto">
+      <% if ticket_photo %>
+        <%= image_tag ticket_photo, alt: "", class: "absolute inset-0 size-full object-cover" %>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col">
+      <div class="px-6 pt-7 pb-7 sm:px-9 sm:pt-8">
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-1 text-[13px] text-muted">
+          <span class="flex items-center gap-2"><%= pin_icon %> <%= @tour.location %></span>
+          <span class="flex items-center gap-2"><%= clock_icon %> <%= tour_duration(@tour) %></span>
+          <span class="ml-auto rounded-full px-3 py-1 text-[11px] font-semibold tracking-[.12em] uppercase <%= page[:pill_class] %>"><%= page[:pill] %></span>
+        </div>
+        <h2 id="ticket-heading" class="mt-3 font-serif text-[clamp(24px,3vw,30px)] leading-[1.1] font-medium">
+          <%= link_to @tour.title, tour_path(@tour), class: "hover:underline" %>
+        </h2>
+        <% if @tour.headline.present? %>
+          <p class="mt-2 font-serif text-[15px] leading-[1.35] text-pretty text-muted-serif italic"><%= @tour.headline %></p>
+        <% end %>
+
+        <dl class="mt-7 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-line pt-6">
+          <% details.each do |detail| %>
+            <div>
+              <dt class="text-[11px] font-semibold tracking-[.16em] text-muted uppercase"><%= detail[:label] %></dt>
+              <dd class="mt-1.5 text-[16px] font-medium"><%= detail[:value] %></dd>
+            </div>
+          <% end %>
+        </dl>
+      </div>
+
+      <%# Ticket stub %>
+      <div class="mt-auto border-t-2 border-dashed border-line bg-rome-soft px-6 py-5 sm:px-9">
+        <div class="flex items-baseline justify-between gap-4">
+          <span class="text-[15px] text-muted">
+            <%= private_tour ? "Total · private group" : "Total · #{pluralize(@booking.guests, "ticket")}" %>
+          </span>
+          <span class="text-[26px] font-semibold tracking-[-.5px]"><%= euros(@booking.total_cents) %></span>
+        </div>
+        <p class="mt-2 flex items-center gap-2 text-[13px] text-muted">
+          <%= clock_icon %> <%= page[:stub] %>
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<% unless @booking.cancelled? %>
+<%# What happens next %>
+<section class="mx-auto max-w-[960px] px-6 pt-24" aria-labelledby="status-heading">
+  <div class="text-center">
+    <h2 id="status-heading" class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">What <em class="font-normal">Happens Next</em></h2>
+    <p class="mx-auto mt-3.5 max-w-[560px] text-base leading-[1.45] text-pretty text-muted">
+      <%= @booking.confirmed? ? "One step left: payment." : "Your booking is a request until we confirm it." %>
+    </p>
+  </div>
+
+  <ol class="mt-12 grid gap-5 sm:grid-cols-3">
+    <% request_steps.each_with_index do |step, i| %>
+      <li class="rounded-[18px] p-6 sm:p-7 <%= step[:done] ? "bg-white" : "bg-white/70" %>">
+        <span class="flex size-9 items-center justify-center rounded-full font-serif text-[15px] text-white <%= step[:done] ? "bg-forest" : "bg-ink" %>">
+          <%= step[:done] ? check_icon : i + 1 %>
+        </span>
+        <h3 class="mt-4 text-[17px] font-semibold"><%= step[:title] %></h3>
+        <p class="mt-2 text-[15px] leading-[1.55] break-words text-ink/75"><%= step[:body] %></p>
+      </li>
+    <% end %>
+  </ol>
+</section>
+
+<%# Before your tour %>
+<section class="mx-auto max-w-[960px] px-6 pt-24" aria-labelledby="next-heading">
+  <div class="text-center">
+    <h2 id="next-heading" class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">Before <em class="font-normal">Your Tour</em></h2>
+    <p class="mx-auto mt-3.5 max-w-[560px] text-base leading-[1.45] text-pretty text-muted">
+      Once you’re confirmed, a few things that make the day go smoothly.
+    </p>
+  </div>
+
+  <ol class="mt-12 grid gap-5 sm:grid-cols-2">
+    <% next_steps.each_with_index do |step, i| %>
+      <li class="flex gap-5 rounded-[18px] bg-white/70 p-6 sm:p-7">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink font-serif text-[15px] text-white"><%= i + 1 %></span>
+        <div class="pt-1">
+          <h3 class="text-[17px] font-semibold"><%= step[:title] %></h3>
+          <p class="mt-2 text-[15px] leading-[1.55] text-ink/75"><%= step[:body] %></p>
+        </div>
+      </li>
+    <% end %>
+  </ol>
+</section>
+<% end %>
+
+<%# Pitch %>
+<section class="mx-auto mt-20 max-w-[960px] px-6">
+  <div class="flex items-center gap-10 rounded-[24px] bg-terracotta px-8 py-10 sm:px-12 sm:py-12">
+    <div class="flex-1">
+      <h2 class="font-serif text-[30px] leading-[1.1] font-normal italic text-balance">Questions Before You Go?</h2>
+      <p class="mt-4 max-w-[560px] text-base leading-[1.55]">
+        Our team lives in Rome. Whether you need an adapted route, want to add a guest, or just can’t find the meeting point, we’ll answer the same day.
+      </p>
+    </div>
+    <span class="hidden size-[84px] shrink-0 items-center justify-center rounded-full border-2 border-ink sm:flex" aria-hidden="true">
+      <svg width="34" height="34" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>
+    </span>
+  </div>
+</section>
+
+<%# More tours %>
+<section class="mx-auto max-w-[1100px] px-6 pt-24 pb-28" aria-labelledby="more-heading">
+  <div class="text-center">
+    <h2 id="more-heading" class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">While <em class="font-normal">You’re in Rome</em></h2>
+    <p class="mx-auto mt-3.5 max-w-[560px] text-base leading-[1.45] text-pretty text-muted">
+      Make a day of it. These pair well with <%= @tour.title %>.
+    </p>
+  </div>
+
+  <div class="mt-12 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-[30px]">
+    <%= render partial: "tours/card", collection: @more_tours, as: :tour %>
+  </div>
+
+  <div class="mt-14 flex justify-center">
+    <%= link_to "Explore all tours", root_path, class: "flex h-[52px] items-center rounded-full bg-ink px-8 text-base text-white transition-colors hover:bg-black" %>
+  </div>
+</section>

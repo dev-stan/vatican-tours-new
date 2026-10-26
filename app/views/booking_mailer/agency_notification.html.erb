@@ -1,0 +1,15 @@
+<p><strong>New booking request.</strong> The customer has been told to expect confirmation and payment details within 12 hours.</p>
+
+<p><a href="<%= @admin_url %>" style="display: inline-block; padding: 10px 18px; background: #1d1d1b; color: #ffffff; text-decoration: none; border-radius: 999px;">Open in panel</a></p>
+<p style="color: #6b6b6b; font-size: 13px;">After you email the guest, set the booking to Confirmed or Cancelled there.</p>
+
+<%= render "summary" %>
+
+<h3>Customer</h3>
+<table style="border-collapse: collapse;">
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Name</strong></td><td><%= @booking.name %></td></tr>
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Email</strong></td><td><%= mail_to @booking.email %></td></tr>
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Phone</strong></td><td><%= @booking.phone.presence || "Not given" %></td></tr>
+</table>
+
+<p>Seats left on this departure: <%= @departure.seats_left %> of <%= @departure.capacity %>.</p>

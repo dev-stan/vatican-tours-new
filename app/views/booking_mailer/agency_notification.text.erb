@@ -1,0 +1,13 @@
+NEW BOOKING REQUEST. The customer has been told to expect confirmation and payment details within 12 hours.
+
+Open in panel: <%= @admin_url %>
+After you email the guest, set the booking to Confirmed or Cancelled there.
+
+<%= render "summary" %>
+
+CUSTOMER
+Name:  <%= @booking.name %>
+Email: <%= @booking.email %>
+Phone: <%= @booking.phone.presence || "Not given" %>
+
+Seats left on this departure: <%= @departure.seats_left %> of <%= @departure.capacity %>.

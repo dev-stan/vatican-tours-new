@@ -1,0 +1,28 @@
+Dear <%= @booking.name %>,
+
+Thank you for your booking request with Vatican Tours Inc.
+
+YOUR BOOKING IS NOT CONFIRMED YET. We're checking availability and will email you within 12 hours to confirm your place and send payment details. Nothing has been charged.
+
+Check the status of your booking at any time:
+<%= @status_url %>
+
+YOUR REQUEST
+<%= render "summary" %>
+<% if @tour.meeting_point.present? %>
+
+MEETING POINT
+<%= @tour.meeting_point %>
+<% end %>
+<% if @tour.tour_facts.any? %>
+
+GOOD TO KNOW
+<% @tour.tour_facts.each do |fact| -%>
+- <%= fact.label %>: <%= fact.body %>
+<% end -%>
+<% end %>
+
+Need to change or cancel your request? Just reply to this email and quote your reference.
+
+Talk soon,
+Vatican Tours Inc

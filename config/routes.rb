@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount_avo
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -12,6 +13,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
 
-  get "tours/ancient-rome-walking-tour", to: "pages#ancient_rome_tour", as: :ancient_rome_tour
-  get "tours/ancient-rome-walking-tour/booked", to: "pages#ancient_rome_booked", as: :ancient_rome_booked
+  resources :tours, only: :show, param: :slug do
+    get "booked/:token", action: :booked, on: :member, as: :booked
+  end
+
+  resources :bookings, only: :create
 end

@@ -31,8 +31,23 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Surface delivery errors while developing.
+  config.action_mailer.raise_delivery_errors = true
+
+  # Same Gmail SMTP as production, once smtp credentials exist; otherwise mail is not delivered.
+  if Rails.application.credentials.dig(:smtp, :password).present?
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      user_name: Rails.application.credentials.dig(:smtp, :user_name),
+      password: Rails.application.credentials.dig(:smtp, :password),
+      address: "smtp.gmail.com",
+      port: 587,
+      authentication: :plain,
+      enable_starttls_auto: true
+    }
+  else
+    config.action_mailer.delivery_method = :test
+  end
 
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false

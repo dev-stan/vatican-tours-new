@@ -1,0 +1,296 @@
+<% content_for :title, "#{@tour.title} — Vatican Tours Inc" %>
+<% if @booking_options %>
+  <%# Room for the fixed mobile booking bar so it never covers the footer %>
+  <% content_for :body_class, "max-lg:pb-[73px]" %>
+<% end %>
+
+<% paragraphs = tour_paragraphs(@tour) %>
+<% included, excluded = @tour.inclusions.partition(&:included) %>
+<% gallery_widths = %w[w-[420px] w-[380px] w-[380px]] %>
+
+<% clock_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>'.html_safe %>
+<% divider = '<li class="mx-7 h-7 w-px shrink-0 bg-ink/25" aria-hidden="true"></li>'.html_safe %>
+
+<%# Header %>
+<header class="mx-auto flex max-w-[1180px] items-center px-6 py-4">
+  <%= link_to root_path, class: "flex items-center gap-3" do %>
+    <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] border-ink font-serif text-base">V</span>
+    <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
+  <% end %>
+</header>
+
+<%# Quick facts %>
+<div class="bg-terracotta">
+  <ul class="no-scrollbar mx-auto flex h-[68px] max-w-[1180px] items-center overflow-x-auto px-6 text-base whitespace-nowrap">
+    <% if (format = tour_format(@tour)) %>
+      <li class="flex items-center gap-4">
+        <span class="flex size-10 items-center justify-center rounded-full bg-white/35">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4"/><path d="M10.5 2.7a2.5 2.5 0 0 1 0 4.6"/><path d="M12.3 10.3c1.1.6 1.9 1.8 2.2 3.7"/></svg>
+        </span>
+        <%= format %>
+      </li>
+      <%= divider %>
+    <% end %>
+    <li class="flex items-center gap-2.5"><%= clock_icon %> <%= tour_duration(@tour) %></li>
+    <%= divider %>
+    <li class="flex items-center gap-2.5">
+      <svg width="14" height="16" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>
+      <%= @tour.location %>
+    </li>
+    <% if @tour.languages.any? %>
+      <%= divider %>
+      <li class="flex items-center gap-2.5">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>
+        Live guide in <%= tour_languages(@tour) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= tag.div class: "mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] px-6 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-14",
+            data: (@booking_options ? { controller: "booking", booking_options_value: @booking_options.to_json,
+                                        booking_today_value: Date.current.iso8601, booking_save_key_value: "saved:#{@tour.slug}" } : {}) do %>
+
+  <%# Tour details %>
+  <div class="pt-10 pb-16 lg:pt-20 lg:pb-28">
+    <nav aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
+        <li><%= link_to "Home", root_path, class: "hover:text-ink" %></li>
+        <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+        <li><%= link_to @tour.location, root_path(anchor: "tours"), class: "hover:text-ink" %></li>
+        <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+        <li class="text-ink" aria-current="page"><%= @tour.title %></li>
+      </ol>
+    </nav>
+
+    <p class="mt-7 text-sm font-semibold tracking-[.16em] text-terracotta-deep uppercase"><%= @tour.title %></p>
+    <h1 class="mt-6 font-serif text-[clamp(34px,4.4vw,50px)] leading-[1.1] font-medium tracking-[-.5px] text-pretty">
+      <%= @tour.headline.presence || @tour.title %>
+    </h1>
+
+    <%# Highlights %>
+    <% if @tour.highlights.any? %>
+      <section class="mt-20 lg:mt-24" aria-labelledby="highlights-heading">
+        <h2 id="highlights-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">Tour Highlights</h2>
+        <div class="mt-12 grid gap-x-14 gap-y-10 sm:grid-cols-2">
+          <% @tour.highlights.each do |highlight| %>
+            <div>
+              <h3 class="text-[17px] font-semibold"><%= highlight.title %></h3>
+              <p class="mt-3 text-base leading-[1.5]"><%= highlight.body %></p>
+            </div>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+
+    <%# Pitch %>
+    <% if paragraphs.any? %>
+      <section class="mt-16 flex items-center gap-10 rounded-[24px] bg-terracotta px-8 py-10 sm:px-11">
+        <div class="flex-1">
+          <% if @tour.tagline.present? %>
+            <h2 class="mb-5 font-serif text-[30px] leading-[1.1] font-normal italic"><%= @tour.tagline %></h2>
+          <% end %>
+          <p class="text-base leading-[1.5]"><%= paragraphs.first %></p>
+        </div>
+        <span class="hidden size-[90px] shrink-0 items-center justify-center rounded-full border-2 border-ink sm:flex" aria-hidden="true">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 34V17a14 14 0 0 1 28 0v17"/><path d="M12 34V18a7 7 0 0 1 14 0v16"/><path d="M2 34h34"/></svg>
+        </span>
+      </section>
+    <% end %>
+
+    <%# Gallery %>
+    <% if @tour.photos.attached? %>
+      <div class="no-scrollbar mt-14 -mr-6 flex snap-x snap-mandatory gap-4 overflow-x-auto pr-6 lg:mr-0 lg:pr-0" role="group" aria-label="Tour photos" tabindex="0">
+        <% @tour.photos.each_with_index do |photo, i| %>
+          <%= image_tag photo, alt: "#{@tour.title}, photo #{i + 1}", loading: "lazy",
+                class: "h-[240px] max-w-[85%] shrink-0 snap-start rounded-[16px] object-cover sm:h-[320px] #{gallery_widths[i % gallery_widths.size]}" %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%# Details %>
+    <% if paragraphs.many? %>
+      <section class="mt-20" aria-labelledby="details-heading">
+        <h2 id="details-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">The Finer Details</h2>
+        <div class="mt-8 space-y-6 text-base leading-[1.65]">
+          <% paragraphs.drop(1).each do |paragraph| %>
+            <p><%= paragraph %></p>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+
+    <%# Included %>
+    <% if @tour.inclusions.any? %>
+      <section class="mt-20" aria-labelledby="included-heading">
+        <h2 id="included-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">What’s Included</h2>
+        <div class="mt-8 grid gap-x-14 gap-y-4 text-base leading-[1.4] sm:grid-cols-2">
+          <ul class="space-y-4">
+            <% included.each do |item| %>
+              <li class="flex gap-4">
+                <svg class="mt-1 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>
+                <span><span class="sr-only">Included: </span><%= item.label %></span>
+              </li>
+            <% end %>
+          </ul>
+          <ul class="space-y-4 text-muted">
+            <% excluded.each do |item| %>
+              <li class="flex gap-4">
+                <svg class="mt-1 shrink-0" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9"/></svg>
+                <span><span class="sr-only">Not included: </span><%= item.label %></span>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </section>
+    <% end %>
+
+    <%# Good to know %>
+    <% if @tour.tour_facts.any? %>
+      <section class="mt-20" aria-labelledby="know-heading">
+        <h2 id="know-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">Good to Know</h2>
+        <dl>
+          <% @tour.tour_facts.each do |fact| %>
+            <div class="grid gap-2 border-b border-line py-5 sm:grid-cols-[35%_1fr] sm:gap-6">
+              <dt class="text-base font-semibold"><%= fact.label %></dt>
+              <dd class="text-base leading-[1.5]"><%= fact.body %></dd>
+            </div>
+          <% end %>
+        </dl>
+      </section>
+    <% end %>
+  </div>
+
+  <% if @booking_options %>
+  <%# Booking card %>
+  <aside class="pb-28 lg:pt-7" aria-label="Book this tour">
+    <div class="sticky scroll-mt-6 rounded-[22px] bg-white p-[26px] transition-[top] duration-200" data-booking-target="card">
+      <div class="grid grid-cols-2 rounded-full bg-stepper p-1 text-sm" role="group" aria-label="Tour type">
+        <% { "group" => "Small Group", "private" => "Private" }.each do |mode, label| %>
+          <button type="button" class="cursor-pointer rounded-full py-2 transition-colors aria-pressed:bg-white aria-pressed:shadow-[0_1px_3px_rgba(0,0,0,.1)]"
+                  aria-pressed="<%= mode == "group" %>" data-mode="<%= mode %>"
+                  data-booking-target="mode" data-action="booking#selectMode"><%= label %></button>
+        <% end %>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-2 text-[15px] text-muted">
+        <span data-booking-target="fromPrice">Starting from <%= euros(@group_tickets.find(&:adult?).price_cents) %></span>
+      </div>
+
+      <div class="mt-5 space-y-5 border-b border-line pb-6">
+        <%# One stepper per group ticket type; in private mode the same counts make up the party size. %>
+        <% @group_tickets.each do |ticket| %>
+          <div class="flex items-center justify-between gap-4">
+            <div>
+              <p id="guests-<%= ticket.id %>-label" class="text-base"><%= ticket.name.pluralize %></p>
+              <p class="mt-0.5 text-[13px] text-muted" data-booking-target="note" data-guest="<%= ticket.id %>"></p>
+            </div>
+            <div class="flex items-center" role="group" aria-labelledby="guests-<%= ticket.id %>-label">
+              <button type="button" class="flex size-[34px] cursor-pointer items-center justify-center rounded-[6px] bg-stepper text-lg transition-opacity disabled:cursor-default disabled:opacity-40"
+                      aria-label="Remove one <%= ticket.name.downcase %>" data-step="down"
+                      data-booking-target="step" data-booking-guest-param="<%= ticket.id %>" data-action="booking#decrement">–</button>
+              <span class="w-[38px] text-center text-lg" aria-live="polite" data-booking-target="count" data-guest="<%= ticket.id %>"></span>
+              <button type="button" class="flex size-[34px] cursor-pointer items-center justify-center rounded-[6px] bg-stepper text-lg transition-opacity disabled:cursor-default disabled:opacity-40"
+                      aria-label="Add one <%= ticket.name.downcase %>" data-step="up"
+                      data-booking-target="step" data-booking-guest-param="<%= ticket.id %>" data-action="booking#increment">+</button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%# Calendar %>
+      <div class="mt-6 rounded-[20px] border border-line px-3 pt-4 pb-2">
+        <div class="flex items-center justify-between px-2">
+          <button type="button" class="flex size-8 cursor-pointer items-center justify-center rounded-full hover:bg-stepper disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent"
+                  aria-label="Previous month" data-booking-target="prev" data-action="booking#previousMonth">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 3L5 8l5 5"/></svg>
+          </button>
+          <p class="text-[17px]" aria-live="polite" data-booking-target="month"></p>
+          <button type="button" class="flex size-8 cursor-pointer items-center justify-center rounded-full hover:bg-stepper disabled:cursor-default disabled:opacity-30 disabled:hover:bg-transparent"
+                  aria-label="Next month" data-booking-target="next" data-action="booking#nextMonth">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+        <div class="mt-4 grid grid-cols-7 text-center text-[13px] text-muted" aria-hidden="true">
+          <% %w[Sun Mon Tue Wed Thu Fri Sat].each do |day| %><span><%= day %></span><% end %>
+        </div>
+        <div class="mt-2 grid grid-cols-7" data-booking-target="days"></div>
+      </div>
+
+      <p class="mt-7 border-b border-line pb-4 text-[15px] font-medium tracking-[.12em] uppercase" aria-live="polite" data-booking-target="dateLabel"></p>
+
+      <%# Start times %>
+      <p id="times-label" class="mt-5 text-base">Start times</p>
+      <div class="mt-3 space-y-2.5" role="group" aria-labelledby="times-label" data-booking-target="slots"></div>
+
+      <div class="mt-6 flex items-baseline justify-between border-t border-line pt-6">
+        <span class="text-[15px] text-muted" data-booking-target="totalLabel"></span>
+        <span class="text-[24px] font-semibold" aria-live="polite" data-booking-target="total"></span>
+      </div>
+
+      <button type="button" class="mt-5 h-[52px] w-full cursor-pointer rounded-full bg-ink text-base text-white transition-colors hover:bg-black disabled:cursor-default disabled:opacity-40"
+              data-booking-target="bookButton" data-action="booking#book">Book Now</button>
+
+      <%# Contact details, expanded by Book Now. Turbo sets aria-busy on the form while it submits. %>
+      <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out data-expanded:grid-rows-[1fr]" data-booking-target="details" inert>
+        <div class="overflow-hidden">
+          <%= form_with scope: :booking, url: bookings_path, class: "group", data: { booking_target: "form" } do |form| %>
+            <div data-booking-target="fields"></div>
+
+            <p class="mt-6 text-base">Your details</p>
+            <div class="mt-3 space-y-3">
+              <% input_class = "mt-1 h-12 w-full rounded-[12px] border border-line bg-white px-4 text-base outline-none transition-colors placeholder:text-[#b5ada5] focus:border-ink/60" %>
+              <div>
+                <%= form.label :name, "Full name", class: "text-[13px] text-muted" %>
+                <%= form.text_field :name, required: true, autocomplete: "name", class: input_class, data: { booking_target: "name" } %>
+              </div>
+              <div>
+                <%= form.label :email, class: "text-[13px] text-muted" %>
+                <%= form.email_field :email, required: true, autocomplete: "email", class: input_class %>
+              </div>
+              <div>
+                <%= form.label :phone, "Phone", class: "text-[13px] text-muted" %>
+                <%= form.telephone_field :phone, required: true, autocomplete: "tel", placeholder: "Include your country code", class: input_class %>
+              </div>
+            </div>
+
+            <p class="mt-5 rounded-[12px] bg-rome-soft px-4 py-3 text-[14px] leading-[1.45]">
+              <span class="font-medium">Nothing to pay now.</span> This sends a booking request. We’ll check availability
+              and email you within 12 hours to confirm your place and arrange payment.
+            </p>
+
+            <p id="booking-error" class="mt-4 text-[14px] leading-[1.4] text-terracotta-deep empty:hidden" role="alert"></p>
+
+            <button type="submit" class="mt-5 flex h-[52px] w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-ink text-base text-white transition-colors hover:bg-black group-aria-busy:cursor-wait group-aria-busy:bg-ink/85">
+              <svg class="hidden size-5 animate-spin group-aria-busy:block" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-opacity=".3" stroke-width="2.5"/>
+                <path d="M21.5 12A9.5 9.5 0 0 0 12 2.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <span class="group-aria-busy:hidden">Request Booking · <span data-booking-target="submitTotal"></span></span>
+              <span class="hidden group-aria-busy:inline" role="status">Sending your request…</span>
+            </button>
+          <% end %>
+        </div>
+      </div>
+
+      <p class="mt-3 text-center text-[13px] text-muted">Free cancellation up to 24 hours before the tour</p>
+
+      <button type="button" class="group mt-4 flex cursor-pointer items-center gap-3 text-base"
+              aria-pressed="false" data-booking-target="save" data-action="booking#toggleSave">
+        <svg class="group-aria-pressed:hidden" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg>
+        <svg class="hidden group-aria-pressed:block" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>
+        Save for Later
+      </button>
+    </div>
+  </aside>
+
+  <%# Mobile booking bar, hidden while the card itself is on screen %>
+  <div class="fixed inset-x-0 bottom-0 z-10 flex items-center justify-between gap-4 border-t border-line bg-white px-6 py-3 transition-transform duration-300 lg:hidden" data-booking-target="bar">
+    <div>
+      <p class="text-[17px] font-semibold" data-booking-target="barTotal"></p>
+      <p class="text-[13px] text-muted" data-booking-target="barDate"></p>
+    </div>
+    <button type="button" class="h-12 cursor-pointer rounded-full bg-ink px-7 text-base text-white" data-action="booking#reveal">Choose a time</button>
+  </div>
+  <% end %>
+<% end %>

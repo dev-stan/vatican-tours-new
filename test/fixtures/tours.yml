@@ -1,0 +1,28 @@
+ancient_rome:
+  title: Ancient Rome Walking Tour
+  slug: ancient-rome-walking-tour
+  headline: Skip the Colosseum queue.
+  location: Rome
+  duration_minutes: 180
+  meeting_point: Outside the Colosseo metro station
+  languages: ["en"]
+  tags: ["wheelchair", "with_kids"]
+  status: published
+
+food_tour:
+  title: Trastevere Food Tour
+  slug: trastevere-food-tour
+  location: Rome
+  duration_minutes: 240
+  languages: ["en", "it"]
+  tags: ["food_and_cooking", "wine", "with_kids"]
+  status: published
+
+draft_tour:
+  title: Unfinished Tour
+  slug: unfinished-tour
+  location: Rome
+  duration_minutes: 120
+  languages: ["en"]
+  tags: ["wheelchair", "with_kids"]
+  status: draft

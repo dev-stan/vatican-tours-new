@@ -1,0 +1,19 @@
+<table style="border-collapse: collapse;">
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Reference</strong></td><td><%= @booking.reference %></td></tr>
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Tour</strong></td><td><%= @tour.title %> (<%= @departure.kind_private? ? "Private" : "Small group" %>)</td></tr>
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Date</strong></td><td><%= @departure.starts_at.to_fs(:tour) %> (Rome time)</td></tr>
+  <tr><td style="padding: 2px 16px 2px 0;"><strong>Guests</strong></td><td><%= @booking.guests %></td></tr>
+</table>
+
+<table style="border-collapse: collapse; margin-top: 12px;">
+  <% @booking.ticket_lines.each do |line| %>
+    <tr>
+      <td style="padding: 2px 16px 2px 0;"><%= line[:quantity] %> × <%= line[:name] %></td>
+      <td style="text-align: right;"><%= euros(line[:quantity] * line[:unit_price_cents]) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td style="padding: 6px 16px 2px 0;"><strong>Total</strong></td>
+    <td style="text-align: right;"><strong><%= euros(@booking.total_cents) %></strong></td>
+  </tr>
+</table>

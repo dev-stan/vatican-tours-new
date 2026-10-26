@@ -1,0 +1,9 @@
+Reference: <%= @booking.reference %>
+Tour:      <%= @tour.title %> (<%= @departure.kind_private? ? "Private" : "Small group" %>)
+Date:      <%= @departure.starts_at.to_fs(:tour) %> (Rome time)
+Guests:    <%= @booking.guests %>
+
+<% @booking.ticket_lines.each do |line| -%>
+<%= line[:quantity] %> × <%= line[:name] %>: <%= euros(line[:quantity] * line[:unit_price_cents]) %>
+<% end -%>
+Total: <%= euros(@booking.total_cents) %>
