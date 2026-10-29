@@ -1470,3 +1470,1177 @@
   prices: { adult: 199, child: 129, private: 1190, max_guests: 6 }
   times: ["07:30"]
   capacity: 8
+
+- slug: self-guided-vatican-museums-sistine-chapel
+  title: Self-Guided Vatican Museums and Sistine Chapel
+  tagline: The Museums on Your Own Clock
+  headline: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
+  location: Vatican City
+  hours: 3
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, with_kids, wheelchair]
+  description: |
+    The queue for the Vatican Museums runs along the Vatican walls most mornings of the year, and in summer it can take two hours to reach the door. This visit skips it: a reserved, timed ticket, handed to you at the entrance, and the rest of the day is yours.
+
+    Our host meets you across the road from the entrance, walks you through security, and gives you a printed map with the route most people want: the Pinecone Courtyard, the Gallery of Maps, the Raphael Rooms, and the Sistine Chapel at the end.
+
+    Inside there is no group to keep up with. Spend an hour with the Laocoön or rush straight to Michelangelo’s ceiling, and stay until closing if you like.
+  highlights:
+    Straight past the queue: A reserved, timed ticket and a host at the door to see you through security.
+    The Sistine Chapel: Michelangelo’s ceiling and Last Judgment, for as long as you want to look up.
+    The Raphael Rooms: The School of Athens and the frescoes that made Raphael’s name.
+    A route in your pocket: A printed map with the highlights marked, in your language.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Host to meet you at the entrance
+    - Printed map and route
+  excluded:
+    - Guide inside the Museums
+    - St. Peter’s Basilica
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Our host will be there 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Silence in the chapel: Photos and talking aren’t allowed in the Sistine Chapel.
+  prices: { adult: 45, child: 29, private: 290, max_guests: 6 }
+  times: ["08:00", "09:00", "10:30", "12:00", "13:30", "15:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: self-guided-all-vatican-priority-passes
+  title: Self-Guided All Vatican with Priority Passes
+  tagline: Museums, Chapel, and Basilica, No Queues
+  headline: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
+  location: Vatican City
+  hours: 4
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, with_kids]
+  description: |
+    The Vatican has two great queues, one for the Museums and one for St. Peter’s Basilica, and most visitors spend more of their day in them than inside. These passes cover both, so you can see the whole of Vatican City at your own pace.
+
+    Start with a timed entry to the Vatican Museums and walk the route at whatever speed suits you, through the Gallery of Maps and the Raphael Rooms to the Sistine Chapel.
+
+    Then use your priority pass for the Basilica: Michelangelo’s Pietà, Bernini’s bronze canopy over the papal altar, and the light falling through the dome. Our audio guide tells the story of each, whenever you press play.
+  highlights:
+    Two queues skipped: Priority entry to both the Vatican Museums and St. Peter’s Basilica.
+    The Sistine Chapel: Michelangelo’s ceiling, with no group to hurry you along.
+    St. Peter’s Basilica: The Pietà, Bernini’s canopy, and the largest church in the world.
+    An audio guide: The stories behind the art, on your phone and in your language.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Priority entry to St. Peter’s Basilica
+    - Audio guide app
+    - Printed map and route
+  excluded:
+    - Live guide
+    - Dome climb
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Bring headphones: The audio guide plays on your own phone.
+  prices: { adult: 75, child: 49, private: 450, max_guests: 6 }
+  times: ["08:00", "09:00", "10:30", "12:00", "13:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: vatican-city-essentials
+  title: Vatican City Essentials
+  tagline: Museums, Chapel, and Basilica in One Visit
+  headline: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
+  location: Vatican City
+  hours: 3
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de]
+  tags: [with_kids, wheelchair]
+  description: |
+    The Vatican holds more masterpieces per square metre than anywhere on earth, and the first visit can feel like drinking from a fire hose. This tour picks the essentials and tells the story that connects them.
+
+    Your guide takes you through the Museums’ classical sculpture courtyards, the Gallery of Maps, and the Raphael Rooms, then into the Sistine Chapel, where Michelangelo spent four years on his back painting the ceiling.
+
+    From the chapel, a passage leads straight into St. Peter’s Basilica, skipping the queue in the square. You finish under Michelangelo’s dome, a few steps from the Pietà he carved at twenty-four.
+  highlights:
+    The Sistine Chapel: Michelangelo’s ceiling and Last Judgment, explained before you walk in.
+    The Raphael Rooms: The School of Athens and the frescoes painted for Pope Julius II.
+    Straight into St. Peter’s: The shortcut from the chapel to the Basilica, past the outside queue.
+    Your own guide: A private guide for your party, with the route shaped around your questions.
+  included:
+    - Skip-the-line Vatican Museums ticket
+    - Sistine Chapel and St. Peter’s Basilica entry
+    - Licensed Vatican guide
+    - Headsets
+  excluded:
+    - Dome climb
+    - Hotel pickup and drop-off
+    - Food and drinks
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Your guide will hold a Vatican Tours Inc sign.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Walking: About 2 km, mostly indoors, with lifts available. Strollers and wheelchairs welcome.
+  prices: { adult: 69, child: 49, private: 480, max_guests: 6 }
+  times: ["08:00", "10:00", "13:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: st-peters-in-depth
+  title: St. Peter’s in Depth
+  tagline: The Basilica, the Grottoes, and the Dome
+  headline: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
+  location: Vatican City
+  hours: 2.5
+  meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
+  languages: [en, es, fr, it]
+  tags: [active]
+  description: |
+    St. Peter’s Basilica took 120 years and a dozen architects to build, and most visitors walk through it in twenty minutes. This tour takes its time, from the grottoes beneath the floor to the top of Michelangelo’s dome.
+
+    Your guide starts in the nave with the Pietà, Bernini’s bronze canopy, and the story of how a pope tore down a 1,200-year-old church to build a new one. Then you go down to the Vatican Grottoes, where popes from St. Peter to John Paul II are buried.
+
+    The tour ends with the climb to the dome: a lift to the roof, then 320 steps between the inner and outer shells to the lantern, and the best view in Rome.
+  highlights:
+    The Pietà: Michelangelo’s marble masterpiece, carved when he was twenty-four.
+    The Vatican Grottoes: The papal tombs beneath the Basilica floor.
+    The dome climb: 320 steps to the lantern and a view over the whole of Rome.
+    Bernini’s Basilica: The canopy, the Chair of St. Peter, and the colonnade that embraces the square.
+  included:
+    - Licensed Vatican guide
+    - Priority entry to the Basilica
+    - Dome climb ticket with lift
+    - Headsets
+  excluded:
+    - Vatican Museums and Sistine Chapel
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square, 15 minutes before the start.
+    Dress code: Shoulders and knees must be covered. Guards turn visitors away at the door.
+    Climbing: 320 steps after the lift, some in narrow, sloping passages. Not suitable for anyone with heart conditions or claustrophobia.
+    Wednesday mornings: The Basilica opens late on Wednesdays during the Papal Audience, so we start in the afternoon.
+  prices: { adult: 39, child: 25, private: 280, max_guests: 6 }
+  times: ["09:00", "14:00", "15:30"]
+  capacity: 14
+
+- slug: vatican-gardens-in-depth
+  title: Vatican Gardens in Depth
+  tagline: The Pope’s Private Gardens
+  headline: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
+  location: Vatican City
+  hours: 2
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, it, de]
+  tags: [with_kids]
+  description: |
+    Half of Vatican City is garden, and almost nobody sees it. Behind the walls lie fifty acres of lawns, woods, and fountains that popes have walked in for seven centuries, open only to small guided groups.
+
+    Your guide leads you past the Fountain of the Eagle, the Lourdes Grotto, and the Casina of Pius IV, a Renaissance summer house hidden in the trees, with views of the dome from angles you won’t find on any postcard.
+
+    The tour ends back inside the Vatican Museums, and your ticket lets you stay and explore the galleries and the Sistine Chapel for the rest of the day.
+  highlights:
+    Behind the walls: Fifty acres of papal gardens, open only to guided visits.
+    The Casina of Pius IV: A Renaissance summer house hidden in the woods.
+    The dome from the garden: Views of Michelangelo’s dome that few visitors see.
+    The Museums afterwards: Your ticket covers the Vatican Museums and Sistine Chapel for the rest of the day.
+  included:
+    - Vatican Gardens access
+    - Vatican Museums and Sistine Chapel entry
+    - Licensed Vatican guide
+    - Headsets
+  excluded:
+    - Guide inside the Museums
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 20 minutes before the start for security.
+    Bring ID: Garden tickets are named and checked against a passport or ID card.
+    Walking: About 2 km on paths and slopes, outdoors. Bring water and a hat in summer.
+    Weather: The gardens stay open in light rain. In storms the Vatican may close them and we’ll offer a new date or a full refund.
+  prices: { adult: 59, child: 39, private: 480, max_guests: 6 }
+  times: ["09:00", "11:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: vatican-scavi-st-peters-tomb
+  title: Vatican Scavi and St. Peter’s Tomb
+  tagline: Beneath the Basilica
+  headline: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
+  location: Vatican City
+  hours: 1.5
+  meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
+  languages: [en, es, it]
+  tags: []
+  description: |
+    Beneath the floor of St. Peter’s Basilica lies a street of Roman tombs, buried when Constantine levelled the hill to build the first church. Excavations in the 1940s uncovered it, and at the end of it, the grave believed to be St. Peter’s.
+
+    Only around 250 people a day are allowed into the Scavi, in groups of a dozen, and the Vatican’s Excavations Office books them months ahead. We handle the application and meet you at the Swiss Guard post.
+
+    Your guide leads you down through pagan and Christian mausoleums, still decorated with frescoes and mosaics, to the red wall and the bones found beside it. You come up in the Grottoes, beneath the papal altar.
+  highlights:
+    The Roman necropolis: A buried street of tombs, frescoes, and mosaics beneath the Basilica.
+    St. Peter’s tomb: The red wall and the grave at the heart of the church.
+    Very few visitors: Around 250 people a day, in groups of no more than 12.
+    The Grottoes: You finish among the papal tombs beneath the high altar.
+  included:
+    - Scavi Office tickets and booking
+    - Licensed Scavi guide
+    - St. Peter’s Basilica access afterwards
+  excluded:
+    - Vatican Museums and Sistine Chapel
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica, 15 minutes before the start.
+    Age limit: The Excavations Office does not admit children under 15.
+    Underground: The passages are narrow, warm, and humid. Not suitable for anyone with claustrophobia or limited mobility.
+    Booking ahead: Tickets are confirmed by the Vatican. If your date isn’t granted we’ll offer another or a full refund.
+  prices: { adult: 69, child: 49, private: 480, max_guests: 4 }
+  times: ["09:00", "11:00", "14:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: essential-vatican-museums
+  title: Essential Vatican Museums
+  tagline: The Highlights in Three Hours
+  headline: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
+  location: Vatican City
+  hours: 3
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [with_kids, wheelchair]
+  description: |
+    The Vatican Museums stretch over seven kilometres of galleries, and without a plan most visitors run out of energy long before the Sistine Chapel. This small-group tour gets you to the rooms that matter, in the right order.
+
+    Your guide starts with the classical sculpture of the Pio-Clementino, where the Laocoön and the Belvedere Torso taught Michelangelo how to carve. Then you walk the Gallery of Maps and the Raphael Rooms, where the School of Athens hangs.
+
+    The tour ends in the Sistine Chapel. Your guide explains the ceiling before you enter, since talking isn’t allowed inside, so you know exactly what you’re looking at.
+  highlights:
+    Skip the queue: Reserved entry past the line along the Vatican walls.
+    Classical sculpture: The Laocoön, the Apollo Belvedere, and the Belvedere Torso.
+    The Gallery of Maps: 120 metres of painted Italy under a gilded ceiling.
+    The Sistine Chapel: Explained before you enter, so the ceiling speaks for itself.
+  included:
+    - Skip-the-line Vatican Museums ticket
+    - Sistine Chapel entry
+    - Licensed Vatican guide
+    - Headsets
+  excluded:
+    - St. Peter’s Basilica
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Your guide will hold a Vatican Tours Inc sign.
+    Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Stay on: Your ticket is valid until closing, so you can keep exploring after the tour.
+  prices: { adult: 70, child: 49, private: 420, max_guests: 6 }
+  times: ["08:30", "10:00", "11:30", "13:30", "15:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: vatican-city-in-depth
+  title: Vatican City in Depth
+  tagline: The Whole Vatican, Properly
+  headline: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
+  location: Vatican City
+  hours: 5
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it]
+  tags: [wheelchair]
+  description: |
+    Three hours is enough to see the Vatican’s famous rooms. Five is enough to understand them. This tour covers the full route at a pace that leaves room for questions, and for the galleries most groups walk straight past.
+
+    After the classical sculpture and the Gallery of Maps, your guide takes you into the Pinacoteca for Raphael’s Transfiguration and Caravaggio’s Deposition, then the Borgia Apartments and the modern religious art collection, with Matisse and Van Gogh.
+
+    The tour finishes with the Sistine Chapel and the passage into St. Peter’s Basilica, where your guide shows you the Pietà, Bernini’s canopy, and the tomb of St. Peter beneath the high altar.
+  highlights:
+    The Pinacoteca: Raphael’s Transfiguration, Caravaggio, and Leonardo’s unfinished St. Jerome.
+    The Borgia Apartments: Pinturicchio’s frescoes for the most notorious pope in history.
+    The Sistine Chapel: Michelangelo’s ceiling, and the Last Judgment he painted thirty years later.
+    St. Peter’s Basilica: Straight in from the chapel, skipping the queue in the square.
+  included:
+    - Skip-the-line Vatican Museums ticket
+    - Sistine Chapel and St. Peter’s Basilica entry
+    - Licensed Vatican guide
+    - Headsets
+    - Coffee break
+  excluded:
+    - Dome climb
+    - Lunch
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before the start.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Walking: About 4 km, mostly indoors, with a coffee break halfway. Lifts are available throughout.
+  prices: { adult: 90, child: 59, private: 540, max_guests: 5 }
+  times: ["08:30", "12:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: self-guided-all-day-in-vatican-city
+  title: Self-Guided All Day in Vatican City
+  tagline: A Whole Day Inside the Walls
+  headline: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
+  location: Vatican City
+  hours: 7
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, active]
+  description: |
+    Vatican City is the smallest country in the world, and it takes a full day to see it properly. This pass covers everything, with priority entry at every door, so you can spend the day inside the walls rather than outside them.
+
+    Start the morning at the Vatican Museums with a timed ticket and a printed route through the galleries and the Sistine Chapel. Break for lunch whenever you like; our map marks the cafés inside and the trattorias just outside.
+
+    In the afternoon, use your priority pass for St. Peter’s Basilica and climb the dome for the view over Rome. An audio guide on your phone tells the story at every stop.
+  highlights:
+    Everything in one day: The Museums, the Sistine Chapel, the Basilica, and the dome.
+    No queues: Priority entry at each site, booked for you in advance.
+    The dome climb: The roof terrace and the lantern, with Rome laid out below.
+    Your own pace: An audio guide and printed route, with no group to keep up with.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Priority entry to St. Peter’s Basilica
+    - Dome climb ticket with lift
+    - Audio guide app and printed route
+  excluded:
+    - Live guide
+    - Lunch
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Climbing: The dome has 320 steps after the lift. You can skip it and use the rest of the pass.
+  prices: { adult: 85, child: 55, private: 510, max_guests: 6 }
+  times: ["08:00", "09:00", "10:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: all-day-in-vatican-city
+  title: All Day in Vatican City
+  tagline: From the Museums to the Dome
+  headline: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
+  location: Vatican City
+  hours: 7
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it]
+  tags: [active]
+  description: |
+    A full day in the Vatican with a guide at your side from the first gallery to the top of the dome. It’s the most complete visit we offer, and the one we recommend to anyone who has only one chance to see it.
+
+    The morning belongs to the Vatican Museums: classical sculpture, the Gallery of Maps, the Raphael Rooms, the Pinacoteca, and the Sistine Chapel. Then a long lunch in Borgo Pio, the old neighbourhood beneath the Vatican walls.
+
+    In the afternoon your guide leads you through St. Peter’s Basilica and down into the Grottoes, then up the dome for the view over the square and the city beyond.
+  highlights:
+    A full morning in the Museums: The Raphael Rooms, the Pinacoteca, and the Sistine Chapel at an unhurried pace.
+    Lunch in Borgo Pio: A local trattoria under the Vatican walls.
+    St. Peter’s and the Grottoes: The Basilica above, the papal tombs below.
+    The dome: 320 steps to the top, and the view that ends the day.
+  included:
+    - Skip-the-line Vatican Museums ticket
+    - Sistine Chapel and St. Peter’s Basilica entry
+    - Dome climb ticket with lift
+    - Licensed Vatican guide
+    - Lunch with a glass of wine
+    - Headsets
+  excluded:
+    - Hotel pickup and drop-off
+    - Gratuities
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Your guide will hold a Vatican Tours Inc sign.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    A long day: About 8 km on foot with stairs. Wear comfortable shoes.
+  prices: { adult: 110, child: 75, private: 790, max_guests: 6 }
+  times: ["08:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: papal-audience-tickets-assistance
+  title: Papal Audience Tickets and On-Site Assistance
+  tagline: Wednesday Morning with the Pope
+  headline: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
+  location: Vatican City
+  hours: 3
+  meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
+  languages: [en, es, fr, it, de, pt]
+  tags: [with_kids, wheelchair]
+  description: |
+    Most Wednesday mornings, the Pope greets pilgrims in St. Peter’s Square, or in the Paul VI Hall in winter. Tickets are free but issued by the Prefecture of the Papal Household, and the security lines start forming hours before the doors open.
+
+    We request your tickets, collect them, and meet you on the morning with an assistant who knows the gates and the timing. They’ll guide you through security and help you find a good spot before the crowds arrive.
+
+    During the audience, the Pope rides through the square, gives a short teaching and greetings in several languages, and ends with the Apostolic Blessing, which extends to any religious objects you bring with you.
+  highlights:
+    Tickets taken care of: We apply, collect, and hand you the tickets on the morning.
+    An assistant at your side: Through security and to your seats with someone who does this every week.
+    The Popemobile: The Pope rides through the square before the audience begins.
+    The Apostolic Blessing: Bring rosaries or medals to be blessed.
+  included:
+    - Papal Audience tickets
+    - On-site assistant
+    - Earpiece radio for groups
+  excluded:
+    - Reserved seating near the front
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square, at 07:30.
+    The Pope’s schedule: Audiences are cancelled in July and when the Pope travels. If yours is cancelled we refund you in full.
+    Security: Expect airport-style checks. Leave large bags, umbrellas, and anything sharp at your hotel.
+    Dress code: Shoulders and knees covered, as in any Vatican basilica.
+  prices: { adult: 40, child: 25, private: 280, max_guests: 6 }
+  times: ["07:30"]
+  days: [wed]
+  capacity: 20
+
+- slug: essential-naples-part-one
+  title: Essential Naples - Part One
+  tagline: Old Naples and the Archaeological Museum
+  headline: Old Naples and the treasures of the Archaeological Museum.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 3
+  meeting_point: Piazza del Gesù Nuovo, by the Guglia dell’Immacolata
+  languages: [en, es, fr, it]
+  tags: [with_kids]
+  photos: [vesuvius.webp, herculaneum.webp]
+  description: |
+    Naples has been lived in for 2,800 years, and its old centre still follows the street grid the Greeks laid out. This walk takes you down Spaccanapoli, the long straight lane that splits the city in two, and into the museum that holds the treasures of Pompeii.
+
+    Your guide leads you past the cloister of Santa Chiara with its painted majolica tiles, the nativity workshops of Via San Gregorio Armeno, and the street shrines and laundry lines that make Naples feel like nowhere else in Italy.
+
+    The tour ends at the National Archaeological Museum, with the Farnese marbles, the mosaics and frescoes lifted from Pompeii, and the Secret Cabinet the Bourbon kings kept locked for a century.
+  highlights:
+    Spaccanapoli: The ancient Greek street that runs straight through the heart of Naples.
+    San Gregorio Armeno: The street of nativity makers, busy all year round.
+    The Archaeological Museum: Pompeii’s mosaics and frescoes, and the Farnese Hercules.
+    A pizza stop: Pizza a portafoglio, folded and eaten on the street, the way Neapolitans do.
+  included:
+    - Licensed Naples guide
+    - Archaeological Museum entry
+    - Street pizza tasting
+  excluded:
+    - Hotel pickup and drop-off
+    - Lunch
+  facts:
+    Meeting point: Piazza del Gesù Nuovo, by the Guglia dell’Immacolata. Your guide will hold a Vatican Tours Inc sign.
+    Closed Tuesdays: The Archaeological Museum is closed on Tuesdays.
+    Walking: About 3 km on cobbled streets. Keep an eye out for scooters in the narrow lanes.
+  prices: { adult: 59, child: 39, private: 390, max_guests: 8 }
+  times: ["09:30", "14:30"]
+  days: [mon, wed, thu, fri, sat, sun]
+
+- slug: essential-naples-part-two
+  title: Essential Naples - Part Two
+  tagline: Caravaggio, Opera, and the City Below
+  headline: Capodimonte Painting Gallery, the San Carlo Opera House, and the Naples Underground.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 3
+  meeting_point: Pickup from your hotel in central Naples
+  languages: [en, es, it]
+  tags: [with_kids]
+  photos: [vesuvius.webp, capri_coastline.webp]
+  description: |
+    The second half of Naples is spread across the city, so we drive it. With a private car and driver, the tour links three sites that most visitors never manage to fit into one day.
+
+    It starts on the hill of Capodimonte, in the Bourbon royal palace that now holds one of Italy’s great painting collections: Titian, Raphael, Bruegel, and Caravaggio’s Flagellation of Christ. Then down to the San Carlo, the oldest working opera house in Europe, for a look at its red-and-gold auditorium.
+
+    The tour ends forty metres below the street, in the tunnels and cisterns the Greeks dug for water and Neapolitans later used as air-raid shelters.
+  highlights:
+    Capodimonte: Caravaggio, Titian, and Raphael in a Bourbon royal palace.
+    Teatro di San Carlo: Europe’s oldest working opera house, older than La Scala.
+    Naples Underground: Greek cisterns and wartime shelters forty metres down.
+    A car and driver: No buses, no taxis, no getting lost between sites.
+  included:
+    - Private car and driver
+    - Licensed Naples guide
+    - Capodimonte, San Carlo, and Naples Underground entry
+  excluded:
+    - Food and drinks
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in central Naples 15 minutes before the start.
+    Closed Wednesdays: Capodimonte is closed on Wednesdays.
+    Underground: The tunnels are narrow in places and cool all year. Bring a light layer.
+    Opera rehearsals: When the San Carlo is rehearsing, we visit the royal box and foyer instead.
+  prices: { adult: 89, child: 59, private: 590, max_guests: 6 }
+  times: ["09:30", "14:30"]
+  days: [mon, tue, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: naples-in-depth
+  title: Naples in Depth Tour
+  tagline: A Deeper Journey into Naples’ Rich Heritage
+  headline: The Veiled Christ, the Archaeological Museum, and the views from Posillipo, by private car.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 6
+  meeting_point: Pickup from your hotel in central Naples
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [vesuvius.webp, capri_coastline.webp]
+  description: |
+    Six hours, a car, and a guide who grew up here: enough to see Naples as more than a gateway to Pompeii. This is the city’s greatest hits and its quieter corners, joined up without a single bus.
+
+    The morning starts in the old centre with the Sansevero Chapel and Giuseppe Sanmartino’s Veiled Christ, a marble figure so fine it looks breathed on. Then the Archaeological Museum for Pompeii’s mosaics, and lunch at a pizzeria that has been firing ovens for over a century.
+
+    In the afternoon the car takes you along the seafront to the Castel dell’Ovo and up the Posillipo hill, where the whole bay opens up, from Vesuvius to Capri.
+  highlights:
+    The Veiled Christ: The marble sculpture in the Sansevero Chapel that seems to breathe.
+    Pompeii’s treasures: The mosaics and frescoes of the Archaeological Museum.
+    Real Neapolitan pizza: Lunch in a historic pizzeria in the old centre.
+    Posillipo: The bay, Vesuvius, and Capri from the hill above the city.
+  included:
+    - Private car and driver
+    - Licensed Naples guide
+    - Sansevero Chapel and Archaeological Museum entry
+    - Pizza lunch
+  excluded:
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in central Naples.
+    Closed Tuesdays: The Sansevero Chapel and the Archaeological Museum are closed on Tuesdays.
+    No photos: Photography isn’t allowed in the Sansevero Chapel.
+  prices: { adult: 129, child: 89, private: 890, max_guests: 6 }
+  times: ["09:00"]
+  days: [mon, wed, thu, fri, sat, sun]
+  capacity: 8
+
+- slug: naples-and-pompeii
+  title: Naples and Pompeii Tour
+  tagline: Living Naples, Timeless Pompeii
+  headline: The lanes of old Naples in the morning, the streets of Pompeii in the afternoon.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 6
+  meeting_point: Pickup from your hotel in Naples
+  languages: [en, es, fr, it, de]
+  tags: [with_kids]
+  photos: [herculaneum.webp, vesuvius.webp]
+  description: |
+    Two cities in one day: one still loud and alive, the other frozen under ash since 79 AD. With a private car between them, the day is unhurried and the contrast is the point.
+
+    The morning is spent in Naples’ historic centre, along Spaccanapoli and through the nativity workshops of San Gregorio Armeno, with a stop for espresso and a sfogliatella.
+
+    After lunch, a forty-minute drive takes you to Pompeii. An archaeologist guide walks you through the Forum, the baths, the brothel, and the villas, and explains how the eruption that destroyed the town also saved it.
+  highlights:
+    Old Naples: Spaccanapoli, street shrines, and the nativity makers.
+    Pompeii with an archaeologist: The Forum, the baths, and the painted villas.
+    The plaster casts: The victims of Vesuvius, caught in their last moments.
+    Coffee and sfogliatella: The Neapolitan breakfast, on us.
+  included:
+    - Private car and driver
+    - Licensed guides in Naples and Pompeii
+    - Pompeii entry
+    - Coffee and pastry
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in Naples. Pickup from Sorrento or the Naples cruise port is available on request.
+    Walking: About 6 km, much of it on Pompeii’s uneven Roman paving. Wear sturdy shoes.
+    Summer heat: There is little shade in Pompeii. Bring water, a hat, and sunscreen.
+  prices: { adult: 139, child: 95, private: 950, max_guests: 6 }
+  times: ["09:00"]
+  capacity: 8
+
+- slug: naples-pompeii-herculaneum-oplontis
+  title: Pompeii, Herculaneum, Oplontis
+  tagline: Three Archaeological Treasures, One Extraordinary Journey
+  headline: Three towns buried by Vesuvius, from the bustling streets of Pompeii to the luxury villa of Oplontis.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 6
+  meeting_point: Pickup from your hotel in Naples
+  languages: [en, es, fr, it]
+  tags: [active]
+  photos: [oplontis.webp, herculaneum.webp, vesuvius.webp]
+  description: |
+    Vesuvius buried more than one town in 79 AD, and each tells a different part of the story. This day visits three of them with an archaeologist, in the order that makes the most sense.
+
+    Herculaneum comes first: smaller than Pompeii but better preserved, with wooden beams, upper floors, and the skeletons of the townspeople who sheltered in the boathouses by the shore.
+
+    Then Oplontis, the seaside villa thought to belong to Nero’s wife Poppaea, with some of the finest wall paintings in the Roman world. The day ends in Pompeii itself, with its Forum, theatres, and bakeries.
+  highlights:
+    Herculaneum: Two-storey houses, carbonised wood, and the boathouse skeletons.
+    Villa Poppaea at Oplontis: A luxury seaside villa with frescoes still bright after 2,000 years.
+    Pompeii: The Forum, the theatres, and the streets of a whole Roman town.
+    An archaeologist guide: Someone who has worked the sites, not just read about them.
+  included:
+    - Private car and driver
+    - Archaeologist guide
+    - Entry to Pompeii, Herculaneum, and Oplontis
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in Naples. Pickup from Sorrento is available on request.
+    Walking: About 8 km across the three sites, on uneven ground. Wear sturdy shoes.
+    Summer heat: There is little shade at the sites. Bring water, a hat, and sunscreen.
+  prices: { adult: 149, child: 99, private: 990, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 8
+
+- slug: amalfi-coast-positano-amalfi-ravello
+  title: "Amalfi Coast: Positano, Amalfi, Ravello"
+  tagline: The Best of the Amalfi Coast, from Sea to Sky
+  headline: Positano’s pastel houses, Amalfi’s cathedral, and Ravello’s gardens high above the sea.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 8
+  meeting_point: Pickup from your hotel in Naples or Sorrento
+  languages: [en, es, fr, it, de, pt]
+  tags: []
+  photos: [positano.webp, capri_coastline.webp]
+  description: |
+    The Amalfi Coast road was carved into the cliffs in the 1800s, and it’s still one of the most beautiful drives in the world. With a private driver at the wheel, you can spend the whole day looking out of the window.
+
+    The first stop is Positano, its houses stacked down the cliff to a pebble beach. Then on to Amalfi, once a maritime republic that rivalled Venice, for its striped cathedral and a lemon granita in the piazza.
+
+    The day ends high above the sea in Ravello, where the gardens of Villa Rufolo and Villa Cimbrone look out over the coast from the terraces that inspired Wagner.
+  highlights:
+    Positano: Free time among the boutiques and beach cafés of the coast’s most famous village.
+    Amalfi: The Cathedral of St. Andrew and the old maritime republic.
+    Ravello: Villa Rufolo’s gardens and the Terrace of Infinity at Villa Cimbrone.
+    The coast road: Photo stops at the best viewpoints, with a driver who knows them all.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Villa Rufolo entry
+  excluded:
+    - Lunch
+    - Villa Cimbrone entry
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in Naples or Sorrento.
+    The coast road: The road is narrow and winding. If you get carsick, sit up front and let us know when you book.
+    Traffic: In summer, traffic can be slow. Your driver may change the order of stops to avoid it.
+  prices: { adult: 169, child: 115, private: 1190, max_guests: 6 }
+  times: ["08:30"]
+  capacity: 8
+
+- slug: naples-pompeii-and-amalfi-coast
+  title: Pompeii and Amalfi Coast
+  tagline: From Pompeii’s Ruins to Italy’s Most Beautiful Coastline
+  headline: A guided morning in Pompeii, then the cliffside villages of the Amalfi Coast.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 8
+  meeting_point: Pickup from your hotel in Naples or Sorrento
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [positano.webp, herculaneum.webp, capri_coastline.webp]
+  description: |
+    The two most famous sights south of Naples, in one comfortable day by private car. The morning is about how the Romans lived; the afternoon is about how good life on this coast can be.
+
+    The day starts in Pompeii with an archaeologist guide, walking the Forum, the baths, and the House of the Faun before the midday heat.
+
+    Then over the Lattari mountains to the coast for lunch in Positano, and a slow drive along the cliffs to Amalfi, with stops at the viewpoints and time to wander the town before heading back.
+  highlights:
+    Pompeii in the morning: The Forum, the baths, and the House of the Faun before the heat.
+    Positano: Lunch above the beach in the coast’s most famous village.
+    Amalfi: The cathedral, the piazza, and the lemons that grow everywhere.
+    Over the mountains: The road across the Lattari hills, with the whole coast below.
+  included:
+    - Private car and driver
+    - Archaeologist guide in Pompeii
+    - Pompeii entry
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in Naples or Sorrento.
+    The coast road: The road is narrow and winding. If you get carsick, sit up front and let us know when you book.
+    Walking: About 5 km in Pompeii on uneven paving. Wear sturdy shoes.
+  prices: { adult: 179, child: 125, private: 1290, max_guests: 6 }
+  times: ["08:00"]
+  capacity: 8
+
+- slug: naples-pompeii-sorrento-capri
+  title: Pompeii, Sorrento and Capri
+  tagline: Ancient Wonders, Coastal Charm & Island Glamour
+  headline: Pompeii’s ruins, lunch in Sorrento, and an afternoon on the island of Capri.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 9
+  meeting_point: Pickup from your hotel in Naples
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [capri_coastline.webp, positano.webp, herculaneum.webp]
+  description: |
+    A long, full day around the Bay of Naples, by car, by boat, and on foot. Three places that would each make a fine day out, joined up by a driver who handles the timing.
+
+    It starts with a guided morning in Pompeii, before the crowds and the heat. Then a short drive along the coast to Sorrento for lunch on a terrace above the sea.
+
+    In the afternoon, a fast ferry takes you to Capri. Ride the funicular up to the Piazzetta, walk to the Gardens of Augustus for the view of the Faraglioni rocks, and catch the evening boat back to the mainland.
+  highlights:
+    Pompeii: A guided morning in the most famous Roman town.
+    Sorrento: Lunch on a terrace with Vesuvius across the bay.
+    Capri: The Piazzetta, the Gardens of Augustus, and the Faraglioni.
+    Everything arranged: Car, ferry tickets, and funicular, all booked for you.
+  included:
+    - Private car and driver
+    - Archaeologist guide in Pompeii
+    - Pompeii entry
+    - Return ferry to Capri and funicular tickets
+  excluded:
+    - Lunch
+    - Blue Grotto entry
+    - Gratuities
+  facts:
+    Pickup: We collect you from your hotel in Naples.
+    Sea conditions: If rough seas cancel the ferries, we replace Capri with Positano and refund the difference.
+    A long day: You’ll be back in Naples around 19:00. Bring a light jacket for the ferry.
+  prices: { adult: 219, child: 155, private: 1490, max_guests: 6 }
+  times: ["08:00"]
+  capacity: 8
+
+- slug: capri-island
+  title: Capri Island
+  tagline: Azure Waters, Dramatic Cliffs & Mediterranean Charm
+  headline: A day on Capri by boat and on foot, from the Faraglioni rocks to the heights of Anacapri.
+  location: Naples, Pompeii and Amalfi Coast
+  hours: 6
+  meeting_point: Molo Beverello ferry terminal, Naples, at the ticket office
+  languages: [en, es, it]
+  tags: [with_kids]
+  photos: [capri_coastline.webp, positano.webp]
+  description: |
+    Capri has drawn emperors, writers, and film stars for two thousand years, and it’s easy to see why. Limestone cliffs rise straight out of a sea so blue it barely looks real.
+
+    The day starts with a boat trip around the island, past the Faraglioni rocks, the White Grotto, and the Green Grotto, with a swim stop in summer. Back on land, your guide takes you up to the Piazzetta and along the path to the Gardens of Augustus.
+
+    After lunch, a minibus climbs to Anacapri, the quieter half of the island, for the chairlift up Monte Solaro and the best view on Capri.
+  highlights:
+    Around the island by boat: The Faraglioni, the grottoes, and the cliffs from the water.
+    The Piazzetta: Capri’s tiny, elegant main square.
+    The Gardens of Augustus: Terraces above the Via Krupp and the sea.
+    Monte Solaro: The chairlift to Capri’s highest point.
+  included:
+    - Return fast ferry from Naples
+    - Boat trip around the island
+    - Licensed Capri guide
+    - Minibus and funicular tickets
+  excluded:
+    - Lunch
+    - Blue Grotto entry
+    - Monte Solaro chairlift
+    - Gratuities
+  facts:
+    Meeting point: Molo Beverello ferry terminal, Naples, at the ticket office, 30 minutes before departure.
+    Sea conditions: Boat trips depend on the weather. If the sea is rough, we explore the island on foot instead.
+    Swimming: In summer there is a swim stop on the boat trip. Bring a swimsuit and towel.
+  prices: { adult: 159, child: 109, private: 1090, max_guests: 8 }
+  times: ["08:30"]
+  days: [mon, tue, wed, thu, fri, sat, sun]
+  capacity: 10
+
+- slug: essential-venice
+  title: Essential Venice
+  tagline: St. Mark’s, the Doge’s Palace, and the Rialto
+  headline: The city’s timeless landmarks around San Marco.
+  location: Venice
+  hours: 2
+  meeting_point: Piazza San Marco, under the Clock Tower
+  languages: [en, es, fr, it, de]
+  tags: [with_kids]
+  description: |
+    For a thousand years Venice was a republic of merchants, and everything around Piazza San Marco was built to show it off. This walk is the best introduction to the city: two hours, the great landmarks, and the stories that explain them.
+
+    Your guide starts under the Clock Tower and walks you round the square Napoleon called the finest drawing room in Europe, with the golden mosaics of St. Mark’s Basilica and the pink-and-white Doge’s Palace beside it.
+
+    From the Bridge of Sighs, the route winds through the lanes of the Mercerie to the Rialto Bridge, where the city’s market has traded since the 1100s.
+  highlights:
+    Piazza San Marco: The Basilica, the Campanile, and the Clock Tower.
+    The Doge’s Palace: The seat of the Venetian Republic, and the Bridge of Sighs behind it.
+    The Mercerie: The old shopping street linking San Marco to the Rialto.
+    The Rialto Bridge: The Grand Canal from its most famous bridge.
+  included:
+    - Licensed Venice guide
+    - Headsets for groups over six
+  excluded:
+    - Basilica and Doge’s Palace entry
+    - Food and drinks
+  facts:
+    Meeting point: Piazza San Marco, under the Clock Tower. Your guide will hold a Vatican Tours Inc sign.
+    Acqua alta: In autumn and winter, high tides can flood the square. We provide boot covers if needed.
+    Walking: About 2 km with several bridges and steps. Strollers are hard work in Venice.
+  prices: { adult: 49, child: 35, private: 320, max_guests: 8 }
+  times: ["09:00", "11:00", "14:30", "16:30"]
+
+- slug: hidden-venice
+  title: Hidden Venice
+  tagline: The Venice Venetians Live In
+  headline: Quiet lanes and the local corners most visitors miss.
+  location: Venice
+  hours: 2
+  meeting_point: Campo Santa Maria Formosa, by the church steps
+  languages: [en, es, fr, it]
+  tags: [with_kids]
+  description: |
+    Two streets away from the crowds of San Marco, Venice goes quiet. Washing hangs over the canals, children play football in the squares, and the bacari pour a glass of wine for a couple of euros. This walk takes you there.
+
+    Your guide leads you through Castello and Cannaregio, past the hidden courtyard of the Corte Seconda del Milion where Marco Polo was born, the bookshop that keeps its books in a gondola, and the Jewish Ghetto, the first in the world.
+
+    Along the way you’ll stop at a bacaro for a cicchetto and an ombra, the small glass of wine Venetians drink standing at the bar.
+  highlights:
+    Castello and Cannaregio: The neighbourhoods where Venetians still live and work.
+    The Jewish Ghetto: The world’s first ghetto, and its five historic synagogues.
+    Marco Polo’s courtyard: The hidden corner where the traveller grew up.
+    A bacaro stop: Cicchetti and an ombra of wine, the Venetian way.
+  included:
+    - Licensed Venice guide
+    - Cicchetto and a glass of wine
+  excluded:
+    - Synagogue entry
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Campo Santa Maria Formosa, by the church steps.
+    Walking: About 3 km with many bridges. Comfortable shoes recommended.
+    Children: Kids get a soft drink instead of wine.
+  prices: { adult: 45, child: 29, private: 290, max_guests: 8 }
+  times: ["10:00", "15:00", "17:30"]
+
+- slug: venice-in-depth-grand-canal
+  title: Venice in Depth with Canale Grande
+  tagline: The City on Foot and by Water
+  headline: Venice’s history and landmarks, with the Grand Canal from the water by private water taxi.
+  location: Venice
+  hours: 4
+  meeting_point: Piazza San Marco, under the Clock Tower
+  languages: [en, es, fr, it, de]
+  tags: []
+  description: |
+    Venice was built to be seen from the water, and the palaces of the Grand Canal still turn their best faces to it. This tour shows you the city both ways: on foot through its lanes, and by private water taxi along its main street.
+
+    The first half is a walk from San Marco through the old city, with your guide explaining how a republic of merchants built an empire on a lagoon, then visiting St. Mark’s Basilica with its thousand-year-old mosaics.
+
+    Then you board a polished wooden water taxi for the length of the Grand Canal, past the Ca’ d’Oro, the Rialto, and the palaces where Byron and Wagner lived, to the railway station and back.
+  highlights:
+    St. Mark’s Basilica: Skip-the-line entry and its glittering golden mosaics.
+    The Grand Canal by water taxi: Four kilometres of palaces, from your own private boat.
+    The Rialto: Venice’s oldest bridge and market, from above and below.
+    The story of the Republic: How a city on the water ruled the Mediterranean.
+  included:
+    - Licensed Venice guide
+    - Private water taxi on the Grand Canal
+    - Skip-the-line St. Mark’s Basilica entry
+  excluded:
+    - Doge’s Palace entry
+    - Food and drinks
+  facts:
+    Meeting point: Piazza San Marco, under the Clock Tower, 10 minutes before the start.
+    Dress code: Shoulders and knees must be covered in St. Mark’s Basilica.
+    Water taxi: The boat seats up to 10. Boarding is by a short step from the dock.
+  prices: { adult: 129, child: 89, private: 890, max_guests: 8 }
+  times: ["09:00", "14:00"]
+  capacity: 10
+
+- slug: murano-and-burano-water-taxi
+  title: Murano and Burano by Water Taxi
+  tagline: Glass Furnaces and Painted Houses
+  headline: Murano and Burano for glassmaking traditions and colourful island streets, by private water taxi.
+  location: Venice
+  hours: 4
+  meeting_point: Fondamenta Nove water taxi stand, Cannaregio
+  languages: [en, es, fr, it, de, pt]
+  tags: [with_kids]
+  description: |
+    The islands of the northern lagoon are a world apart from Venice, and a private water taxi gets you there in a fraction of the time the public boats take.
+
+    On Murano, glassmakers have worked since 1291, when the Republic moved its furnaces off the main island for fear of fire. You’ll watch a master shape molten glass in a working furnace and stroll the canal lined with workshops.
+
+    Then on to Burano, where every house is painted a different colour and lacemakers still work by hand. Wander the streets, try the butter biscuits called bussolai, and take the water taxi back when you’re ready.
+  highlights:
+    A glass furnace: Watch a Murano master shape molten glass in front of you.
+    Burano’s colours: The brightest street in Italy, house by house.
+    Handmade lace: The lacemakers of Burano and their centuries-old craft.
+    Your own boat: A private water taxi across the lagoon, no public ferries.
+  included:
+    - Private water taxi
+    - Licensed Venice guide
+    - Glassblowing demonstration
+  excluded:
+    - Lunch
+    - Lace Museum entry
+  facts:
+    Meeting point: Fondamenta Nove water taxi stand, Cannaregio, 10 minutes before the start.
+    Water taxi: The boat seats up to 10. Boarding is by a short step from the dock.
+    No pressure to buy: The furnace visit is a demonstration, not a sales pitch.
+  prices: { adult: 139, child: 95, private: 950, max_guests: 8 }
+  times: ["09:30", "14:00"]
+  capacity: 10
+
+- slug: venice-lagoon-murano-burano-torcello
+  title: "Venice Lagoon: Murano, Burano and Torcello"
+  tagline: Three Islands, One Lagoon
+  headline: Murano’s glass, Burano’s colours, and Torcello’s Byzantine mosaics, by private water taxi.
+  location: Venice
+  hours: 6
+  meeting_point: Fondamenta Nove water taxi stand, Cannaregio
+  languages: [en, es, fr, it, de]
+  tags: [with_kids]
+  description: |
+    Before there was Venice, there was Torcello. Refugees from the mainland settled the island in the 400s, and at its height 20,000 people lived there. Today it has a dozen residents, a cathedral, and some of the finest mosaics in Italy.
+
+    This full day by private water taxi visits the three great islands of the northern lagoon. It starts on Murano with a glassblowing demonstration, then crosses to Burano for its painted houses, its lace, and a seafood lunch.
+
+    In the afternoon the boat takes you through the salt marshes to Torcello, where the Cathedral of Santa Maria Assunta holds a vast golden Last Judgment, older than St. Mark’s.
+  highlights:
+    Torcello Cathedral: Byzantine mosaics, and the Last Judgment in gold.
+    Murano glass: A master glassmaker at work in a furnace.
+    Burano: Painted houses, lace, and a lunch of lagoon seafood.
+    The salt marshes: The wild, quiet lagoon most visitors never see.
+  included:
+    - Private water taxi
+    - Licensed Venice guide
+    - Glassblowing demonstration
+    - Torcello Cathedral entry
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Meeting point: Fondamenta Nove water taxi stand, Cannaregio, 10 minutes before the start.
+    Water taxi: The boat seats up to 10. Boarding is by a short step from the dock.
+    Bring a layer: It can be breezy on the open lagoon, even in summer.
+  prices: { adult: 179, child: 125, private: 1290, max_guests: 8 }
+  times: ["09:30"]
+  capacity: 10
+
+- slug: venice-lagoon-and-winery
+  title: Venice Lagoon and Winery
+  tagline: Wine Grown on the Water
+  headline: Discover the Venetian lagoon and enjoy a taste of local wine country.
+  location: Venice
+  hours: 6
+  meeting_point: Fondamenta Nove water taxi stand, Cannaregio
+  languages: [en, es, fr, it]
+  tags: [wine]
+  description: |
+    Vines have grown in the Venetian lagoon since the Middle Ages, when monasteries and noble families planted them on the islands for their own tables. A few still do, and the wine they make tastes of salt and sea air.
+
+    By private water taxi, you cross the lagoon to Burano for its painted houses and lace, then walk over the wooden bridge to the island of Mazzorbo and a walled vineyard replanted with Dorona, the golden grape of the old Republic.
+
+    After a tour of the vines, sit down to a tasting of lagoon wines with cicchetti, then take the long way back to Venice past the abandoned islands of the northern lagoon.
+  highlights:
+    A lagoon vineyard: Dorona grapes grown behind medieval walls on Mazzorbo.
+    A wine tasting: Lagoon wines with cicchetti, a short walk from the vines.
+    Burano: The painted houses and lacemakers of the lagoon’s brightest island.
+    The open lagoon: Salt marshes and abandoned islands from your own boat.
+  included:
+    - Private water taxi
+    - Licensed Venice guide
+    - Vineyard visit and wine tasting
+    - Cicchetti
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Meeting point: Fondamenta Nove water taxi stand, Cannaregio, 10 minutes before the start.
+    Wine tasting: Guests must be 18 or over to drink. Children get juice.
+    Bring a layer: It can be breezy on the open lagoon, even in summer.
+  prices: { adult: 199, child: 129, private: 1390, max_guests: 8 }
+  times: ["10:00"]
+  capacity: 10
+
+- slug: santa-lucia-arrival-transfer
+  title: Arrival Transfer from Santa Lucia Train Station with Assistance
+  tagline: Met on the Platform, Taken to Your Door
+  headline: Meet your assistant at the station and enjoy a smooth, supported arrival in Venice.
+  location: Venice
+  hours: 1
+  meeting_point: Venezia Santa Lucia station, at the end of your train’s platform
+  languages: [en, es, fr, it, de, pt]
+  tags: [transfers, with_kids]
+  description: |
+    Arriving in Venice by train is magical: you step out of the station and the Grand Canal is right in front of you. Getting your suitcases from there to your hotel, over bridges and down narrow lanes, is less so.
+
+    Your assistant meets you on the platform with a name sign, helps with your bags, and walks you to the water taxi waiting at the station dock.
+
+    The boat takes you down the Grand Canal to the nearest landing to your hotel, and your assistant sees you and your luggage to the front desk.
+  highlights:
+    Met at the train: An assistant waiting at the end of your platform with your name.
+    Help with your bags: No dragging suitcases over bridges.
+    The Grand Canal on arrival: A private water taxi straight from the station.
+    To the door: Your assistant sees you all the way to your hotel’s front desk.
+  included:
+    - Meet-and-greet assistant
+    - Private water taxi
+    - Luggage handling
+  excluded:
+    - Porter fees at the hotel
+    - Gratuities
+  facts:
+    Meeting point: At the end of your train’s platform at Venezia Santa Lucia. Send us your train number when you book.
+    Delays: We track your train. If it’s late, your assistant waits at no extra cost.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+  prices: { adult: 45, child: 30, private: 220, max_guests: 6 }
+  times: ["09:00", "11:00", "13:00", "15:00", "17:00", "19:00"]
+  capacity: 8
+
+- slug: marco-polo-airport-hotel-transfer
+  title: Marco Polo Airport to Hotel Transfer
+  tagline: Across the Lagoon by Water Taxi
+  headline: Private water taxi transfer from Venice Marco Polo airport to your hotel.
+  location: Venice
+  hours: 1
+  meeting_point: Marco Polo airport arrivals hall, by the water taxi desk
+  languages: [en, es, fr, it, de, pt]
+  tags: [transfers, with_kids]
+  description: |
+    There is no better way to arrive in Venice than across the lagoon. A private water taxi from Marco Polo airport takes about thirty minutes and brings you as close to your hotel as the canals allow.
+
+    Our driver meets you in the arrivals hall with a name sign and walks you to the airport dock, five minutes away along a covered walkway. Your bags go on board and you set off across the open lagoon.
+
+    The first sight of Venice comes as the boat swings into the city’s canals, and you step off at the landing nearest your hotel.
+  highlights:
+    Met in arrivals: A driver waiting for you with a name sign.
+    Across the lagoon: Thirty minutes by private water taxi, with Venice rising ahead.
+    Door to door: Dropped at the landing nearest your hotel.
+    Flight tracking: Your driver waits if your flight is late.
+  included:
+    - Private water taxi
+    - Meet-and-greet in arrivals
+    - Luggage on board
+  excluded:
+    - Porter from the landing to the hotel
+    - Gratuities
+  facts:
+    Meeting point: Marco Polo airport arrivals hall, by the water taxi desk. Send us your flight number when you book.
+    Delays: We track your flight. If it’s late, your driver waits at no extra cost.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+  prices: { adult: 59, child: 39, private: 290, max_guests: 6 }
+  times: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
+  capacity: 8
+
+- slug: ravenna-cruise-transfer-venice
+  title: Cruise Transfer to Venice from Ravenna Pier
+  tagline: From the Ship to the Lagoon
+  headline: Connect from Ravenna’s cruise pier to Venice with a comfortable transfer.
+  location: Venice
+  hours: 4
+  meeting_point: Porto Corsini cruise terminal, Ravenna, at the passenger exit
+  languages: [en, es, fr, it, de]
+  tags: [transfers, cruises]
+  description: |
+    Many cruises that sail to Venice now dock in Ravenna, a long way down the coast. This private transfer takes you from the ship to Venice in comfort, without the shuttle-bus queue.
+
+    Your driver meets you at the passenger exit with a name sign, loads your luggage, and sets off north along the coast road through the Po Delta, with a coffee stop on the way.
+
+    The car drops you at Piazzale Roma, the last point a car can reach in Venice, where a porter or water taxi can take you on to your hotel.
+  highlights:
+    Met at the ship: A driver waiting at the passenger exit with your name.
+    No shuttle bus: A private car with space for your luggage.
+    Through the Po Delta: The flat, wild coast between Ravenna and the lagoon.
+    Onward help: We can book a water taxi from Piazzale Roma to your hotel.
+  included:
+    - Private car and driver
+    - Meet-and-greet at the terminal
+    - Luggage handling
+  excluded:
+    - Water taxi from Piazzale Roma
+    - Gratuities
+  facts:
+    Meeting point: Porto Corsini cruise terminal, Ravenna, at the passenger exit. Send us your ship’s name when you book.
+    Disembarkation: Your driver waits until you’re off the ship, even if disembarkation runs late.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+  prices: { adult: 99, child: 69, private: 590, max_guests: 6 }
+  times: ["08:00", "09:00", "10:00", "11:00"]
+  capacity: 8
+
+- slug: venice-to-milan-transfer
+  title: From Venice to Milan Direct Transfer
+  tagline: Lagoon to Lombardy, Door to Door
+  headline: A direct, comfortable journey from Venice to Milan.
+  location: Venice
+  hours: 4
+  meeting_point: Piazzale Roma, Venice, at the car terminal
+  languages: [en, es, fr, it, de]
+  tags: [transfers]
+  description: |
+    The road from Venice to Milan runs across the whole of the Po Valley, past Padua, Vicenza, Verona, and Lake Garda. This private transfer gets you there directly, with room for your luggage and no trains to change.
+
+    Your driver meets you at Piazzale Roma, the last point a car can reach in Venice, and takes you straight to your hotel in Milan, with a stop on the way if you want one.
+
+    We can also book a water taxi to bring you and your bags from your Venice hotel to the car.
+  highlights:
+    Door to door: From Piazzale Roma to your hotel in Milan.
+    No changes: One car, one driver, all your luggage.
+    A stop if you like: Coffee or lunch on the way, at your pace.
+    Water taxi on request: From your Venice hotel to the car.
+  included:
+    - Private car and driver
+    - Luggage handling
+    - Tolls and fuel
+  excluded:
+    - Water taxi to Piazzale Roma
+    - Gratuities
+  facts:
+    Meeting point: Piazzale Roma, Venice, at the car terminal. Your driver will hold a sign with your name.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+    Travel time: About 3 hours, depending on traffic around Milan.
+  prices: { adult: 109, child: 75, private: 650, max_guests: 6 }
+  times: ["08:00", "10:00", "12:00", "14:00"]
+  capacity: 8
+
+- slug: venice-to-lake-como-transfer
+  title: From Venice to Lake Como Direct Transfer
+  tagline: From the Lagoon to the Lake
+  headline: A direct, comfortable journey from Venice to the shores of Lake Como.
+  location: Venice
+  hours: 4
+  meeting_point: Piazzale Roma, Venice, at the car terminal
+  languages: [en, es, fr, it, de]
+  tags: [transfers]
+  description: |
+    Lake Como is one of the hardest places in Italy to reach by public transport from Venice: two trains, a change in Milan, and a bus or ferry at the end. This private transfer does it in one go.
+
+    Your driver meets you at Piazzale Roma, loads your luggage, and drives across the Po Valley and up into the hills to the lake. You’re dropped at your hotel’s door, whether it’s in Como, Cernobbio, or Bellagio.
+
+    We can also book a water taxi to bring you and your bags from your Venice hotel to the car.
+  highlights:
+    Door to door: From Piazzale Roma to your hotel on the lake.
+    No changes: No trains in Milan, no ferries with luggage.
+    The lake road: The last stretch along the water, villas on every bend.
+    Water taxi on request: From your Venice hotel to the car.
+  included:
+    - Private car and driver
+    - Luggage handling
+    - Tolls and fuel
+  excluded:
+    - Water taxi to Piazzale Roma
+    - Gratuities
+  facts:
+    Meeting point: Piazzale Roma, Venice, at the car terminal. Your driver will hold a sign with your name.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+    Travel time: About 3.5 hours to Como, longer to Bellagio.
+  prices: { adult: 119, child: 79, private: 690, max_guests: 6 }
+  times: ["08:00", "10:00", "12:00", "14:00"]
+  capacity: 8
+
+- slug: venice-to-milan-verona-franciacorta
+  title: From Venice to Milan with Stops at Verona and a Franciacorta Winery
+  tagline: The Scenic Way to Milan
+  headline: From Venice to Milan, with time to explore Verona and the Franciacorta wine region.
+  location: Venice
+  hours: 8
+  meeting_point: Piazzale Roma, Venice, at the car terminal
+  languages: [en, es, fr, it, de]
+  tags: [transfers, wine]
+  description: |
+    Why spend three hours on the motorway when you could spend a day seeing northern Italy? This transfer takes you from Venice to Milan by way of Verona and the vineyards of Franciacorta.
+
+    The first stop is Verona, for a walk with a local guide past the Roman Arena, Piazza delle Erbe, and the courtyard of Juliet’s house. Time for lunch, then back in the car.
+
+    In the afternoon, you stop in Franciacorta, Italy’s answer to Champagne, for a cellar tour and tasting of its sparkling wines, before the last hour into Milan and your hotel.
+  highlights:
+    Verona: The Roman Arena, Piazza delle Erbe, and Juliet’s balcony.
+    Franciacorta: A cellar tour and tasting of Italy’s finest sparkling wine.
+    Door to door: From Piazzale Roma to your hotel in Milan.
+    Luggage stays in the car: Explore freely while your bags travel with you.
+  included:
+    - Private car and driver
+    - Licensed guide in Verona
+    - Winery visit and tasting
+    - Tolls and fuel
+  excluded:
+    - Lunch
+    - Water taxi to Piazzale Roma
+    - Gratuities
+  facts:
+    Meeting point: Piazzale Roma, Venice, at the car terminal. Your driver will hold a sign with your name.
+    Wine tasting: Guests must be 18 or over to drink. Your driver doesn’t, so enjoy the tasting.
+    Luggage: Your bags stay locked in the car all day.
+  prices: { adult: 229, child: 149, private: 1490, max_guests: 6 }
+  times: ["08:00"]
+  capacity: 8

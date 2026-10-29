@@ -31,10 +31,8 @@
 
   <%# Intro + features %>
   <section class="mx-auto max-w-[1100px] px-6 pt-[54px] pb-2.5 text-center">
-    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">See Italy <em class="font-normal">Your Own Way</em></h2>
-    <p class="mx-auto mt-3.5 max-w-[600px] text-[15px] leading-[1.4] text-pretty text-muted">
-      Wander the Museums at your own pace or walk with a specialist who knows every fresco by heart — either way, you’ll skip the queue and see what most visitors miss.
-    </p>
+    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">See <span data-tour-filter-target="sectionTitle"><%= @hero_places["All Locations"] %></span> <em class="font-normal">Your Own Way</em></h2>
+    <p class="mx-auto mt-3.5 max-w-[620px] text-[15px] leading-[1.4] text-pretty text-muted" data-tour-filter-target="sectionSubtitle"><%= @section_subtitles["All Locations"] %></p>
 
     <div class="mt-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-7 text-left">
       <% @features.each do |feature| %>
@@ -49,9 +47,6 @@
         </div>
       <% end %>
     </div>
-
-    <h2 class="mt-20 font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium" data-tour-filter-target="sectionTitle"><%= @hero_places["All Locations"] %></h2>
-    <p class="mx-auto mt-3.5 max-w-[620px] text-[15px] leading-[1.4] text-pretty text-muted" data-tour-filter-target="sectionSubtitle"><%= @section_subtitles["All Locations"] %></p>
   </section>
 
   <%# Tour browser %>
