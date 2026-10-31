@@ -34,3 +34,7 @@ en:
       format:
         unit: "€"
         format: "%u%n"
+  activemodel:
+    attributes:
+      contact_message:
+        body: "Message"

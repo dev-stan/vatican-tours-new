@@ -1,0 +1,83 @@
+<% content_for :title, "Privacy Policy — Vatican Tours Inc" %>
+
+<% email_link = mail_to(ContactHelper::CONTACT_EMAIL, class: "underline underline-offset-2 hover:text-terracotta-deep") %>
+<% sections = [
+  { id: "who-we-are", title: "Who we are", body: [
+    safe_join([ "Vatican Tours Inc, based in Rome, Italy, is the data controller for the personal data collected through this website. You can reach us about anything in this policy at ", email_link, "." ])
+  ] },
+  { id: "what-we-collect", title: "What we collect", list: [
+    "Booking requests: your name, email address, phone number, the tour, date, and number of guests.",
+    "Contact form messages: your name, email address, and what you write to us.",
+    "Newsletter sign-ups: your email address.",
+    "Technical data: your IP address and browser details, which our servers log for security and to keep the site running."
+  ] },
+  { id: "how-we-use-it", title: "How we use it", list: [
+    "To handle your booking request, confirm your place, send payment details, and contact you about your tour (to perform our contract with you).",
+    "To answer your messages (at your request, before entering into a contract).",
+    "To send our newsletter, only if you ask for it. You can unsubscribe at any time (your consent).",
+    "To keep accounting records as Italian law requires (legal obligation), and to protect the site from abuse (our legitimate interest)."
+  ], after: "We never sell your data, and we don’t use it for advertising." },
+  { id: "who-we-share-it-with", title: "Who we share it with", list: [
+    "The guides and venues that run your tour, only as far as needed to deliver it.",
+    "Our hosting and email providers, who process data on our behalf under data processing agreements.",
+    "Google Fonts: pages on this site load fonts from Google’s servers, which receive your IP address."
+  ], after: "Some of these providers may process data outside the European Economic Area. Where they do, the transfer is covered by the European Commission’s standard contractual clauses or an adequacy decision." },
+  { id: "cookies", title: "Cookies", body: [
+    "We use only the cookies the site needs to work, such as a session cookie that keeps forms secure. We don’t use analytics, advertising, or tracking cookies, so we don’t ask for cookie consent."
+  ] },
+  { id: "how-long-we-keep-it", title: "How long we keep it", body: [
+    "We keep booking records for as long as Italian tax and accounting law requires, generally ten years. Contact messages are kept for as long as needed to answer you and deal with any follow-up. Newsletter addresses are deleted when you unsubscribe."
+  ] },
+  { id: "your-rights", title: "Your rights", body: [
+    "Under the GDPR you can ask to access, correct, or delete your data, to restrict or object to how we use it, and to receive it in a portable format. Where we rely on your consent, you can withdraw it at any time.",
+    safe_join([ "To use any of these rights, email ", email_link, ". We’ll reply within one month. You also have the right to complain to the Italian data protection authority, the ",
+      link_to("Garante per la protezione dei dati personali", "https://www.garanteprivacy.it", target: "_blank", rel: "noopener", class: "underline underline-offset-2 hover:text-terracotta-deep"), "." ])
+  ] },
+  { id: "changes", title: "Changes to this policy", body: [
+    "If we change this policy, we’ll update it here and change the date at the top of the page."
+  ] }
+] %>
+
+<%= render "shared/header" %>
+
+<section class="mx-auto max-w-[1180px] px-6 pt-14 pb-12 md:pt-20">
+  <p class="text-[13px] font-semibold tracking-[.18em] text-terracotta-deep uppercase">Legal</p>
+  <h1 class="mt-4 font-serif text-[clamp(40px,6vw,72px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
+    Privacy <em class="font-normal">Policy</em>
+  </h1>
+  <p class="mt-5 text-[15px] text-muted">Last updated October 31, 2026</p>
+</section>
+
+<div class="mx-auto grid max-w-[1180px] gap-10 px-6 pb-28 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-16">
+  <nav aria-label="On this page" class="lg:sticky lg:top-8 lg:self-start">
+    <h2 class="text-[13px] font-semibold tracking-[.18em] text-muted uppercase">On this page</h2>
+    <ol class="mt-4 space-y-2.5 text-[15px]">
+      <% sections.each do |section| %>
+        <li><%= link_to section[:title], "##{section[:id]}", class: "text-ink/75 hover:text-ink hover:underline underline-offset-4" %></li>
+      <% end %>
+    </ol>
+  </nav>
+
+  <article class="max-w-[720px] space-y-12">
+    <p class="text-[17px] leading-[1.6] text-ink/80">
+      This policy explains what personal data we collect when you use this website or book a tour with us, why we collect it, and the choices you have.
+    </p>
+
+    <% sections.each do |section| %>
+      <section id="<%= section[:id] %>" class="scroll-mt-8" aria-labelledby="<%= section[:id] %>-heading">
+        <h2 id="<%= section[:id] %>-heading" class="font-serif text-[clamp(24px,2.6vw,30px)] leading-[1.15] font-medium"><%= section[:title] %></h2>
+        <% Array(section[:body]).each do |paragraph| %>
+          <p class="mt-4 text-base leading-[1.65] text-ink/80"><%= paragraph %></p>
+        <% end %>
+        <% if section[:list] %>
+          <ul class="mt-4 list-disc space-y-2.5 pl-5 text-base leading-[1.65] text-ink/80 marker:text-terracotta-deep">
+            <% section[:list].each do |item| %><li><%= item %></li><% end %>
+          </ul>
+        <% end %>
+        <% if section[:after] %>
+          <p class="mt-4 text-base leading-[1.65] text-ink/80"><%= section[:after] %></p>
+        <% end %>
+      </section>
+    <% end %>
+  </article>
+</div>

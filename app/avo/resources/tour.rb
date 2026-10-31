@@ -24,6 +24,8 @@ class Avo::Resources::Tour < Avo::BaseResource
     field :meeting_point, as: :text, hide_on: :index
     field :languages, as: :select, multiple: true, hide_on: :index,
           options: ToursHelper::LANGUAGE_NAMES.invert.slice(*ToursHelper::LANGUAGE_NAMES.values_at(*::Tour::LANGUAGES))
+    field :badge, as: :select, include_blank: true, hide_on: :index, help: "Pill shown on the tour card photo.",
+          options: ::Tour.badges.keys.index_by(&:humanize)
     field :tags, as: :select, multiple: true, hide_on: :index,
           options: ::Tour::TAGS.index_by { |tag| ToursHelper::TAG_CATEGORIES.fetch(tag, tag.humanize) }
     field :photos, as: :files, hide_on: :index, help: "The first photo is the tour's main image."

@@ -5,22 +5,19 @@
     title: "Booking Request Received", icon: :clock, eyebrow: "Request received · Not yet confirmed",
     heading: "Thank You,", heading_em: "We’re On It",
     lead: safe_join([ "Your booking isn’t confirmed yet. Within 12 hours we’ll email ", guest_email, " to confirm your place and send payment details." ]),
-    pill: "Awaiting confirmation", pill_class: "bg-terracotta text-ink",
-    stub: "Nothing to pay yet. Payment details come with your confirmation."
+    pill: "Awaiting confirmation", pill_class: "bg-terracotta text-ink"
   },
   "confirmed" => {
     title: "Booking Confirmed", icon: :check, eyebrow: "Booking confirmed",
     heading: "Thank You,", heading_em: "See You in Rome",
     lead: safe_join([ "Your place is confirmed. We’ve emailed your confirmation and payment details to ", guest_email, "." ]),
-    pill: "Confirmed", pill_class: "bg-forest text-white",
-    stub: "Payment details are in your confirmation email."
+    pill: "Confirmed", pill_class: "bg-forest text-white"
   },
   "cancelled" => {
     title: "Booking Cancelled", icon: :cross, eyebrow: "Booking cancelled",
     heading: "This Booking", heading_em: "Was Cancelled",
     lead: "Nothing is due for this booking. If you think this is a mistake, reply to any of our emails, or pick another date below.",
-    pill: "Cancelled", pill_class: "bg-ink/10 text-ink",
-    stub: "Nothing is due for this booking."
+    pill: "Cancelled", pill_class: "bg-ink/10 text-ink"
   }
 }.fetch(@booking.status) %>
 
@@ -66,12 +63,7 @@
          <% if hero_photo %>style="background-image: url('<%= url_for(hero_photo) %>')"<% end %>>
   <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,22,28,.55),rgba(18,22,28,.45)_50%,rgba(18,22,28,.7))]"></div>
 
-  <header class="relative mx-auto flex w-full max-w-[1180px] items-center px-6 py-4">
-    <%= link_to root_path, class: "flex items-center gap-3 text-white" do %>
-      <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] border-white font-serif text-base">V</span>
-      <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
-    <% end %>
-  </header>
+  <%= render "shared/header", on_photo: true %>
 
   <div class="relative my-auto flex flex-col items-center px-6 pt-8 pb-28 text-center sm:pt-4 sm:pb-32">
     <span class="flex size-12 items-center justify-center rounded-full ring-[6px] ring-white/10 <%= page[:icon] == :check ? "bg-forest" : "bg-white/15" %>" aria-hidden="true">
@@ -134,9 +126,6 @@
           </span>
           <span class="text-[26px] font-semibold tracking-[-.5px]"><%= euros(@booking.total_cents) %></span>
         </div>
-        <p class="mt-2 flex items-center gap-2 text-[13px] text-muted">
-          <%= clock_icon %> <%= page[:stub] %>
-        </p>
       </div>
     </div>
   </article>

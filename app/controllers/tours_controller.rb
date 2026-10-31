@@ -5,12 +5,12 @@ class ToursController < ApplicationController
     @tour = Tour.published.with_attached_photos.includes(:highlights, :inclusions, :tour_facts, :ticket_types)
                 .find_by!(slug: params[:slug])
     ticket_types = @tour.ticket_types.to_a
+    # The booking card sells group tickets priced from an adult ticket, a private option, or both.
     @group_tickets = ticket_types.select(&:kind_group?)
-    @private_ticket = ticket_types.find(&:kind_private?)
-    # The booking card sells group tickets priced from an adult ticket, and a private option. Tours
-    # without both get an enquiry card instead.
-    if @private_ticket && @group_tickets.any?(&:adult?)
-      @booking_options = booking_options(@tour, @group_tickets, @private_ticket)
+    @group_tickets = [] unless @group_tickets.any?(&:adult?)
+    @private_tickets = @tour.private_tickets
+    if @group_tickets.any? || @private_tickets.any?
+      @booking_options = booking_options(@tour, @group_tickets, @private_tickets)
     end
   end
 
@@ -26,24 +26,29 @@ class ToursController < ApplicationController
   end
 
   private
-    # Everything the booking card needs: ticket prices per kind and the bookable departures,
+    # Everything the booking card needs: ticket prices per kind the tour sells and the bookable departures,
     # grouped by Rome date. Party-size checks against seats_left happen in the browser and again in Bookings::Create.
-    def booking_options(tour, group_tickets, private_ticket)
+    # `guests` are the steppers: the group tickets, or a single "Guest" for a private-only tour.
+    def booking_options(tour, group_tickets, private_tickets)
       departures = tour.departures.bookable.chronological.group_by(&:kind)
+      guests = group_tickets.map { |ticket| { id: ticket.id, name: ticket.name, ages: ticket.age_label, price_cents: ticket.price_cents, adult: ticket.adult? } }
+      guests = [ { id: 0, name: "Guest", ages: nil, price_cents: 0, adult: true } ] if guests.empty?
 
-      {
-        group: {
-          tickets: group_tickets.map { |ticket| { id: ticket.id, ages: ticket.age_label, price_cents: ticket.price_cents, adult: ticket.adult? } },
+      options = { guests: guests }
+      if group_tickets.any?
+        options[:group] = {
           max_guests: departures.fetch("group", []).map(&:capacity).max || 1,
           departures: departure_days(departures["group"])
-        },
-        private: {
-          ticket_id: private_ticket.id,
-          price_cents: private_ticket.price_cents,
-          max_guests: private_ticket.max_guests,
+        }
+      end
+      if private_tickets.any?
+        options[:private] = {
+          tiers: private_tickets.map { |ticket| { ticket_id: ticket.id, max_guests: ticket.max_guests, price_cents: ticket.price_cents } },
+          max_guests: private_tickets.last.max_guests,
           departures: departure_days(departures["private"])
         }
-      }
+      end
+      options
     end
 
     def departure_days(departures)

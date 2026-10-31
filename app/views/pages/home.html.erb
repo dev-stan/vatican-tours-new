@@ -10,18 +10,15 @@
 <div data-controller="tour-filter"
      data-tour-filter-places-value="<%= @hero_places.to_json %>"
      data-tour-filter-subtitles-value="<%= @hero_subtitles.to_json %>"
-     data-tour-filter-section-subtitles-value="<%= @section_subtitles.to_json %>">
+     data-tour-filter-section-subtitles-value="<%= @section_subtitles.to_json %>"
+     data-tour-filter-features-value="<%= @features.to_json %>"
+     data-tour-filter-advice-titles-value="<%= @guide_advice.transform_values { _1[:title] }.to_json %>">
   <%# Hero %>
   <section class="relative flex min-h-[540px] flex-col bg-[#3a3a36] bg-cover bg-[center_40%] bg-no-repeat text-white"
            style="background-image: url('<%= image_path("bar-hero.jpg") %>')">
     <div class="pointer-events-none absolute inset-0 bg-[rgba(20,30,40,.32)]"></div>
 
-    <header class="relative flex flex-wrap items-center justify-between gap-4 px-6 py-3.5 md:px-16">
-      <%= link_to root_path, class: "flex items-center gap-3 text-white" do %>
-        <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] border-white font-serif text-base">V</span>
-        <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
-      <% end %>
-    </header>
+    <%= render "shared/header", on_photo: true, wrapper_class: "px-6 md:px-16" %>
 
     <div class="relative my-auto flex flex-col items-center px-6 pb-10 text-center md:px-16">
       <h1 class="mt-3.5 font-serif text-[clamp(48px,7.5vw,96px)] leading-none font-medium tracking-[-1px]"><span data-tour-filter-target="place"><%= @hero_places["All Locations"] %></span> Seen Up Close</h1>
@@ -31,22 +28,23 @@
 
   <%# Intro + features %>
   <section class="mx-auto max-w-[1100px] px-6 pt-[54px] pb-2.5 text-center">
-    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium">See <span data-tour-filter-target="sectionTitle"><%= @hero_places["All Locations"] %></span> <em class="font-normal">Your Own Way</em></h2>
+    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium"><span data-tour-filter-target="sectionTitle"><%= @hero_places["All Locations"] %></span>, <em class="font-normal">seen up close</em></h2>
     <p class="mx-auto mt-3.5 max-w-[620px] text-[15px] leading-[1.4] text-pretty text-muted" data-tour-filter-target="sectionSubtitle"><%= @section_subtitles["All Locations"] %></p>
 
     <div class="mt-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-7 text-left">
-      <% @features.each do |feature| %>
+      <% @features["All Locations"].zip(@feature_icons).each do |feature, icon| %>
         <div class="flex gap-[22px]">
           <span class="flex size-[31px] shrink-0 items-center justify-center rounded-full bg-ink">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><%= feature_icons[feature[:icon]].html_safe %></svg>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.2" aria-hidden="true"><%= feature_icons[icon].html_safe %></svg>
           </span>
           <div>
-            <h3 class="text-sm font-semibold"><%= feature[:title] %></h3>
-            <p class="mt-2 text-[13px] leading-[1.35]"><%= feature[:body] %></p>
+            <h3 class="text-sm font-semibold" data-tour-filter-target="featureTitle"><%= feature[:title] %></h3>
+            <p class="mt-2 text-[13px] leading-[1.35]" data-tour-filter-target="featureBody"><%= feature[:body] %></p>
           </div>
         </div>
       <% end %>
     </div>
+
   </section>
 
   <%# Tour browser %>
@@ -97,4 +95,6 @@
       No tours match these filters yet.
     </p>
   </section>
+
+  <%= render "shared/guide_advice", advice: @guide_advice %>
 </div>

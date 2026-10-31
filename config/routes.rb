@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
 
+  get "about" => "pages#about", as: :about
+  get "privacy" => "pages#privacy", as: :privacy
+  resource :contact, only: %i[show create]
+
   resources :tours, only: :show, param: :slug do
     get "booked/:token", action: :booked, on: :member, as: :booked
   end

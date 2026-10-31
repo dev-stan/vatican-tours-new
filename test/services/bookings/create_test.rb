@@ -110,4 +110,21 @@ class Bookings::CreateTest < ActiveSupport::TestCase
     assert_equal :invalid_tickets, book(departure: departure, tickets: { ticket_types(:private_group).id => 1 }).error
     assert_equal :invalid_tickets, book(departure: departure, tickets: { ticket_types(:private_group).id => 2 }, guests: 4).error
   end
+
+  test "private booking priced by party size pays the price for its party" do
+    tour = tours(:ancient_rome)
+    ticket_types(:private_group).destroy!
+    tiers = [ 380_00, 400_00, 420_00 ].each.with_index(1).map do |price_cents, guests|
+      tour.ticket_types.create!(kind: "private", name: "Private, #{guests} guests", max_guests: guests, price_cents:, position: 3 + guests)
+    end
+
+    # A party of 2 can't book the 1-guest price, nor the 3-guest one.
+    assert_equal :party_too_large, book(departure: departures(:private_open), tickets: { tiers.first.id => 1 }, guests: 4).error
+    assert_equal :invalid_tickets, book(departure: departures(:private_open), tickets: { tiers.first.id => 1 }, guests: 2).error
+    assert_equal :invalid_tickets, book(departure: departures(:private_open), tickets: { tiers.last.id => 1 }, guests: 2).error
+
+    result = book(departure: departures(:private_open), tickets: { tiers.second.id => 1 }, guests: 2)
+    assert result.success?
+    assert_equal 400_00, result.booking.total_cents
+  end
 end

@@ -1,0 +1,27 @@
+<%# locals: (on_photo: false, wrapper_class: "mx-auto w-full max-w-[1180px] px-6") -%>
+<%# on_photo: white text for headers laid over a hero photo; otherwise ink on the cream page. %>
+<% nav_links = [
+  { label: "Tours", path: root_path(anchor: "tours") },
+  { label: "About", path: about_path },
+  { label: "Contact", path: contact_path },
+  { label: "Privacy", path: privacy_path }
+] %>
+
+<header class="relative flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 <%= wrapper_class %> <%= on_photo ? "text-white" : "text-ink" %>">
+  <%= link_to root_path, class: "flex items-center gap-3" do %>
+    <span class="flex size-[30px] items-center justify-center rounded-full border-[1.5px] font-serif text-base <%= on_photo ? "border-white" : "border-ink" %>">V</span>
+    <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
+  <% end %>
+
+  <nav aria-label="Main">
+    <ul class="-mx-3 flex flex-wrap items-center text-[15px]">
+      <% nav_links.each do |link| %>
+        <li>
+          <%= link_to link[:label], link[:path],
+                class: "block rounded-full px-3 py-1.5 underline-offset-[6px] decoration-1 hover:underline aria-[current=page]:underline #{on_photo ? "text-white/90 hover:text-white" : "text-ink/80 hover:text-ink"}",
+                aria: { current: ("page" if current_page?(link[:path])) } %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

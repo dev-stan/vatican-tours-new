@@ -5,7 +5,7 @@ const DAY_LABEL = { weekday: "long", month: "long", day: "numeric", year: "numer
 const FEW_LEFT = 4
 const CLOCK_ICON = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>`
 
-// Tour page booking card: group/private toggle, guest steppers, a calendar and start times built from
+// Tour page booking card: group/private toggle (for tours selling both), guest steppers, a calendar and start times built from
 // the tour's bookable departures, and a running total. Book Now expands the contact form, which Turbo
 // submits to BookingsController. On wide screens the card sticks like Airbnb's: a card taller than
 // the window scrolls until its bottom is in view, then holds there.
@@ -20,7 +20,7 @@ export default class extends Controller {
 
   connect() {
     this.options = this.optionsValue
-    this.mode = "group"
+    this.mode = this.options.group ? "group" : "private"
     this.adult = this.tickets.find(ticket => ticket.adult)
     this.guests = Object.fromEntries(this.tickets.map(ticket => [ticket.id, ticket === this.adult ? Math.min(2, this.maxGuests) : 0]))
     this.today = parseDate(this.todayValue)
@@ -135,7 +135,7 @@ export default class extends Controller {
     const size = this.partySize
 
     this.modeTargets.forEach(button => button.setAttribute("aria-pressed", button.dataset.mode === this.mode))
-    this.fromPriceTarget.textContent = group ? `Starting from ${money(this.adult.price_cents)}` : `${money(this.options.private.price_cents)} per group`
+    this.fromPriceTarget.textContent = group ? `Starting from ${money(this.adult.price_cents)}` : this.privatePriceLabel
 
     this.noteTargets.forEach(note => {
       const ticket = this.ticket(note.dataset.guest)
@@ -196,7 +196,8 @@ export default class extends Controller {
   renderSlots() {
     const departures = this.departuresOn(this.date)
     if (!departures.length) {
-      this.slotsTarget.innerHTML = `<p class="text-[15px] text-muted">No start times left for a party of ${this.partySize}. Try fewer guests or the other tour type.</p>`
+      const hint = this.options.group && this.options.private ? "Try fewer guests or the other tour type." : "Try fewer guests."
+      this.slotsTarget.innerHTML = `<p class="text-[15px] text-muted">No start times left for a party of ${this.partySize}. ${hint}</p>`
       return
     }
 
@@ -242,7 +243,7 @@ export default class extends Controller {
     if (this.mode === "group") {
       this.tickets.forEach(ticket => { if (this.guests[ticket.id] > 0) fields[`booking[tickets][${ticket.id}]`] = this.guests[ticket.id] })
     } else {
-      fields[`booking[tickets][${this.options.private.ticket_id}]`] = 1
+      fields[`booking[tickets][${this.privateTier.ticket_id}]`] = 1
       fields["booking[guests]"] = this.partySize
     }
 
@@ -271,8 +272,9 @@ export default class extends Controller {
 
   // Helpers
 
+  // The steppers: group ticket types, or a single "Guest" on a private-only tour.
   get tickets() {
-    return this.options.group.tickets
+    return this.options.guests
   }
 
   ticket(id) {
@@ -293,8 +295,19 @@ export default class extends Controller {
   }
 
   get amount() {
-    if (this.mode === "private") return this.options.private.price_cents
+    if (this.mode === "private") return this.privateTier.price_cents
     return this.tickets.reduce((sum, ticket) => sum + this.guests[ticket.id] * ticket.price_cents, 0)
+  }
+
+  // Private prices go by party size: the first tier the party fits. Steppers stop at the largest.
+  get privateTier() {
+    const tiers = this.options.private.tiers
+    return tiers.find(tier => tier.max_guests == null || tier.max_guests >= this.partySize) ?? tiers.at(-1)
+  }
+
+  get privatePriceLabel() {
+    const [first, ...rest] = this.options.private.tiers
+    return `${rest.length ? "From " : ""}${money(first.price_cents)} per group`
   }
 
   get departures() {

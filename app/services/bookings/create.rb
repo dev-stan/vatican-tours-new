@@ -4,7 +4,8 @@ module Bookings
   #   Bookings::Create.call(departure:, tickets: { adult.id => 2, child.id => 1 },
   #                         name:, email:, phone:)
   #
-  # A private booking passes its single "Private group" ticket plus `guests:`, the party size.
+  # A private booking passes one private ticket plus `guests:`, the party size. Private tours priced by
+  # party size have a ticket per size, and the booking must use the one for its party.
   # Returns a Result; check `success?`, then use `booking`, or `error` and `message`.
   class Create
     MESSAGES = {
@@ -93,8 +94,10 @@ module Bookings
       def party_size(lines)
         if @departure.kind_private?
           refuse!(:invalid_tickets) unless lines.sum { |line| line["quantity"] } == 1 && @private_party_size.positive?
-          max_guests = ticket_types.first.max_guests
-          refuse!(:party_too_large) if max_guests && @private_party_size > max_guests
+          # Private prices go by party size: the ticket must be the one this party pays.
+          ticket = @departure.tour.private_ticket_for(@private_party_size)
+          refuse!(:party_too_large) unless ticket
+          refuse!(:invalid_tickets) unless ticket == ticket_types.first
           @private_party_size
         else
           refuse!(:adult_required) unless ticket_types.any?(&:adult?)

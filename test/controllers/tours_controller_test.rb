@@ -6,10 +6,10 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     options = JSON.parse(css_select("[data-controller=booking]").first["data-booking-options-value"])
-    assert_equal [ "Age 18+", "Age 6–17", "Age 0–5" ], options["group"]["tickets"].map { |ticket| ticket["ages"] }
-    assert_equal 390_00, options["private"]["price_cents"]
+    assert_equal [ "Age 18+", "Age 6–17", "Age 0–5" ], options["guests"].map { |ticket| ticket["ages"] }
+    assert_equal [ 390_00 ], options["private"]["tiers"].map { |tier| tier["price_cents"] }
 
-    departure_ids = options.values.flat_map { |kind| kind["departures"].values.flatten.map { |departure| departure["id"] } }
+    departure_ids = options.slice("group", "private").values.flat_map { |kind| kind["departures"].values.flatten.map { |departure| departure["id"] } }
     assert_includes departure_ids, departures(:group_open).id
     assert_includes departure_ids, departures(:private_open).id
     assert_not_includes departure_ids, departures(:group_closed).id
@@ -40,8 +40,26 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
     assert_select "dt", "Bring ID"
   end
 
-  test "tours the booking card can't sell yet show no booking card" do
-    # Private only: the card needs group tickets with an adult price too.
+  test "private-only tours sell private tours priced by party size, without the group option" do
+    tour = tours(:food_tour)
+    tour.ticket_types.delete_all
+    [ 380_00, 400_00, 420_00 ].each.with_index(1) do |price_cents, guests|
+      tour.ticket_types.create!(kind: "private", name: "Private, #{guests} guests", max_guests: guests, price_cents:, position: guests)
+    end
+
+    get tour_path(tour)
+
+    assert_response :success
+    options = JSON.parse(css_select("[data-controller=booking]").first["data-booking-options-value"])
+    assert_nil options["group"]
+    assert_equal [ [ 1, 380_00 ], [ 2, 400_00 ], [ 3, 420_00 ] ], options["private"]["tiers"].map { |tier| tier.values_at("max_guests", "price_cents") }
+    assert_equal 3, options["private"]["max_guests"]
+    assert_equal [ "Guest" ], options["guests"].map { |guest| guest["name"] }
+    assert_select "[data-booking-target=mode]", 0
+  end
+
+  test "tours without prices show no booking card" do
+    tours(:food_tour).ticket_types.delete_all
     get tour_path(tours(:food_tour))
 
     assert_response :success

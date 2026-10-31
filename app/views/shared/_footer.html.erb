@@ -1,13 +1,7 @@
-<% pin_icon = '<svg width="14" height="15" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>'.html_safe %>
-<% mail_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg>'.html_safe %>
-<% phone_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M5.6 1.5H3.2c-.9 0-1.7.8-1.6 1.7.6 6 5.2 10.6 11.2 11.2.9.1 1.7-.7 1.7-1.6v-2.4l-3-1.3-1.5 1.5a8.6 8.6 0 0 1-3.6-3.6L7 5.5z"/></svg>'.html_safe %>
-<% chat_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>'.html_safe %>
-
-<% contacts = [
-  { icon: mail_icon, label: "tours@vaticantoursinc.com", href: "mailto:tours@vaticantoursinc.com" },
-  { icon: phone_icon, label: "+39 334 438 6561", href: "tel:+393344386561" },
-  { icon: chat_icon, label: "+39 334 438 6561", note: "WhatsApp", href: "https://wa.me/393344386561" },
-  { icon: pin_icon, label: "Rome, Italy" }
+<% page_links = [
+  { label: "About Us", path: about_path },
+  { label: "Contact", path: contact_path },
+  { label: "Privacy Policy", path: privacy_path }
 ] %>
 
 <footer class="bg-ink text-cream">
@@ -56,18 +50,18 @@
       <div>
         <h2 class="text-[13px] font-semibold tracking-[.18em] text-cream/50 uppercase">Contact</h2>
         <ul class="mt-5 space-y-3.5 text-[15px]">
-          <% contacts.each do |contact| %>
+          <% contact_channels.each do |contact| %>
             <li>
               <% if contact[:href] %>
                 <%= link_to contact[:href], class: "group inline-flex items-center gap-3 hover:text-terracotta",
                       **(contact[:href].start_with?("http") ? { target: "_blank", rel: "noopener" } : {}) do %>
-                  <span class="text-cream/55 group-hover:text-terracotta"><%= contact[:icon] %></span>
+                  <span class="text-cream/55 group-hover:text-terracotta"><%= contact_icon(contact[:icon]) %></span>
                   <span><%= contact[:label] %></span>
                   <% if contact[:note] %><span class="text-[13px] text-cream/50"><%= contact[:note] %></span><% end %>
                 <% end %>
               <% else %>
                 <span class="inline-flex items-center gap-3">
-                  <span class="flex w-4 justify-center text-cream/55"><%= contact[:icon] %></span>
+                  <span class="flex w-4 justify-center text-cream/55"><%= contact_icon(contact[:icon]) %></span>
                   <%= contact[:label] %>
                 </span>
               <% end %>
@@ -90,6 +84,13 @@
 
     <div class="flex flex-wrap items-center justify-between gap-3 border-t border-white/15 py-6 text-[13px] text-cream/45">
       <p>© <%= Date.current.year %> Vatican Tours Inc</p>
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-6 gap-y-2">
+          <% page_links.each do |link| %>
+            <li><%= link_to link[:label], link[:path], class: "hover:text-terracotta" %></li>
+          <% end %>
+        </ul>
+      </nav>
       <p class="font-serif text-sm italic">Italy, seen up close.</p>
     </div>
   </div>

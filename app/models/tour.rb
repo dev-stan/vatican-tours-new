@@ -12,6 +12,10 @@ class Tour < ApplicationRecord
   has_many :bookings, dependent: :restrict_with_error
 
   enum :status, { draft: "draft", published: "published" }, validate: true
+  # How the tour gets around; picks the icon on the tour card.
+  enum :transport, { walking: "walking", boat: "boat", car: "car" }, prefix: true, validate: true
+  # Optional pill on the tour card photo; at most one per tour.
+  enum :badge, { wheelchair: "wheelchair", cruise: "cruise", food: "food", wine: "wine", active: "active" }, prefix: true, validate: { allow_nil: true }
 
   normalizes :languages, :tags, with: ->(values) { Array(values).map(&:to_s).compact_blank.uniq }
 
@@ -46,6 +50,17 @@ class Tour < ApplicationRecord
   # The lowest price to join: the cheapest adult group ticket or the private price. Nil until the tour has prices.
   def starting_price_cents
     ticket_types.select { |ticket| ticket.kind_private? || ticket.adult? }.map(&:price_cents).min
+  end
+
+  # Private tickets by party size, smallest first; a private party pays the first one it fits.
+  # A flat-priced private tour has just one.
+  def private_tickets
+    ticket_types.select(&:kind_private?).sort_by { |ticket| ticket.max_guests || Float::INFINITY }
+  end
+
+  # The private ticket a party of this size pays; nil when the party is too large.
+  def private_ticket_for(guests)
+    private_tickets.find { |ticket| ticket.max_guests.nil? || ticket.max_guests >= guests }
   end
 
   def offered_kinds

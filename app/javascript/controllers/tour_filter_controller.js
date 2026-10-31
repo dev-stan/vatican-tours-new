@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 // Filters the home page tour cards by location tab and category checkboxes,
-// and swaps the hero place name, the section title, and the subtitles for the selected location.
+// and swaps the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected location.
 export default class extends Controller {
-  static targets = ["tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionSubtitle", "size"]
-  static values = { places: Object, subtitles: Object, sectionSubtitles: Object, location: { type: String, default: "All Locations" }, size: { type: Number, default: 1 } }
+  static targets = ["tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
+  static values = { places: Object, subtitles: Object, sectionSubtitles: Object, features: Object, adviceTitles: Object, location: { type: String, default: "All Locations" }, size: { type: Number, default: 1 } }
 
   selectLocation(event) {
     this.locationValue = event.currentTarget.dataset.location
@@ -23,6 +23,16 @@ export default class extends Controller {
     if (this.hasSectionSubtitleTarget) {
       this.sectionSubtitleTarget.textContent = this.sectionSubtitlesValue[this.locationValue] || ""
     }
+    if (this.hasAdviceTitleTarget) {
+      this.adviceTitleTarget.textContent = this.adviceTitlesValue[this.locationValue] || this.adviceTitlesValue["All Locations"] || ""
+    }
+    const adviceLocation = this.advicePanelTargets.some(panel => panel.dataset.location === this.locationValue) ? this.locationValue : "All Locations"
+    this.advicePanelTargets.forEach(panel => panel.hidden = panel.dataset.location !== adviceLocation)
+    const features = this.featuresValue[this.locationValue] || this.featuresValue["All Locations"] || []
+    features.forEach((feature, i) => {
+      if (this.featureTitleTargets[i]) this.featureTitleTargets[i].textContent = feature.title
+      if (this.featureBodyTargets[i]) this.featureBodyTargets[i].textContent = feature.body
+    })
     this.filter()
   }
 

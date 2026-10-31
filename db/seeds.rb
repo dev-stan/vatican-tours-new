@@ -22,7 +22,8 @@ to = from + 8.weeks
 YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
   tour = Tour.find_or_initialize_by(slug: data["slug"])
   tour.update!(
-    **data.slice("title", "tagline", "headline", "location", "meeting_point", "languages", "tags").symbolize_keys,
+    **data.slice("title", "tagline", "headline", "location", "transport", "meeting_point", "languages", "tags").symbolize_keys,
+    badge: data["badge"],
     description: data["description"].strip,
     duration_minutes: (data["hours"] * 60).to_i,
     status: "published"
@@ -42,20 +43,37 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
 
   # Ticket types are updated in place: bookings snapshot their prices, but keep ids stable anyway.
   prices = data["prices"]
-  [
-    { kind: "group", name: "Adult", min_age: 18, max_age: nil, max_guests: nil, price_cents: prices["adult"] * 100 },
-    { kind: "group", name: "Child", min_age: 6, max_age: 17, max_guests: nil, price_cents: prices["child"] * 100 },
-    { kind: "group", name: "Infant", min_age: 0, max_age: 5, max_guests: nil, price_cents: 0 },
-    { kind: "private", name: "Private group", min_age: nil, max_age: nil, max_guests: prices["max_guests"], price_cents: prices["private"] * 100 }
-  ].each_with_index do |attributes, position|
-    tour.ticket_types.find_or_initialize_by(kind: attributes[:kind], name: attributes[:name])
-        .update!(attributes.merge(position: position))
+  tickets = []
+  if prices["adult"]
+    tickets << { kind: "group", name: "Adult", min_age: 18, max_age: nil, max_guests: nil, price_cents: prices["adult"] * 100 }
+    tickets << { kind: "group", name: "Child", min_age: 6, max_age: 17, max_guests: nil, price_cents: prices["child"] * 100 }
+    tickets << { kind: "group", name: "Infant", min_age: 0, max_age: 5, max_guests: nil, price_cents: 0 }
   end
+  case prices["private"]
+  when Array # One private ticket per party size.
+    prices["private"].each.with_index(1) do |price, guests|
+      tickets << { kind: "private", name: "Private, #{guests} #{"guest".pluralize(guests)}", min_age: nil, max_age: nil, max_guests: guests, price_cents: price * 100 }
+    end
+  when Integer
+    tickets << { kind: "private", name: "Private group", min_age: nil, max_age: nil, max_guests: prices["max_guests"], price_cents: prices["private"] * 100 }
+  end
+
+  kept = tickets.each_with_index.map do |attributes, position|
+    ticket = tour.ticket_types.find_or_initialize_by(kind: attributes[:kind], name: attributes[:name])
+    ticket.update!(attributes.merge(position: position))
+    ticket.id
+  end
+  # Bookings keep their own copy of ticket prices, so dropped ticket types can go.
+  tour.ticket_types.where.not(id: kept).delete_all
 
   attach_photos(tour, data.fetch("photos", []))
 
+  # Departures only for the kinds the tour sells; unbooked ones of a kind it no longer sells go.
+  kinds = tickets.map { |ticket| ticket[:kind] }.uniq
+  tour.departures.where.not(kind: kinds).where.missing(:bookings).delete_all
+
   days = data.fetch("days", Departures::Generator::DAYS).map(&:to_sym)
-  created = { "group" => data.fetch("capacity", 12), "private" => 1 }.sum do |kind, capacity|
+  created = { "group" => data.fetch("capacity", 12), "private" => 1 }.slice(*kinds).sum do |kind, capacity|
     Departures::Generator.call(tour:, kind:, times: data["times"], days:, capacity:, from:, to:,
                                skip_dates: CLOSED_DAYS.(from, to))
   end

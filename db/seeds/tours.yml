@@ -1,10 +1,14 @@
 # The tour catalogue, loaded by db/seeds.rb. Edit here, then run bin/rails db:seed.
 #
 # hours:       tour length (decimals allowed, e.g. 2.5)
+# transport:   walking, boat or car; picks the icon on the tour card
+# badge:       optional pill on the card photo: wheelchair, cruise, food, wine or active (omit for none)
 # photos:      files in app/assets/images/tours; the first one is the card image (optional)
 # description: paragraphs separated by a blank line; the first is the pitch
-# prices:      euros. Adult (18+) and child (6–17) group tickets, private group price for up to max_guests.
-#              Infants (0–5) go free. Every tour also gets a cancellation fact.
+# prices:      euros. Adult (18+) and child (6–17) group tickets; infants (0–5) go free. Leave them out for a
+#              private-only tour. private is either one price for up to max_guests, or a list of prices by
+#              party size ([1 guest, 2 guests, ...]); leave it out for a group-only tour.
+#              Every tour also gets a cancellation fact.
 # times:       Rome start times, for both group and private departures
 # days:        weekdays the tour runs (default: every day)
 # capacity:    seats on a group departure (default 12)
@@ -15,6 +19,7 @@
   headline: Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
   languages: [en, es, fr]
   tags: [wheelchair, with_kids]
@@ -57,6 +62,7 @@
   headline: In-depth archaeological sites with a cappuccino break
   location: Rome
   hours: 5
+  transport: walking
   meeting_point: Piazza del Colosseo, by the newsstand opposite the Colosseo metro exit
   languages: [en, es, de]
   tags: [active]
@@ -95,6 +101,7 @@
   headline: Centro storico, where locals outnumber tourists
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Piazza di Spagna, at the foot of the Spanish Steps by the Barcaccia fountain
   languages: [en, es, fr, it]
   tags: [with_kids]
@@ -131,6 +138,7 @@
   headline: Top sights without walking; good for limited mobility
   location: Rome
   hours: 2
+  transport: car
   meeting_point: Pickup from your hotel or apartment in central Rome
   languages: [en, es, it, pt]
   tags: [with_kids, wheelchair]
@@ -167,6 +175,7 @@
   headline: Evening stroll through Rome’s streets and squares
   location: Rome
   hours: 2.5
+  transport: walking
   meeting_point: Piazza del Popolo, in front of the twin churches
   languages: [en, es, it]
   tags: [with_kids]
@@ -203,6 +212,7 @@
   headline: Catacombs visit and walk on the Appian Way
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Porta San Sebastiano, at the start of the Appian Way
   languages: [en, es, fr, de]
   tags: [with_kids]
@@ -239,6 +249,7 @@
   headline: Caravaggio, Bernini, Borromini and the Borghese Gallery
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Entrance of the Borghese Gallery, Piazzale Scipione Borghese
   languages: [en, fr, it]
   tags: []
@@ -275,6 +286,7 @@
   headline: The Jewish Ghetto and its history
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Largo 16 Ottobre 1943, in front of the Great Synagogue
   languages: [en, es, it]
   tags: [wheelchair]
@@ -311,6 +323,7 @@
   headline: Rome’s ancient sights, made fun for kids
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: In front of the Basilica of San Clemente, Via Labicana 95
   languages: [en, es, fr, de]
   tags: [with_kids]
@@ -346,6 +359,7 @@
   headline: Rome’s hidden clues from Dan Brown’s novel
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Piazza del Popolo, at the obelisk
   languages: [en, es, de]
   tags: []
@@ -381,6 +395,7 @@
   headline: Photo walk with a professional photographer
   location: Rome
   hours: 3
+  transport: walking
   meeting_point: Top of the Spanish Steps, in front of Trinità dei Monti
   languages: [en, it, fr]
   tags: []
@@ -417,6 +432,7 @@
   headline: Old and Ancient Rome at a slow pace with a lunch break
   location: Rome
   hours: 6
+  transport: walking
   meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
   languages: [en, es, fr, de, pt]
   tags: [active]
@@ -453,6 +469,7 @@
   headline: Tivoli’s grand gardens and Hadrian’s vast villa
   location: Rome Day Trips
   hours: 6
+  transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it]
   tags: []
@@ -491,6 +508,7 @@
   headline: Ancient Ostia and Cerveteri’s Etruscan heritage
   location: Rome Day Trips
   hours: 6
+  transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, fr, de]
   tags: []
@@ -529,6 +547,7 @@
   headline: Elegant palaces and gardens in the Roman countryside
   location: Rome Day Trips
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, it, fr]
   tags: []
@@ -567,6 +586,8 @@
   headline: Roman hills and a local winery
   location: Rome Day Trips
   hours: 6
+  transport: car
+  badge: wine
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, de]
   tags: [wine, food_and_cooking]
@@ -605,6 +626,7 @@
   headline: Pompeii’s ancient streets and Oplontis’ Roman villa
   location: Rome Day Trips
   hours: 10
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, it]
   tags: []
@@ -643,6 +665,7 @@
   headline: Three remarkably preserved sites beneath Vesuvius
   location: Rome Day Trips
   hours: 10
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, de]
   tags: []
@@ -682,6 +705,7 @@
   headline: Ancient ruins beneath Vesuvius
   location: Rome Day Trips
   hours: 10
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr]
   tags: [active]
@@ -720,6 +744,7 @@
   headline: Pompeii’s ruins and Positano’s colorful coastal streets
   location: Rome Day Trips
   hours: 10
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, it, pt]
   tags: []
@@ -758,6 +783,7 @@
   headline: Pompeii’s ruins, Sorrento’s coast, and Capri’s island charm
   location: Rome Day Trips
   hours: 12
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, de]
   tags: []
@@ -797,6 +823,7 @@
   headline: Assisi’s historic landmarks and Umbria’s hill towns
   location: Rome Day Trips
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, pt]
   tags: []
@@ -834,6 +861,7 @@
   headline: Tuscany’s medieval villages and rolling countryside
   location: Rome Day Trips
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, de, it]
   tags: [wine]
@@ -872,6 +900,7 @@
   headline: Florence’s Renaissance treasures, Chianti’s countryside, and Siena’s medieval beauty
   location: Rome Day Trips
   hours: 12
+  transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, pt]
   tags: [wine]
@@ -912,6 +941,7 @@
   headline: Michelangelo’s David, Renaissance art, and Florence’s historic heart.
   location: Florence
   hours: 3
+  transport: walking
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
@@ -948,6 +978,7 @@
   headline: Florence’s iconic landmarks and the Uffizi’s Renaissance masterpieces.
   location: Florence
   hours: 3
+  transport: walking
   meeting_point: Piazza della Repubblica, under the arch on the western side of the square
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
@@ -984,6 +1015,7 @@
   headline: Florence revealed — the Oltrarno and Masaccio’s frescoes.
   location: Florence
   hours: 3
+  transport: walking
   meeting_point: Ponte Santa Trinita, at the corner with Via Maggio
   languages: [en, it, fr]
   tags: [with_kids]
@@ -1019,6 +1051,7 @@
   headline: Florence revealed — Giotto, Fra Angelico, and Donatello.
   location: Florence
   hours: 3
+  transport: walking
   meeting_point: Piazza San Marco, at the steps of the Church of San Marco
   languages: [en, it, de]
   tags: []
@@ -1053,6 +1086,7 @@
   headline: The David and the Accademia at your own pace, with a secured timed entrance.
   location: Florence
   hours: 2
+  transport: walking
   meeting_point: Via Ricasoli 58, at the Accademia’s reserved-entry door
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
@@ -1089,6 +1123,7 @@
   headline: The best of two museums in one morning.
   location: Florence
   hours: 3
+  transport: walking
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr]
   tags: [wheelchair]
@@ -1124,6 +1159,7 @@
   headline: The masterpieces of the Uffizi at your own pace, with a secured timed entrance.
   location: Florence
   hours: 2
+  transport: walking
   meeting_point: Piazzale degli Uffizi, at the reserved-entry door 1
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
@@ -1159,6 +1195,7 @@
   headline: Botticelli, Leonardo, and other Renaissance masters in the Uffizi.
   location: Florence
   hours: 2
+  transport: walking
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
@@ -1192,6 +1229,7 @@
   headline: Uffizi treasures and an exclusive passage through the Vasari Corridor.
   location: Florence
   hours: 2.5
+  transport: walking
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr]
   tags: [wheelchair]
@@ -1226,6 +1264,7 @@
   headline: Hidden terraces and Brunelleschi’s Dome, with stunning views of Florence.
   location: Florence
   hours: 2
+  transport: walking
   meeting_point: Piazza del Duomo, at the Porta della Mandorla on the cathedral’s north side
   languages: [en, es, it]
   tags: [active]
@@ -1261,6 +1300,7 @@
   headline: A must-do day trip from Florence for first-time visitors to Tuscany.
   location: Tuscany
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [with_kids]
@@ -1297,6 +1337,8 @@
   headline: The best of Tuscany and a private winery visit.
   location: Tuscany
   hours: 8
+  transport: car
+  badge: wine
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [wine]
@@ -1334,6 +1376,8 @@
   headline: Private winery visits with local sommeliers, for serious wine lovers.
   location: Tuscany
   hours: 8
+  transport: car
+  badge: wine
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, it, de]
   tags: [wine]
@@ -1370,6 +1414,8 @@
   headline: Lazy time with beautiful vistas, good wine, and a Tuscan lunch.
   location: Tuscany
   hours: 5
+  transport: car
+  badge: wine
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [wine]
@@ -1404,6 +1450,7 @@
   headline: Pisa’s iconic Leaning Tower and Lucca’s charm on a memorable day trip.
   location: Tuscany
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it, pt]
   tags: [with_kids]
@@ -1440,6 +1487,8 @@
   headline: Colorful seaside villages, breathtaking coastal views, and the charm of the Italian Riviera.
   location: Tuscany
   hours: 8
+  transport: car
+  badge: active
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, it, de]
   tags: [active]
@@ -1477,6 +1526,7 @@
   headline: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
   location: Vatican City
   hours: 3
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
@@ -1505,7 +1555,7 @@
     Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Silence in the chapel: Photos and talking aren’t allowed in the Sistine Chapel.
-  prices: { adult: 45, child: 29, private: 290, max_guests: 6 }
+  prices: { adult: 45, child: 29 }
   times: ["08:00", "09:00", "10:30", "12:00", "13:30", "15:00"]
   days: [mon, tue, wed, thu, fri, sat]
   capacity: 20
@@ -1516,6 +1566,7 @@
   headline: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
   location: Vatican City
   hours: 4
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids]
@@ -1545,7 +1596,7 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Bring headphones: The audio guide plays on your own phone.
-  prices: { adult: 75, child: 49, private: 450, max_guests: 6 }
+  prices: { adult: 75, child: 49 }
   times: ["08:00", "09:00", "10:30", "12:00", "13:30"]
   days: [mon, tue, wed, thu, fri, sat]
   capacity: 20
@@ -1556,6 +1607,7 @@
   headline: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
   location: Vatican City
   hours: 3
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de]
   tags: [with_kids, wheelchair]
@@ -1584,7 +1636,7 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Walking: About 2 km, mostly indoors, with lifts available. Strollers and wheelchairs welcome.
-  prices: { adult: 69, child: 49, private: 480, max_guests: 6 }
+  prices: { private: [380, 400, 420, 440, 460, 480] }
   times: ["08:00", "10:00", "13:00"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1594,6 +1646,7 @@
   headline: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
   location: Vatican City
   hours: 2.5
+  transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it]
   tags: [active]
@@ -1621,7 +1674,7 @@
     Dress code: Shoulders and knees must be covered. Guards turn visitors away at the door.
     Climbing: 320 steps after the lift, some in narrow, sloping passages. Not suitable for anyone with heart conditions or claustrophobia.
     Wednesday mornings: The Basilica opens late on Wednesdays during the Papal Audience, so we start in the afternoon.
-  prices: { adult: 39, child: 25, private: 280, max_guests: 6 }
+  prices: { private: [180, 200, 220, 240, 260, 280] }
   times: ["09:00", "14:00", "15:30"]
   capacity: 14
 
@@ -1631,6 +1684,7 @@
   headline: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
   location: Vatican City
   hours: 2
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, it, de]
   tags: [with_kids]
@@ -1658,7 +1712,7 @@
     Bring ID: Garden tickets are named and checked against a passport or ID card.
     Walking: About 2 km on paths and slopes, outdoors. Bring water and a hat in summer.
     Weather: The gardens stay open in light rain. In storms the Vatican may close them and we’ll offer a new date or a full refund.
-  prices: { adult: 59, child: 39, private: 480, max_guests: 6 }
+  prices: { private: [400, 400, 420, 440, 460, 480] }
   times: ["09:00", "11:00"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1668,6 +1722,7 @@
   headline: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
   location: Vatican City
   hours: 1.5
+  transport: walking
   meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
   languages: [en, es, it]
   tags: []
@@ -1694,7 +1749,7 @@
     Age limit: The Excavations Office does not admit children under 15.
     Underground: The passages are narrow, warm, and humid. Not suitable for anyone with claustrophobia or limited mobility.
     Booking ahead: Tickets are confirmed by the Vatican. If your date isn’t granted we’ll offer another or a full refund.
-  prices: { adult: 69, child: 49, private: 480, max_guests: 4 }
+  prices: { private: [120, 240, 260, 480] }
   times: ["09:00", "11:00", "14:30"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1704,6 +1759,7 @@
   headline: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
   location: Vatican City
   hours: 3
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
@@ -1731,7 +1787,7 @@
     Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Stay on: Your ticket is valid until closing, so you can keep exploring after the tour.
-  prices: { adult: 70, child: 49, private: 420, max_guests: 6 }
+  prices: { adult: 70, child: 49 }
   times: ["08:30", "10:00", "11:30", "13:30", "15:00"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1741,6 +1797,7 @@
   headline: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
   location: Vatican City
   hours: 5
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [wheelchair]
@@ -1770,7 +1827,7 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Walking: About 4 km, mostly indoors, with a coffee break halfway. Lifts are available throughout.
-  prices: { adult: 90, child: 59, private: 540, max_guests: 5 }
+  prices: { adult: 90, child: 59, private: [480, 480, 500, 520, 540, 560] }
   times: ["08:30", "12:30"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1780,6 +1837,7 @@
   headline: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
   location: Vatican City
   hours: 7
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, active]
@@ -1809,7 +1867,7 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Climbing: The dome has 320 steps after the lift. You can skip it and use the rest of the pass.
-  prices: { adult: 85, child: 55, private: 510, max_guests: 6 }
+  prices: { adult: 85, child: 55 }
   times: ["08:00", "09:00", "10:00"]
   days: [mon, tue, wed, thu, fri, sat]
   capacity: 20
@@ -1820,6 +1878,7 @@
   headline: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
   location: Vatican City
   hours: 7
+  transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [active]
@@ -1849,7 +1908,7 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     A long day: About 8 km on foot with stairs. Wear comfortable shoes.
-  prices: { adult: 110, child: 75, private: 790, max_guests: 6 }
+  prices: { adult: 110, child: 75 }
   times: ["08:30"]
   days: [mon, tue, wed, thu, fri, sat]
 
@@ -1859,6 +1918,7 @@
   headline: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
   location: Vatican City
   hours: 3
+  transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
@@ -1885,7 +1945,7 @@
     The Pope’s schedule: Audiences are cancelled in July and when the Pope travels. If yours is cancelled we refund you in full.
     Security: Expect airport-style checks. Leave large bags, umbrellas, and anything sharp at your hotel.
     Dress code: Shoulders and knees covered, as in any Vatican basilica.
-  prices: { adult: 40, child: 25, private: 280, max_guests: 6 }
+  prices: { adult: 40, child: 25, private: [140, 160, 180, 240, 260, 280] }
   times: ["07:30"]
   days: [wed]
   capacity: 20
@@ -1896,6 +1956,7 @@
   headline: Old Naples and the treasures of the Archaeological Museum.
   location: Naples, Pompeii and Amalfi Coast
   hours: 3
+  transport: walking
   meeting_point: Piazza del Gesù Nuovo, by the Guglia dell’Immacolata
   languages: [en, es, fr, it]
   tags: [with_kids]
@@ -1932,6 +1993,7 @@
   headline: Capodimonte Painting Gallery, the San Carlo Opera House, and the Naples Underground.
   location: Naples, Pompeii and Amalfi Coast
   hours: 3
+  transport: car
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, it]
   tags: [with_kids]
@@ -1970,6 +2032,7 @@
   headline: The Veiled Christ, the Archaeological Museum, and the views from Posillipo, by private car.
   location: Naples, Pompeii and Amalfi Coast
   hours: 6
+  transport: car
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, fr, it, de]
   tags: []
@@ -2007,6 +2070,7 @@
   headline: The lanes of old Naples in the morning, the streets of Pompeii in the afternoon.
   location: Naples, Pompeii and Amalfi Coast
   hours: 6
+  transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it, de]
   tags: [with_kids]
@@ -2044,6 +2108,7 @@
   headline: Three towns buried by Vesuvius, from the bustling streets of Pompeii to the luxury villa of Oplontis.
   location: Naples, Pompeii and Amalfi Coast
   hours: 6
+  transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it]
   tags: [active]
@@ -2080,6 +2145,7 @@
   headline: Positano’s pastel houses, Amalfi’s cathedral, and Ravello’s gardens high above the sea.
   location: Naples, Pompeii and Amalfi Coast
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in Naples or Sorrento
   languages: [en, es, fr, it, de, pt]
   tags: []
@@ -2117,6 +2183,7 @@
   headline: A guided morning in Pompeii, then the cliffside villages of the Amalfi Coast.
   location: Naples, Pompeii and Amalfi Coast
   hours: 8
+  transport: car
   meeting_point: Pickup from your hotel in Naples or Sorrento
   languages: [en, es, fr, it, de]
   tags: []
@@ -2153,6 +2220,7 @@
   headline: Pompeii’s ruins, lunch in Sorrento, and an afternoon on the island of Capri.
   location: Naples, Pompeii and Amalfi Coast
   hours: 9
+  transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it, de]
   tags: []
@@ -2191,6 +2259,7 @@
   headline: A day on Capri by boat and on foot, from the Faraglioni rocks to the heights of Anacapri.
   location: Naples, Pompeii and Amalfi Coast
   hours: 6
+  transport: walking
   meeting_point: Molo Beverello ferry terminal, Naples, at the ticket office
   languages: [en, es, it]
   tags: [with_kids]
@@ -2231,9 +2300,11 @@
   headline: The city’s timeless landmarks around San Marco.
   location: Venice
   hours: 2
+  transport: walking
   meeting_point: Piazza San Marco, under the Clock Tower
   languages: [en, es, fr, it, de]
   tags: [with_kids]
+  photos: [essential-venice.webp]
   description: |
     For a thousand years Venice was a republic of merchants, and everything around Piazza San Marco was built to show it off. This walk is the best introduction to the city: two hours, the great landmarks, and the stories that explain them.
 
@@ -2264,9 +2335,11 @@
   headline: Quiet lanes and the local corners most visitors miss.
   location: Venice
   hours: 2
+  transport: walking
   meeting_point: Campo Santa Maria Formosa, by the church steps
   languages: [en, es, fr, it]
   tags: [with_kids]
+  photos: [hidden-venice.webp]
   description: |
     Two streets away from the crowds of San Marco, Venice goes quiet. Washing hangs over the canals, children play football in the squares, and the bacari pour a glass of wine for a couple of euros. This walk takes you there.
 
@@ -2297,9 +2370,11 @@
   headline: Venice’s history and landmarks, with the Grand Canal from the water by private water taxi.
   location: Venice
   hours: 4
+  transport: walking
   meeting_point: Piazza San Marco, under the Clock Tower
   languages: [en, es, fr, it, de]
   tags: []
+  photos: [canale-grande.webp]
   description: |
     Venice was built to be seen from the water, and the palaces of the Grand Canal still turn their best faces to it. This tour shows you the city both ways: on foot through its lanes, and by private water taxi along its main street.
 
@@ -2332,9 +2407,11 @@
   headline: Murano and Burano for glassmaking traditions and colourful island streets, by private water taxi.
   location: Venice
   hours: 4
+  transport: boat
   meeting_point: Fondamenta Nove water taxi stand, Cannaregio
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids]
+  photos: [murano.webp, burano.webp]
   description: |
     The islands of the northern lagoon are a world apart from Venice, and a private water taxi gets you there in a fraction of the time the public boats take.
 
@@ -2367,9 +2444,11 @@
   headline: Murano’s glass, Burano’s colours, and Torcello’s Byzantine mosaics, by private water taxi.
   location: Venice
   hours: 6
+  transport: boat
   meeting_point: Fondamenta Nove water taxi stand, Cannaregio
   languages: [en, es, fr, it, de]
   tags: [with_kids]
+  photos: [burano.webp, murano.webp]
   description: |
     Before there was Venice, there was Torcello. Refugees from the mainland settled the island in the 400s, and at its height 20,000 people lived there. Today it has a dozen residents, a cathedral, and some of the finest mosaics in Italy.
 
@@ -2403,9 +2482,12 @@
   headline: Discover the Venetian lagoon and enjoy a taste of local wine country.
   location: Venice
   hours: 6
+  transport: boat
+  badge: wine
   meeting_point: Fondamenta Nove water taxi stand, Cannaregio
   languages: [en, es, fr, it]
   tags: [wine]
+  photos: [venice-vinery.webp, burano.webp]
   description: |
     Vines have grown in the Venetian lagoon since the Middle Ages, when monasteries and noble families planted them on the islands for their own tables. A few still do, and the wine they make tastes of salt and sea air.
 
@@ -2439,9 +2521,11 @@
   headline: Meet your assistant at the station and enjoy a smooth, supported arrival in Venice.
   location: Venice
   hours: 1
+  transport: boat
   meeting_point: Venezia Santa Lucia station, at the end of your train’s platform
   languages: [en, es, fr, it, de, pt]
   tags: [transfers, with_kids]
+  photos: [santa-lucia-train-station.webp]
   description: |
     Arriving in Venice by train is magical: you step out of the station and the Grand Canal is right in front of you. Getting your suitcases from there to your hotel, over bridges and down narrow lanes, is less so.
 
@@ -2474,9 +2558,11 @@
   headline: Private water taxi transfer from Venice Marco Polo airport to your hotel.
   location: Venice
   hours: 1
+  transport: boat
   meeting_point: Marco Polo airport arrivals hall, by the water taxi desk
   languages: [en, es, fr, it, de, pt]
   tags: [transfers, with_kids]
+  photos: [marcopolo-airport-transfer.webp]
   description: |
     There is no better way to arrive in Venice than across the lagoon. A private water taxi from Marco Polo airport takes about thirty minutes and brings you as close to your hotel as the canals allow.
 
@@ -2509,9 +2595,12 @@
   headline: Connect from Ravenna’s cruise pier to Venice with a comfortable transfer.
   location: Venice
   hours: 4
+  transport: car
+  badge: cruise
   meeting_point: Porto Corsini cruise terminal, Ravenna, at the passenger exit
   languages: [en, es, fr, it, de]
   tags: [transfers, cruises]
+  photos: [ravenna-pier.webp]
   description: |
     Many cruises that sail to Venice now dock in Ravenna, a long way down the coast. This private transfer takes you from the ship to Venice in comfort, without the shuttle-bus queue.
 
@@ -2544,9 +2633,11 @@
   headline: A direct, comfortable journey from Venice to Milan.
   location: Venice
   hours: 4
+  transport: car
   meeting_point: Piazzale Roma, Venice, at the car terminal
   languages: [en, es, fr, it, de]
   tags: [transfers]
+  photos: [milan-transfer.webp]
   description: |
     The road from Venice to Milan runs across the whole of the Po Valley, past Padua, Vicenza, Verona, and Lake Garda. This private transfer gets you there directly, with room for your luggage and no trains to change.
 
@@ -2579,9 +2670,11 @@
   headline: A direct, comfortable journey from Venice to the shores of Lake Como.
   location: Venice
   hours: 4
+  transport: car
   meeting_point: Piazzale Roma, Venice, at the car terminal
   languages: [en, es, fr, it, de]
   tags: [transfers]
+  photos: [como.webp]
   description: |
     Lake Como is one of the hardest places in Italy to reach by public transport from Venice: two trains, a change in Milan, and a bus or ferry at the end. This private transfer does it in one go.
 
@@ -2614,9 +2707,12 @@
   headline: From Venice to Milan, with time to explore Verona and the Franciacorta wine region.
   location: Venice
   hours: 8
+  transport: car
+  badge: wine
   meeting_point: Piazzale Roma, Venice, at the car terminal
   languages: [en, es, fr, it, de]
   tags: [transfers, wine]
+  photos: [franciacorta-winery.webp, milan-transfer.webp]
   description: |
     Why spend three hours on the motorway when you could spend a day seeing northern Italy? This transfer takes you from Venice to Milan by way of Verona and the vineyards of Franciacorta.
 

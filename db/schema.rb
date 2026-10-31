@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_26_075843) do
+ActiveRecord::Schema[8.1].define(version: 2026_10_31_100000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -141,10 +141,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_26_075843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "tagline"
+    t.string "transport", default: "walking", null: false
+    t.string "badge"
     t.index ["slug"], name: "index_tours_on_slug", unique: true
     t.index ["status"], name: "index_tours_on_status"
+    t.check_constraint "badge IS NULL OR badge IN ('wheelchair', 'cruise', 'food', 'wine', 'active')", name: "tours_badge_valid"
     t.check_constraint "duration_minutes > 0", name: "tours_duration_positive"
     t.check_constraint "status IN ('draft', 'published')", name: "tours_status_valid"
+    t.check_constraint "transport IN ('walking', 'boat', 'car')", name: "tours_transport_valid"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
