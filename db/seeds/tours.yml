@@ -945,6 +945,7 @@
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
+  photos: [florence-academy.webp, david-florence.webp, duomo-florence.webp]
   description: |
     Florence is small enough to cross in twenty minutes and dense enough to fill a lifetime. The first part of our Essential Florence series starts where most visitors want to begin: face to face with Michelangelo’s David.
 
@@ -982,6 +983,7 @@
   meeting_point: Piazza della Repubblica, under the arch on the western side of the square
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
+  photos: [florence-uffizi.webp, uffizi-3.webp, duomo-florence.webp]
   description: |
     The second part of Essential Florence joins the city’s great public spaces to the gallery the Medici built to show them off. It works on its own, or as the follow-up to Part One.
 
@@ -1019,6 +1021,7 @@
   meeting_point: Ponte Santa Trinita, at the corner with Via Maggio
   languages: [en, it, fr]
   tags: [with_kids]
+  photos: [oltrarno.webp, duomo-florence.webp, florence_duomo.webp]
   description: |
     Across the Arno, Florence slows down. The Oltrarno is the city of artisans: gilders, framers, and leather workers in workshops that have been passed down for generations, around squares where locals still outnumber visitors.
 
@@ -1055,6 +1058,7 @@
   meeting_point: Piazza San Marco, at the steps of the Church of San Marco
   languages: [en, it, de]
   tags: []
+  photos: [florence-grand-masters.webp, uffizi-3.webp, florence-academy-2.webp]
   description: |
     The last part of Essential Florence is for travellers who’ve seen the David and the Uffizi and want to understand where it all came from. Three masters, three buildings, and a hundred years of art history in a morning.
 
@@ -1090,6 +1094,7 @@
   meeting_point: Via Ricasoli 58, at the Accademia’s reserved-entry door
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
+  photos: [florence-academy-2.webp, david-florence.webp, florence-academy.webp]
   description: |
     Some visitors want a guide. Others want to stand in front of the David for as long as they like. This is for the second kind: a secured, timed entry to the Accademia Gallery, and the rest is up to you.
 
@@ -1127,6 +1132,7 @@
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr]
   tags: [wheelchair]
+  photos: [david-florence.webp, florence-uffizi.webp, florence-academy.webp]
   description: |
     Florence’s two great museums sit fifteen minutes apart, and most visitors spend a whole day queuing for them. This tour puts both in one morning, with reserved entry to each and a guide who knows exactly where to go.
 
@@ -1163,6 +1169,7 @@
   meeting_point: Piazzale degli Uffizi, at the reserved-entry door 1
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
+  photos: [uffizi-self-guide.webp, florence-uffizi.webp, uffizi-3.webp]
   description: |
     The Uffizi is one of the most visited museums in the world, and the queue under its arcades shows it. Skip it with a timed ticket booked ahead, then explore the galleries at whatever pace suits you.
 
@@ -1199,6 +1206,7 @@
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
+  photos: [uffizi-3.webp, florence-uffizi.webp, uffizi-self-guide.webp]
   description: |
     The Uffizi holds more Renaissance masterpieces than anywhere else on earth, and the rooms go on for nearly a kilometre. This two-hour tour picks the paintings that changed art and tells the story that links them.
 
@@ -1233,6 +1241,7 @@
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr]
   tags: [wheelchair]
+  photos: [corridor.webp, florence-uffizi.webp, oltrarno.webp]
   description: |
     In 1565 Cosimo I de’ Medici had Vasari build a private corridor so he could walk from his offices in the Uffizi to his home in Palazzo Pitti without mixing with the people of Florence. Almost a kilometre long, it runs over the shops of the Ponte Vecchio and across the Arno.
 
@@ -1268,6 +1277,7 @@
   meeting_point: Piazza del Duomo, at the Porta della Mandorla on the cathedral’s north side
   languages: [en, es, it]
   tags: [active]
+  photos: [duomo-florence.webp, florence_duomo.webp, oltrarno.webp]
   description: |
     Brunelleschi’s Dome was the largest in the world when it was finished in 1436, and nobody is quite sure how he built it without a wooden frame. This tour takes you inside the cathedral’s structure to find out.
 
@@ -1304,6 +1314,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [with_kids]
+  photos: [tuscan-classics.webp, chianti.webp, countryside_palace.webp]
   description: |
     If you only have one day to see the Tuscan countryside, this is the day. Your driver collects you in Florence and heads south through the hills to three towns that each show a different side of medieval Tuscany.
 
@@ -1342,6 +1353,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [wine]
+  photos: [tuscan-winery.webp, tuscan-classics.webp, chianti.webp]
   description: |
     The classic Tuscan day with a glass in hand. We keep the highlights, Siena and San Gimignano, and add a private visit to a family winery in the hills between them.
 
@@ -1381,6 +1393,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, it, de]
   tags: [wine]
+  photos: [brunello.webp, chianti.webp, tuscan-winery.webp]
   description: |
     This is not a tasting-room day. It’s a day with the people who make the wine, led by a sommelier who can talk clones, soils, and vintages as easily as the view.
 
@@ -1419,6 +1432,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [wine]
+  photos: [chianti.webp, tuscan-winery.webp, vineyard.webp]
   description: |
     Not everyone wants an eight-hour day. This one is half the length and twice as relaxed: a scenic drive into the Chianti hills, a winery visit, and a long Tuscan lunch.
 
@@ -1454,6 +1468,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it, pt]
   tags: [with_kids]
+  photos: [pisa-tower.webp, tuscan-classics.webp, florence_duomo.webp]
   description: |
     Two cities an hour west of Florence, and two very different days out. Pisa is the famous one; Lucca is the one people fall in love with.
 
@@ -1492,6 +1507,7 @@
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, it, de]
   tags: [active]
+  photos: [cinque-terre.webp, tuscan-classics.webp, countryside_palace.webp]
   description: |
     Five fishing villages painted in every shade of the sunset, stacked on cliffs above the Ligurian Sea. The Cinque Terre is just across the Tuscan border, and it makes for an unforgettable day.
 
@@ -1530,6 +1546,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
+  photos: [vatican-museums.webp, sistine-chapel.webp, vatican-museums-essentials.webp]
   description: |
     The queue for the Vatican Museums runs along the Vatican walls most mornings of the year, and in summer it can take two hours to reach the door. This visit skips it: a reserved, timed ticket, handed to you at the entrance, and the rest of the day is yours.
 
@@ -1570,6 +1587,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids]
+  photos: [vatican-city.webp, vatican-museums.webp, basilica.webp]
   description: |
     The Vatican has two great queues, one for the Museums and one for St. Peter’s Basilica, and most visitors spend more of their day in them than inside. These passes cover both, so you can see the whole of Vatican City at your own pace.
 
@@ -1611,6 +1629,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de]
   tags: [with_kids, wheelchair]
+  photos: [vatican-city-1.webp, sistine-chapel.webp, basilica.webp]
   description: |
     The Vatican holds more masterpieces per square metre than anywhere on earth, and the first visit can feel like drinking from a fire hose. This tour picks the essentials and tells the story that connects them.
 
@@ -1650,6 +1669,7 @@
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it]
   tags: [active]
+  photos: [st-peters-basilica-inside.webp, michelangelos-pieta.webp, basilica.webp]
   description: |
     St. Peter’s Basilica took 120 years and a dozen architects to build, and most visitors walk through it in twenty minutes. This tour takes its time, from the grottoes beneath the floor to the top of Michelangelo’s dome.
 
@@ -1688,6 +1708,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, it, de]
   tags: [with_kids]
+  photos: [vatican-gardens.webp, vatican-city.webp, vatican-museums.webp]
   description: |
     Half of Vatican City is garden, and almost nobody sees it. Behind the walls lie fifty acres of lawns, woods, and fountains that popes have walked in for seven centuries, open only to small guided groups.
 
@@ -1726,6 +1747,7 @@
   meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
   languages: [en, es, it]
   tags: []
+  photos: [scavi.webp, st-peters-basilica-inside.webp, basilica.webp]
   description: |
     Beneath the floor of St. Peter’s Basilica lies a street of Roman tombs, buried when Constantine levelled the hill to build the first church. Excavations in the 1940s uncovered it, and at the end of it, the grave believed to be St. Peter’s.
 
@@ -1763,6 +1785,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
+  photos: [vatican-museums-essentials.webp, sistine-chapel.webp, vatican-museums.webp]
   description: |
     The Vatican Museums stretch over seven kilometres of galleries, and without a plan most visitors run out of energy long before the Sistine Chapel. This small-group tour gets you to the rooms that matter, in the right order.
 
@@ -1801,6 +1824,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [wheelchair]
+  photos: [basilica.webp, sistine-chapel.webp, michelangelos-pieta.webp]
   description: |
     Three hours is enough to see the Vatican’s famous rooms. Five is enough to understand them. This tour covers the full route at a pace that leaves room for questions, and for the galleries most groups walk straight past.
 
@@ -1841,6 +1865,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, active]
+  photos: [sistine-chapel.webp, vatican-gardens.webp, basilica.webp]
   description: |
     Vatican City is the smallest country in the world, and it takes a full day to see it properly. This pass covers everything, with priority entry at every door, so you can spend the day inside the walls rather than outside them.
 
@@ -1882,6 +1907,7 @@
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [active]
+  photos: [michelangelos-pieta.webp, vatican-gardens.webp, sistine-chapel.webp]
   description: |
     A full day in the Vatican with a guide at your side from the first gallery to the top of the dome. It’s the most complete visit we offer, and the one we recommend to anyone who has only one chance to see it.
 
@@ -1922,6 +1948,7 @@
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
+  photos: [papal-audience.webp, basilica.webp, vatican-city-1.webp]
   description: |
     Most Wednesday mornings, the Pope greets pilgrims in St. Peter’s Square, or in the Paul VI Hall in winter. Tickets are free but issued by the Prefecture of the Papal Household, and the security lines start forming hours before the doors open.
 
@@ -1960,7 +1987,7 @@
   meeting_point: Piazza del Gesù Nuovo, by the Guglia dell’Immacolata
   languages: [en, es, fr, it]
   tags: [with_kids]
-  photos: [vesuvius.webp, herculaneum.webp]
+  photos: [essential-naples.webp, naples-2.webp, naples-3.webp]
   description: |
     Naples has been lived in for 2,800 years, and its old centre still follows the street grid the Greeks laid out. This walk takes you down Spaccanapoli, the long straight lane that splits the city in two, and into the museum that holds the treasures of Pompeii.
 
@@ -1997,7 +2024,7 @@
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, it]
   tags: [with_kids]
-  photos: [vesuvius.webp, capri_coastline.webp]
+  photos: [naples-2.webp, essential-naples.webp, naples-3.webp]
   description: |
     The second half of Naples is spread across the city, so we drive it. With a private car and driver, the tour links three sites that most visitors never manage to fit into one day.
 
@@ -2036,7 +2063,7 @@
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, fr, it, de]
   tags: []
-  photos: [vesuvius.webp, capri_coastline.webp]
+  photos: [naples-3.webp, essential-naples.webp, naples-2.webp]
   description: |
     Six hours, a car, and a guide who grew up here: enough to see Naples as more than a gateway to Pompeii. This is the city’s greatest hits and its quieter corners, joined up without a single bus.
 
@@ -2149,7 +2176,7 @@
   meeting_point: Pickup from your hotel in Naples or Sorrento
   languages: [en, es, fr, it, de, pt]
   tags: []
-  photos: [positano.webp, capri_coastline.webp]
+  photos: [ravello.webp, positano.webp, capri_coastline.webp]
   description: |
     The Amalfi Coast road was carved into the cliffs in the 1800s, and it’s still one of the most beautiful drives in the world. With a private driver at the wheel, you can spend the whole day looking out of the window.
 
@@ -2740,3 +2767,546 @@
   prices: { adult: 229, child: 149, private: 1490, max_guests: 6 }
   times: ["08:00"]
   capacity: 8
+
+- slug: essential-palermo
+  title: Essential Palermo
+  tagline: Palermo in a Morning
+  headline: Best of Palermo in half a day.
+  location: Sicily
+  hours: 3
+  transport: walking
+  meeting_point: Piazza Pretoria, by the Fontana Pretoria
+  languages: [en, es, fr, it, de]
+  tags: [with_kids]
+  photos: [essential-palermo.webp, palermo-in-depth.webp, palermo-port.webp]
+  description: |
+    Palermo has been ruled by Phoenicians, Romans, Arabs, Normans, and Spaniards, and every one of them left something behind. This walk is the quickest way to make sense of it: three hours, the great landmarks, and the stories that tie them together.
+
+    Your guide starts at the Fontana Pretoria, the “Fountain of Shame”, and leads you to the Quattro Canti, the Baroque crossroads at the heart of the old city, and the churches of La Martorana and San Cataldo, where Byzantine mosaics sit under red Arab domes.
+
+    The walk ends at the Cathedral, a building that is part mosque, part Norman fortress, and part Baroque church, with the tombs of Sicily’s kings inside.
+  highlights:
+    Quattro Canti: The Baroque crossroads that divides the old city into four.
+    La Martorana: Golden Byzantine mosaics in a Norman church.
+    Palermo Cathedral: Arab, Norman, and Baroque in one building.
+    The Fountain of Shame: The nude statues that scandalised Palermo’s nuns.
+  included:
+    - Licensed Palermo guide
+  excluded:
+    - Church and Cathedral entry fees
+    - Food and drinks
+  facts:
+    Meeting point: Piazza Pretoria, by the Fontana Pretoria. Your guide will hold a Vatican Tours Inc sign.
+    Dress code: Shoulders and knees must be covered in churches.
+    Walking: About 3 km on flat streets.
+  prices: { private: [240, 260, 280, 300, 320, 340] }
+  times: ["09:00", "14:30"]
+
+- slug: palermo-in-depth
+  title: Palermo in Depth
+  tagline: Arab, Norman, and Baroque Palermo
+  headline: Palermo’s layered history, vibrant culture, and authentic Sicilian character.
+  location: Sicily
+  hours: 5
+  transport: walking
+  meeting_point: Piazza della Vittoria, at the entrance to the Royal Palace
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [palermo-in-depth.webp, essential-palermo.webp, jewish-palermo.webp]
+  description: |
+    Three hours shows you Palermo’s landmarks; five lets you understand them. This in-depth walk covers the whole of the old city, from the palace of its Norman kings to the markets that have fed it since the Arabs ran them.
+
+    It starts at the Royal Palace and the Palatine Chapel, where Norman kings hired Byzantine mosaicists and Arab carpenters to build the most beautiful room in Sicily. From there, your guide leads you to the Cathedral, the Quattro Canti, and La Martorana.
+
+    The afternoon takes you into the Ballarò market and the backstreets of the Kalsa, where the city’s Arab street plan survives, with a stop for an arancina along the way.
+  highlights:
+    The Palatine Chapel: Golden mosaics under an Arab carved wooden ceiling.
+    Palermo Cathedral: The tombs of Sicily’s Norman and Swabian kings.
+    Ballarò market: Palermo’s oldest market, loud, colourful, and still the real thing.
+    The Kalsa: The old Arab quarter and its hidden palaces.
+  included:
+    - Licensed Palermo guide
+    - Royal Palace and Palatine Chapel entry
+    - Street food tasting
+  excluded:
+    - Lunch
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Piazza della Vittoria, at the entrance to the Royal Palace. Your guide will hold a Vatican Tours Inc sign.
+    Dress code: Shoulders and knees must be covered in the Palatine Chapel and churches.
+    Walking: About 5 km on flat streets.
+  prices: { private: [390, 410, 430, 450, 470, 490] }
+  times: ["09:00"]
+
+- slug: jewish-palermo
+  title: Jewish Palermo
+  tagline: The Giudecca Rediscovered
+  headline: Palermo’s Jewish heritage.
+  location: Sicily
+  hours: 3
+  transport: walking
+  meeting_point: Piazza Bellini, in front of the church of San Cataldo
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [jewish-palermo.webp, palermo-in-depth.webp, essential-palermo.webp]
+  description: |
+    For more than a thousand years, Palermo had one of the largest Jewish communities in Europe, until the Spanish expulsion of 1492 forced it out. This walk traces what it left behind in the old quarter of the Giudecca.
+
+    Your guide takes you through the streets where Jewish merchants, doctors, and craftsmen lived and worked, to the site of the Great Synagogue, the mikveh discovered beneath a Baroque palace, and the church of Santa Maria del Sabato.
+
+    Along the way, you’ll hear how Arab, Norman, and Jewish Palermo lived side by side, and how the city is rediscovering this part of its past.
+  highlights:
+    The Giudecca: The old Jewish quarter and its medieval street plan.
+    The mikveh: A ritual bath hidden beneath a Baroque palace.
+    The Great Synagogue: The site of one of the largest synagogues in medieval Europe.
+    A shared city: How Jews, Arabs, and Normans lived together in medieval Palermo.
+  included:
+    - Licensed Palermo guide
+  excluded:
+    - Entry fees
+    - Food and drinks
+  facts:
+    Meeting point: Piazza Bellini, in front of the church of San Cataldo. Your guide will hold a Vatican Tours Inc sign.
+    Opening times: Some sites keep irregular hours; your guide will adapt the route on the day.
+    Walking: About 2 km on flat streets.
+  prices: { private: [260, 280, 300, 320, 340, 360] }
+  times: ["09:30", "14:30"]
+
+- slug: palermo-food-tour
+  title: Palermo Food Tour
+  tagline: Europe’s Street Food Capital
+  headline: Palermo’s vibrant street food and the traditions behind its local flavours.
+  location: Sicily
+  hours: 3
+  transport: walking
+  badge: food
+  meeting_point: Teatro Massimo, on the front steps
+  languages: [en, es, fr, it, de]
+  tags: [food_and_cooking, with_kids]
+  photos: [palermo-restaurants.webp, essential-palermo.webp, palermo-in-depth.webp]
+  description: |
+    Palermo eats on the street, and has done for centuries. Its markets are among the oldest in Europe, and the food they sell tells the story of everyone who has ruled the island.
+
+    Your guide leads you through the Capo and Ballarò markets, stopping for arancine, panelle, and sfincione, then for pane con la milza if you’re brave enough to try Palermo’s favourite sandwich.
+
+    The tour finishes with a cannolo filled to order and a granita, the Sicilian way to end any meal.
+  highlights:
+    The markets: Capo and Ballarò, loud, colourful, and still where Palermitans shop.
+    Arancine and panelle: Palermo’s classics, fried in front of you.
+    Pane con la milza: The city’s favourite street sandwich, for the adventurous.
+    Cannoli and granita: Sicily’s sweet side, filled and churned to order.
+  included:
+    - Licensed Palermo guide
+    - All food tastings
+    - A drink
+  excluded:
+    - Hotel pickup and drop-off
+    - Extra food and drinks
+  facts:
+    Meeting point: Teatro Massimo, on the front steps. Your guide will hold a Vatican Tours Inc sign.
+    Dietary needs: Vegetarian options are available. Let us know about allergies when you book.
+    Come hungry: The tastings add up to a full meal.
+  prices: { private: [260, 320, 380, 440, 500, 560] }
+  times: ["10:30", "17:00"]
+
+- slug: marsala-wine-tour-from-palermo
+  title: Marsala Wine Tour from Palermo
+  tagline: Salt Pans and Fortified Wine
+  headline: Marsala’s historic wine culture and the distinctive flavours of western Sicily.
+  location: Sicily
+  hours: 8
+  transport: car
+  badge: wine
+  meeting_point: Pickup from your Palermo hotel
+  languages: [en, es, fr, it, de]
+  tags: [wine]
+  photos: [marsala-wine-tour.webp, essential-palermo.webp, palermo-port.webp]
+  description: |
+    In 1773, an English merchant tasted the wine of Marsala and shipped it home fortified with brandy so it would survive the voyage. Within decades it was drunk across the British Empire, and Marsala became Sicily’s most famous wine.
+
+    Your driver collects you from your hotel in Palermo for the drive to the west coast. In Marsala, you visit a historic cellar for a tour of the barrels and a tasting of its wines, from dry to sweet, with local cheeses.
+
+    On the way back, you stop at the salt pans between Marsala and Trapani, where windmills still pump seawater into the shallow pools, glowing pink at the end of the day.
+  highlights:
+    A historic cellar: The barrels and the story of Marsala wine.
+    A guided tasting: Marsala from dry to sweet, with local cheeses.
+    The salt pans: Windmills and pink pools on the coast near Trapani.
+    Door to door: Hotel pickup and drop-off in Palermo.
+  included:
+    - Private car and driver
+    - Hotel pickup and drop-off in Palermo
+    - Winery visit and tasting
+  excluded:
+    - Lunch
+    - Gratuities
+  facts:
+    Pickup: From your hotel in Palermo. Send us its name when you book.
+    Wine tasting: Guests must be 18 or over to drink. Your driver doesn’t, so enjoy the tasting.
+    Travel time: About 1 hour 30 minutes each way.
+  prices: { private: 790, max_guests: 6 }
+  times: ["09:00"]
+
+- slug: monreale-and-cefalu-from-palermo
+  title: Norman Monreale and Medieval Cefalù from Palermo
+  tagline: Mosaics and a Seaside Cathedral
+  headline: Sicily’s Norman heritage, from Monreale’s mosaics to Cefalù’s medieval charm.
+  location: Sicily
+  hours: 6
+  transport: car
+  meeting_point: Pickup from your Palermo hotel
+  languages: [en, es, fr, it, de]
+  tags: [with_kids]
+  photos: [cefalu.webp, palermo-in-depth.webp, essential-palermo.webp]
+  description: |
+    The Norman kings of Sicily built two of the greatest cathedrals in Europe within a day’s ride of Palermo. This tour visits both.
+
+    First, Monreale, on the hill above the city, where the cathedral’s walls are covered in more than 6,000 square metres of golden mosaics, and the cloister has 228 carved columns, no two alike.
+
+    Then along the coast to Cefalù, a fishing town under a great rock, where King Roger II built his cathedral after surviving a storm at sea. There’s time for lunch and a walk on the beach before the drive back.
+  highlights:
+    Monreale Cathedral: Golden mosaics covering every wall.
+    The cloister: 228 carved columns, each one different.
+    Cefalù: A medieval fishing town under its great rock.
+    Time by the sea: Lunch and a stroll on Cefalù’s beach.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Hotel pickup and drop-off in Palermo
+  excluded:
+    - Cathedral and cloister entry fees
+    - Lunch
+  facts:
+    Pickup: From your hotel in Palermo. Send us its name when you book.
+    Dress code: Shoulders and knees must be covered in both cathedrals.
+    Travel time: About 1 hour from Monreale to Cefalù.
+  prices: { private: 690, max_guests: 6 }
+  times: ["09:00"]
+
+- slug: best-of-palermo-port-of-call
+  title: Best of Palermo Port of Call
+  tagline: Palermo in One Port Day
+  headline: Palermo’s highlights, rich history, and vibrant local culture in one memorable port day.
+  location: Sicily
+  hours: 7
+  transport: car
+  badge: cruise
+  meeting_point: Palermo cruise terminal, at the passenger exit
+  languages: [en, es, fr, it, de]
+  tags: [cruises, with_kids]
+  photos: [palermo-port.webp, essential-palermo.webp, palermo-in-depth.webp]
+  description: |
+    Palermo’s port sits right next to the old city, but with only a day ashore it pays to know where you’re going. This shore excursion makes the most of every hour and gets you back to the ship on time.
+
+    Your guide and driver meet you at the terminal. The morning takes in Monreale and its golden mosaics on the hill above the city, then drops down into Palermo for the Cathedral and the Palatine Chapel.
+
+    After lunch, you walk the Quattro Canti and the Ballarò market, with a taste of street food, before the car takes you back to the ship.
+  highlights:
+    Monreale: Golden mosaics on the hill above the city.
+    The Palatine Chapel: The jewel of Norman Palermo.
+    Ballarò market: Street food in Palermo’s oldest market.
+    Back on time: We plan around your all-aboard time.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Pickup and drop-off at the cruise terminal
+  excluded:
+    - Entry fees
+    - Lunch
+  facts:
+    Meeting point: Palermo cruise terminal, at the passenger exit. Send us your ship’s name when you book.
+    All aboard: We have you back at the ship at least an hour before departure.
+    Dress code: Shoulders and knees must be covered in churches.
+  prices: { private: 790, max_guests: 6 }
+  times: ["08:30"]
+
+- slug: catania-and-taormina-port-of-call
+  title: Catania and Taormina Port of Call
+  tagline: Baroque Streets and Clifftop Views
+  headline: Catania’s baroque charm and Taormina’s breathtaking coastal views in one unforgettable port day.
+  location: Sicily
+  hours: 7
+  transport: car
+  badge: cruise
+  meeting_point: Catania cruise terminal, at the passenger exit
+  languages: [en, es, fr, it, de]
+  tags: [cruises, with_kids]
+  photos: [catania.webp, taormina.webp, taormina-2.webp]
+  description: |
+    Catania was rebuilt in black lava stone after the earthquake of 1693, and Taormina has looked down on the Ionian Sea since the Greeks founded it. This shore excursion shows you both.
+
+    Your guide meets you at the terminal for a walk through Catania’s Baroque centre: the Cathedral of Sant’Agata, the elephant fountain, and the fish market, loud and theatrical every morning.
+
+    Then the car climbs to Taormina, where the Greek theatre frames Mount Etna and the sea. There’s time for lunch and the shops of Corso Umberto before the drive back to the ship.
+  highlights:
+    Catania’s Baroque centre: A city rebuilt in black lava stone.
+    The fish market: Catania’s morning theatre.
+    The Greek theatre: Etna and the sea from Taormina’s ancient stage.
+    Back on time: We plan around your all-aboard time.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Pickup and drop-off at the cruise terminal
+  excluded:
+    - Greek theatre entry
+    - Lunch
+  facts:
+    Meeting point: Catania cruise terminal, at the passenger exit. Send us your ship’s name when you book.
+    All aboard: We have you back at the ship at least an hour before departure.
+    Travel time: About 1 hour from Catania to Taormina.
+  prices: { private: 750, max_guests: 6 }
+  times: ["08:30"]
+
+- slug: syracuse-and-noto-port-of-call
+  title: Catania, Syracuse and Baroque Noto Port of Call
+  tagline: Greek Syracuse and Golden Noto
+  headline: Syracuse’s historic heart and Noto’s Baroque beauty on a shore excursion from Catania.
+  location: Sicily
+  hours: 8
+  transport: car
+  badge: cruise
+  meeting_point: Catania cruise terminal, at the passenger exit
+  languages: [en, es, fr, it, de]
+  tags: [cruises]
+  photos: [syracuse.webp, baroque-noto.webp, catania.webp]
+  description: |
+    Syracuse was once the largest city in the Greek world, a rival to Athens. Noto, just inland, was rebuilt after the earthquake of 1693 as a Baroque stage set in golden stone. This shore excursion from Catania covers both.
+
+    Your driver meets you at the terminal for the drive south to Syracuse and the island of Ortigia, where the cathedral was built around a Greek temple and its Doric columns still stand in the walls. Your guide leads you to the Fountain of Arethusa and through the old streets.
+
+    After lunch, the car takes you to Noto, for a walk along Corso Vittorio Emanuele past churches and palaces glowing honey-gold, before the drive back to Catania.
+  highlights:
+    Ortigia: The island at the heart of Greek Syracuse.
+    Syracuse Cathedral: A Greek temple inside a Baroque church.
+    Noto: A whole town rebuilt in golden Baroque stone.
+    Back on time: We plan around your all-aboard time.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Pickup and drop-off at the cruise terminal
+  excluded:
+    - Entry fees
+    - Lunch
+  facts:
+    Meeting point: Catania cruise terminal, at the passenger exit. Send us your ship’s name when you book.
+    All aboard: We have you back at the ship at least an hour before departure.
+    Travel time: About 1 hour from Catania to Syracuse.
+  prices: { private: 890, max_guests: 6 }
+  times: ["08:00"]
+
+- slug: etna-wineries-port-of-call
+  title: Catania and Etna Wineries Port of Call
+  tagline: Wine from the Volcano
+  headline: Mount Etna’s volcanic landscapes and wines from its hillside vineyards.
+  location: Sicily
+  hours: 8
+  transport: car
+  badge: wine
+  meeting_point: Catania cruise terminal, at the passenger exit
+  languages: [en, es, fr, it, de]
+  tags: [cruises, wine]
+  photos: [catania-wineries.webp, etna-wineries.webp, catania.webp]
+  description: |
+    Mount Etna is Europe’s highest active volcano, and its black soil makes some of Italy’s most exciting wines. This shore excursion takes you from the port of Catania up its slopes.
+
+    Your driver meets you at the terminal and climbs through the lava fields to the Silvestri craters, where you can walk the rim of a crater formed in 1892.
+
+    Then down to the vineyards on the northern slope, for a cellar visit and a tasting of Etna Rosso and Bianco with a lunch of local produce, before the drive back to the ship.
+  highlights:
+    The Silvestri craters: Walk the rim of an extinct crater on Etna’s slope.
+    Lava fields: The landscape of recent eruptions, up close.
+    A volcanic winery: Etna Rosso and Bianco, tasted where they grow.
+    Back on time: We plan around your all-aboard time.
+  included:
+    - Private car and driver
+    - Winery visit, tasting, and light lunch
+    - Pickup and drop-off at the cruise terminal
+  excluded:
+    - Cable car and summit excursions
+    - Gratuities
+  facts:
+    Meeting point: Catania cruise terminal, at the passenger exit. Send us your ship’s name when you book.
+    All aboard: We have you back at the ship at least an hour before departure.
+    Wine tasting: Guests must be 18 or over to drink. Your driver doesn’t, so enjoy the tasting.
+    Bring a layer: It’s cooler on the volcano, even in summer.
+  prices: { private: 890, max_guests: 6 }
+  times: ["08:00"]
+
+- slug: catania-to-taormina-transfer
+  title: Transfer from Catania to Taormina
+  tagline: Airport to Hilltop, Door to Door
+  headline: From Catania to Taormina with a private transfer tailored to your schedule.
+  location: Sicily
+  hours: 1
+  transport: car
+  meeting_point: Catania airport arrivals hall, or your Catania hotel
+  languages: [en, es, fr, it, de, pt]
+  tags: [transfers, with_kids]
+  photos: [taormina-2.webp, catania.webp, taormina.webp]
+  description: |
+    Taormina sits on a cliff above the sea, and the road up to it is steep, narrow, and short on parking. This private transfer takes you there from Catania airport, the station, or your hotel, without the bus.
+
+    Your driver meets you with a name sign, loads your luggage, and drives up the coast with Etna on one side and the sea on the other.
+
+    You’re dropped at your hotel’s door, or as close as the town’s limited traffic zone allows.
+  highlights:
+    Met on arrival: A driver waiting with your name.
+    Flight tracking: Your driver waits if your flight is late.
+    The coast road: Etna on one side, the sea on the other.
+    Door to door: To your hotel in Taormina.
+  included:
+    - Private car and driver
+    - Meet-and-greet
+    - Luggage handling
+  excluded:
+    - Gratuities
+  facts:
+    Meeting point: Catania airport arrivals hall, or your Catania hotel. Send us your flight number or hotel when you book.
+    Delays: We track your flight. If it’s late, your driver waits at no extra cost.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+  prices: { private: 160, max_guests: 6 }
+  times: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
+
+- slug: godfather-tour-from-taormina
+  title: Godfather Tour from Taormina
+  tagline: Savoca, Forza d’Agrò, and Bar Vitelli
+  headline: Visit Savoca and Forza d’Agrò, the Sicilian villages featured in The Godfather.
+  location: Sicily
+  hours: 6
+  transport: car
+  meeting_point: Pickup from your Taormina hotel
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [taormina.webp, taormina-2.webp, catania.webp]
+  description: |
+    When Francis Ford Coppola came to film The Godfather in 1971, Corleone had grown too modern, so he shot Michael’s Sicilian exile in two hill villages north of Taormina instead. Both look much as they did on screen.
+
+    Your driver collects you from your hotel for the drive to Savoca, where you’ll sit at Bar Vitelli, where Michael asks for Apollonia’s hand, and see the church where they married.
+
+    Then on to Forza d’Agrò, a village of stone lanes and views over the sea, which stood in for Corleone in The Godfather Part II.
+  highlights:
+    Bar Vitelli: A granita where Michael met Apollonia’s father.
+    The wedding church: Santa Lucia in Savoca, as it was on screen.
+    Forza d’Agrò: The Corleone of The Godfather Part II.
+    Sea views: Hill villages above the Ionian coast.
+  included:
+    - Private car and driver
+    - Hotel pickup and drop-off in Taormina
+  excluded:
+    - Food and drinks
+    - Gratuities
+  facts:
+    Pickup: From your hotel in Taormina. Send us its name when you book.
+    Walking: Steep cobbled lanes in both villages. Comfortable shoes recommended.
+    Travel time: About 30 minutes to Savoca.
+  prices: { private: 490, max_guests: 6 }
+  times: ["09:00", "14:00"]
+
+- slug: syracuse-and-noto-from-taormina
+  title: Catania, Syracuse and Baroque Noto from Taormina
+  tagline: Eastern Sicily in a Day
+  headline: Eastern Sicily’s ancient heritage and Baroque architecture on a full-day trip from Taormina.
+  location: Sicily
+  hours: 6
+  transport: car
+  meeting_point: Pickup from your Taormina hotel
+  languages: [en, es, fr, it, de]
+  tags: []
+  photos: [baroque-noto.webp, syracuse.webp, catania.webp]
+  description: |
+    South of Taormina lies the Sicily of postcards: Greek Syracuse on its island, and Noto, a town of golden Baroque stone. This private day trip takes you to both, by way of Catania.
+
+    Your driver collects you from your hotel and heads south past Etna. In Syracuse, your guide leads you around the island of Ortigia, to the cathedral built around a Greek temple and the Fountain of Arethusa.
+
+    Then on to Noto, for a walk along Corso Vittorio Emanuele past churches and palaces glowing honey-gold, before the drive back to Taormina.
+  highlights:
+    Ortigia: The island at the heart of Greek Syracuse.
+    Syracuse Cathedral: A Greek temple inside a Baroque church.
+    Noto: A whole town rebuilt in golden Baroque stone.
+    Door to door: Hotel pickup and drop-off in Taormina.
+  included:
+    - Private car and driver
+    - Licensed guide
+    - Hotel pickup and drop-off in Taormina
+  excluded:
+    - Entry fees
+    - Lunch
+  facts:
+    Pickup: From your hotel in Taormina. Send us its name when you book.
+    Travel time: About 1 hour 30 minutes from Taormina to Syracuse.
+    Dress code: Shoulders and knees must be covered in churches.
+  prices: { private: 890, max_guests: 6 }
+  times: ["08:00"]
+
+- slug: etna-wineries-from-taormina
+  title: Etna Wineries from Taormina
+  tagline: Vineyards on the Volcano
+  headline: Taste volcanic wines and explore Etna’s scenic vineyards on a day trip from Taormina.
+  location: Sicily
+  hours: 6
+  transport: car
+  badge: wine
+  meeting_point: Pickup from your Taormina hotel
+  languages: [en, es, fr, it, de]
+  tags: [wine]
+  photos: [etna-wineries.webp, catania-wineries.webp, taormina.webp]
+  description: |
+    Etna’s northern slope, a short drive from Taormina, is one of the most exciting wine regions in Italy. Its vines grow on old lava terraces, some of them ungrafted and more than a century old.
+
+    Your driver collects you from your hotel and drives into the hills around Castiglione di Sicilia and Randazzo, where the vineyards run up the side of the volcano.
+
+    You’ll visit two wineries for a tour of the vines and cellars and a tasting of Etna Rosso, Bianco, and Rosato, with lunch of local produce at one of them.
+  highlights:
+    Two volcanic wineries: Cellar tours and tastings on Etna’s northern slope.
+    Ancient vines: Terraces of old ungrafted vines on black lava soil.
+    A winery lunch: Local cheeses, salumi, and olive oil with the wine.
+    Door to door: Hotel pickup and drop-off in Taormina.
+  included:
+    - Private car and driver
+    - Two winery visits and tastings
+    - Light lunch
+    - Hotel pickup and drop-off in Taormina
+  excluded:
+    - Gratuities
+  facts:
+    Pickup: From your hotel in Taormina. Send us its name when you book.
+    Wine tasting: Guests must be 18 or over to drink. Your driver doesn’t, so enjoy the tasting.
+    Bring a layer: It’s cooler on the volcano, even in summer.
+  prices: { private: 790, max_guests: 6 }
+  times: ["09:30"]
+
+- slug: taormina-to-amalfi-coast-transfer
+  title: Transfer from Taormina to Amalfi Coast
+  tagline: Sicily to the Mainland, Door to Door
+  headline: Travel in comfort with a private, door-to-door transfer.
+  location: Sicily
+  hours: 8
+  transport: car
+  meeting_point: Pickup from your Taormina hotel
+  languages: [en, es, fr, it, de, pt]
+  tags: [transfers]
+  photos: [amalfi-coast.webp, taormina-2.webp, positano.webp]
+  description: |
+    Getting from Taormina to the Amalfi Coast by public transport means a train, a ferry across the Strait of Messina, another train, and a bus at the end. This private transfer does it in one go.
+
+    Your driver collects you from your hotel, drives you onto the ferry across the Strait, and heads north up the length of Calabria, with stops for coffee and lunch when you want them.
+
+    You’re dropped at your hotel’s door in Positano, Amalfi, Ravello, or Sorrento.
+  highlights:
+    Door to door: From your Taormina hotel to your hotel on the coast.
+    Across the Strait: The ferry from Sicily to the mainland, without leaving the car.
+    No changes: One car, one driver, all your luggage.
+    Stops if you like: Coffee or lunch on the way, at your pace.
+  included:
+    - Private car and driver
+    - Strait of Messina ferry
+    - Luggage handling
+    - Tolls and fuel
+  excluded:
+    - Meals
+    - Gratuities
+  facts:
+    Pickup: From your hotel in Taormina. Send us its name when you book.
+    Luggage: One large suitcase and one carry-on per guest. Let us know if you’re bringing more.
+    Travel time: About 7 to 8 hours, depending on traffic and the ferry.
+  prices: { private: 1590, max_guests: 6 }
+  times: ["08:00"]

@@ -40,6 +40,17 @@ module ToursHelper
     euros(tour.starting_price_cents || DEFAULT_PRICE_CENTS)
   end
 
+  # Label and price pairs for a tour card: [["Private", "€390"], ["Group", "€65"]] when it sells both, else one pair.
+  def tour_card_prices(tour)
+    if tour_format(tour) == "Private or Group"
+      both = { "Private" => "private", "Group" => "group" }.filter_map do |label, kind|
+        (cents = tour.starting_price_cents(kind)) && [ label, euros(cents) ]
+      end
+      return both if both.size == 2
+    end
+    [ [ tour_price_label(tour), tour_price(tour) ] ]
+  end
+
   def tour_categories(tour)
     kinds = tour.offered_kinds
     categories = []

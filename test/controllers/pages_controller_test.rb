@@ -9,7 +9,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "article[data-tour-filter-target=card]", 3
     assert_select "article", text: /Unfinished Tour/, count: 0
-    assert_select "article[data-categories=?]", [ "Private Tours", "Small Group", "Wheelchair", "With Kids" ].to_json, text: /Private or Group\s*€65/
+    assert_select "article[data-categories=?]", [ "Private Tours", "Small Group", "Wheelchair", "With Kids" ].to_json, text: /Private\s*€390\s*\|\s*Group\s*€65/
     assert_select "article", text: /Trastevere Food Tour.*Private\s*€500/m
     assert_select "article", text: /1 hour 30 min.*#{unpriced.title}.*From\s*€100/m
     assert_no_match "★", response.body

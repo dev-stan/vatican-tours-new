@@ -47,9 +47,11 @@ class Tour < ApplicationRecord
 
   def to_param = slug
 
-  # The lowest price to join: the cheapest adult group ticket or the private price. Nil until the tour has prices.
-  def starting_price_cents
-    ticket_types.select { |ticket| ticket.kind_private? || ticket.adult? }.map(&:price_cents).min
+  # The lowest price to join: the cheapest adult group ticket or the private price, optionally of one kind only.
+  # Nil until the tour has prices.
+  def starting_price_cents(kind = nil)
+    ticket_types.select { |ticket| (kind.nil? || ticket.kind == kind) && (ticket.kind_private? || ticket.adult?) }
+                .map(&:price_cents).min
   end
 
   # Private tickets by party size, smallest first; a private party pays the first one it fits.

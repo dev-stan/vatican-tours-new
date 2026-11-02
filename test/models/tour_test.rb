@@ -126,5 +126,7 @@ class TourTest < ActiveSupport::TestCase
     assert_equal 65_00, tours(:ancient_rome).starting_price_cents
     assert_equal 500_00, tours(:food_tour).starting_price_cents
     assert_nil Tour.new.starting_price_cents
+    assert_equal 390_00, tours(:ancient_rome).starting_price_cents("private")
+    assert_equal 65_00, tours(:ancient_rome).starting_price_cents("group")
   end
 end
