@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   CATEGORIES = [
     "Self Guided", "Private Tours", "Small Group", "With Kids", "Wheelchair",
-    "Transfers", "Cruises", "Food and Cooking", "Wine Tours", "Active"
+    "Transfers", "Day Trips", "Cruises", "Food and Cooking", "Wine Tours", "Active"
   ].freeze
 
   # Short place names for the hero title ("Vatican Seen Up Close"); unlisted regions use their tab label.

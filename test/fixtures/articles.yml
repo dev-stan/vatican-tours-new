@@ -1,0 +1,18 @@
+lagoon_wineries:
+  title: The Wineries of the Venetian Lagoon
+  slug: venetian-lagoon-wineries
+  excerpt: Golden grapes behind medieval walls.
+  status: published
+  published_at: <%= 2.days.ago.to_fs(:db) %>
+  tour: ancient_rome
+
+draft_story:
+  title: An Unfinished Story
+  slug: unfinished-story
+  status: draft
+
+future_story:
+  title: A Story Coming Soon
+  slug: coming-soon
+  status: published
+  published_at: <%= 3.days.from_now.to_fs(:db) %>

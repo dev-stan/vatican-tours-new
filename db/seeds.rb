@@ -16,6 +16,25 @@ def attach_photos(tour, files)
   end
 end
 
+# Slugs of tours since renamed or dropped from tours.yml. They go before seeding so their codes are free
+# for the new tours; one with bookings can't be deleted, so it's unpublished and loses its code instead.
+RETIRED_SLUGS = %w[
+  self-guided-vatican-museums-sistine-chapel self-guided-all-vatican-priority-passes vatican-city-essentials
+  st-peters-in-depth vatican-gardens-in-depth vatican-scavi-st-peters-tomb essential-vatican-museums
+  vatican-city-in-depth self-guided-all-day-in-vatican-city all-day-in-vatican-city papal-audience-tickets-assistance
+].freeze
+
+Tour.where(slug: RETIRED_SLUGS).find_each do |tour|
+  if tour.bookings.exists?
+    tour.update!(code: nil, status: "draft")
+    puts "#{tour.title}: has bookings, unpublished instead of deleted"
+  else
+    tour.departures.delete_all(:delete_all)
+    tour.destroy!
+    puts "#{tour.title}: deleted"
+  end
+end
+
 from = Date.current
 to = from + 8.weeks
 
@@ -81,4 +100,24 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
                                skip_dates: CLOSED_DAYS.(from, to))
   end
   puts "#{tour.title}: #{created} departures created"
+end
+
+# Blog articles. Images are replaced only when the file name in articles.yml changes.
+YAML.load_file(Rails.root.join("db/seeds/articles.yml")).each do |data|
+  article = Article.find_or_initialize_by(slug: data["slug"])
+  article.update!(
+    **data.slice("title", "excerpt", "body").symbolize_keys,
+    published_at: Time.zone.parse(data["published_at"].to_s),
+    tour: data["tour"] && Tour.find_by!(slug: data["tour"]),
+    status: "published"
+  )
+
+  %w[hero_image tour_image].each do |name|
+    attachment = article.public_send(name)
+    next if attachment.attached? && attachment.filename.to_s == data[name]
+
+    path = Rails.root.join("app/assets/images/tours", data[name])
+    attachment.attach(io: path.open, filename: data[name], content_type: "image/webp")
+  end
+  puts "#{article.title}: article seeded"
 end

@@ -5,7 +5,13 @@ module ToursHelper
   # Tags as the home page category checkboxes label them. "Private Tours" and "Small Group" come from ticket types.
   TAG_CATEGORIES = {
     "self_guided" => "Self Guided", "with_kids" => "With Kids", "wheelchair" => "Wheelchair", "transfers" => "Transfers",
-    "cruises" => "Cruises", "food_and_cooking" => "Food and Cooking", "wine" => "Wine Tours", "active" => "Active"
+    "day_trip" => "Day Trips",     "cruises" => "Cruises", "food_and_cooking" => "Food and Cooking", "wine" => "Wine Tours", "active" => "Active"
+  }.freeze
+
+  # The pill text for each Tour badge. A badge is one of the tour's tags, so these are keyed by tag.
+  BADGE_LABELS = {
+    "wine" => "Wine Trip", "day_trip" => "Day Trip", "transfers" => "Transfer Tour", "wheelchair" => "Wheelchairs",
+    "with_kids" => "Kids Friendly", "cruises" => "Cruise", "active" => "Active"
   }.freeze
 
   LANGUAGE_NAMES = { "en" => "English", "es" => "Spanish", "fr" => "French", "it" => "Italian", "de" => "German", "pt" => "Portuguese" }.freeze

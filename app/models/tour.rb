@@ -1,6 +1,6 @@
 class Tour < ApplicationRecord
   LANGUAGES = %w[en es fr it de pt].freeze
-  TAGS = %w[self_guided with_kids wheelchair transfers cruises food_and_cooking wine active].freeze
+  TAGS = %w[self_guided with_kids wheelchair transfers day_trip cruises food_and_cooking wine active].freeze
 
   has_many_attached :photos
 
@@ -10,12 +10,15 @@ class Tour < ApplicationRecord
   has_many :ticket_types, -> { order(:position) }, dependent: :destroy
   has_many :departures, dependent: :restrict_with_error
   has_many :bookings, dependent: :restrict_with_error
+  has_many :articles, dependent: :nullify
 
   enum :status, { draft: "draft", published: "published" }, validate: true
   # How the tour gets around; picks the icon on the tour card.
   enum :transport, { walking: "walking", boat: "boat", car: "car" }, prefix: true, validate: true
-  # Optional pill on the tour card photo; at most one per tour.
-  enum :badge, { wheelchair: "wheelchair", cruise: "cruise", food: "food", wine: "wine", active: "active" }, prefix: true, validate: { allow_nil: true }
+  # Optional pill on the tour card photo: one of the tour's own tags, featured. The tours_badge_valid
+  # check constraint enforces both rules in the database too.
+  enum :badge, { wine: "wine", day_trip: "day_trip", transfers: "transfers", wheelchair: "wheelchair",
+                 with_kids: "with_kids", cruises: "cruises", active: "active" }, prefix: true, validate: { allow_nil: true }
 
   normalizes :languages, :tags, with: ->(values) { Array(values).map(&:to_s).compact_blank.uniq }
 
@@ -23,7 +26,7 @@ class Tour < ApplicationRecord
   validates :slug, presence: true, uniqueness: true, format: { with: /\A[a-z0-9]+(?:-[a-z0-9]+)*\z/ }
   validates :code, uniqueness: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
   validates :duration_minutes, numericality: { only_integer: true, greater_than: 0 }
-  validate :languages_are_known, :tags_are_known
+  validate :languages_are_known, :tags_are_known, :badge_is_tagged
 
   # Tours carrying ALL of the given tags. Tags live in a json array (SQLite has no
   # array type); on Postgres this becomes `where("tags @> ARRAY[?]::varchar[]", tags)`.
@@ -79,5 +82,10 @@ class Tour < ApplicationRecord
     def tags_are_known
       unknown = tags - TAGS
       errors.add(:tags, "contains unknown tags: #{unknown.join(", ")}") if unknown.any?
+    end
+
+    def badge_is_tagged
+      return if badge.nil? || tags.include?(badge)
+      errors.add(:badge, "must also be ticked in Tags (#{ToursHelper::TAG_CATEGORIES.fetch(badge, badge.humanize)})")
     end
 end

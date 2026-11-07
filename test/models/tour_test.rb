@@ -53,6 +53,27 @@ class TourTest < ActiveSupport::TestCase
     assert tour.valid?
   end
 
+  test "badge must be one of the tour's tags" do
+    tour = tours(:ancient_rome)
+    tour.badge = "wheelchair"
+    assert tour.valid?
+
+    tour.badge = "wine"
+    assert_not tour.valid?
+    assert_match "Tags", tour.errors[:badge].first
+  end
+
+  test "the database rejects a badge missing from the tags" do
+    tour = tours(:ancient_rome)
+    tour.update!(badge: "with_kids")
+    assert_raises(ActiveRecord::CheckViolation) { tour.update_columns(tags: [ "wheelchair" ]) }
+  end
+
+  test "every badge is a tag with a pill label" do
+    assert_empty Tour.badges.keys - Tour::TAGS
+    assert_equal Tour.badges.keys.sort, ToursHelper::BADGE_LABELS.keys.sort
+  end
+
   test "tags are normalized and default to empty" do
     assert_equal [], Tour.new.tags
     tour = Tour.new(tags: [ :wine, "wine", "", nil ])

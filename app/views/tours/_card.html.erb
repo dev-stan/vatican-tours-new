@@ -7,7 +7,7 @@
       <%= image_tag photo, alt: "", loading: "lazy", class: "absolute inset-0 block size-full object-cover" %>
     <% end %>
     <% if tour.badge %>
-      <span class="absolute top-2.5 left-2.5 rounded-full bg-black/40 px-3 py-1 text-[15px] leading-tight text-white backdrop-blur-sm"><%= tour.badge.humanize %></span>
+      <span class="absolute top-2.5 left-2.5 rounded-full bg-black/40 px-3 py-1 text-[15px] leading-tight text-white backdrop-blur-sm"><%= ToursHelper::BADGE_LABELS.fetch(tour.badge, tour.badge.humanize) %></span>
     <% end %>
   </div>
 

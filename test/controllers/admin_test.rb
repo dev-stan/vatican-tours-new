@@ -19,7 +19,7 @@ class AdminTest < ActionDispatch::IntegrationTest
   end
 
   test "every resource lists, shows and edits" do
-    records = [ bookings(:confirmed), departures(:group_open), tours(:ancient_rome), ticket_types(:adult) ]
+    records = [ bookings(:confirmed), departures(:group_open), tours(:ancient_rome), ticket_types(:adult), articles(:lagoon_wineries) ]
     records << tours(:ancient_rome).highlights.create!(title: "Palatine Hill")
     records << tours(:ancient_rome).inclusions.create!(label: "Licensed guide")
     records << tours(:ancient_rome).tour_facts.create!(label: "Bring ID", body: "Checked at the gate.")

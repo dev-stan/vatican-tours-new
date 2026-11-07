@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_07_090000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_08_130000) do
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -37,6 +47,21 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_07_090000) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.string "status", default: "draft", null: false
+    t.datetime "published_at"
+    t.text "excerpt"
+    t.integer "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_articles_on_slug", unique: true
+    t.index ["status", "published_at"], name: "index_articles_on_status_and_published_at"
+    t.index ["tour_id"], name: "index_articles_on_tour_id"
+    t.check_constraint "status IN ('draft', 'published')", name: "articles_status_valid"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -151,7 +176,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_07_090000) do
     t.index ["code"], name: "index_tours_on_code", unique: true
     t.index ["slug"], name: "index_tours_on_slug", unique: true
     t.index ["status"], name: "index_tours_on_status"
-    t.check_constraint "badge IS NULL OR badge IN ('wheelchair', 'cruise', 'food', 'wine', 'active')", name: "tours_badge_valid"
+    t.check_constraint "badge IS NULL OR ( badge IN ('wine', 'day_trip', 'transfers', 'wheelchair', 'with_kids', 'cruises', 'active') AND instr(tags, '\"' || badge || '\"') > 0 )", name: "tours_badge_valid"
     t.check_constraint "duration_minutes > 0", name: "tours_duration_positive"
     t.check_constraint "status IN ('draft', 'published')", name: "tours_status_valid"
     t.check_constraint "transport IN ('walking', 'boat', 'car')", name: "tours_transport_valid"
@@ -159,6 +184,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_07_090000) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "articles", "tours", on_delete: :nullify
   add_foreign_key "bookings", "departures"
   add_foreign_key "bookings", "tours"
   add_foreign_key "departures", "tours"

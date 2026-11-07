@@ -25,6 +25,25 @@
   }
 }
 
+/* Blog post bodies, written in Avo's rich text editor (ActionText). */
+.article-body {
+  @apply text-[17px] leading-[1.7] text-ink/85;
+
+  & .trix-content > * + * { @apply mt-6; }
+  & h1, & h2 { @apply mt-12 font-serif text-[clamp(26px,3vw,32px)] leading-[1.15] font-medium text-ink; }
+  & h3 { @apply mt-10 text-[19px] font-semibold text-ink; }
+  & a { @apply underline decoration-1 underline-offset-4 hover:text-terracotta-deep; }
+  & strong { @apply font-semibold text-ink; }
+  & ul { @apply list-disc space-y-2 pl-6; }
+  & ol { @apply list-decimal space-y-2 pl-6; }
+  & blockquote { @apply border-l-2 border-terracotta pl-6 font-serif text-[22px] leading-[1.45] text-ink italic; }
+  & pre { @apply overflow-x-auto rounded-[12px] bg-white/70 p-4 text-[15px]; }
+  & figure.attachment { @apply my-10; }
+  & figure.attachment img { @apply block h-auto w-full rounded-[16px]; }
+  & .attachment__caption { @apply mt-3 block text-center text-sm text-muted; }
+  & .attachment__name, & .attachment__size { @apply hidden; }
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

@@ -3,7 +3,8 @@
 # code:        the tour's ID, shown in the admin. Vatican tours are 100+; the rest are placeholders from 0
 # hours:       tour length (decimals allowed, e.g. 2.5)
 # transport:   walking, boat or car; picks the icon on the tour card
-# badge:       optional pill on the card photo: wheelchair, cruise, food, wine or active (omit for none)
+# badge:       optional pill on the card photo, featuring one of the tour's tags: wine, day_trip, transfers, wheelchair,
+#              with_kids, cruises or active (omit for none). The tag must also be in tags.
 # photos:      files in app/assets/images/tours; the first one is the card image (optional)
 # subtitle:    the line under the tour name on its card and page
 # region:      one of PagesController::REGIONS (the home page tabs)
@@ -527,7 +528,7 @@
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it]
-  tags: []
+  tags: [day_trip]
   photos: [villa_deste.webp, countryside_palace.webp, roman_ruins.webp]
   what_we_think: |
     Thirty kilometers east of Rome, the town of Tivoli has been the city’s summer retreat for two thousand years. Emperor Hadrian built a private city here, and fifteen centuries later a cardinal built the most extravagant water garden in Europe.
@@ -570,7 +571,7 @@
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, fr, de]
-  tags: []
+  tags: [day_trip]
   photos: [ostia_antica.webp, roman_ruins.webp, appian_way.webp]
   what_we_think: |
     Pompeii gets the crowds, but Ostia Antica was Rome’s own harbor town, and it’s nearly as well preserved. Pair it with the Etruscan necropolis of Cerveteri and you get two civilizations in one day, without long drives.
@@ -613,7 +614,7 @@
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, it, fr]
-  tags: []
+  tags: [day_trip]
   photos: [countryside_palace.webp, villa_deste.webp, vineyard.webp]
   what_we_think: |
     Renaissance cardinals spent their summers in the hills of Lazio, and they built palaces there to rival anything in Rome. Few tourists make the trip, so the rooms and gardens are often empty.
@@ -657,7 +658,7 @@
   badge: wine
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, de]
-  tags: [wine, food_and_cooking]
+  tags: [wine, food_and_cooking, day_trip]
   photos: [vineyard.webp, countryside_palace.webp, villa_deste.webp]
   what_we_think: |
     The Castelli Romani, the volcanic hills south of Rome, are where Romans go on weekends to eat and drink. The wine is crisp, the porchetta is famous, and the views stretch all the way back to the dome of St. Peter’s.
@@ -700,7 +701,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, it]
-  tags: []
+  tags: [day_trip]
   photos: [oplontis.webp, herculaneum.webp, ostia_antica.webp]
   what_we_think: |
     In AD 79, Vesuvius buried Pompeii in a single afternoon. The town that came out of the ash two thousand years later still has its bakeries, bars, brothels, and election slogans painted on the walls.
@@ -743,7 +744,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, de]
-  tags: []
+  tags: [day_trip]
   photos: [herculaneum.webp, roman_ruins.webp, ostia_antica.webp]
   what_we_think: |
     Vesuvius buried three very different places in AD 79: a busy town, a wealthy seaside resort, and a luxury villa. Seeing all three in one day shows how differently the eruption treated each.
@@ -787,7 +788,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr]
-  tags: [active]
+  tags: [active, day_trip]
   photos: [vesuvius.webp, herculaneum.webp, positano.webp]
   what_we_think: |
     Stand on the rim of the volcano in the morning, and walk the streets it destroyed in the afternoon. This is the full story of AD 79, from the crater down.
@@ -830,7 +831,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, it, pt]
-  tags: []
+  tags: [day_trip]
   photos: [positano.webp, capri_coastline.webp, herculaneum.webp]
   what_we_think: |
     Two of southern Italy’s great sights in one day: the ruins of Pompeii and the cliffside town of Positano, linked by one of the most beautiful roads in the world.
@@ -873,7 +874,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, de]
-  tags: []
+  tags: [day_trip]
   photos: [capri_coastline.webp, positano.webp, herculaneum.webp]
   what_we_think: |
     A long, full day around the Bay of Naples: Pompeii, the lemon groves of Sorrento, and a boat trip around the island of Capri.
@@ -917,7 +918,7 @@
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, pt]
-  tags: []
+  tags: [day_trip]
   photos: [assisi.webp, countryside_palace.webp, vineyard.webp]
   what_we_think: |
     Two hours north of Rome, Umbria is all olive groves, pink stone towns, and quiet roads. At its center is Assisi, home of St. Francis and one of the great pilgrimage sites of Europe.
@@ -959,7 +960,7 @@
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, de, it]
-  tags: [wine]
+  tags: [wine, day_trip]
   photos: [vineyard.webp, florence_duomo.webp, countryside_palace.webp]
   what_we_think: |
     The Val d’Orcia is the Tuscany of postcards: cypress-lined roads, golden hills, and stone villages on every ridge. It’s also an easy day trip from Rome.
@@ -1002,7 +1003,7 @@
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, pt]
-  tags: [wine]
+  tags: [wine, day_trip]
   photos: [florence_duomo.webp, vineyard.webp, countryside_palace.webp]
   what_we_think: |
     Three Tuscan icons in one day: the Renaissance art of Florence, the vineyards of Chianti, and the medieval city of Siena. It’s a long day, but the fast train makes it possible.
@@ -1702,104 +1703,13 @@
   times: ["07:30"]
   capacity: 8
 
-- slug: self-guided-vatican-museums-sistine-chapel
-  code: 100
-  title: Self-Guided Vatican Museums and Sistine Chapel
-  tagline: The Museums on Your Own Clock
-  subtitle: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
-  region: Vatican City
-  hours: 3
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it, de, pt]
-  tags: [self_guided, with_kids, wheelchair]
-  photos: [vatican-museums.webp, sistine-chapel.webp, vatican-museums-essentials.webp]
-  what_we_think: |
-    The queue for the Vatican Museums runs along the Vatican walls most mornings of the year, and in summer it can take two hours to reach the door. This visit skips it: a reserved, timed ticket, handed to you at the entrance, and the rest of the day is yours.
-  what_customers_think: "We like to go at our own pace with the audio guide. We only need tickets that let us skip the line in the morning."
-  customer_name: "Pierre & Camille"
-  customer_origin: "Bordeaux, France"
-  finer_details: |
-    Our host meets you across the road from the entrance, walks you through security, and gives you a printed map with the route most people want: the Pinecone Courtyard, the Gallery of Maps, the Raphael Rooms, and the Sistine Chapel at the end.
-
-    Inside there is no group to keep up with. Spend an hour with the Laocoön or rush straight to Michelangelo’s ceiling, and stay until closing if you like.
-  highlights:
-    Straight past the queue: A reserved, timed ticket and a host at the door to see you through security.
-    The Sistine Chapel: Michelangelo’s ceiling and Last Judgment, for as long as you want to look up.
-    The Raphael Rooms: The School of Athens and the frescoes that made Raphael’s name.
-    A route in your pocket: A printed map with the highlights marked, in your language.
-  included:
-    - Reserved, timed Vatican Museums ticket
-    - Sistine Chapel entry
-    - Host to meet you at the entrance
-    - Printed map and route
-  excluded:
-    - Guide inside the Museums
-    - St. Peter’s Basilica
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Our host will be there 15 minutes before your slot.
-    Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    Silence in the chapel: Photos and talking aren’t allowed in the Sistine Chapel.
-  prices: { adult: 45, child: 29 }
-  times: ["08:00", "09:00", "10:30", "12:00", "13:30", "15:00"]
-  days: [mon, tue, wed, thu, fri, sat]
-  capacity: 20
-
-- slug: self-guided-all-vatican-priority-passes
+- slug: guided-tour-essential-vatican-priority-passes
   code: 101
-  title: Self-Guided All Vatican with Priority Passes
-  tagline: Museums, Chapel, and Basilica, No Queues
-  subtitle: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
+  title: Vatican Museums, Sistine Chapel, St. Peter’s Basilica
+  tagline: Museums, Chapel, and Basilica in One Visit
+  subtitle: Guided tour of essential Vatican with priority passes
   region: Vatican City
   hours: 4
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it, de, pt]
-  tags: [self_guided, with_kids]
-  photos: [vatican-city.webp, vatican-museums.webp, basilica.webp]
-  what_we_think: |
-    The Vatican has two great queues, one for the Museums and one for St. Peter’s Basilica, and most visitors spend more of their day in them than inside. These passes cover both, so you can see the whole of Vatican City at your own pace.
-  what_customers_think: "Museums, Sistine Chapel, and the Basilica, all in one go, no queues anywhere. We do not need a guide."
-  customer_name: "Tomás"
-  customer_origin: "Santiago, Chile"
-  finer_details: |
-    Start with a timed entry to the Vatican Museums and walk the route at whatever speed suits you, through the Gallery of Maps and the Raphael Rooms to the Sistine Chapel.
-
-    Then use your priority pass for the Basilica: Michelangelo’s Pietà, Bernini’s bronze canopy over the papal altar, and the light falling through the dome. Our audio guide tells the story of each, whenever you press play.
-  highlights:
-    Two queues skipped: Priority entry to both the Vatican Museums and St. Peter’s Basilica.
-    The Sistine Chapel: Michelangelo’s ceiling, with no group to hurry you along.
-    St. Peter’s Basilica: The Pietà, Bernini’s canopy, and the largest church in the world.
-    An audio guide: The stories behind the art, on your phone and in your language.
-  included:
-    - Reserved, timed Vatican Museums ticket
-    - Sistine Chapel entry
-    - Priority entry to St. Peter’s Basilica
-    - Audio guide app
-    - Printed map and route
-  excluded:
-    - Live guide
-    - Dome climb
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
-    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    Bring headphones: The audio guide plays on your own phone.
-  prices: { adult: 75, child: 49 }
-  times: ["08:00", "09:00", "10:30", "12:00", "13:30"]
-  days: [mon, tue, wed, thu, fri, sat]
-  capacity: 20
-
-- slug: vatican-city-essentials
-  code: 102
-  title: Vatican City Essentials
-  tagline: Museums, Chapel, and Basilica in One Visit
-  subtitle: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
-  region: Vatican City
-  hours: 3
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de]
@@ -1818,7 +1728,7 @@
     The Sistine Chapel: Michelangelo’s ceiling and Last Judgment, explained before you walk in.
     The Raphael Rooms: The School of Athens and the frescoes painted for Pope Julius II.
     Straight into St. Peter’s: The shortcut from the chapel to the Basilica, past the outside queue.
-    Your own guide: A private guide for your party, with the route shaped around your questions.
+    Private or small group: Join a small group, or book a guide just for your party.
   included:
     - Skip-the-line Vatican Museums ticket
     - Sistine Chapel and St. Peter’s Basilica entry
@@ -1833,17 +1743,247 @@
     Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
     Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
     Walking: About 2 km, mostly indoors, with lifts available. Strollers and wheelchairs welcome.
-  prices: { private: [380, 400, 420, 440, 460, 480] }
+  prices: { adult: 0, child: 0, private: [380, 400, 420, 440, 460, 480] }
   times: ["08:00", "10:00", "13:00"]
   days: [mon, tue, wed, thu, fri, sat]
 
-- slug: st-peters-in-depth
-  code: 103
-  title: St. Peter’s in Depth
-  tagline: The Basilica, the Grottoes, and the Dome
-  subtitle: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
+- slug: essential-vatican-priority-passes
+  code: 102
+  title: Self-Guided Vatican Museums, Sistine Chapel, St. Peter’s Basilica
+  tagline: Museums, Chapel, and Basilica on Your Own Clock
+  subtitle: Essential Vatican with priority passes
   region: Vatican City
-  hours: 2.5
+  hours: 3
+  transport: walking
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, with_kids, wheelchair]
+  photos: [vatican-museums.webp, sistine-chapel.webp, vatican-museums-essentials.webp]
+  what_we_think: |
+    The Vatican has two great queues, one for the Museums and one for St. Peter’s Basilica, and in summer each can take an hour or more. These passes skip both: a reserved, timed ticket handed to you at the Museums entrance, priority entry to the Basilica, and the rest of the day is yours.
+  what_customers_think: "We like to go at our own pace. We only need tickets that let us skip the lines, the Museums in the morning and then St. Peter’s."
+  customer_name: "Pierre & Camille"
+  customer_origin: "Bordeaux, France"
+  finer_details: |
+    Our host meets you across the road from the entrance, walks you through security, and gives you a printed map with the route most people want: the Pinecone Courtyard, the Gallery of Maps, the Raphael Rooms, and the Sistine Chapel at the end.
+
+    From there, use your priority pass for St. Peter’s Basilica: Michelangelo’s Pietà, Bernini’s bronze canopy over the papal altar, and the light falling through the dome. There is no group to keep up with, so take as long as you like.
+  highlights:
+    Straight past the queues: Priority entry to both the Vatican Museums and St. Peter’s Basilica.
+    The Sistine Chapel: Michelangelo’s ceiling and Last Judgment, for as long as you want to look up.
+    St. Peter’s Basilica: The Pietà, Bernini’s canopy, and the largest church in the world.
+    A route in your pocket: A printed map with the highlights marked, in your language.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Priority entry to St. Peter’s Basilica
+    - Host to meet you at the entrance
+    - Printed map and route
+  excluded:
+    - Live guide
+    - Dome climb
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Our host will be there 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Silence in the chapel: Photos and talking aren’t allowed in the Sistine Chapel.
+  prices: { adult: 45, child: 29 }
+  times: ["08:00", "09:00", "10:30", "12:00", "13:30", "15:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: guided-in-depth-vatican-priority-passes
+  code: 103
+  title: Vatican Museums, Sistine Chapel, St. Peter’s Basilica with Dome and Papal Tombs
+  tagline: The Whole Vatican, Properly
+  subtitle: Guided in-depth tour of Vatican with priority passes
+  region: Vatican City
+  hours: 5
+  transport: walking
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it]
+  tags: [active]
+  photos: [basilica.webp, sistine-chapel.webp, michelangelos-pieta.webp]
+  what_we_think: |
+    Three hours is enough to see the Vatican’s famous rooms. Five is enough to understand them. This tour covers the full route at a pace that leaves room for questions, then goes beneath St. Peter’s to the papal tombs and up to the top of the dome.
+  what_customers_think: "We do not want the quick version. Show us the rooms the big groups walk past, the tombs of the popes, and the dome. We have five hours."
+  customer_name: "Graham & Fiona"
+  customer_origin: "Glasgow, UK"
+  finer_details: |
+    After the classical sculpture and the Gallery of Maps, your guide takes you into the Pinacoteca for Raphael’s Transfiguration and Caravaggio’s Deposition, then on through the Raphael Rooms to the Sistine Chapel.
+
+    The passage from the chapel leads straight into St. Peter’s Basilica, where your guide shows you the Pietà and Bernini’s canopy. Then you go down to the Vatican Grottoes, where popes from St. Peter to John Paul II are buried, and finish with the climb to the dome: a lift to the roof, then 320 steps to the lantern and the best view in Rome.
+  highlights:
+    The Pinacoteca: Raphael’s Transfiguration, Caravaggio, and Leonardo’s unfinished St. Jerome.
+    The Sistine Chapel: Michelangelo’s ceiling, and the Last Judgment he painted thirty years later.
+    The Papal Tombs: The Vatican Grottoes beneath the Basilica floor.
+    Michelangelo’s Dome: 320 steps to the lantern and a view over the whole of Rome.
+  included:
+    - Skip-the-line Vatican Museums ticket
+    - Sistine Chapel and St. Peter’s Basilica entry
+    - Vatican Grottoes
+    - Dome climb ticket with lift
+    - Licensed Vatican guide
+    - Headsets
+    - Coffee break
+  excluded:
+    - Lunch
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before the start.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Climbing: The dome has 320 steps after the lift, some in narrow, sloping passages. You can wait below if you prefer to skip it.
+  prices: { adult: 90, child: 59, private: [480, 480, 500, 520, 540, 560] }
+  times: ["08:30", "12:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+
+- slug: top-vatican-sites-priority-passes
+  code: 104
+  title: Self-Guided Vatican Museums, Sistine Chapel, St. Peter’s Basilica with Dome and Papal Tombs
+  tagline: Museums, Basilica, Tombs, and Dome, No Queues
+  subtitle: Top Vatican sites with priority passes
+  region: Vatican City
+  hours: 6
+  transport: walking
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, active]
+  photos: [vatican-city.webp, vatican-museums.webp, basilica.webp]
+  what_we_think: |
+    The Vatican’s top sites sit behind a string of queues: the Museums, the Basilica, and the dome. These passes cover all of them, so you can see the Museums, St. Peter’s, the papal tombs, and the view from the top at your own pace.
+  what_customers_think: "Museums, Sistine Chapel, the Basilica, and the dome, all in one go, no queues anywhere. We do not need a guide."
+  customer_name: "Tomás"
+  customer_origin: "Santiago, Chile"
+  finer_details: |
+    Start with a timed entry to the Vatican Museums and walk the route at whatever speed suits you, through the Gallery of Maps and the Raphael Rooms to the Sistine Chapel.
+
+    Then use your priority pass for the Basilica: Michelangelo’s Pietà and Bernini’s bronze canopy over the papal altar. Go down to the Grottoes to see the papal tombs, then climb the dome for the view over Rome. Our audio guide tells the story of each, whenever you press play.
+  highlights:
+    No queues: Priority entry to the Vatican Museums, St. Peter’s Basilica, and the dome.
+    The Sistine Chapel: Michelangelo’s ceiling, with no group to hurry you along.
+    The Papal Tombs: The Vatican Grottoes beneath the Basilica floor.
+    Michelangelo’s Dome: The roof terrace and the lantern, with Rome laid out below.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Priority entry to St. Peter’s Basilica
+    - Vatican Grottoes
+    - Dome climb ticket with lift
+    - Audio guide app
+    - Printed map and route
+  excluded:
+    - Live guide
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Climbing: The dome has 320 steps after the lift. You can skip it and use the rest of the pass.
+  prices: { adult: 75, child: 49 }
+  times: ["08:00", "09:00", "10:30", "12:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: all-vatican-priority-passes
+  code: 105
+  title: Self-Guided Vatican Museums, Sistine Chapel, Vatican Gardens, St. Peter’s Basilica with Dome and Papal Tombs
+  tagline: Every Corner of the Vatican
+  subtitle: All Vatican with priority passes
+  region: Vatican City
+  hours: 4
+  transport: walking
+  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
+  languages: [en, es, fr, it, de, pt]
+  tags: [self_guided, active]
+  photos: [sistine-chapel.webp, vatican-gardens.webp, basilica.webp]
+  what_we_think: |
+    Vatican City is the smallest country in the world, and half of it is garden. This pass covers all of it, the Museums, the Gardens, the Basilica, the papal tombs, and the dome, with priority entry at every door, so your time goes on the sights rather than the queues.
+  what_customers_think: "We want to see all of the Vatican, gardens included, at our own rhythm, with priority entry everywhere and the dome at the end."
+  customer_name: "Yuki & Haruto"
+  customer_origin: "Tokyo, Japan"
+  finer_details: |
+    Start at the Vatican Museums with a timed ticket and a printed route through the galleries and the Sistine Chapel, and visit the Vatican Gardens, the fifty acres of lawns, woods, and fountains behind the walls.
+
+    Then use your priority pass for St. Peter’s Basilica, go down to the Grottoes for the papal tombs, and climb the dome for the view over Rome. An audio guide on your phone tells the story at every stop.
+  highlights:
+    All of the Vatican: The Museums, the Sistine Chapel, the Gardens, the Basilica, and the dome.
+    The Vatican Gardens: Fifty acres of papal gardens behind the Vatican walls.
+    No queues: Priority entry at each site, booked for you in advance.
+    The Papal Tombs and the Dome: The Grottoes below the Basilica, and the view from the top.
+  included:
+    - Reserved, timed Vatican Museums ticket
+    - Sistine Chapel entry
+    - Vatican Gardens access
+    - Priority entry to St. Peter’s Basilica
+    - Vatican Grottoes
+    - Dome climb ticket with lift
+    - Audio guide app and printed route
+  excluded:
+    - Live guide
+    - Lunch
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
+    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
+    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
+    Climbing: The dome has 320 steps after the lift. You can skip it and use the rest of the pass.
+  prices: { adult: 85, child: 55 }
+  times: ["08:00", "09:00", "10:00"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 20
+
+- slug: necropolis-st-peters-tomb-skip-line-st-peters
+  code: 106
+  title: Vatican Scavi and St. Peter’s Tomb
+  tagline: Beneath the Basilica
+  subtitle: Necropolis, St. Peter’s Tomb and skip line access to St. Peter’s
+  region: Vatican City
+  hours: 2
+  transport: walking
+  meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
+  languages: [en, es, it]
+  tags: []
+  photos: [scavi.webp, st-peters-basilica-inside.webp, basilica.webp]
+  what_we_think: |
+    Beneath the floor of St. Peter’s Basilica lies a street of Roman tombs, buried when Constantine levelled the hill to build the first church. Excavations in the 1940s uncovered it, and at the end of it, the grave believed to be St. Peter’s.
+  what_customers_think: "For years I have wanted to see the tomb of Saint Peter under the Basilica. This is the reason for our pilgrimage."
+  customer_name: "Father Michael"
+  customer_origin: "Philadelphia, USA"
+  finer_details: |
+    Only around 250 people a day are allowed into the Scavi, in groups of a dozen, and the Vatican’s Excavations Office books them months ahead. We handle the application and meet you at the Swiss Guard post.
+
+    Your guide leads you down through pagan and Christian mausoleums, still decorated with frescoes and mosaics, to the red wall and the bones found beside it. You come up in the Grottoes, beneath the papal altar, and go straight into the Basilica without queuing again.
+  highlights:
+    The Roman necropolis: A buried street of tombs, frescoes, and mosaics beneath the Basilica.
+    St. Peter’s tomb: The red wall and the grave at the heart of the church.
+    A small group: Around 250 people a day, in groups of no more than 12.
+    Straight into St. Peter’s: Skip-the-line access to the Basilica when you come up.
+  included:
+    - Scavi Office tickets and booking
+    - Licensed Scavi guide
+    - Skip-the-line access to St. Peter’s Basilica
+  excluded:
+    - Vatican Museums and Sistine Chapel
+    - Hotel pickup and drop-off
+  facts:
+    Meeting point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica, 15 minutes before the start.
+    Age limit: The Excavations Office does not admit children under 15.
+    Underground: The passages are narrow, warm, and humid. Not suitable for anyone with claustrophobia or limited mobility.
+    Booking ahead: Tickets are confirmed by the Vatican. If your date isn’t granted we’ll offer another or a full refund.
+  prices: { adult: 0, child: 0 }
+  times: ["09:00", "11:00", "14:30"]
+  days: [mon, tue, wed, thu, fri, sat]
+  capacity: 12
+
+- slug: highlights-st-peters-basilica-dome-papal-tombs
+  code: 107
+  title: St. Peter’s Basilica in Depth
+  tagline: The Basilica, the Grottoes, and the Dome
+  subtitle: Highlights of St. Peter’s Basilica with Michelangelo’s Dome and Papal Tombs
+  region: Vatican City
+  hours: 2
   transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it]
@@ -1878,13 +2018,12 @@
     Wednesday mornings: The Basilica opens late on Wednesdays during the Papal Audience, so we start in the afternoon.
   prices: { private: [180, 200, 220, 240, 260, 280] }
   times: ["09:00", "14:00", "15:30"]
-  capacity: 14
 
-- slug: vatican-gardens-in-depth
-  code: 104
+- slug: guided-vatican-gardens-skip-line-vatican-museums
+  code: 108
   title: Vatican Gardens in Depth
   tagline: The Pope’s Private Gardens
-  subtitle: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
+  subtitle: A guided walk through Vatican Gardens with skip line tickets to Vatican Museums for a self-guided visit
   region: Vatican City
   hours: 2
   transport: walking
@@ -1893,22 +2032,22 @@
   tags: [with_kids]
   photos: [vatican-gardens.webp, vatican-city.webp, vatican-museums.webp]
   what_we_think: |
-    Half of Vatican City is garden, and almost nobody sees it. Behind the walls lie fifty acres of lawns, woods, and fountains that popes have walked in for seven centuries, open only to small guided groups.
+    Half of Vatican City is garden, and almost nobody sees it. Behind the walls lie fifty acres of lawns, woods, and fountains that popes have walked in for seven centuries.
   what_customers_think: "We heard half the Vatican is gardens and almost nobody sees them. That is exactly what we want to see."
   customer_name: "Eleanor"
   customer_origin: "Oxford, UK"
   finer_details: |
     Your guide leads you past the Fountain of the Eagle, the Lourdes Grotto, and the Casina of Pius IV, a Renaissance summer house hidden in the trees, with views of the dome from angles you won’t find on any postcard.
 
-    The tour ends back inside the Vatican Museums, and your ticket lets you stay and explore the galleries and the Sistine Chapel for the rest of the day.
+    The tour ends back inside the Vatican Museums, and your skip-the-line ticket lets you stay and explore the galleries and the Sistine Chapel on your own for the rest of the day.
   highlights:
-    Behind the walls: Fifty acres of papal gardens, open only to guided visits.
+    Behind the walls: Fifty acres of papal gardens, with a guide of your own.
     The Casina of Pius IV: A Renaissance summer house hidden in the woods.
     The dome from the garden: Views of Michelangelo’s dome that few visitors see.
     The Museums afterwards: Your ticket covers the Vatican Museums and Sistine Chapel for the rest of the day.
   included:
     - Vatican Gardens access
-    - Vatican Museums and Sistine Chapel entry
+    - Skip-the-line Vatican Museums and Sistine Chapel ticket
     - Licensed Vatican guide
     - Headsets
   excluded:
@@ -1923,234 +2062,13 @@
   times: ["09:00", "11:00"]
   days: [mon, tue, wed, thu, fri, sat]
 
-- slug: vatican-scavi-st-peters-tomb
-  code: 105
-  title: Vatican Scavi and St. Peter’s Tomb
-  tagline: Beneath the Basilica
-  subtitle: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
-  region: Vatican City
-  hours: 1.5
-  transport: walking
-  meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
-  languages: [en, es, it]
-  tags: []
-  photos: [scavi.webp, st-peters-basilica-inside.webp, basilica.webp]
-  what_we_think: |
-    Beneath the floor of St. Peter’s Basilica lies a street of Roman tombs, buried when Constantine levelled the hill to build the first church. Excavations in the 1940s uncovered it, and at the end of it, the grave believed to be St. Peter’s.
-  what_customers_think: "For years I have wanted to see the tomb of Saint Peter under the Basilica. This is the reason for our pilgrimage."
-  customer_name: "Father Michael"
-  customer_origin: "Philadelphia, USA"
-  finer_details: |
-    Only around 250 people a day are allowed into the Scavi, in groups of a dozen, and the Vatican’s Excavations Office books them months ahead. We handle the application and meet you at the Swiss Guard post.
-
-    Your guide leads you down through pagan and Christian mausoleums, still decorated with frescoes and mosaics, to the red wall and the bones found beside it. You come up in the Grottoes, beneath the papal altar.
-  highlights:
-    The Roman necropolis: A buried street of tombs, frescoes, and mosaics beneath the Basilica.
-    St. Peter’s tomb: The red wall and the grave at the heart of the church.
-    Very few visitors: Around 250 people a day, in groups of no more than 12.
-    The Grottoes: You finish among the papal tombs beneath the high altar.
-  included:
-    - Scavi Office tickets and booking
-    - Licensed Scavi guide
-    - St. Peter’s Basilica access afterwards
-  excluded:
-    - Vatican Museums and Sistine Chapel
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica, 15 minutes before the start.
-    Age limit: The Excavations Office does not admit children under 15.
-    Underground: The passages are narrow, warm, and humid. Not suitable for anyone with claustrophobia or limited mobility.
-    Booking ahead: Tickets are confirmed by the Vatican. If your date isn’t granted we’ll offer another or a full refund.
-  prices: { private: [120, 240, 260, 480] }
-  times: ["09:00", "11:00", "14:30"]
-  days: [mon, tue, wed, thu, fri, sat]
-
-- slug: essential-vatican-museums
-  code: 106
-  title: Essential Vatican Museums
-  tagline: The Highlights in Three Hours
-  subtitle: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
-  region: Vatican City
-  hours: 3
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it, de, pt]
-  tags: [with_kids, wheelchair]
-  photos: [vatican-museums-essentials.webp, sistine-chapel.webp, vatican-museums.webp]
-  what_we_think: |
-    The Vatican Museums stretch over seven kilometres of galleries, and without a plan most visitors run out of energy long before the Sistine Chapel. This small-group tour gets you to the rooms that matter, in the right order.
-  what_customers_think: "We want the Raphael Rooms, the Gallery of Maps, and the Sistine Chapel, explained well, in a small group."
-  customer_name: "Lucía & Andrés"
-  customer_origin: "Bogotá, Colombia"
-  finer_details: |
-    Your guide starts with the classical sculpture of the Pio-Clementino, where the Laocoön and the Belvedere Torso taught Michelangelo how to carve. Then you walk the Gallery of Maps and the Raphael Rooms, where the School of Athens hangs.
-
-    The tour ends in the Sistine Chapel. Your guide explains the ceiling before you enter, since talking isn’t allowed inside, so you know exactly what you’re looking at.
-  highlights:
-    Skip the queue: Reserved entry past the line along the Vatican walls.
-    Classical sculpture: The Laocoön, the Apollo Belvedere, and the Belvedere Torso.
-    The Gallery of Maps: 120 metres of painted Italy under a gilded ceiling.
-    The Sistine Chapel: Explained before you enter, so the ceiling speaks for itself.
-  included:
-    - Skip-the-line Vatican Museums ticket
-    - Sistine Chapel entry
-    - Licensed Vatican guide
-    - Headsets
-  excluded:
-    - St. Peter’s Basilica
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Your guide will hold a Vatican Tours Inc sign.
-    Dress code: Shoulders and knees must be covered to enter the Sistine Chapel.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    Stay on: Your ticket is valid until closing, so you can keep exploring after the tour.
-  prices: { adult: 70, child: 49 }
-  times: ["08:30", "10:00", "11:30", "13:30", "15:00"]
-  days: [mon, tue, wed, thu, fri, sat]
-
-- slug: vatican-city-in-depth
-  code: 107
-  title: Vatican City in Depth
-  tagline: The Whole Vatican, Properly
-  subtitle: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
-  region: Vatican City
-  hours: 5
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it]
-  tags: [wheelchair]
-  photos: [basilica.webp, sistine-chapel.webp, michelangelos-pieta.webp]
-  what_we_think: |
-    Three hours is enough to see the Vatican’s famous rooms. Five is enough to understand them. This tour covers the full route at a pace that leaves room for questions, and for the galleries most groups walk straight past.
-  what_customers_think: "We do not want the quick version. Show us the rooms the big groups walk past, we have five hours."
-  customer_name: "Graham & Fiona"
-  customer_origin: "Glasgow, UK"
-  finer_details: |
-    After the classical sculpture and the Gallery of Maps, your guide takes you into the Pinacoteca for Raphael’s Transfiguration and Caravaggio’s Deposition, then the Borgia Apartments and the modern religious art collection, with Matisse and Van Gogh.
-
-    The tour finishes with the Sistine Chapel and the passage into St. Peter’s Basilica, where your guide shows you the Pietà, Bernini’s canopy, and the tomb of St. Peter beneath the high altar.
-  highlights:
-    The Pinacoteca: Raphael’s Transfiguration, Caravaggio, and Leonardo’s unfinished St. Jerome.
-    The Borgia Apartments: Pinturicchio’s frescoes for the most notorious pope in history.
-    The Sistine Chapel: Michelangelo’s ceiling, and the Last Judgment he painted thirty years later.
-    St. Peter’s Basilica: Straight in from the chapel, skipping the queue in the square.
-  included:
-    - Skip-the-line Vatican Museums ticket
-    - Sistine Chapel and St. Peter’s Basilica entry
-    - Licensed Vatican guide
-    - Headsets
-    - Coffee break
-  excluded:
-    - Dome climb
-    - Lunch
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before the start.
-    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    Walking: About 4 km, mostly indoors, with a coffee break halfway. Lifts are available throughout.
-  prices: { adult: 90, child: 59, private: [480, 480, 500, 520, 540, 560] }
-  times: ["08:30", "12:30"]
-  days: [mon, tue, wed, thu, fri, sat]
-
-- slug: self-guided-all-day-in-vatican-city
-  code: 108
-  title: Self-Guided All Day in Vatican City
-  tagline: A Whole Day Inside the Walls
-  subtitle: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
-  region: Vatican City
-  hours: 7
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it, de, pt]
-  tags: [self_guided, active]
-  photos: [sistine-chapel.webp, vatican-gardens.webp, basilica.webp]
-  what_we_think: |
-    Vatican City is the smallest country in the world, and it takes a full day to see it properly. This pass covers everything, with priority entry at every door, so you can spend the day inside the walls rather than outside them.
-  what_customers_think: "We want a whole day in the Vatican, at our own rhythm, with priority entry everywhere and the dome at the end."
-  customer_name: "Yuki & Haruto"
-  customer_origin: "Tokyo, Japan"
-  finer_details: |
-    Start the morning at the Vatican Museums with a timed ticket and a printed route through the galleries and the Sistine Chapel. Break for lunch whenever you like; our map marks the cafés inside and the trattorias just outside.
-
-    In the afternoon, use your priority pass for St. Peter’s Basilica and climb the dome for the view over Rome. An audio guide on your phone tells the story at every stop.
-  highlights:
-    Everything in one day: The Museums, the Sistine Chapel, the Basilica, and the dome.
-    No queues: Priority entry at each site, booked for you in advance.
-    The dome climb: The roof terrace and the lantern, with Rome laid out below.
-    Your own pace: An audio guide and printed route, with no group to keep up with.
-  included:
-    - Reserved, timed Vatican Museums ticket
-    - Sistine Chapel entry
-    - Priority entry to St. Peter’s Basilica
-    - Dome climb ticket with lift
-    - Audio guide app and printed route
-  excluded:
-    - Live guide
-    - Lunch
-    - Hotel pickup and drop-off
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance, 15 minutes before your slot.
-    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    Climbing: The dome has 320 steps after the lift. You can skip it and use the rest of the pass.
-  prices: { adult: 85, child: 55 }
-  times: ["08:00", "09:00", "10:00"]
-  days: [mon, tue, wed, thu, fri, sat]
-  capacity: 20
-
-- slug: all-day-in-vatican-city
+- slug: audience-tickets-assistance-on-site
   code: 109
-  title: All Day in Vatican City
-  tagline: From the Museums to the Dome
-  subtitle: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
-  region: Vatican City
-  hours: 7
-  transport: walking
-  meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
-  languages: [en, es, fr, it]
-  tags: [active]
-  photos: [michelangelos-pieta.webp, vatican-gardens.webp, sistine-chapel.webp]
-  what_we_think: |
-    A full day in the Vatican with a guide at your side from the first gallery to the top of the dome. It’s the most complete visit we offer, and the one we recommend to anyone who has only one chance to see it.
-  what_customers_think: "The Vatican is the main reason for our trip to Rome. One full day, one guide, everything including the dome."
-  customer_name: "The Sullivans"
-  customer_origin: "Boston, USA"
-  finer_details: |
-    The morning belongs to the Vatican Museums: classical sculpture, the Gallery of Maps, the Raphael Rooms, the Pinacoteca, and the Sistine Chapel. Then a long lunch in Borgo Pio, the old neighbourhood beneath the Vatican walls.
-
-    In the afternoon your guide leads you through St. Peter’s Basilica and down into the Grottoes, then up the dome for the view over the square and the city beyond.
-  highlights:
-    A full morning in the Museums: The Raphael Rooms, the Pinacoteca, and the Sistine Chapel at an unhurried pace.
-    Lunch in Borgo Pio: A local trattoria under the Vatican walls.
-    St. Peter’s and the Grottoes: The Basilica above, the papal tombs below.
-    The dome: 320 steps to the top, and the view that ends the day.
-  included:
-    - Skip-the-line Vatican Museums ticket
-    - Sistine Chapel and St. Peter’s Basilica entry
-    - Dome climb ticket with lift
-    - Licensed Vatican guide
-    - Lunch with a glass of wine
-    - Headsets
-  excluded:
-    - Hotel pickup and drop-off
-    - Gratuities
-  facts:
-    Meeting point: Viale Vaticano 100, opposite the Vatican Museums entrance. Your guide will hold a Vatican Tours Inc sign.
-    Dress code: Shoulders and knees must be covered in the Sistine Chapel and the Basilica.
-    Closed Sundays: The Vatican Museums close on Sundays, except the last Sunday of the month.
-    A long day: About 8 km on foot with stairs. Wear comfortable shoes.
-  prices: { adult: 110, child: 75 }
-  times: ["08:30"]
-  days: [mon, tue, wed, thu, fri, sat]
-
-- slug: papal-audience-tickets-assistance
-  code: 110
   title: Papal Audience Tickets and On-Site Assistance
   tagline: Wednesday Morning with the Pope
-  subtitle: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
+  subtitle: Audience Tickets and assistance on site
   region: Vatican City
-  hours: 3
+  hours: 2
   transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it, de, pt]
@@ -2162,7 +2080,7 @@
   customer_name: "Rosa & Carmen"
   customer_origin: "Seville, Spain"
   finer_details: |
-    We request your tickets, collect them, and meet you on the morning with an assistant who knows the gates and the timing. They’ll guide you through security and help you find a good spot before the crowds arrive.
+    We request your tickets, collect them, and meet you on the morning with a private assistant who knows the gates and the timing. They’ll guide you through security and help you find a good spot before the crowds arrive.
 
     During the audience, the Pope rides through the square, gives a short teaching and greetings in several languages, and ends with the Apostolic Blessing, which extends to any religious objects you bring with you.
   highlights:
@@ -2172,8 +2090,8 @@
     The Apostolic Blessing: Bring rosaries or medals to be blessed.
   included:
     - Papal Audience tickets
-    - On-site assistant
-    - Earpiece radio for groups
+    - Private on-site assistant
+    - Earpiece radio
   excluded:
     - Reserved seating near the front
     - Hotel pickup and drop-off
@@ -2182,10 +2100,9 @@
     The Pope’s schedule: Audiences are cancelled in July and when the Pope travels. If yours is cancelled we refund you in full.
     Security: Expect airport-style checks. Leave large bags, umbrellas, and anything sharp at your hotel.
     Dress code: Shoulders and knees covered, as in any Vatican basilica.
-  prices: { adult: 40, child: 25, private: [140, 160, 180, 240, 260, 280] }
+  prices: { private: [140, 160, 180, 240, 260, 280] }
   times: ["07:30"]
   days: [wed]
-  capacity: 20
 
 - slug: essential-naples-part-one
   code: 40
@@ -2902,7 +2819,7 @@
   region: Venice
   hours: 4
   transport: car
-  badge: cruise
+  badge: transfers
   meeting_point: Porto Corsini cruise terminal, Ravenna, at the passenger exit
   languages: [en, es, fr, it, de]
   tags: [transfers, cruises]
@@ -3186,7 +3103,6 @@
   region: Sicily
   hours: 3
   transport: walking
-  badge: food
   meeting_point: Teatro Massimo, on the front steps
   languages: [en, es, fr, it, de]
   tags: [food_and_cooking, with_kids]
@@ -3308,7 +3224,7 @@
   region: Sicily
   hours: 7
   transport: car
-  badge: cruise
+  badge: cruises
   meeting_point: Palermo cruise terminal, at the passenger exit
   languages: [en, es, fr, it, de]
   tags: [cruises, with_kids]
@@ -3349,7 +3265,7 @@
   region: Sicily
   hours: 7
   transport: car
-  badge: cruise
+  badge: cruises
   meeting_point: Catania cruise terminal, at the passenger exit
   languages: [en, es, fr, it, de]
   tags: [cruises, with_kids]
@@ -3390,7 +3306,7 @@
   region: Sicily
   hours: 8
   transport: car
-  badge: cruise
+  badge: cruises
   meeting_point: Catania cruise terminal, at the passenger exit
   languages: [en, es, fr, it, de]
   tags: [cruises]

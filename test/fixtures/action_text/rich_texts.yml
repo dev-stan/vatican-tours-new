@@ -1,0 +1,4 @@
+lagoon_wineries_body:
+  record: lagoon_wineries (Article)
+  name: body
+  body: <h2>The golden grape</h2><div>Vines have grown in the lagoon since the Middle Ages.</div>
