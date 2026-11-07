@@ -21,6 +21,7 @@ class Tour < ApplicationRecord
 
   validates :title, :location, presence: true
   validates :slug, presence: true, uniqueness: true, format: { with: /\A[a-z0-9]+(?:-[a-z0-9]+)*\z/ }
+  validates :code, uniqueness: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
   validates :duration_minutes, numericality: { only_integer: true, greater_than: 0 }
   validate :languages_are_known, :tags_are_known
 

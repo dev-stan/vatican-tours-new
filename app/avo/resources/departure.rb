@@ -1,4 +1,5 @@
 class Avo::Resources::Departure < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.title = -> { "#{record.tour.title} · #{record.starts_at.to_fs(:tour_short)} · #{record.kind.humanize}" }
   self.description = "Bookable start times. Generate many at once with bin/rails departures:generate."
   self.icon = "tabler/outline/calendar"

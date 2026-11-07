@@ -1,4 +1,5 @@
 class Avo::Resources::TicketType < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.title = -> { "#{record.name} (#{record.kind.humanize})" }
   self.icon = "tabler/outline/receipt"
   self.includes = [ :tour ]

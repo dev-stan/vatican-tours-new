@@ -1,5 +1,6 @@
 # The tour catalogue, loaded by db/seeds.rb. Edit here, then run bin/rails db:seed.
 #
+# code:        the tour's ID, shown in the admin. Vatican tours are 100+; the rest are placeholders from 0
 # hours:       tour length (decimals allowed, e.g. 2.5)
 # transport:   walking, boat or car; picks the icon on the tour card
 # badge:       optional pill on the card photo: wheelchair, cruise, food, wine or active (omit for none)
@@ -14,6 +15,7 @@
 # capacity:    seats on a group departure (default 12)
 
 - slug: ancient-rome-walking-tour
+  code: 0
   title: Ancient Rome Walking Tour
   tagline: Two Thousand Years, Three Hours
   headline: Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
@@ -57,6 +59,7 @@
   times: ["09:00", "10:30", "13:00", "14:30", "16:00"]
 
 - slug: ancient-rome-in-depth-underground-colosseum
+  code: 1
   title: Ancient Rome in Depth with Underground Colosseum
   tagline: Below the Arena Floor
   headline: In-depth archaeological sites with a cappuccino break
@@ -96,6 +99,7 @@
   capacity: 10
 
 - slug: old-rome-walking-tour
+  code: 2
   title: Old Rome Walking Tour
   tagline: Rome Between the Monuments
   headline: Centro storico, where locals outnumber tourists
@@ -133,6 +137,7 @@
   times: ["09:30", "14:00", "17:00"]
 
 - slug: old-rome-by-golf-cart
+  code: 3
   title: Old Rome by Golf Cart
   tagline: All of Rome, None of the Blisters
   headline: Top sights without walking; good for limited mobility
@@ -170,6 +175,7 @@
   capacity: 6
 
 - slug: rome-night-walk
+  code: 4
   title: Night Walk
   tagline: Rome After Dark
   headline: Evening stroll through Rome’s streets and squares
@@ -207,6 +213,7 @@
   capacity: 14
 
 - slug: appian-way-and-catacombs
+  code: 5
   title: Appian Way and the Catacombs Tour
   tagline: The Queen of Roads
   headline: Catacombs visit and walk on the Appian Way
@@ -244,6 +251,7 @@
   days: [mon, tue, thu, fri, sat, sun]
 
 - slug: rome-baroque-walking-tour
+  code: 6
   title: Rome Baroque Walking Tour
   tagline: Marble That Moves
   headline: Caravaggio, Bernini, Borromini and the Borghese Gallery
@@ -281,6 +289,7 @@
   days: [tue, wed, thu, fri, sat, sun]
 
 - slug: jewish-rome-walking-tour
+  code: 7
   title: Jewish Rome Walking Tour
   tagline: Two Thousand Years by the Tiber
   headline: The Jewish Ghetto and its history
@@ -318,6 +327,7 @@
   days: [sun, mon, tue, wed, thu, fri]
 
 - slug: rome-underground-for-smart-kids
+  code: 8
   title: Rome Underground for Smart Kids
   tagline: Dig Down Through Time
   headline: Rome’s ancient sights, made fun for kids
@@ -354,6 +364,7 @@
   times: ["09:30", "14:30"]
 
 - slug: angels-and-demons-tour
+  code: 9
   title: On the Path of Angels and Demons Tour
   tagline: Follow the Path of Illumination
   headline: Rome’s hidden clues from Dan Brown’s novel
@@ -390,6 +401,7 @@
   times: ["10:00", "15:00"]
 
 - slug: rome-photography-tour
+  code: 10
   title: Rome through the Lens with a Photographer
   tagline: Golden Hour in the Eternal City
   headline: Photo walk with a professional photographer
@@ -427,6 +439,7 @@
   capacity: 6
 
 - slug: rome-all-the-sights
+  code: 11
   title: Rome, All the Sights Walking Tour
   tagline: The Whole City in a Day
   headline: Old and Ancient Rome at a slow pace with a lunch break
@@ -464,6 +477,7 @@
   times: ["09:00"]
 
 - slug: tivoli-and-hadrians-villa
+  code: 12
   title: Tivoli Gardens and Hadrian’s Villa
   tagline: Where Emperors and Cardinals Escaped
   headline: Tivoli’s grand gardens and Hadrian’s vast villa
@@ -503,6 +517,7 @@
   capacity: 8
 
 - slug: ostia-antica-and-cerveteri
+  code: 13
   title: Ostia Antica and Etruscan Cerveteri by Car
   tagline: Rome’s Port and the Etruscan Dead
   headline: Ancient Ostia and Cerveteri’s Etruscan heritage
@@ -542,6 +557,7 @@
   capacity: 8
 
 - slug: rome-countryside-palaces-and-gardens
+  code: 14
   title: Palaces and Gardens of Rome Countryside
   tagline: The Cardinals’ Country Houses
   headline: Elegant palaces and gardens in the Roman countryside
@@ -581,6 +597,7 @@
   capacity: 8
 
 - slug: roman-hills-and-winery
+  code: 15
   title: Roman Hills and Winery Visit
   tagline: Frascati in the Glass
   headline: Roman hills and a local winery
@@ -621,6 +638,7 @@
   capacity: 8
 
 - slug: pompeii-and-oplontis
+  code: 16
   title: Pompeii and Oplontis, the Excavations
   tagline: A City Stopped Mid-Sentence
   headline: Pompeii’s ancient streets and Oplontis’ Roman villa
@@ -660,6 +678,7 @@
   capacity: 10
 
 - slug: pompeii-herculaneum-oplontis
+  code: 17
   title: Pompeii, Herculaneum, Oplontis
   tagline: Three Towns Under the Ash
   headline: Three remarkably preserved sites beneath Vesuvius
@@ -700,6 +719,7 @@
   capacity: 10
 
 - slug: pompeii-herculaneum-vesuvius
+  code: 18
   title: Pompeii, Herculaneum and Vesuvius
   tagline: Up the Volcano, Down Through History
   headline: Ancient ruins beneath Vesuvius
@@ -739,6 +759,7 @@
   capacity: 10
 
 - slug: pompeii-amalfi-coast-positano
+  code: 19
   title: Pompeii, Amalfi Coast and Positano
   tagline: Ruins in the Morning, Sea in the Afternoon
   headline: Pompeii’s ruins and Positano’s colorful coastal streets
@@ -778,6 +799,7 @@
   capacity: 8
 
 - slug: pompeii-sorrento-capri
+  code: 20
   title: Pompeii, Sorrento, Capri
   tagline: The Bay of Naples in a Day
   headline: Pompeii’s ruins, Sorrento’s coast, and Capri’s island charm
@@ -818,6 +840,7 @@
   capacity: 8
 
 - slug: assisi-and-umbria
+  code: 21
   title: Assisi and Umbria
   tagline: The Green Heart of Italy
   headline: Assisi’s historic landmarks and Umbria’s hill towns
@@ -856,6 +879,7 @@
   capacity: 8
 
 - slug: tuscany-villages-and-countryside
+  code: 22
   title: Tuscany, Villages and Countryside
   tagline: Cypress Roads and Brunello
   headline: Tuscany’s medieval villages and rolling countryside
@@ -895,6 +919,7 @@
   capacity: 8
 
 - slug: florence-chianti-siena
+  code: 23
   title: Florence, Chianti, Siena, Renaissance Marvels
   tagline: The Best of Tuscany from Rome
   headline: Florence’s Renaissance treasures, Chianti’s countryside, and Siena’s medieval beauty
@@ -936,6 +961,7 @@
   capacity: 10
 
 - slug: essential-florence-part-one-academy
+  code: 24
   title: Essential Florence Part One with Academy
   tagline: The David and the City Around Him
   headline: Michelangelo’s David, Renaissance art, and Florence’s historic heart.
@@ -974,6 +1000,7 @@
   days: [tue, wed, thu, fri, sat, sun]
 
 - slug: essential-florence-part-two-uffizi
+  code: 25
   title: Essential Florence Part Two with Uffizi
   tagline: Landmarks and Masterpieces
   headline: Florence’s iconic landmarks and the Uffizi’s Renaissance masterpieces.
@@ -1012,6 +1039,7 @@
   days: [tue, wed, thu, fri, sat, sun]
 
 - slug: essential-florence-part-three-oltrarno
+  code: 26
   title: Essential Florence Part Three, Oltrarno
   tagline: Across the River
   headline: Florence revealed — the Oltrarno and Masaccio’s frescoes.
@@ -1049,6 +1077,7 @@
   times: ["09:30", "15:00"]
 
 - slug: essential-florence-part-four-grand-masters
+  code: 27
   title: Essential Florence Part Four, Grand Masters
   tagline: Giotto, Fra Angelico, and Donatello
   headline: Florence revealed — Giotto, Fra Angelico, and Donatello.
@@ -1085,6 +1114,7 @@
   times: ["09:00"]
 
 - slug: academy-self-guided-skip-the-line
+  code: 28
   title: Skip-the-Line Self-Guided Visit of the Academy
   tagline: The David at Your Own Pace
   headline: The David and the Accademia at your own pace, with a secured timed entrance.
@@ -1123,6 +1153,7 @@
   capacity: 20
 
 - slug: david-and-uffizi-small-group
+  code: 29
   title: David in Academy and Masterpieces of Uffizi
   tagline: Two Museums, One Morning
   headline: The best of two museums in one morning.
@@ -1160,6 +1191,7 @@
   days: [tue, wed, thu, fri, sat, sun]
 
 - slug: uffizi-self-guided-skip-the-line
+  code: 30
   title: Skip-the-Line Self-Guided Visit of the Uffizi
   tagline: The Uffizi on Your Own Terms
   headline: The masterpieces of the Uffizi at your own pace, with a secured timed entrance.
@@ -1197,6 +1229,7 @@
   capacity: 20
 
 - slug: uffizi-masterpieces-small-group
+  code: 31
   title: Masterpieces of Uffizi Small Group
   tagline: The Renaissance in Ten Rooms
   headline: Botticelli, Leonardo, and other Renaissance masters in the Uffizi.
@@ -1232,6 +1265,7 @@
   days: [tue, wed, thu, fri, sat, sun]
 
 - slug: vip-uffizi-and-vasari-corridor
+  code: 32
   title: VIP Uffizi and Vasari Corridor
   tagline: The Medici’s Private Passage
   headline: Uffizi treasures and an exclusive passage through the Vasari Corridor.
@@ -1268,6 +1302,7 @@
   capacity: 8
 
 - slug: vip-duomo-terraces-and-brunelleschi-dome
+  code: 33
   title: VIP Duomo Tour, Secret Terraces and Brunelleschi Dome
   tagline: On the Roof of Florence
   headline: Hidden terraces and Brunelleschi’s Dome, with stunning views of Florence.
@@ -1305,6 +1340,7 @@
   capacity: 10
 
 - slug: tuscan-classic-towns-villages-countryside
+  code: 34
   title: "Tuscan Classic: Towns, Villages & Countryside"
   tagline: Siena, San Gimignano, and the Hills Between
   headline: A must-do day trip from Florence for first-time visitors to Tuscany.
@@ -1343,6 +1379,7 @@
   capacity: 8
 
 - slug: tuscan-classic-winery-tour-and-tasting
+  code: 35
   title: Tuscan Classic with a Winery Tour and Tasting
   tagline: Hill Towns and a Cellar Door
   headline: The best of Tuscany and a private winery visit.
@@ -1383,6 +1420,7 @@
   capacity: 8
 
 - slug: serious-wine-maker-brunello-and-chianti
+  code: 36
   title: "A Serious Wine Maker: Brunello and Chianti"
   tagline: For People Who Read the Label
   headline: Private winery visits with local sommeliers, for serious wine lovers.
@@ -1422,6 +1460,7 @@
   capacity: 6
 
 - slug: short-chianti-day-lunch-and-winery
+  code: 37
   title: Short Chianti Day with Lunch and Winery Visit
   tagline: A Lazy Afternoon in Chianti
   headline: Lazy time with beautiful vistas, good wine, and a Tuscan lunch.
@@ -1459,6 +1498,7 @@
   capacity: 8
 
 - slug: lucca-pisa-and-leaning-tower
+  code: 38
   title: Lucca, Pisa and Leaning Tower
   tagline: Walls, Towers, and the Field of Miracles
   headline: Pisa’s iconic Leaning Tower and Lucca’s charm on a memorable day trip.
@@ -1497,6 +1537,7 @@
   capacity: 8
 
 - slug: cinque-terre-adventure
+  code: 39
   title: Cinque Terre Adventure
   tagline: Five Villages on the Riviera
   headline: Colorful seaside villages, breathtaking coastal views, and the charm of the Italian Riviera.
@@ -1537,6 +1578,7 @@
   capacity: 8
 
 - slug: self-guided-vatican-museums-sistine-chapel
+  code: 100
   title: Self-Guided Vatican Museums and Sistine Chapel
   tagline: The Museums on Your Own Clock
   headline: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
@@ -1578,6 +1620,7 @@
   capacity: 20
 
 - slug: self-guided-all-vatican-priority-passes
+  code: 101
   title: Self-Guided All Vatican with Priority Passes
   tagline: Museums, Chapel, and Basilica, No Queues
   headline: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
@@ -1620,6 +1663,7 @@
   capacity: 20
 
 - slug: vatican-city-essentials
+  code: 102
   title: Vatican City Essentials
   tagline: Museums, Chapel, and Basilica in One Visit
   headline: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
@@ -1660,6 +1704,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: st-peters-in-depth
+  code: 103
   title: St. Peter’s in Depth
   tagline: The Basilica, the Grottoes, and the Dome
   headline: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
@@ -1699,6 +1744,7 @@
   capacity: 14
 
 - slug: vatican-gardens-in-depth
+  code: 104
   title: Vatican Gardens in Depth
   tagline: The Pope’s Private Gardens
   headline: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
@@ -1738,6 +1784,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: vatican-scavi-st-peters-tomb
+  code: 105
   title: Vatican Scavi and St. Peter’s Tomb
   tagline: Beneath the Basilica
   headline: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
@@ -1776,6 +1823,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: essential-vatican-museums
+  code: 106
   title: Essential Vatican Museums
   tagline: The Highlights in Three Hours
   headline: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
@@ -1815,6 +1863,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: vatican-city-in-depth
+  code: 107
   title: Vatican City in Depth
   tagline: The Whole Vatican, Properly
   headline: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
@@ -1856,6 +1905,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: self-guided-all-day-in-vatican-city
+  code: 108
   title: Self-Guided All Day in Vatican City
   tagline: A Whole Day Inside the Walls
   headline: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
@@ -1898,6 +1948,7 @@
   capacity: 20
 
 - slug: all-day-in-vatican-city
+  code: 109
   title: All Day in Vatican City
   tagline: From the Museums to the Dome
   headline: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
@@ -1939,6 +1990,7 @@
   days: [mon, tue, wed, thu, fri, sat]
 
 - slug: papal-audience-tickets-assistance
+  code: 110
   title: Papal Audience Tickets and On-Site Assistance
   tagline: Wednesday Morning with the Pope
   headline: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
@@ -1978,6 +2030,7 @@
   capacity: 20
 
 - slug: essential-naples-part-one
+  code: 40
   title: Essential Naples - Part One
   tagline: Old Naples and the Archaeological Museum
   headline: Old Naples and the treasures of the Archaeological Museum.
@@ -2015,6 +2068,7 @@
   days: [mon, wed, thu, fri, sat, sun]
 
 - slug: essential-naples-part-two
+  code: 41
   title: Essential Naples - Part Two
   tagline: Caravaggio, Opera, and the City Below
   headline: Capodimonte Painting Gallery, the San Carlo Opera House, and the Naples Underground.
@@ -2054,6 +2108,7 @@
   capacity: 8
 
 - slug: naples-in-depth
+  code: 42
   title: Naples in Depth Tour
   tagline: A Deeper Journey into Naples’ Rich Heritage
   headline: The Veiled Christ, the Archaeological Museum, and the views from Posillipo, by private car.
@@ -2092,6 +2147,7 @@
   capacity: 8
 
 - slug: naples-and-pompeii
+  code: 43
   title: Naples and Pompeii Tour
   tagline: Living Naples, Timeless Pompeii
   headline: The lanes of old Naples in the morning, the streets of Pompeii in the afternoon.
@@ -2130,6 +2186,7 @@
   capacity: 8
 
 - slug: naples-pompeii-herculaneum-oplontis
+  code: 44
   title: Pompeii, Herculaneum, Oplontis
   tagline: Three Archaeological Treasures, One Extraordinary Journey
   headline: Three towns buried by Vesuvius, from the bustling streets of Pompeii to the luxury villa of Oplontis.
@@ -2167,6 +2224,7 @@
   capacity: 8
 
 - slug: amalfi-coast-positano-amalfi-ravello
+  code: 45
   title: "Amalfi Coast: Positano, Amalfi, Ravello"
   tagline: The Best of the Amalfi Coast, from Sea to Sky
   headline: Positano’s pastel houses, Amalfi’s cathedral, and Ravello’s gardens high above the sea.
@@ -2205,6 +2263,7 @@
   capacity: 8
 
 - slug: naples-pompeii-and-amalfi-coast
+  code: 46
   title: Pompeii and Amalfi Coast
   tagline: From Pompeii’s Ruins to Italy’s Most Beautiful Coastline
   headline: A guided morning in Pompeii, then the cliffside villages of the Amalfi Coast.
@@ -2242,6 +2301,7 @@
   capacity: 8
 
 - slug: naples-pompeii-sorrento-capri
+  code: 47
   title: Pompeii, Sorrento and Capri
   tagline: Ancient Wonders, Coastal Charm & Island Glamour
   headline: Pompeii’s ruins, lunch in Sorrento, and an afternoon on the island of Capri.
@@ -2281,6 +2341,7 @@
   capacity: 8
 
 - slug: capri-island
+  code: 48
   title: Capri Island
   tagline: Azure Waters, Dramatic Cliffs & Mediterranean Charm
   headline: A day on Capri by boat and on foot, from the Faraglioni rocks to the heights of Anacapri.
@@ -2322,6 +2383,7 @@
   capacity: 10
 
 - slug: essential-venice
+  code: 49
   title: Essential Venice
   tagline: St. Mark’s, the Doge’s Palace, and the Rialto
   headline: The city’s timeless landmarks around San Marco.
@@ -2357,6 +2419,7 @@
   times: ["09:00", "11:00", "14:30", "16:30"]
 
 - slug: hidden-venice
+  code: 50
   title: Hidden Venice
   tagline: The Venice Venetians Live In
   headline: Quiet lanes and the local corners most visitors miss.
@@ -2392,6 +2455,7 @@
   times: ["10:00", "15:00", "17:30"]
 
 - slug: venice-in-depth-grand-canal
+  code: 51
   title: Venice in Depth with Canale Grande
   tagline: The City on Foot and by Water
   headline: Venice’s history and landmarks, with the Grand Canal from the water by private water taxi.
@@ -2429,6 +2493,7 @@
   capacity: 10
 
 - slug: murano-and-burano-water-taxi
+  code: 52
   title: Murano and Burano by Water Taxi
   tagline: Glass Furnaces and Painted Houses
   headline: Murano and Burano for glassmaking traditions and colourful island streets, by private water taxi.
@@ -2466,6 +2531,7 @@
   capacity: 10
 
 - slug: venice-lagoon-murano-burano-torcello
+  code: 53
   title: "Venice Lagoon: Murano, Burano and Torcello"
   tagline: Three Islands, One Lagoon
   headline: Murano’s glass, Burano’s colours, and Torcello’s Byzantine mosaics, by private water taxi.
@@ -2504,6 +2570,7 @@
   capacity: 10
 
 - slug: venice-lagoon-and-winery
+  code: 54
   title: Venice Lagoon and Winery
   tagline: Wine Grown on the Water
   headline: Discover the Venetian lagoon and enjoy a taste of local wine country.
@@ -2543,6 +2610,7 @@
   capacity: 10
 
 - slug: santa-lucia-arrival-transfer
+  code: 55
   title: Arrival Transfer from Santa Lucia Train Station with Assistance
   tagline: Met on the Platform, Taken to Your Door
   headline: Meet your assistant at the station and enjoy a smooth, supported arrival in Venice.
@@ -2580,6 +2648,7 @@
   capacity: 8
 
 - slug: marco-polo-airport-hotel-transfer
+  code: 56
   title: Marco Polo Airport to Hotel Transfer
   tagline: Across the Lagoon by Water Taxi
   headline: Private water taxi transfer from Venice Marco Polo airport to your hotel.
@@ -2617,6 +2686,7 @@
   capacity: 8
 
 - slug: ravenna-cruise-transfer-venice
+  code: 57
   title: Cruise Transfer to Venice from Ravenna Pier
   tagline: From the Ship to the Lagoon
   headline: Connect from Ravenna’s cruise pier to Venice with a comfortable transfer.
@@ -2655,6 +2725,7 @@
   capacity: 8
 
 - slug: venice-to-milan-transfer
+  code: 58
   title: From Venice to Milan Direct Transfer
   tagline: Lagoon to Lombardy, Door to Door
   headline: A direct, comfortable journey from Venice to Milan.
@@ -2692,6 +2763,7 @@
   capacity: 8
 
 - slug: venice-to-lake-como-transfer
+  code: 59
   title: From Venice to Lake Como Direct Transfer
   tagline: From the Lagoon to the Lake
   headline: A direct, comfortable journey from Venice to the shores of Lake Como.
@@ -2729,6 +2801,7 @@
   capacity: 8
 
 - slug: venice-to-milan-verona-franciacorta
+  code: 60
   title: From Venice to Milan with Stops at Verona and a Franciacorta Winery
   tagline: The Scenic Way to Milan
   headline: From Venice to Milan, with time to explore Verona and the Franciacorta wine region.
@@ -2769,6 +2842,7 @@
   capacity: 8
 
 - slug: essential-palermo
+  code: 61
   title: Essential Palermo
   tagline: Palermo in a Morning
   headline: Best of Palermo in half a day.
@@ -2803,6 +2877,7 @@
   times: ["09:00", "14:30"]
 
 - slug: palermo-in-depth
+  code: 62
   title: Palermo in Depth
   tagline: Arab, Norman, and Baroque Palermo
   headline: Palermo’s layered history, vibrant culture, and authentic Sicilian character.
@@ -2839,6 +2914,7 @@
   times: ["09:00"]
 
 - slug: jewish-palermo
+  code: 63
   title: Jewish Palermo
   tagline: The Giudecca Rediscovered
   headline: Palermo’s Jewish heritage.
@@ -2873,6 +2949,7 @@
   times: ["09:30", "14:30"]
 
 - slug: palermo-food-tour
+  code: 64
   title: Palermo Food Tour
   tagline: Europe’s Street Food Capital
   headline: Palermo’s vibrant street food and the traditions behind its local flavours.
@@ -2910,6 +2987,7 @@
   times: ["10:30", "17:00"]
 
 - slug: marsala-wine-tour-from-palermo
+  code: 65
   title: Marsala Wine Tour from Palermo
   tagline: Salt Pans and Fortified Wine
   headline: Marsala’s historic wine culture and the distinctive flavours of western Sicily.
@@ -2947,6 +3025,7 @@
   times: ["09:00"]
 
 - slug: monreale-and-cefalu-from-palermo
+  code: 66
   title: Norman Monreale and Medieval Cefalù from Palermo
   tagline: Mosaics and a Seaside Cathedral
   headline: Sicily’s Norman heritage, from Monreale’s mosaics to Cefalù’s medieval charm.
@@ -2983,6 +3062,7 @@
   times: ["09:00"]
 
 - slug: best-of-palermo-port-of-call
+  code: 67
   title: Best of Palermo Port of Call
   tagline: Palermo in One Port Day
   headline: Palermo’s highlights, rich history, and vibrant local culture in one memorable port day.
@@ -3020,6 +3100,7 @@
   times: ["08:30"]
 
 - slug: catania-and-taormina-port-of-call
+  code: 68
   title: Catania and Taormina Port of Call
   tagline: Baroque Streets and Clifftop Views
   headline: Catania’s baroque charm and Taormina’s breathtaking coastal views in one unforgettable port day.
@@ -3057,6 +3138,7 @@
   times: ["08:30"]
 
 - slug: syracuse-and-noto-port-of-call
+  code: 69
   title: Catania, Syracuse and Baroque Noto Port of Call
   tagline: Greek Syracuse and Golden Noto
   headline: Syracuse’s historic heart and Noto’s Baroque beauty on a shore excursion from Catania.
@@ -3094,6 +3176,7 @@
   times: ["08:00"]
 
 - slug: etna-wineries-port-of-call
+  code: 70
   title: Catania and Etna Wineries Port of Call
   tagline: Wine from the Volcano
   headline: Mount Etna’s volcanic landscapes and wines from its hillside vineyards.
@@ -3132,6 +3215,7 @@
   times: ["08:00"]
 
 - slug: catania-to-taormina-transfer
+  code: 71
   title: Transfer from Catania to Taormina
   tagline: Airport to Hilltop, Door to Door
   headline: From Catania to Taormina with a private transfer tailored to your schedule.
@@ -3167,6 +3251,7 @@
   times: ["08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00"]
 
 - slug: godfather-tour-from-taormina
+  code: 72
   title: Godfather Tour from Taormina
   tagline: Savoca, Forza d’Agrò, and Bar Vitelli
   headline: Visit Savoca and Forza d’Agrò, the Sicilian villages featured in The Godfather.
@@ -3202,6 +3287,7 @@
   times: ["09:00", "14:00"]
 
 - slug: syracuse-and-noto-from-taormina
+  code: 73
   title: Catania, Syracuse and Baroque Noto from Taormina
   tagline: Eastern Sicily in a Day
   headline: Eastern Sicily’s ancient heritage and Baroque architecture on a full-day trip from Taormina.
@@ -3238,6 +3324,7 @@
   times: ["08:00"]
 
 - slug: etna-wineries-from-taormina
+  code: 74
   title: Etna Wineries from Taormina
   tagline: Vineyards on the Volcano
   headline: Taste volcanic wines and explore Etna’s scenic vineyards on a day trip from Taormina.
@@ -3275,6 +3362,7 @@
   times: ["09:30"]
 
 - slug: taormina-to-amalfi-coast-transfer
+  code: 75
   title: Transfer from Taormina to Amalfi Coast
   tagline: Sicily to the Mainland, Door to Door
   headline: Travel in comfort with a private, door-to-door transfer.

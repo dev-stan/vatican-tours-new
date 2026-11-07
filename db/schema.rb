@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_31_100000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_05_090000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -143,6 +143,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_31_100000) do
     t.string "tagline"
     t.string "transport", default: "walking", null: false
     t.string "badge"
+    t.integer "code"
+    t.index ["code"], name: "index_tours_on_code", unique: true
     t.index ["slug"], name: "index_tours_on_slug", unique: true
     t.index ["status"], name: "index_tours_on_status"
     t.check_constraint "badge IS NULL OR badge IN ('wheelchair', 'cruise', 'food', 'wine', 'active')", name: "tours_badge_valid"

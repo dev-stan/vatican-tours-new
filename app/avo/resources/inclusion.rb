@@ -1,4 +1,5 @@
 class Avo::Resources::Inclusion < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.title = :label
   self.icon = "tabler/outline/checklist"
   self.includes = [ :tour ]

@@ -1,4 +1,5 @@
 class Avo::Resources::Highlight < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.icon = "tabler/outline/star"
   self.includes = [ :tour ]
   self.default_sort_column = :position

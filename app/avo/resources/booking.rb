@@ -1,4 +1,5 @@
 class Avo::Resources::Booking < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.title = :reference
   self.description = "Booking requests from the site. Email the guest yourself, then set the status here: " \
                      "cancelling frees the seats, and the guest's booking page shows the new status."

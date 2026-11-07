@@ -3,7 +3,10 @@ class Avo::Resources::Tour < Avo::BaseResource
   self.icon = "tabler/outline/map"
   self.attachments = [ :photos ]
   self.search = {
-    query: -> { query.where("tours.title LIKE :q OR tours.slug LIKE :q OR tours.location LIKE :q", q: "%#{q}%") }
+    query: -> {
+      scope = query.where("tours.title LIKE :q OR tours.slug LIKE :q OR tours.location LIKE :q", q: "%#{q}%")
+      q.strip.match?(/\A\d+\z/) ? scope.or(query.where(code: q.strip.to_i)) : scope
+    }
   }
   # Tours use their slug in URLs (Tour#to_param).
   self.find_record_method = -> {
@@ -12,6 +15,7 @@ class Avo::Resources::Tour < Avo::BaseResource
   self.external_link = -> { main_app.tour_path(record) if record.published? }
 
   def fields
+    field :code, as: :number, name: "ID", sortable: true, help: "The tour's ID. Vatican tours are 100+."
     field :title, as: :text, link_to_record: true
     field :status, as: :select, options: ::Tour.statuses.keys.index_by(&:humanize), format_display_using: -> { value.to_s.humanize },
           help: "Only published tours appear on the site."

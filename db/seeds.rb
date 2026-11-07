@@ -2,7 +2,7 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-CANCELLATION = "Full refund if you cancel at least 24 hours before your start time."
+CANCELLATION = "Cancellations made less than 7 days before the tour are non-refundable.\nPre-booked admission tickets are non-refundable, regardless of the cancellation date."
 CLOSED_DAYS = ->(from, to) { (from.year..to.year).flat_map { |year| [ Date.new(year, 12, 25), Date.new(year, 1, 1) ] } }
 
 # Photos are replaced only when the list in tours.yml changes, so re-seeding doesn't re-upload them.
@@ -23,6 +23,7 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
   tour = Tour.find_or_initialize_by(slug: data["slug"])
   tour.update!(
     **data.slice("title", "tagline", "headline", "location", "transport", "meeting_point", "languages", "tags").symbolize_keys,
+    code: data["code"],
     badge: data["badge"],
     description: data["description"].strip,
     duration_minutes: (data["hours"] * 60).to_i,

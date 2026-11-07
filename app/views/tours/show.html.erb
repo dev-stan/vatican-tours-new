@@ -148,7 +148,7 @@
           <% @tour.tour_facts.each do |fact| %>
             <div class="grid gap-2 border-b border-line py-5 sm:grid-cols-[35%_1fr] sm:gap-6">
               <dt class="text-base font-semibold"><%= fact.label %></dt>
-              <dd class="text-base leading-[1.5]"><%= fact.body %></dd>
+              <dd class="text-base leading-[1.5] whitespace-pre-line"><%= fact.body %></dd>
             </div>
           <% end %>
         </dl>
@@ -265,8 +265,6 @@
           <% end %>
         </div>
       </div>
-
-      <p class="mt-3 text-center text-[13px] text-muted">Free cancellation up to 24 hours before the tour</p>
 
       <button type="button" class="group mt-4 flex cursor-pointer items-center gap-3 text-base"
               aria-pressed="false" data-booking-target="save" data-action="booking#toggleSave">

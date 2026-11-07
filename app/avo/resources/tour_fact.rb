@@ -1,4 +1,5 @@
 class Avo::Resources::TourFact < Avo::BaseResource
+  self.visible_on_sidebar = false
   self.title = :label
   self.description = "\"Good to know\" facts: shown on the tour page, in the request email and on the guest's booking page."
   self.icon = "tabler/outline/info-circle"
