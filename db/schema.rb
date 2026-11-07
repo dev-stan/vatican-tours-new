@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_05_090000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_07_090000) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -130,9 +130,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_05_090000) do
   create_table "tours", force: :cascade do |t|
     t.string "title", null: false
     t.string "slug", null: false
-    t.string "headline"
-    t.text "description"
-    t.string "location", null: false
+    t.string "subtitle"
+    t.text "finer_details"
+    t.string "region", null: false
     t.integer "duration_minutes", null: false
     t.string "meeting_point"
     t.json "languages", default: [], null: false
@@ -144,6 +144,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_05_090000) do
     t.string "transport", default: "walking", null: false
     t.string "badge"
     t.integer "code"
+    t.text "what_we_think"
+    t.text "what_customers_think"
+    t.string "customer_name"
+    t.string "customer_origin"
     t.index ["code"], name: "index_tours_on_code", unique: true
     t.index ["slug"], name: "index_tours_on_slug", unique: true
     t.index ["status"], name: "index_tours_on_status"

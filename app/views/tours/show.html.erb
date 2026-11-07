@@ -4,7 +4,7 @@
   <% content_for :body_class, "max-lg:pb-[73px]" %>
 <% end %>
 
-<% paragraphs = tour_paragraphs(@tour) %>
+<% details = tour_finer_details(@tour) %>
 <% included, excluded = @tour.inclusions.partition(&:included) %>
 <% gallery_widths = %w[w-[420px] w-[380px] w-[380px]] %>
 
@@ -30,7 +30,7 @@
     <%= divider %>
     <li class="flex items-center gap-2.5">
       <svg width="14" height="16" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>
-      <%= @tour.location %>
+      <%= @tour.region %>
     </li>
     <% if @tour.languages.any? %>
       <%= divider %>
@@ -52,7 +52,7 @@
       <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
         <li><%= link_to "Home", root_path, class: "hover:text-ink" %></li>
         <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
-        <li><%= link_to @tour.location, root_path(anchor: "tours"), class: "hover:text-ink" %></li>
+        <li><%= link_to @tour.region, root_path(anchor: "tours"), class: "hover:text-ink" %></li>
         <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
         <li class="text-ink" aria-current="page"><%= @tour.title %></li>
       </ol>
@@ -60,7 +60,7 @@
 
     <p class="mt-7 text-sm font-semibold tracking-[.16em] text-terracotta-deep uppercase"><%= @tour.title %></p>
     <h1 class="mt-6 font-serif text-[clamp(34px,4.4vw,50px)] leading-[1.1] font-medium tracking-[-.5px] text-pretty">
-      <%= @tour.headline.presence || @tour.title %>
+      <%= @tour.subtitle.presence || @tour.title %>
     </h1>
 
     <%# Highlights %>
@@ -78,18 +78,29 @@
       </section>
     <% end %>
 
-    <%# Pitch %>
-    <% if paragraphs.any? %>
-      <section class="mt-16 flex items-center gap-10 rounded-[24px] bg-terracotta px-8 py-10 sm:px-11">
-        <div class="flex-1">
-          <% if @tour.tagline.present? %>
-            <h2 class="mb-5 font-serif text-[30px] leading-[1.1] font-normal italic"><%= @tour.tagline %></h2>
-          <% end %>
-          <p class="text-base leading-[1.5]"><%= paragraphs.first %></p>
-        </div>
-        <span class="hidden size-[90px] shrink-0 items-center justify-center rounded-full border-2 border-ink sm:flex" aria-hidden="true">
-          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 34V17a14 14 0 0 1 28 0v17"/><path d="M12 34V18a7 7 0 0 1 14 0v16"/><path d="M2 34h34"/></svg>
-        </span>
+    <%# What we think, and what travellers told us %>
+    <% if @tour.what_we_think.present? || @tour.what_customers_think.present? %>
+      <section class="mt-16 rounded-[24px] bg-terracotta px-8 py-10 sm:px-11" aria-label="Our take on this tour">
+        <% if @tour.what_we_think.present? %>
+          <div>
+            <h2 class="text-[13px] font-semibold tracking-[.16em] text-ink/75 uppercase">What we think about this tour</h2>
+            <p class="mt-4 text-base leading-[1.6] whitespace-pre-line"><%= @tour.what_we_think %></p>
+          </div>
+        <% end %>
+        <% if @tour.what_customers_think.present? %>
+          <figure class="<%= "mt-8 border-t border-ink/25 pt-8" if @tour.what_we_think.present? %>">
+            <h2 class="text-[13px] font-semibold tracking-[.16em] text-ink/75 uppercase">What travellers shared with us about this tour</h2>
+            <blockquote class="mt-4 font-serif text-[clamp(22px,2.4vw,27px)] leading-[1.4] text-pretty italic">
+              “<%= @tour.what_customers_think %>”
+            </blockquote>
+            <% if @tour.customer_name.present? || @tour.customer_origin.present? %>
+              <figcaption class="mt-5">
+                <% if @tour.customer_name.present? %><p class="text-base font-semibold"><%= @tour.customer_name %></p><% end %>
+                <% if @tour.customer_origin.present? %><p class="mt-0.5 text-[15px] text-ink/75"><%= @tour.customer_origin %></p><% end %>
+              </figcaption>
+            <% end %>
+          </figure>
+        <% end %>
       </section>
     <% end %>
 
@@ -104,11 +115,11 @@
     <% end %>
 
     <%# Details %>
-    <% if paragraphs.many? %>
+    <% if details.any? %>
       <section class="mt-20" aria-labelledby="details-heading">
         <h2 id="details-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">The Finer Details</h2>
         <div class="mt-8 space-y-6 text-base leading-[1.65]">
-          <% paragraphs.drop(1).each do |paragraph| %>
+          <% details.each do |paragraph| %>
             <p><%= paragraph %></p>
           <% end %>
         </div>

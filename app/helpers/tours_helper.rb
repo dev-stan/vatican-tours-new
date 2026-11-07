@@ -13,7 +13,7 @@ module ToursHelper
   CARD_TINTS = { "Vatican City" => "bg-vatican-soft", "Rome" => "bg-rome-soft", "Rome Day Trips" => "bg-rome-soft" }.freeze
 
   def tour_card_tint(tour)
-    CARD_TINTS.fetch(tour.location, "bg-white")
+    CARD_TINTS.fetch(tour.region, "bg-white")
   end
 
   # 180 => "3 hours", 150 => "2 hours 30 min"
@@ -65,8 +65,8 @@ module ToursHelper
         .to_sentence(two_words_connector: " or ", last_word_connector: ", or ")
   end
 
-  # The description's first paragraph opens the tour page; the rest are the finer details.
-  def tour_paragraphs(tour)
-    tour.description.to_s.split(/\n{2,}/).map(&:strip).compact_blank
+  # "The Finer Details" on the tour page, one paragraph per blank-line-separated block.
+  def tour_finer_details(tour)
+    tour.finer_details.to_s.split(/\n{2,}/).map(&:strip).compact_blank
   end
 end

@@ -2,7 +2,7 @@ require "test_helper"
 
 class Departures::GeneratorTest < ActiveSupport::TestCase
   setup do
-    @tour = Tour.create!(title: "Night Walk", slug: "night-walk", location: "Rome", duration_minutes: 120)
+    @tour = Tour.create!(title: "Night Walk", slug: "night-walk", region: "Rome", duration_minutes: 120)
     travel_to Time.zone.local(2027, 3, 1, 8)
   end
 

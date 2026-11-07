@@ -2,7 +2,7 @@ require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   test "home page shows a card for every published tour" do
-    unpriced = Tour.create!(title: "Unpriced Tour", slug: "unpriced-tour", location: "Rome", duration_minutes: 90, status: "published")
+    unpriced = Tour.create!(title: "Unpriced Tour", slug: "unpriced-tour", region: "Rome", duration_minutes: 90, status: "published")
 
     get root_path
     assert_response :success

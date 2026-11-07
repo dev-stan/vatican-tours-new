@@ -19,7 +19,8 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
 
   test "tour page shows the tour's own content" do
     tour = tours(:ancient_rome)
-    tour.update!(tagline: "Two Thousand Years", description: "The pitch.\n\nFirst detail.\n\nSecond detail.")
+    tour.update!(what_we_think: "The pitch.", finer_details: "First detail.\n\nSecond detail.",
+                 what_customers_think: "No lines, please.", customer_name: "Betty & Peter", customer_origin: "London, UK")
     tour.highlights.create!(title: "Palatine Hill", body: "Where Rome began.")
     tour.inclusions.create!(label: "Licensed guide", included: true)
     tour.inclusions.create!(label: "Hotel pickup", included: false)
@@ -32,8 +33,11 @@ class ToursControllerTest < ActionDispatch::IntegrationTest
     assert_select "li", /Private or Group/
     assert_select "li", /Live guide in English/
     assert_select "h3", "Palatine Hill"
-    assert_select "h2", "Two Thousand Years"
+    assert_select "h2", "What we think about this tour"
     assert_select "p", "The pitch."
+    assert_select "blockquote", /No lines, please\./
+    assert_select "figcaption p", "Betty & Peter"
+    assert_select "figcaption p", "London, UK"
     assert_select "#details-heading ~ div p", 2
     assert_select "li", /Included: Licensed guide/
     assert_select "li", /Not included: Hotel pickup/

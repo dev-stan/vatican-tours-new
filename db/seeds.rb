@@ -22,10 +22,12 @@ to = from + 8.weeks
 YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
   tour = Tour.find_or_initialize_by(slug: data["slug"])
   tour.update!(
-    **data.slice("title", "tagline", "headline", "location", "transport", "meeting_point", "languages", "tags").symbolize_keys,
+    **data.slice("title", "tagline", "subtitle", "region", "transport", "meeting_point", "languages", "tags",
+               "what_customers_think", "customer_name", "customer_origin").symbolize_keys,
     code: data["code"],
     badge: data["badge"],
-    description: data["description"].strip,
+    what_we_think: data["what_we_think"].strip,
+    finer_details: data["finer_details"].strip,
     duration_minutes: (data["hours"] * 60).to_i,
     status: "published"
   )

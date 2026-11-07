@@ -57,9 +57,9 @@ class ToursController < ApplicationController
       end
     end
 
-    # Other tours in the same location first, then the rest of the catalogue.
+    # Other tours in the same region first, then the rest of the catalogue.
     def more_tours(tour)
       Tour.published.where.not(id: tour.id).with_attached_photos.includes(:ticket_types)
-          .in_order_of(:location, [ tour.location ], filter: false).order(:id).limit(MORE_TOURS)
+          .in_order_of(:region, [ tour.region ], filter: false).order(:id).limit(MORE_TOURS)
     end
 end

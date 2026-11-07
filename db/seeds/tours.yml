@@ -5,7 +5,12 @@
 # transport:   walking, boat or car; picks the icon on the tour card
 # badge:       optional pill on the card photo: wheelchair, cruise, food, wine or active (omit for none)
 # photos:      files in app/assets/images/tours; the first one is the card image (optional)
-# description: paragraphs separated by a blank line; the first is the pitch
+# subtitle:    the line under the tour name on its card and page
+# region:      one of PagesController::REGIONS (the home page tabs)
+# what_we_think:        our take on the tour, shown in the orange card on the tour page
+# what_customers_think: a traveller quote for the same card, with customer_name and customer_origin under it
+#                       (sample quotes: replace with real ones from your travellers)
+# finer_details:        paragraphs separated by a blank line, shown under "The Finer Details"
 # prices:      euros. Adult (18+) and child (6–17) group tickets; infants (0–5) go free. Leave them out for a
 #              private-only tour. private is either one price for up to max_guests, or a list of prices by
 #              party size ([1 guest, 2 guests, ...]); leave it out for a group-only tour.
@@ -18,17 +23,20 @@
   code: 0
   title: Ancient Rome Walking Tour
   tagline: Two Thousand Years, Three Hours
-  headline: Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
-  location: Rome
+  subtitle: Skip the Colosseum queue, climb the Palatine Hill where Rome began, and walk the Forum’s Sacred Way with an archaeologist at your side.
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
   languages: [en, es, fr]
   tags: [wheelchair, with_kids]
   photos: [colloseum.webp, roman_ruins.webp, colloseum_underground.webp]
-  description: |
+  what_we_think: |
     The Colosseum, the Forum, and the Palatine sit side by side, but most visitors see them as three separate queues. We walk them as one story — from the hut where Romulus lived to the arena where emperors bought the crowd’s loyalty.
-
+  what_customers_think: "First time in Rome with two kids. We want the Colosseum without standing in the sun for an hour, and somebody who makes the stones talk."
+  customer_name: "The Morales Family"
+  customer_origin: "Madrid, Spain"
+  finer_details: |
     The Colosseum draws more visitors than any other site in Italy, and the ticket line can swallow your whole morning. Your priority pass takes you through the reserved entrance, so the first thing you see is the arena, not the back of someone’s hat.
 
     Inside, your guide walks you around the first tier to explain how 50,000 Romans were seated, fed, and kept in line. Then you cross the Arch of Constantine and climb the Palatine Hill, where the first Romans built their huts and later emperors built palaces on top of them.
@@ -62,17 +70,20 @@
   code: 1
   title: Ancient Rome in Depth with Underground Colosseum
   tagline: Below the Arena Floor
-  headline: In-depth archaeological sites with a cappuccino break
-  location: Rome
+  subtitle: In-depth archaeological sites with a cappuccino break
+  region: Rome
   hours: 5
   transport: walking
   meeting_point: Piazza del Colosseo, by the newsstand opposite the Colosseo metro exit
   languages: [en, es, de]
   tags: [active]
   photos: [colloseum_underground.webp, colloseum.webp, roman_ruins.webp]
-  description: |
+  what_we_think: |
     Most visitors see the Colosseum from the stands. We take you underneath it, into the tunnels where gladiators waited and animals were hoisted into the light, then out onto the reconstructed arena floor to look back up at 50,000 empty seats.
-
+  what_customers_think: "We have seen the Colosseum from above already. This time we want to go underneath, where the gladiators waited, and take our time on the Palatine."
+  customer_name: "Hannah & Jonas"
+  customer_origin: "Hamburg, Germany"
+  finer_details: |
     The underground hypogeum opens only to small groups with a licensed guide, and tickets go months ahead. We hold our own allocation, so your group walks straight from the security check down the stairs and into the passages beneath the sand.
 
     After a cappuccino break in a café the locals actually use, the tour continues through the Roman Forum and up onto the Palatine Hill. With five hours instead of three, there is time for the House of Augustus, the Stadium of Domitian, and the questions most tours rush past.
@@ -102,17 +113,20 @@
   code: 2
   title: Old Rome Walking Tour
   tagline: Rome Between the Monuments
-  headline: Centro storico, where locals outnumber tourists
-  location: Rome
+  subtitle: Centro storico, where locals outnumber tourists
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Piazza di Spagna, at the foot of the Spanish Steps by the Barcaccia fountain
   languages: [en, es, fr, it]
   tags: [with_kids]
   photos: [piazza_navona.webp, pantheon.webp, bernini_fountain.webp]
-  description: |
+  what_we_think: |
     The famous sights of the centro storico sit a few minutes apart, linked by lanes most visitors never walk down. This tour strings them together the way Romans do — from the Spanish Steps to the Trevi Fountain, the Pantheon, and Piazza Navona, by way of the side streets in between.
-
+  what_customers_think: "We want to feel like we live here for one morning. Small streets, a good espresso, and the Pantheon before the crowds."
+  customer_name: "Claire & Mark"
+  customer_origin: "Toronto, Canada"
+  finer_details: |
     Your guide shows you where a pope dug up a Roman aqueduct to feed the Trevi, why the Pantheon’s dome has stood for 1,900 years without steel, and how Piazza Navona keeps the shape of the stadium beneath it.
 
     Along the way you will stop at an artisan bookbinder, a 400-year-old pharmacy, and the bar that serves Rome’s best espresso standing up. By the end you will know the old city well enough to find your way back for dinner.
@@ -140,17 +154,20 @@
   code: 3
   title: Old Rome by Golf Cart
   tagline: All of Rome, None of the Blisters
-  headline: Top sights without walking; good for limited mobility
-  location: Rome
+  subtitle: Top sights without walking; good for limited mobility
+  region: Rome
   hours: 2
   transport: car
   meeting_point: Pickup from your hotel or apartment in central Rome
   languages: [en, es, it, pt]
   tags: [with_kids, wheelchair]
   photos: [golf_cart.webp, pantheon.webp, piazza_navona.webp]
-  description: |
+  what_we_think: |
     Electric golf carts are allowed where coaches and taxis are not, so in two hours you glide through the lanes of the centro storico and stop at the places that matter — with a seat waiting every time your legs have had enough.
-
+  what_customers_think: "My mother is 82 and cannot walk far, but she has waited her whole life to see the Trevi Fountain. We need to see the centre without the walking."
+  customer_name: "Linda"
+  customer_origin: "Phoenix, USA"
+  finer_details: |
     Your driver-guide picks you up from your door and loops through the Trevi Fountain, the Pantheon, Piazza Navona, the Jewish Ghetto, and up to the Gianicolo terrace for the widest view over the domes of the city.
 
     It is the easiest way to see Rome with young children, grandparents, or anyone short on time. Carts take six guests and fold-up wheelchairs ride along in the back.
@@ -178,17 +195,20 @@
   code: 4
   title: Night Walk
   tagline: Rome After Dark
-  headline: Evening stroll through Rome’s streets and squares
-  location: Rome
+  subtitle: Evening stroll through Rome’s streets and squares
+  region: Rome
   hours: 2.5
   transport: walking
   meeting_point: Piazza del Popolo, in front of the twin churches
   languages: [en, es, it]
   tags: [with_kids]
   photos: [trevi_night.webp, piazza_navona.webp, pantheon.webp]
-  description: |
+  what_we_think: |
     Once the day-trippers leave and the floodlights come on, the centro storico turns back into a neighborhood. Fountains sound louder, piazzas fill with Romans on their evening passeggiata, and the monuments glow amber against the dark.
-
+  what_customers_think: "After dinner we do not want to sit in the hotel. Show us the fountains and piazzas when they are lit up and quiet."
+  customer_name: "Sophie & Tom"
+  customer_origin: "Bristol, UK"
+  finer_details: |
     The walk starts in Piazza del Popolo and winds down Via del Corso to the Trevi Fountain, lit up and finally quiet enough to hear. From there it is a short stroll to the Pantheon and on to Piazza Navona, where street artists set up under Bernini’s fountain.
 
     Halfway through we stop for gelato at a family-run gelateria — one of the few in town that still makes every flavor in the back room. It is a relaxed, unhurried way to spend your first or last evening in Rome.
@@ -216,17 +236,20 @@
   code: 5
   title: Appian Way and the Catacombs Tour
   tagline: The Queen of Roads
-  headline: Catacombs visit and walk on the Appian Way
-  location: Rome
+  subtitle: Catacombs visit and walk on the Appian Way
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Porta San Sebastiano, at the start of the Appian Way
   languages: [en, es, fr, de]
   tags: [with_kids]
   photos: [appian_way.webp, roman_ruins.webp, ostia_antica.webp]
-  description: |
+  what_we_think: |
     The Appian Way left Rome in 312 BC and ran all the way to the heel of Italy. Its first miles are still paved with the original basalt stones, lined with umbrella pines, tombs, and the entrances to the underground cemeteries where early Christians buried their dead.
-
+  what_customers_think: "Our son reads everything about the early Christians. He wants to walk the real Roman road and go down into the catacombs."
+  customer_name: "The O’Briens"
+  customer_origin: "Cork, Ireland"
+  finer_details: |
     We start at Porta San Sebastiano, the best-preserved gate in the Aurelian Walls, and walk the old road past the tomb of Cecilia Metella and the ruins of the Circus of Maxentius.
 
     Then we go underground. The Catacombs of San Callisto run for twenty kilometers on four levels, with chapels, frescoes, and the crypt of nine third-century popes. A specialist guide leads you through the galleries, and you come out blinking into the countryside a short walk from where you started.
@@ -254,17 +277,20 @@
   code: 6
   title: Rome Baroque Walking Tour
   tagline: Marble That Moves
-  headline: Caravaggio, Bernini, Borromini and the Borghese Gallery
-  location: Rome
+  subtitle: Caravaggio, Bernini, Borromini and the Borghese Gallery
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Entrance of the Borghese Gallery, Piazzale Scipione Borghese
   languages: [en, fr, it]
   tags: []
   photos: [borghese_gallery.webp, bernini_fountain.webp, piazza_navona.webp]
-  description: |
+  what_we_think: |
     In the 1600s, a handful of artists remade Rome in marble and light. Bernini carved stone so it looked like skin, Borromini bent walls into waves, and Caravaggio painted saints with dirty feet. This tour takes you to their best work.
-
+  what_customers_think: "We came to Rome for Caravaggio and Bernini, not for the ruins. Please make sure we get into the Borghese, tickets there are impossible."
+  customer_name: "Marta & Paolo"
+  customer_origin: "Buenos Aires, Argentina"
+  finer_details: |
     We start in the Borghese Gallery, where reservations are timed and capped. Your guide leads you to Bernini’s Apollo and Daphne and Rape of Proserpina, then to the room of Caravaggios collected by the cardinal who couldn’t stop buying them.
 
     From there we walk through the Pincio gardens to the Caravaggios in Santa Maria del Popolo, then on to Borromini’s spiraling San Ivo and Bernini’s Fountain of the Four Rivers — and the rivalry between the two men that shaped the whole city.
@@ -292,17 +318,20 @@
   code: 7
   title: Jewish Rome Walking Tour
   tagline: Two Thousand Years by the Tiber
-  headline: The Jewish Ghetto and its history
-  location: Rome
+  subtitle: The Jewish Ghetto and its history
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Largo 16 Ottobre 1943, in front of the Great Synagogue
   languages: [en, es, it]
   tags: [wheelchair]
   photos: [jewish_ghetto.webp, roman_piazza.webp, roman_ruins.webp]
-  description: |
+  what_we_think: |
     Rome has the oldest Jewish community in Europe, here since before the Colosseum was built. Their story is told in the stones of a few streets by the Tiber, the area that was walled off as the Ghetto from 1555 until 1870.
-
+  what_customers_think: "My grandfather’s family came from Rome. I would like to understand the Ghetto, the synagogue, and the history behind it, told with care."
+  customer_name: "Daniel"
+  customer_origin: "Tel Aviv, Israel"
+  finer_details: |
     Your guide walks you through the old Ghetto, past the Portico d’Ottavia and the Theater of Marcellus, and over to Tiber Island. Along the way you hear about life behind the walls, the raid of 16 October 1943, and the community that rebuilt itself afterward.
 
     The tour ends with a visit to the Great Synagogue and the Jewish Museum of Rome, followed by time to try carciofi alla giudia — deep-fried artichokes — in one of the kosher restaurants on Via del Portico d’Ottavia.
@@ -330,17 +359,20 @@
   code: 8
   title: Rome Underground for Smart Kids
   tagline: Dig Down Through Time
-  headline: Rome’s ancient sights, made fun for kids
-  location: Rome
+  subtitle: Rome’s ancient sights, made fun for kids
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: In front of the Basilica of San Clemente, Via Labicana 95
   languages: [en, es, fr, de]
   tags: [with_kids]
   photos: [roman_ruins.webp, colloseum_underground.webp, colloseum.webp]
-  description: |
+  what_we_think: |
     Rome is a layer cake: every century built on top of the last. This tour turns the city into a dig site for kids, going down three levels below street level to find what the Romans left behind.
-
+  what_customers_think: "Our kids are 9 and 11 and bored by museums. They want secret tunnels and stories with a bit of blood in them."
+  customer_name: "The Lindqvists"
+  customer_origin: "Stockholm, Sweden"
+  finer_details: |
     It starts at the Basilica of San Clemente, where a twelfth-century church sits on top of a fourth-century church, which sits on top of a Roman house and a temple to the god Mithras. Kids follow the sound of an underground river that still runs below it all.
 
     Then it’s on to the Colosseum valley for a gladiator-school session: how they trained, what they ate, and who actually won. Every child gets an explorer’s map and a sticker for each level they reach.
@@ -367,17 +399,20 @@
   code: 9
   title: On the Path of Angels and Demons Tour
   tagline: Follow the Path of Illumination
-  headline: Rome’s hidden clues from Dan Brown’s novel
-  location: Rome
+  subtitle: Rome’s hidden clues from Dan Brown’s novel
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Piazza del Popolo, at the obelisk
   languages: [en, es, de]
   tags: []
   photos: [bernini_fountain.webp, piazza_navona.webp, pantheon.webp]
-  description: |
+  what_we_think: |
     In Angels and Demons, Robert Langdon races across Rome following four altars of science hidden in Bernini’s sculptures. The churches, fountains, and statues are all real, and you can follow the same trail in an afternoon.
-
+  what_customers_think: "We read the book twice before the trip. We want to follow the Path of Illumination church by church, and know what is real and what is fiction."
+  customer_name: "Jenna & Chris"
+  customer_origin: "Denver, USA"
+  finer_details: |
     Your guide starts at Santa Maria del Popolo and the Chigi Chapel, where the first clue is hidden, then follows the Path of Illumination to Santa Maria della Vittoria and Bernini’s Ecstasy of St. Teresa.
 
     The trail ends at the Fountain of the Four Rivers in Piazza Navona and the Pantheon. Along the way you’ll learn where fact ends and fiction begins — and why the real history of the Illuminati is stranger than the novel.
@@ -404,17 +439,20 @@
   code: 10
   title: Rome through the Lens with a Photographer
   tagline: Golden Hour in the Eternal City
-  headline: Photo walk with a professional photographer
-  location: Rome
+  subtitle: Photo walk with a professional photographer
+  region: Rome
   hours: 3
   transport: walking
   meeting_point: Top of the Spanish Steps, in front of Trinità dei Monti
   languages: [en, it, fr]
   tags: []
   photos: [roman_piazza.webp, trevi_night.webp, piazza_navona.webp]
-  description: |
+  what_we_think: |
     Rome is one of the most photographed cities on earth, and most of those photos look the same. Walk it with a working photographer and you will come home with pictures that don’t.
-
+  what_customers_think: "I have a good camera and no idea how to use it in Rome’s light. I want the spots without other tourists in the frame."
+  customer_name: "Akiko"
+  customer_origin: "Osaka, Japan"
+  finer_details: |
     Tours start at sunrise or before sunset, when the light turns gold and the crowds thin out. Your photographer leads you from the Spanish Steps through the backstreets of the Tridente to the Trevi Fountain and Piazza Navona, teaching composition, light, and the settings that matter.
 
     Bring any camera, from a phone to a full-frame kit. The group stays small, so there is time for one-on-one advice at every stop, and you get a short edit of your best shots by email the next day.
@@ -442,17 +480,20 @@
   code: 11
   title: Rome, All the Sights Walking Tour
   tagline: The Whole City in a Day
-  headline: Old and Ancient Rome at a slow pace with a lunch break
-  location: Rome
+  subtitle: Old and Ancient Rome at a slow pace with a lunch break
+  region: Rome
   hours: 6
   transport: walking
   meeting_point: Outside the Colosseo metro station exit on Via dei Fori Imperiali
   languages: [en, es, fr, de, pt]
   tags: [active]
   photos: [pantheon.webp, colloseum.webp, trevi_night.webp]
-  description: |
+  what_we_think: |
     If you have one full day in Rome, this is the tour. It covers the Colosseum, the Forum, and the old city at a pace that leaves time to look, sit, and eat properly in between.
-
+  what_customers_think: "Only one full day in Rome and we want everything, ancient and old, but at a slow pace with a proper lunch in the middle."
+  customer_name: "Robert & Ann"
+  customer_origin: "Sydney, Australia"
+  finer_details: |
     The morning is Ancient Rome: priority entry to the Colosseum, the Roman Forum, and the Capitoline Hill with its view over the ruins. Then we stop for a long Roman lunch of pasta and wine in a trattoria in Monti.
 
     The afternoon is Old Rome: the Pantheon, Piazza Navona, Campo de’ Fiori, and the Trevi Fountain, with a gelato stop on the way. You finish with a full picture of the city and a list of places to come back to.
@@ -480,17 +521,20 @@
   code: 12
   title: Tivoli Gardens and Hadrian’s Villa
   tagline: Where Emperors and Cardinals Escaped
-  headline: Tivoli’s grand gardens and Hadrian’s vast villa
-  location: Rome Day Trips
+  subtitle: Tivoli’s grand gardens and Hadrian’s vast villa
+  region: Rome Day Trips
   hours: 6
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it]
   tags: []
   photos: [villa_deste.webp, countryside_palace.webp, roman_ruins.webp]
-  description: |
+  what_we_think: |
     Thirty kilometers east of Rome, the town of Tivoli has been the city’s summer retreat for two thousand years. Emperor Hadrian built a private city here, and fifteen centuries later a cardinal built the most extravagant water garden in Europe.
-
+  what_customers_think: "We have done the centre of Rome. Now we want the gardens and fountains of Tivoli, and Hadrian’s villa without a big bus group."
+  customer_name: "Elise & Pieter"
+  customer_origin: "Utrecht, Netherlands"
+  finer_details: |
     Your driver collects you from your hotel and heads first to Hadrian’s Villa, a sprawling complex of palaces, baths, and pools that the emperor designed himself. Walk the Canopus, a long pool lined with statues, and the island retreat where he went to be alone.
 
     After lunch in Tivoli, we cross town to Villa d’Este. Its terraced gardens hold hundreds of fountains, from the Hundred Fountains walk to the Organ Fountain, which still plays music using only water pressure.
@@ -520,17 +564,20 @@
   code: 13
   title: Ostia Antica and Etruscan Cerveteri by Car
   tagline: Rome’s Port and the Etruscan Dead
-  headline: Ancient Ostia and Cerveteri’s Etruscan heritage
-  location: Rome Day Trips
+  subtitle: Ancient Ostia and Cerveteri’s Etruscan heritage
+  region: Rome Day Trips
   hours: 6
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, fr, de]
   tags: []
   photos: [ostia_antica.webp, roman_ruins.webp, appian_way.webp]
-  description: |
+  what_we_think: |
     Pompeii gets the crowds, but Ostia Antica was Rome’s own harbor town, and it’s nearly as well preserved. Pair it with the Etruscan necropolis of Cerveteri and you get two civilizations in one day, without long drives.
-
+  what_customers_think: "Pompeii is too far for us this trip. We want a real Roman town to walk through, and the Etruscan tombs we read about."
+  customer_name: "Gregor"
+  customer_origin: "Vienna, Austria"
+  finer_details: |
     In Ostia, walk the main street past warehouses, apartment blocks, bakeries, and a theater that still hosts summer plays. Mosaics in the Square of the Corporations show where each shipping company kept its office.
 
     After lunch, we drive up the coast to Cerveteri, a UNESCO site where the Etruscans built their tombs like houses, complete with carved beds, chairs, and tools. Walking the streets of the necropolis feels like visiting a town that is still waiting for its people.
@@ -560,17 +607,20 @@
   code: 14
   title: Palaces and Gardens of Rome Countryside
   tagline: The Cardinals’ Country Houses
-  headline: Elegant palaces and gardens in the Roman countryside
-  location: Rome Day Trips
+  subtitle: Elegant palaces and gardens in the Roman countryside
+  region: Rome Day Trips
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, it, fr]
   tags: []
   photos: [countryside_palace.webp, villa_deste.webp, vineyard.webp]
-  description: |
+  what_we_think: |
     Renaissance cardinals spent their summers in the hills of Lazio, and they built palaces there to rival anything in Rome. Few tourists make the trip, so the rooms and gardens are often empty.
-
+  what_customers_think: "Our third time in Rome. We want a quiet day out of the city, beautiful villas and gardens, nothing rushed."
+  customer_name: "Catherine & Henri"
+  customer_origin: "Lyon, France"
+  finer_details: |
     The day starts at Palazzo Farnese in Caprarola, a pentagon-shaped palace with a spiral staircase wide enough for a horse and painted rooms covered in maps of the known world.
 
     After lunch in a country trattoria, we visit Villa Lante in Bagnaia. Its formal garden is a waterworks, with a water chain, a stone table with a channel in the middle for cooling wine, and fountains that step down the hill to the village.
@@ -600,8 +650,8 @@
   code: 15
   title: Roman Hills and Winery Visit
   tagline: Frascati in the Glass
-  headline: Roman hills and a local winery
-  location: Rome Day Trips
+  subtitle: Roman hills and a local winery
+  region: Rome Day Trips
   hours: 6
   transport: car
   badge: wine
@@ -609,9 +659,12 @@
   languages: [en, es, it, de]
   tags: [wine, food_and_cooking]
   photos: [vineyard.webp, countryside_palace.webp, villa_deste.webp]
-  description: |
+  what_we_think: |
     The Castelli Romani, the volcanic hills south of Rome, are where Romans go on weekends to eat and drink. The wine is crisp, the porchetta is famous, and the views stretch all the way back to the dome of St. Peter’s.
-
+  what_customers_think: "We love wine and want to see where the Romans make theirs. A good lunch, a cellar, a view over the hills."
+  customer_name: "Mike & Debbie"
+  customer_origin: "Napa, USA"
+  finer_details: |
     The day starts in Castel Gandolfo, the pope’s summer town above Lake Albano. Then we drive the lake road to Nemi, known for wild strawberries, and on to a family winery for a cellar tour and tasting of their Frascati whites and local reds.
 
     Lunch is a long fraschetta-style meal in Ariccia: porchetta, cheese, cured meats, and house wine at shared tables. You head back to Rome full, relaxed, and with a bottle or two under your arm.
@@ -641,17 +694,20 @@
   code: 16
   title: Pompeii and Oplontis, the Excavations
   tagline: A City Stopped Mid-Sentence
-  headline: Pompeii’s ancient streets and Oplontis’ Roman villa
-  location: Rome Day Trips
+  subtitle: Pompeii’s ancient streets and Oplontis’ Roman villa
+  region: Rome Day Trips
   hours: 10
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, it]
   tags: []
   photos: [oplontis.webp, herculaneum.webp, ostia_antica.webp]
-  description: |
+  what_we_think: |
     In AD 79, Vesuvius buried Pompeii in a single afternoon. The town that came out of the ash two thousand years later still has its bakeries, bars, brothels, and election slogans painted on the walls.
-
+  what_customers_think: "We are based in Rome but Pompeii is the dream. We need the day organised end to end, and a guide who knows the excavations well."
+  customer_name: "Ravi & Priya"
+  customer_origin: "Bangalore, India"
+  finer_details: |
     We take the high-speed train from Rome to Naples, where a driver takes you to the excavations. Your archaeologist guide leads you through the Forum, the baths, and the House of the Faun, and the casts of the people who didn’t escape.
 
     After lunch, we visit Oplontis, a short drive away. The Villa of Poppaea, thought to belong to Nero’s wife, has some of the finest wall paintings in the Roman world, and you will probably have it to yourselves.
@@ -681,17 +737,20 @@
   code: 17
   title: Pompeii, Herculaneum, Oplontis
   tagline: Three Towns Under the Ash
-  headline: Three remarkably preserved sites beneath Vesuvius
-  location: Rome Day Trips
+  subtitle: Three remarkably preserved sites beneath Vesuvius
+  region: Rome Day Trips
   hours: 10
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, de]
   tags: []
   photos: [herculaneum.webp, roman_ruins.webp, ostia_antica.webp]
-  description: |
+  what_we_think: |
     Vesuvius buried three very different places in AD 79: a busy town, a wealthy seaside resort, and a luxury villa. Seeing all three in one day shows how differently the eruption treated each.
-
+  what_customers_think: "My husband is an archaeology teacher. He wants all three sites in one day and someone who can answer his difficult questions."
+  customer_name: "Ingrid"
+  customer_origin: "Oslo, Norway"
+  finer_details: |
     Herculaneum comes first, before the heat. Buried under twenty meters of volcanic mud rather than ash, it kept its wooden beams, furniture, and even food. Then it’s on to Oplontis and the painted Villa of Poppaea.
 
     After a pizza lunch, the afternoon is Pompeii: the Forum, the theaters, and the great houses, guided by an archaeologist who knows which streets to take to avoid the crowds.
@@ -722,17 +781,20 @@
   code: 18
   title: Pompeii, Herculaneum and Vesuvius
   tagline: Up the Volcano, Down Through History
-  headline: Ancient ruins beneath Vesuvius
-  location: Rome Day Trips
+  subtitle: Ancient ruins beneath Vesuvius
+  region: Rome Day Trips
   hours: 10
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr]
   tags: [active]
   photos: [vesuvius.webp, herculaneum.webp, positano.webp]
-  description: |
+  what_we_think: |
     Stand on the rim of the volcano in the morning, and walk the streets it destroyed in the afternoon. This is the full story of AD 79, from the crater down.
-
+  what_customers_think: "We want to stand on the volcano and then see what it did. We are fit and happy with a long day."
+  customer_name: "Lukas & Mia"
+  customer_origin: "Zurich, Switzerland"
+  finer_details: |
     After the fast train to Naples, a driver takes you up the slopes of Vesuvius. A volcanologist guide leads the 30-minute climb to the crater rim, where steam still rises from the rocks and the whole Bay of Naples spreads out below.
 
     Back down, you visit Herculaneum, with its wooden houses preserved by volcanic mud, then Pompeii, the town buried under ash. By the end of the day you’ll understand exactly what happened, minute by minute.
@@ -762,17 +824,20 @@
   code: 19
   title: Pompeii, Amalfi Coast and Positano
   tagline: Ruins in the Morning, Sea in the Afternoon
-  headline: Pompeii’s ruins and Positano’s colorful coastal streets
-  location: Rome Day Trips
+  subtitle: Pompeii’s ruins and Positano’s colorful coastal streets
+  region: Rome Day Trips
   hours: 10
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, it, pt]
   tags: []
   photos: [positano.webp, capri_coastline.webp, herculaneum.webp]
-  description: |
+  what_we_think: |
     Two of southern Italy’s great sights in one day: the ruins of Pompeii and the cliffside town of Positano, linked by one of the most beautiful roads in the world.
-
+  what_customers_think: "Only one day for the south. Pompeii in the morning, Positano in the afternoon. Is this possible from Rome? We hope yes."
+  customer_name: "Jessica & Ryan"
+  customer_origin: "Chicago, USA"
+  finer_details: |
     The morning is Pompeii, with an archaeologist guide and the town’s best houses, baths, and streets. After lunch, your driver takes the Amalfi Coast road, hairpin after hairpin above the sea, with photo stops at the best viewpoints.
 
     You have free time in Positano to walk its steep lanes, browse the linen shops, or swim from the beach below the pastel houses, before the drive back to Naples for the evening train to Rome.
@@ -802,17 +867,20 @@
   code: 20
   title: Pompeii, Sorrento, Capri
   tagline: The Bay of Naples in a Day
-  headline: Pompeii’s ruins, Sorrento’s coast, and Capri’s island charm
-  location: Rome Day Trips
+  subtitle: Pompeii’s ruins, Sorrento’s coast, and Capri’s island charm
+  region: Rome Day Trips
   hours: 12
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, de]
   tags: []
   photos: [capri_coastline.webp, positano.webp, herculaneum.webp]
-  description: |
+  what_we_think: |
     A long, full day around the Bay of Naples: Pompeii, the lemon groves of Sorrento, and a boat trip around the island of Capri.
-
+  what_customers_think: "Our honeymoon. We want to see Pompeii, have lunch looking at the sea, and finish the day on Capri."
+  customer_name: "Ana & Miguel"
+  customer_origin: "Lisbon, Portugal"
+  finer_details: |
     It starts early with the fast train to Naples and a guided morning in Pompeii. Then it’s on to Sorrento for lunch on a terrace above the sea, and a fast ferry to Capri.
 
     On Capri, a private boat takes you around the island, past the Faraglioni rocks and into the grottoes, before free time in the Piazzetta. The last ferry and the evening train bring you back to Rome late, tired, and very happy.
@@ -843,17 +911,20 @@
   code: 21
   title: Assisi and Umbria
   tagline: The Green Heart of Italy
-  headline: Assisi’s historic landmarks and Umbria’s hill towns
-  location: Rome Day Trips
+  subtitle: Assisi’s historic landmarks and Umbria’s hill towns
+  region: Rome Day Trips
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, it, pt]
   tags: []
   photos: [assisi.webp, countryside_palace.webp, vineyard.webp]
-  description: |
+  what_we_think: |
     Two hours north of Rome, Umbria is all olive groves, pink stone towns, and quiet roads. At its center is Assisi, home of St. Francis and one of the great pilgrimage sites of Europe.
-
+  what_customers_think: "Saint Francis is very important to our family. We want to pray in Assisi and see the hill towns around it."
+  customer_name: "The Kowalski Family"
+  customer_origin: "Kraków, Poland"
+  finer_details: |
     Your guide starts at the Basilica of St. Francis, two churches stacked on top of each other, with Giotto’s frescoes of the saint’s life in the upper church and his tomb below. Then we walk up through the medieval town to the Piazza del Comune and the Basilica of St. Clare.
 
     After lunch with Umbrian truffles and local wine, we drive to Spello, a flower-filled hill town with Roman gates and Pinturicchio’s frescoes, before heading back to Rome.
@@ -882,17 +953,20 @@
   code: 22
   title: Tuscany, Villages and Countryside
   tagline: Cypress Roads and Brunello
-  headline: Tuscany’s medieval villages and rolling countryside
-  location: Rome Day Trips
+  subtitle: Tuscany’s medieval villages and rolling countryside
+  region: Rome Day Trips
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in central Rome
   languages: [en, es, de, it]
   tags: [wine]
   photos: [vineyard.webp, florence_duomo.webp, countryside_palace.webp]
-  description: |
+  what_we_think: |
     The Val d’Orcia is the Tuscany of postcards: cypress-lined roads, golden hills, and stone villages on every ridge. It’s also an easy day trip from Rome.
-
+  what_customers_think: "Cypress trees, little stone villages, a glass of Chianti. We want the Tuscany from the postcards, from Rome in one day."
+  customer_name: "Rachel"
+  customer_origin: "Melbourne, Australia"
+  finer_details: |
     Our first stop is Pienza, the ideal Renaissance town built by a pope in his home village, and famous for its pecorino cheese. Then we drive the valley road, stopping at the chapel of the Madonna di Vitaleta and the best viewpoints.
 
     Lunch is at a farm in Montepulciano, with a tasting of Vino Nobile in cellars dug into the hill. The last stop is Montalcino, home of Brunello, one of Italy’s most famous red wines, before the drive back to Rome.
@@ -922,17 +996,20 @@
   code: 23
   title: Florence, Chianti, Siena, Renaissance Marvels
   tagline: The Best of Tuscany from Rome
-  headline: Florence’s Renaissance treasures, Chianti’s countryside, and Siena’s medieval beauty
-  location: Rome Day Trips
+  subtitle: Florence’s Renaissance treasures, Chianti’s countryside, and Siena’s medieval beauty
+  region: Rome Day Trips
   hours: 12
   transport: car
   meeting_point: Roma Termini station, in front of the FRECCIALounge
   languages: [en, es, fr, pt]
   tags: [wine]
   photos: [florence_duomo.webp, vineyard.webp, countryside_palace.webp]
-  description: |
+  what_we_think: |
     Three Tuscan icons in one day: the Renaissance art of Florence, the vineyards of Chianti, and the medieval city of Siena. It’s a long day, but the fast train makes it possible.
-
+  what_customers_think: "We cannot stay a night in Tuscany this time. Florence, Siena, and some wine in between, all in one day please."
+  customer_name: "Gary & Sue"
+  customer_origin: "Leeds, UK"
+  finer_details: |
     You reach Florence in ninety minutes. Your guide takes you into the Accademia to see Michelangelo’s David, then on a walk past the Duomo, Giotto’s bell tower, Piazza della Signoria, and the Ponte Vecchio.
 
     After lunch, your driver takes the Chianti road south, stopping at a winery for a tasting, and on to Siena. Walk through its shell-shaped Piazza del Campo and into the striped Cathedral before the evening train back to Rome.
@@ -964,17 +1041,20 @@
   code: 24
   title: Essential Florence Part One with Academy
   tagline: The David and the City Around Him
-  headline: Michelangelo’s David, Renaissance art, and Florence’s historic heart.
-  location: Florence
+  subtitle: Michelangelo’s David, Renaissance art, and Florence’s historic heart.
+  region: Florence
   hours: 3
   transport: walking
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
   photos: [florence-academy.webp, david-florence.webp, duomo-florence.webp]
-  description: |
+  what_we_think: |
     Florence is small enough to cross in twenty minutes and dense enough to fill a lifetime. The first part of our Essential Florence series starts where most visitors want to begin: face to face with Michelangelo’s David.
-
+  what_customers_think: "The David is the reason we came to Florence. We want to see him without the queue and understand the city around him."
+  customer_name: "The Nguyens"
+  customer_origin: "San Jose, USA"
+  finer_details: |
     Your timed entry takes you straight into the Accademia Gallery. Before the David, your guide stops at the Prisoners, the unfinished figures that seem to fight their way out of the marble, and explains how a 26-year-old turned a block other sculptors had given up on into the symbol of a city.
 
     Back outside, we walk down to the Duomo and the Baptistery, past the workshops and palaces of the Medici quarter, and finish in Piazza della Signoria, where the copy of the David stands on the spot Michelangelo’s original was first unveiled.
@@ -1003,17 +1083,20 @@
   code: 25
   title: Essential Florence Part Two with Uffizi
   tagline: Landmarks and Masterpieces
-  headline: Florence’s iconic landmarks and the Uffizi’s Renaissance masterpieces.
-  location: Florence
+  subtitle: Florence’s iconic landmarks and the Uffizi’s Renaissance masterpieces.
+  region: Florence
   hours: 3
   transport: walking
   meeting_point: Piazza della Repubblica, under the arch on the western side of the square
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
   photos: [florence-uffizi.webp, uffizi-3.webp, duomo-florence.webp]
-  description: |
+  what_we_think: |
     The second part of Essential Florence joins the city’s great public spaces to the gallery the Medici built to show them off. It works on its own, or as the follow-up to Part One.
-
+  what_customers_think: "The Uffizi is too big to do alone. We want someone to take us straight to the masterpieces and tell us why they matter."
+  customer_name: "Julia & Ben"
+  customer_origin: "Manchester, UK"
+  finer_details: |
     We start in Piazza della Repubblica, the old Roman forum, and walk past Orsanmichele, the grain market turned church whose niches hold statues by Donatello and Verrocchio. From Piazza della Signoria it’s a few steps to the Uffizi, where your reserved entry skips the queue that wraps around the courtyard.
 
     Inside, your guide picks a route through the highlights: Giotto’s Madonna, Botticelli’s Birth of Venus and Primavera, Leonardo’s Annunciation, and Michelangelo’s only finished panel painting in Florence. The tour ends at the windows above the Arno, looking out at the Ponte Vecchio.
@@ -1042,17 +1125,20 @@
   code: 26
   title: Essential Florence Part Three, Oltrarno
   tagline: Across the River
-  headline: Florence revealed — the Oltrarno and Masaccio’s frescoes.
-  location: Florence
+  subtitle: Florence revealed — the Oltrarno and Masaccio’s frescoes.
+  region: Florence
   hours: 3
   transport: walking
   meeting_point: Ponte Santa Trinita, at the corner with Via Maggio
   languages: [en, it, fr]
   tags: [with_kids]
   photos: [oltrarno.webp, duomo-florence.webp, florence_duomo.webp]
-  description: |
+  what_we_think: |
     Across the Arno, Florence slows down. The Oltrarno is the city of artisans: gilders, framers, and leather workers in workshops that have been passed down for generations, around squares where locals still outnumber visitors.
-
+  what_customers_think: "We saw the famous Florence already. Now we want the other side of the river, the artisans and the frescoes most people miss."
+  customer_name: "Isabelle"
+  customer_origin: "Montréal, Canada"
+  finer_details: |
     Our walk starts at Ponte Santa Trinita and winds through Santo Spirito, Brunelleschi’s last church, before reaching Santa Maria del Carmine and the Brancacci Chapel. Here Masaccio painted the frescoes that taught the Renaissance how to paint people with weight, shadow, and feeling, and every artist who came after, Michelangelo included, came to copy them.
 
     We finish with a stop in an artisan workshop and a walk along Via Maggio, Florence’s street of antique dealers, ending near Palazzo Pitti.
@@ -1080,17 +1166,20 @@
   code: 27
   title: Essential Florence Part Four, Grand Masters
   tagline: Giotto, Fra Angelico, and Donatello
-  headline: Florence revealed — Giotto, Fra Angelico, and Donatello.
-  location: Florence
+  subtitle: Florence revealed — Giotto, Fra Angelico, and Donatello.
+  region: Florence
   hours: 3
   transport: walking
   meeting_point: Piazza San Marco, at the steps of the Church of San Marco
   languages: [en, it, de]
   tags: []
   photos: [florence-grand-masters.webp, uffizi-3.webp, florence-academy-2.webp]
-  description: |
+  what_we_think: |
     The last part of Essential Florence is for travellers who’ve seen the David and the Uffizi and want to understand where it all came from. Three masters, three buildings, and a hundred years of art history in a morning.
-
+  what_customers_think: "We are art lovers and want to go deeper. Giotto, Fra Angelico, Donatello, with somebody who really knows them."
+  customer_name: "Charlotte & James"
+  customer_origin: "Edinburgh, UK"
+  finer_details: |
     We begin at the Convent of San Marco, where Fra Angelico painted a fresco in each friar’s cell to help them pray. His Annunciation at the top of the stairs is one of the most quietly moving paintings in Italy.
 
     From there we cross to the Bargello, the old city prison turned sculpture museum, to see Donatello’s bronze David, the first free-standing nude since antiquity. We end in Santa Croce, where Giotto’s frescoes of St. Francis sit a few steps from the tombs of Michelangelo and Galileo.
@@ -1117,17 +1206,20 @@
   code: 28
   title: Skip-the-Line Self-Guided Visit of the Academy
   tagline: The David at Your Own Pace
-  headline: The David and the Accademia at your own pace, with a secured timed entrance.
-  location: Florence
+  subtitle: The David and the Accademia at your own pace, with a secured timed entrance.
+  region: Florence
   hours: 2
   transport: walking
   meeting_point: Via Ricasoli 58, at the Accademia’s reserved-entry door
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
   photos: [florence-academy-2.webp, david-florence.webp, florence-academy.webp]
-  description: |
+  what_we_think: |
     Some visitors want a guide. Others want to stand in front of the David for as long as they like. This is for the second kind: a secured, timed entry to the Accademia Gallery, and the rest is up to you.
-
+  what_customers_think: "We like to look at art in silence and at our own speed. We only need a sure entry time, no waiting outside."
+  customer_name: "Helga & Klaus"
+  customer_origin: "Munich, Germany"
+  finer_details: |
     Tickets for the Accademia sell out weeks ahead in high season, and the walk-up queue on Via Ricasoli can take hours. We book your time slot in advance and meet you at the reserved-entry door with your tickets, so you walk in at your time.
 
     Inside, follow our short printed guide or simply wander: the Prisoners, the David, the gallery of Florentine painting, and the museum of musical instruments with its Stradivarius.
@@ -1156,17 +1248,20 @@
   code: 29
   title: David in Academy and Masterpieces of Uffizi
   tagline: Two Museums, One Morning
-  headline: The best of two museums in one morning.
-  location: Florence
+  subtitle: The best of two museums in one morning.
+  region: Florence
   hours: 3
   transport: walking
   meeting_point: Piazza San Marco, by the statue of General Manfredo Fanti
   languages: [en, es, fr]
   tags: [wheelchair]
   photos: [david-florence.webp, florence-uffizi.webp, florence-academy.webp]
-  description: |
+  what_we_think: |
     Florence’s two great museums sit fifteen minutes apart, and most visitors spend a whole day queuing for them. This tour puts both in one morning, with reserved entry to each and a guide who knows exactly where to go.
-
+  what_customers_think: "We do not have much time, want to see David and the Uffizi in one morning. Small group, no lines."
+  customer_name: "Min-jun & Seo-yeon"
+  customer_origin: "Seoul, South Korea"
+  finer_details: |
     We start at the Accademia as the doors open, while the gallery is at its quietest, for the Prisoners and Michelangelo’s David. Then a short walk past the Duomo brings us to the Uffizi.
 
     In the Uffizi your guide leads you through the essentials: Giotto, Botticelli’s Birth of Venus and Primavera, Leonardo, Raphael, and Caravaggio. It’s a full morning, but you’ll leave having seen the best of Renaissance Florence.
@@ -1194,17 +1289,20 @@
   code: 30
   title: Skip-the-Line Self-Guided Visit of the Uffizi
   tagline: The Uffizi on Your Own Terms
-  headline: The masterpieces of the Uffizi at your own pace, with a secured timed entrance.
-  location: Florence
+  subtitle: The masterpieces of the Uffizi at your own pace, with a secured timed entrance.
+  region: Florence
   hours: 2
   transport: walking
   meeting_point: Piazzale degli Uffizi, at the reserved-entry door 1
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
   photos: [uffizi-self-guide.webp, florence-uffizi.webp, uffizi-3.webp]
-  description: |
+  what_we_think: |
     The Uffizi is one of the most visited museums in the world, and the queue under its arcades shows it. Skip it with a timed ticket booked ahead, then explore the galleries at whatever pace suits you.
-
+  what_customers_think: "I have a list of paintings I want to see and I want to sit in front of the Botticelli for as long as I like. Just get me in."
+  customer_name: "Margaret"
+  customer_origin: "Boston, USA"
+  finer_details: |
     Our host meets you at the reserved entrance with your tickets and a short printed guide to the collection. Spend an hour with Botticelli or walk the whole east wing; your ticket lets you stay until closing.
   highlights:
     Secured timed entry: Tickets booked ahead and handed to you at the door.
@@ -1232,17 +1330,20 @@
   code: 31
   title: Masterpieces of Uffizi Small Group
   tagline: The Renaissance in Ten Rooms
-  headline: Botticelli, Leonardo, and other Renaissance masters in the Uffizi.
-  location: Florence
+  subtitle: Botticelli, Leonardo, and other Renaissance masters in the Uffizi.
+  region: Florence
   hours: 2
   transport: walking
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr, it]
   tags: [with_kids, wheelchair]
   photos: [uffizi-3.webp, florence-uffizi.webp, uffizi-self-guide.webp]
-  description: |
+  what_we_think: |
     The Uffizi holds more Renaissance masterpieces than anywhere else on earth, and the rooms go on for nearly a kilometre. This two-hour tour picks the paintings that changed art and tells the story that links them.
-
+  what_customers_think: "Botticelli and Leonardo are on the list for our daughter’s art class. We want a guide who can make it interesting for a teenager."
+  customer_name: "The Davies Family"
+  customer_origin: "Cardiff, UK"
+  finer_details: |
     From Giotto’s gold-ground Madonna to Botticelli’s Birth of Venus, Leonardo’s Annunciation, Michelangelo’s Doni Tondo, and Titian’s Venus of Urbino, your guide follows the Renaissance as it unfolds room by room.
   highlights:
     Botticelli: The Birth of Venus and Primavera.
@@ -1268,17 +1369,20 @@
   code: 32
   title: VIP Uffizi and Vasari Corridor
   tagline: The Medici’s Private Passage
-  headline: Uffizi treasures and an exclusive passage through the Vasari Corridor.
-  location: Florence
+  subtitle: Uffizi treasures and an exclusive passage through the Vasari Corridor.
+  region: Florence
   hours: 2.5
   transport: walking
   meeting_point: Piazza della Signoria, by the Fountain of Neptune
   languages: [en, es, fr]
   tags: [wheelchair]
   photos: [corridor.webp, florence-uffizi.webp, oltrarno.webp]
-  description: |
+  what_we_think: |
     In 1565 Cosimo I de’ Medici had Vasari build a private corridor so he could walk from his offices in the Uffizi to his home in Palazzo Pitti without mixing with the people of Florence. Almost a kilometre long, it runs over the shops of the Ponte Vecchio and across the Arno.
-
+  what_customers_think: "Our anniversary trip. We want something special, the corridor the Medici used, and not to be in a crowd of fifty."
+  customer_name: "Alessandra & David"
+  customer_origin: "New York, USA"
+  finer_details: |
     This tour begins with the highlights of the Uffizi, then enters the corridor, where visits are limited to a handful of small groups a day. Through its small round windows you’ll see the Ponte Vecchio and the river as the Medici saw them, and come out in the Boboli Gardens.
   highlights:
     The Vasari Corridor: The Medici’s elevated passage over the Ponte Vecchio, open to few visitors.
@@ -1305,17 +1409,20 @@
   code: 33
   title: VIP Duomo Tour, Secret Terraces and Brunelleschi Dome
   tagline: On the Roof of Florence
-  headline: Hidden terraces and Brunelleschi’s Dome, with stunning views of Florence.
-  location: Florence
+  subtitle: Hidden terraces and Brunelleschi’s Dome, with stunning views of Florence.
+  region: Florence
   hours: 2
   transport: walking
   meeting_point: Piazza del Duomo, at the Porta della Mandorla on the cathedral’s north side
   languages: [en, es, it]
   tags: [active]
   photos: [duomo-florence.webp, florence_duomo.webp, oltrarno.webp]
-  description: |
+  what_we_think: |
     Brunelleschi’s Dome was the largest in the world when it was finished in 1436, and nobody is quite sure how he built it without a wooden frame. This tour takes you inside the cathedral’s structure to find out.
-
+  what_customers_think: "We want to climb the dome and see Florence from the terraces where tourists cannot go. We don’t mind the stairs."
+  customer_name: "Erik & Lena"
+  customer_origin: "Copenhagen, Denmark"
+  finer_details: |
     With a guide and special access, you climb to the terraces along the cathedral’s roof, closed to regular visitors, with views straight down into the nave and out across the city. Then you continue up between the dome’s two shells, past Vasari’s Last Judgment frescoes, to the lantern at the top and the best view in Florence.
   highlights:
     The secret terraces: Walk the cathedral roof, closed to regular visitors.
@@ -1343,17 +1450,20 @@
   code: 34
   title: "Tuscan Classic: Towns, Villages & Countryside"
   tagline: Siena, San Gimignano, and the Hills Between
-  headline: A must-do day trip from Florence for first-time visitors to Tuscany.
-  location: Tuscany
+  subtitle: A must-do day trip from Florence for first-time visitors to Tuscany.
+  region: Tuscany
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it]
   tags: [with_kids]
   photos: [tuscan-classics.webp, chianti.webp, countryside_palace.webp]
-  description: |
+  what_we_think: |
     If you only have one day to see the Tuscan countryside, this is the day. Your driver collects you in Florence and heads south through the hills to three towns that each show a different side of medieval Tuscany.
-
+  what_customers_think: "First time in Tuscany. We want San Gimignano, Siena, the countryside, and not to drive ourselves."
+  customer_name: "Patricia & Steve"
+  customer_origin: "Dallas, USA"
+  finer_details: |
     First is Monteriggioni, a tiny village still enclosed by its 13th-century walls. Then Siena: walk into the shell-shaped Piazza del Campo, where the Palio horse race is run, and on to the striped marble Cathedral.
 
     After lunch, the road climbs to San Gimignano, the town of towers, for a gelato from one of Italy’s most famous gelaterias and the view over the valley before the drive back to Florence.
@@ -1382,8 +1492,8 @@
   code: 35
   title: Tuscan Classic with a Winery Tour and Tasting
   tagline: Hill Towns and a Cellar Door
-  headline: The best of Tuscany and a private winery visit.
-  location: Tuscany
+  subtitle: The best of Tuscany and a private winery visit.
+  region: Tuscany
   hours: 8
   transport: car
   badge: wine
@@ -1391,9 +1501,12 @@
   languages: [en, es, fr, it]
   tags: [wine]
   photos: [tuscan-winery.webp, tuscan-classics.webp, chianti.webp]
-  description: |
+  what_we_think: |
     The classic Tuscan day with a glass in hand. We keep the highlights, Siena and San Gimignano, and add a private visit to a family winery in the hills between them.
-
+  what_customers_think: "The towns, yes, but most of all we want a real family winery, not a tasting room for buses."
+  customer_name: "Nicole & Adam"
+  customer_origin: "Auckland, New Zealand"
+  finer_details: |
     Start with Siena’s Piazza del Campo and Cathedral, then drive into the countryside for a tour of the vineyard and cellars with the family who runs them. Lunch is at the winery, with a tasting of their Chianti and Vernaccia alongside local cheese and cured meats.
 
     The afternoon ends in San Gimignano, among its medieval towers, before the drive back to Florence.
@@ -1423,8 +1536,8 @@
   code: 36
   title: "A Serious Wine Maker: Brunello and Chianti"
   tagline: For People Who Read the Label
-  headline: Private winery visits with local sommeliers, for serious wine lovers.
-  location: Tuscany
+  subtitle: Private winery visits with local sommeliers, for serious wine lovers.
+  region: Tuscany
   hours: 8
   transport: car
   badge: wine
@@ -1432,9 +1545,12 @@
   languages: [en, it, de]
   tags: [wine]
   photos: [brunello.webp, chianti.webp, tuscan-winery.webp]
-  description: |
+  what_we_think: |
     This is not a tasting-room day. It’s a day with the people who make the wine, led by a sommelier who can talk clones, soils, and vintages as easily as the view.
-
+  what_customers_think: "We collect Brunello at home. We want to meet the people who make it and taste older vintages with a sommelier."
+  customer_name: "Richard"
+  customer_origin: "London, UK"
+  finer_details: |
     In the morning we visit a Chianti Classico estate for a walk through the vines and a barrel tasting in the cellar. Then the road runs south to Montalcino, where Brunello is made from Sangiovese alone and aged for at least five years before release.
 
     Lunch is at a Montalcino estate, paired with a vertical tasting of their Brunello across several vintages. Expect to come home knowing more about Tuscan wine than most wine lists.
@@ -1463,8 +1579,8 @@
   code: 37
   title: Short Chianti Day with Lunch and Winery Visit
   tagline: A Lazy Afternoon in Chianti
-  headline: Lazy time with beautiful vistas, good wine, and a Tuscan lunch.
-  location: Tuscany
+  subtitle: Lazy time with beautiful vistas, good wine, and a Tuscan lunch.
+  region: Tuscany
   hours: 5
   transport: car
   badge: wine
@@ -1472,9 +1588,12 @@
   languages: [en, es, fr, it]
   tags: [wine]
   photos: [chianti.webp, tuscan-winery.webp, vineyard.webp]
-  description: |
+  what_we_think: |
     Not everyone wants an eight-hour day. This one is half the length and twice as relaxed: a scenic drive into the Chianti hills, a winery visit, and a long Tuscan lunch.
-
+  what_customers_think: "No big program. A drive through the vineyards, a long Tuscan lunch, some wine, back by evening."
+  customer_name: "Anna & Felix"
+  customer_origin: "Berlin, Germany"
+  finer_details: |
     We drive the Via Chiantigiana through Greve and Panzano, stopping for the views, then visit a small family winery for a cellar tour and tasting. Lunch follows on the terrace, with pasta, local olive oil, and their wine, and you’re back in Florence by mid-afternoon.
   highlights:
     The Chianti road: Vineyards, olive groves, and cypress-lined hills.
@@ -1501,17 +1620,20 @@
   code: 38
   title: Lucca, Pisa and Leaning Tower
   tagline: Walls, Towers, and the Field of Miracles
-  headline: Pisa’s iconic Leaning Tower and Lucca’s charm on a memorable day trip.
-  location: Tuscany
+  subtitle: Pisa’s iconic Leaning Tower and Lucca’s charm on a memorable day trip.
+  region: Tuscany
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in central Florence
   languages: [en, es, fr, it, pt]
   tags: [with_kids]
   photos: [pisa-tower.webp, tuscan-classics.webp, florence_duomo.webp]
-  description: |
+  what_we_think: |
     Two cities an hour west of Florence, and two very different days out. Pisa is the famous one; Lucca is the one people fall in love with.
-
+  what_customers_think: "The kids want the photo holding up the Leaning Tower. We want Lucca and its walls. One day for both."
+  customer_name: "The Fischers"
+  customer_origin: "Cologne, Germany"
+  finer_details: |
     In Pisa, your guide walks you across the Field of Miracles, the green lawn that holds the Cathedral, the Baptistery, and the Leaning Tower, and explains why it leans and why it hasn’t fallen. There’s time for the photo everyone takes, and an optional climb to the top.
 
     In the afternoon we drive to Lucca, still wrapped in its Renaissance walls. Walk or cycle along the tree-lined ramparts, then explore the oval Piazza dell’Anfiteatro, built inside a Roman amphitheatre, before the drive back to Florence.
@@ -1540,8 +1662,8 @@
   code: 39
   title: Cinque Terre Adventure
   tagline: Five Villages on the Riviera
-  headline: Colorful seaside villages, breathtaking coastal views, and the charm of the Italian Riviera.
-  location: Tuscany
+  subtitle: Colorful seaside villages, breathtaking coastal views, and the charm of the Italian Riviera.
+  region: Tuscany
   hours: 8
   transport: car
   badge: active
@@ -1549,9 +1671,12 @@
   languages: [en, es, it, de]
   tags: [active]
   photos: [cinque-terre.webp, tuscan-classics.webp, countryside_palace.webp]
-  description: |
+  what_we_think: |
     Five fishing villages painted in every shade of the sunset, stacked on cliffs above the Ligurian Sea. The Cinque Terre is just across the Tuscan border, and it makes for an unforgettable day.
-
+  what_customers_think: "We want to hike between the villages, swim if we can, and eat focaccia by the sea. Organise the trains for us."
+  customer_name: "Kate & Liam"
+  customer_origin: "Vancouver, Canada"
+  finer_details: |
     Your driver takes you to La Spezia, where the local train links the villages along the coast. With your guide, you’ll explore Riomaggiore’s harbour, Manarola’s famous viewpoint, and Vernazza’s little square on the sea, with time for focaccia and a swim in summer.
 
     Weather permitting, part of the route is by boat, the best way to see the villages from the water. Fitter travellers can walk one of the coastal paths between two villages.
@@ -1581,17 +1706,20 @@
   code: 100
   title: Self-Guided Vatican Museums and Sistine Chapel
   tagline: The Museums on Your Own Clock
-  headline: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
-  location: Vatican City
+  subtitle: Skip-the-line entry to the Vatican Museums and the Sistine Chapel, then explore at your own pace.
+  region: Vatican City
   hours: 3
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids, wheelchair]
   photos: [vatican-museums.webp, sistine-chapel.webp, vatican-museums-essentials.webp]
-  description: |
+  what_we_think: |
     The queue for the Vatican Museums runs along the Vatican walls most mornings of the year, and in summer it can take two hours to reach the door. This visit skips it: a reserved, timed ticket, handed to you at the entrance, and the rest of the day is yours.
-
+  what_customers_think: "We like to go at our own pace with the audio guide. We only need tickets that let us skip the line in the morning."
+  customer_name: "Pierre & Camille"
+  customer_origin: "Bordeaux, France"
+  finer_details: |
     Our host meets you across the road from the entrance, walks you through security, and gives you a printed map with the route most people want: the Pinecone Courtyard, the Gallery of Maps, the Raphael Rooms, and the Sistine Chapel at the end.
 
     Inside there is no group to keep up with. Spend an hour with the Laocoön or rush straight to Michelangelo’s ceiling, and stay until closing if you like.
@@ -1623,17 +1751,20 @@
   code: 101
   title: Self-Guided All Vatican with Priority Passes
   tagline: Museums, Chapel, and Basilica, No Queues
-  headline: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
-  location: Vatican City
+  subtitle: Priority passes for the Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica.
+  region: Vatican City
   hours: 4
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, with_kids]
   photos: [vatican-city.webp, vatican-museums.webp, basilica.webp]
-  description: |
+  what_we_think: |
     The Vatican has two great queues, one for the Museums and one for St. Peter’s Basilica, and most visitors spend more of their day in them than inside. These passes cover both, so you can see the whole of Vatican City at your own pace.
-
+  what_customers_think: "Museums, Sistine Chapel, and the Basilica, all in one go, no queues anywhere. We do not need a guide."
+  customer_name: "Tomás"
+  customer_origin: "Santiago, Chile"
+  finer_details: |
     Start with a timed entry to the Vatican Museums and walk the route at whatever speed suits you, through the Gallery of Maps and the Raphael Rooms to the Sistine Chapel.
 
     Then use your priority pass for the Basilica: Michelangelo’s Pietà, Bernini’s bronze canopy over the papal altar, and the light falling through the dome. Our audio guide tells the story of each, whenever you press play.
@@ -1666,17 +1797,20 @@
   code: 102
   title: Vatican City Essentials
   tagline: Museums, Chapel, and Basilica in One Visit
-  headline: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
-  location: Vatican City
+  subtitle: The Vatican Museums, the Sistine Chapel, and St. Peter’s Basilica with your own guide.
+  region: Vatican City
   hours: 3
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de]
   tags: [with_kids, wheelchair]
   photos: [vatican-city-1.webp, sistine-chapel.webp, basilica.webp]
-  description: |
+  what_we_think: |
     The Vatican holds more masterpieces per square metre than anywhere on earth, and the first visit can feel like drinking from a fire hose. This tour picks the essentials and tells the story that connects them.
-
+  what_customers_think: "We do not have much time, want to see all best things in one morning. Looking for good value. No lines."
+  customer_name: "Betty & Peter"
+  customer_origin: "London, UK"
+  finer_details: |
     Your guide takes you through the Museums’ classical sculpture courtyards, the Gallery of Maps, and the Raphael Rooms, then into the Sistine Chapel, where Michelangelo spent four years on his back painting the ceiling.
 
     From the chapel, a passage leads straight into St. Peter’s Basilica, skipping the queue in the square. You finish under Michelangelo’s dome, a few steps from the Pietà he carved at twenty-four.
@@ -1707,17 +1841,20 @@
   code: 103
   title: St. Peter’s in Depth
   tagline: The Basilica, the Grottoes, and the Dome
-  headline: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
-  location: Vatican City
+  subtitle: Michelangelo’s Pietà, the papal tombs, and the climb to the dome, with an expert guide.
+  region: Vatican City
   hours: 2.5
   transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it]
   tags: [active]
   photos: [st-peters-basilica-inside.webp, michelangelos-pieta.webp, basilica.webp]
-  description: |
+  what_we_think: |
     St. Peter’s Basilica took 120 years and a dozen architects to build, and most visitors walk through it in twenty minutes. This tour takes its time, from the grottoes beneath the floor to the top of Michelangelo’s dome.
-
+  what_customers_think: "We are Catholic and want to understand the Basilica properly, the Pietà, the tombs of the popes, and then climb to the top."
+  customer_name: "Maria & Joseph"
+  customer_origin: "Manila, Philippines"
+  finer_details: |
     Your guide starts in the nave with the Pietà, Bernini’s bronze canopy, and the story of how a pope tore down a 1,200-year-old church to build a new one. Then you go down to the Vatican Grottoes, where popes from St. Peter to John Paul II are buried.
 
     The tour ends with the climb to the dome: a lift to the roof, then 320 steps between the inner and outer shells to the lantern, and the best view in Rome.
@@ -1747,17 +1884,20 @@
   code: 104
   title: Vatican Gardens in Depth
   tagline: The Pope’s Private Gardens
-  headline: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
-  location: Vatican City
+  subtitle: Fountains, grottoes, and woodland behind the Vatican walls, then the Museums at your own pace.
+  region: Vatican City
   hours: 2
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, it, de]
   tags: [with_kids]
   photos: [vatican-gardens.webp, vatican-city.webp, vatican-museums.webp]
-  description: |
+  what_we_think: |
     Half of Vatican City is garden, and almost nobody sees it. Behind the walls lie fifty acres of lawns, woods, and fountains that popes have walked in for seven centuries, open only to small guided groups.
-
+  what_customers_think: "We heard half the Vatican is gardens and almost nobody sees them. That is exactly what we want to see."
+  customer_name: "Eleanor"
+  customer_origin: "Oxford, UK"
+  finer_details: |
     Your guide leads you past the Fountain of the Eagle, the Lourdes Grotto, and the Casina of Pius IV, a Renaissance summer house hidden in the trees, with views of the dome from angles you won’t find on any postcard.
 
     The tour ends back inside the Vatican Museums, and your ticket lets you stay and explore the galleries and the Sistine Chapel for the rest of the day.
@@ -1787,17 +1927,20 @@
   code: 105
   title: Vatican Scavi and St. Peter’s Tomb
   tagline: Beneath the Basilica
-  headline: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
-  location: Vatican City
+  subtitle: The Roman necropolis under St. Peter’s, down to the tomb of the apostle himself.
+  region: Vatican City
   hours: 1.5
   transport: walking
   meeting_point: The Swiss Guard post at the Arco delle Campane, left of St. Peter’s Basilica
   languages: [en, es, it]
   tags: []
   photos: [scavi.webp, st-peters-basilica-inside.webp, basilica.webp]
-  description: |
+  what_we_think: |
     Beneath the floor of St. Peter’s Basilica lies a street of Roman tombs, buried when Constantine levelled the hill to build the first church. Excavations in the 1940s uncovered it, and at the end of it, the grave believed to be St. Peter’s.
-
+  what_customers_think: "For years I have wanted to see the tomb of Saint Peter under the Basilica. This is the reason for our pilgrimage."
+  customer_name: "Father Michael"
+  customer_origin: "Philadelphia, USA"
+  finer_details: |
     Only around 250 people a day are allowed into the Scavi, in groups of a dozen, and the Vatican’s Excavations Office books them months ahead. We handle the application and meet you at the Swiss Guard post.
 
     Your guide leads you down through pagan and Christian mausoleums, still decorated with frescoes and mosaics, to the red wall and the bones found beside it. You come up in the Grottoes, beneath the papal altar.
@@ -1826,17 +1969,20 @@
   code: 106
   title: Essential Vatican Museums
   tagline: The Highlights in Three Hours
-  headline: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
-  location: Vatican City
+  subtitle: The Raphael Rooms, the Gallery of Maps, and the Sistine Chapel with a small group.
+  region: Vatican City
   hours: 3
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
   photos: [vatican-museums-essentials.webp, sistine-chapel.webp, vatican-museums.webp]
-  description: |
+  what_we_think: |
     The Vatican Museums stretch over seven kilometres of galleries, and without a plan most visitors run out of energy long before the Sistine Chapel. This small-group tour gets you to the rooms that matter, in the right order.
-
+  what_customers_think: "We want the Raphael Rooms, the Gallery of Maps, and the Sistine Chapel, explained well, in a small group."
+  customer_name: "Lucía & Andrés"
+  customer_origin: "Bogotá, Colombia"
+  finer_details: |
     Your guide starts with the classical sculpture of the Pio-Clementino, where the Laocoön and the Belvedere Torso taught Michelangelo how to carve. Then you walk the Gallery of Maps and the Raphael Rooms, where the School of Athens hangs.
 
     The tour ends in the Sistine Chapel. Your guide explains the ceiling before you enter, since talking isn’t allowed inside, so you know exactly what you’re looking at.
@@ -1866,17 +2012,20 @@
   code: 107
   title: Vatican City in Depth
   tagline: The Whole Vatican, Properly
-  headline: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
-  location: Vatican City
+  subtitle: The Museums, the Sistine Chapel, and St. Peter’s Basilica, with time for the rooms most tours skip.
+  region: Vatican City
   hours: 5
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [wheelchair]
   photos: [basilica.webp, sistine-chapel.webp, michelangelos-pieta.webp]
-  description: |
+  what_we_think: |
     Three hours is enough to see the Vatican’s famous rooms. Five is enough to understand them. This tour covers the full route at a pace that leaves room for questions, and for the galleries most groups walk straight past.
-
+  what_customers_think: "We do not want the quick version. Show us the rooms the big groups walk past, we have five hours."
+  customer_name: "Graham & Fiona"
+  customer_origin: "Glasgow, UK"
+  finer_details: |
     After the classical sculpture and the Gallery of Maps, your guide takes you into the Pinacoteca for Raphael’s Transfiguration and Caravaggio’s Deposition, then the Borgia Apartments and the modern religious art collection, with Matisse and Van Gogh.
 
     The tour finishes with the Sistine Chapel and the passage into St. Peter’s Basilica, where your guide shows you the Pietà, Bernini’s canopy, and the tomb of St. Peter beneath the high altar.
@@ -1908,17 +2057,20 @@
   code: 108
   title: Self-Guided All Day in Vatican City
   tagline: A Whole Day Inside the Walls
-  headline: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
-  location: Vatican City
+  subtitle: Priority entry to the Museums, the Sistine Chapel, St. Peter’s, and the dome, at your own pace.
+  region: Vatican City
   hours: 7
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it, de, pt]
   tags: [self_guided, active]
   photos: [sistine-chapel.webp, vatican-gardens.webp, basilica.webp]
-  description: |
+  what_we_think: |
     Vatican City is the smallest country in the world, and it takes a full day to see it properly. This pass covers everything, with priority entry at every door, so you can spend the day inside the walls rather than outside them.
-
+  what_customers_think: "We want a whole day in the Vatican, at our own rhythm, with priority entry everywhere and the dome at the end."
+  customer_name: "Yuki & Haruto"
+  customer_origin: "Tokyo, Japan"
+  finer_details: |
     Start the morning at the Vatican Museums with a timed ticket and a printed route through the galleries and the Sistine Chapel. Break for lunch whenever you like; our map marks the cafés inside and the trattorias just outside.
 
     In the afternoon, use your priority pass for St. Peter’s Basilica and climb the dome for the view over Rome. An audio guide on your phone tells the story at every stop.
@@ -1951,17 +2103,20 @@
   code: 109
   title: All Day in Vatican City
   tagline: From the Museums to the Dome
-  headline: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
-  location: Vatican City
+  subtitle: A full guided day through the Museums, the Sistine Chapel, St. Peter’s Basilica, and the dome.
+  region: Vatican City
   hours: 7
   transport: walking
   meeting_point: Viale Vaticano 100, opposite the Vatican Museums entrance
   languages: [en, es, fr, it]
   tags: [active]
   photos: [michelangelos-pieta.webp, vatican-gardens.webp, sistine-chapel.webp]
-  description: |
+  what_we_think: |
     A full day in the Vatican with a guide at your side from the first gallery to the top of the dome. It’s the most complete visit we offer, and the one we recommend to anyone who has only one chance to see it.
-
+  what_customers_think: "The Vatican is the main reason for our trip to Rome. One full day, one guide, everything including the dome."
+  customer_name: "The Sullivans"
+  customer_origin: "Boston, USA"
+  finer_details: |
     The morning belongs to the Vatican Museums: classical sculpture, the Gallery of Maps, the Raphael Rooms, the Pinacoteca, and the Sistine Chapel. Then a long lunch in Borgo Pio, the old neighbourhood beneath the Vatican walls.
 
     In the afternoon your guide leads you through St. Peter’s Basilica and down into the Grottoes, then up the dome for the view over the square and the city beyond.
@@ -1993,17 +2148,20 @@
   code: 110
   title: Papal Audience Tickets and On-Site Assistance
   tagline: Wednesday Morning with the Pope
-  headline: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
-  location: Vatican City
+  subtitle: Reserved tickets for the Wednesday General Audience, with an assistant to get you in and seated.
+  region: Vatican City
   hours: 3
   transport: walking
   meeting_point: Piazza Pio XII, at the end of Via della Conciliazione facing St. Peter’s Square
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids, wheelchair]
   photos: [papal-audience.webp, basilica.webp, vatican-city-1.webp]
-  description: |
+  what_we_think: |
     Most Wednesday mornings, the Pope greets pilgrims in St. Peter’s Square, or in the Paul VI Hall in winter. Tickets are free but issued by the Prefecture of the Papal Household, and the security lines start forming hours before the doors open.
-
+  what_customers_think: "My mother’s wish is to see the Pope. We need tickets and someone to get us in and seated, she cannot wait in line for hours."
+  customer_name: "Rosa & Carmen"
+  customer_origin: "Seville, Spain"
+  finer_details: |
     We request your tickets, collect them, and meet you on the morning with an assistant who knows the gates and the timing. They’ll guide you through security and help you find a good spot before the crowds arrive.
 
     During the audience, the Pope rides through the square, gives a short teaching and greetings in several languages, and ends with the Apostolic Blessing, which extends to any religious objects you bring with you.
@@ -2033,17 +2191,20 @@
   code: 40
   title: Essential Naples - Part One
   tagline: Old Naples and the Archaeological Museum
-  headline: Old Naples and the treasures of the Archaeological Museum.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: Old Naples and the treasures of the Archaeological Museum.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 3
   transport: walking
   meeting_point: Piazza del Gesù Nuovo, by the Guglia dell’Immacolata
   languages: [en, es, fr, it]
   tags: [with_kids]
   photos: [essential-naples.webp, naples-2.webp, naples-3.webp]
-  description: |
+  what_we_think: |
     Naples has been lived in for 2,800 years, and its old centre still follows the street grid the Greeks laid out. This walk takes you down Spaccanapoli, the long straight lane that splits the city in two, and into the museum that holds the treasures of Pompeii.
-
+  what_customers_think: "Everybody told us Naples is chaos. We want a local to show us the real old city and the treasures from Pompeii in the museum."
+  customer_name: "Oliver & Grace"
+  customer_origin: "Brighton, UK"
+  finer_details: |
     Your guide leads you past the cloister of Santa Chiara with its painted majolica tiles, the nativity workshops of Via San Gregorio Armeno, and the street shrines and laundry lines that make Naples feel like nowhere else in Italy.
 
     The tour ends at the National Archaeological Museum, with the Farnese marbles, the mosaics and frescoes lifted from Pompeii, and the Secret Cabinet the Bourbon kings kept locked for a century.
@@ -2071,17 +2232,20 @@
   code: 41
   title: Essential Naples - Part Two
   tagline: Caravaggio, Opera, and the City Below
-  headline: Capodimonte Painting Gallery, the San Carlo Opera House, and the Naples Underground.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: Capodimonte Painting Gallery, the San Carlo Opera House, and the Naples Underground.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 3
   transport: car
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, it]
   tags: [with_kids]
   photos: [naples-2.webp, essential-naples.webp, naples-3.webp]
-  description: |
+  what_we_think: |
     The second half of Naples is spread across the city, so we drive it. With a private car and driver, the tour links three sites that most visitors never manage to fit into one day.
-
+  what_customers_think: "We already saw old Naples. Now we want the palace gallery, the opera house, and the tunnels under the city."
+  customer_name: "Martin"
+  customer_origin: "Prague, Czech Republic"
+  finer_details: |
     It starts on the hill of Capodimonte, in the Bourbon royal palace that now holds one of Italy’s great painting collections: Titian, Raphael, Bruegel, and Caravaggio’s Flagellation of Christ. Then down to the San Carlo, the oldest working opera house in Europe, for a look at its red-and-gold auditorium.
 
     The tour ends forty metres below the street, in the tunnels and cisterns the Greeks dug for water and Neapolitans later used as air-raid shelters.
@@ -2111,17 +2275,20 @@
   code: 42
   title: Naples in Depth Tour
   tagline: A Deeper Journey into Naples’ Rich Heritage
-  headline: The Veiled Christ, the Archaeological Museum, and the views from Posillipo, by private car.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: The Veiled Christ, the Archaeological Museum, and the views from Posillipo, by private car.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 6
   transport: car
   meeting_point: Pickup from your hotel in central Naples
   languages: [en, es, fr, it, de]
   tags: []
   photos: [naples-3.webp, essential-naples.webp, naples-2.webp]
-  description: |
+  what_we_think: |
     Six hours, a car, and a guide who grew up here: enough to see Naples as more than a gateway to Pompeii. This is the city’s greatest hits and its quieter corners, joined up without a single bus.
-
+  what_customers_think: "We want to see the Veiled Christ and the best of Naples by car, with the view over the bay at the end."
+  customer_name: "Sandra & Luis"
+  customer_origin: "Mexico City, Mexico"
+  finer_details: |
     The morning starts in the old centre with the Sansevero Chapel and Giuseppe Sanmartino’s Veiled Christ, a marble figure so fine it looks breathed on. Then the Archaeological Museum for Pompeii’s mosaics, and lunch at a pizzeria that has been firing ovens for over a century.
 
     In the afternoon the car takes you along the seafront to the Castel dell’Ovo and up the Posillipo hill, where the whole bay opens up, from Vesuvius to Capri.
@@ -2150,17 +2317,20 @@
   code: 43
   title: Naples and Pompeii Tour
   tagline: Living Naples, Timeless Pompeii
-  headline: The lanes of old Naples in the morning, the streets of Pompeii in the afternoon.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: The lanes of old Naples in the morning, the streets of Pompeii in the afternoon.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 6
   transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it, de]
   tags: [with_kids]
   photos: [herculaneum.webp, vesuvius.webp]
-  description: |
+  what_we_think: |
     Two cities in one day: one still loud and alive, the other frozen under ash since 79 AD. With a private car between them, the day is unhurried and the contrast is the point.
-
+  what_customers_think: "Our ship is in Naples for one day. We want pizza in the old town and to walk the streets of Pompeii."
+  customer_name: "Karen & Bill"
+  customer_origin: "Atlanta, USA"
+  finer_details: |
     The morning is spent in Naples’ historic centre, along Spaccanapoli and through the nativity workshops of San Gregorio Armeno, with a stop for espresso and a sfogliatella.
 
     After lunch, a forty-minute drive takes you to Pompeii. An archaeologist guide walks you through the Forum, the baths, the brothel, and the villas, and explains how the eruption that destroyed the town also saved it.
@@ -2189,17 +2359,20 @@
   code: 44
   title: Pompeii, Herculaneum, Oplontis
   tagline: Three Archaeological Treasures, One Extraordinary Journey
-  headline: Three towns buried by Vesuvius, from the bustling streets of Pompeii to the luxury villa of Oplontis.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: Three towns buried by Vesuvius, from the bustling streets of Pompeii to the luxury villa of Oplontis.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 6
   transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it]
   tags: [active]
   photos: [oplontis.webp, herculaneum.webp, vesuvius.webp]
-  description: |
+  what_we_think: |
     Vesuvius buried more than one town in 79 AD, and each tells a different part of the story. This day visits three of them with an archaeologist, in the order that makes the most sense.
-
+  what_customers_think: "Pompeii is not enough for us. We want Herculaneum and the villa at Oplontis too, with a guide who knows all three."
+  customer_name: "Sebastian"
+  customer_origin: "Warsaw, Poland"
+  finer_details: |
     Herculaneum comes first: smaller than Pompeii but better preserved, with wooden beams, upper floors, and the skeletons of the townspeople who sheltered in the boathouses by the shore.
 
     Then Oplontis, the seaside villa thought to belong to Nero’s wife Poppaea, with some of the finest wall paintings in the Roman world. The day ends in Pompeii itself, with its Forum, theatres, and bakeries.
@@ -2227,17 +2400,20 @@
   code: 45
   title: "Amalfi Coast: Positano, Amalfi, Ravello"
   tagline: The Best of the Amalfi Coast, from Sea to Sky
-  headline: Positano’s pastel houses, Amalfi’s cathedral, and Ravello’s gardens high above the sea.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: Positano’s pastel houses, Amalfi’s cathedral, and Ravello’s gardens high above the sea.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in Naples or Sorrento
   languages: [en, es, fr, it, de, pt]
   tags: []
   photos: [ravello.webp, positano.webp, capri_coastline.webp]
-  description: |
+  what_we_think: |
     The Amalfi Coast road was carved into the cliffs in the 1800s, and it’s still one of the most beautiful drives in the world. With a private driver at the wheel, you can spend the whole day looking out of the window.
-
+  what_customers_think: "We are scared to drive the coast road ourselves. We want Positano, Amalfi, Ravello, and somebody else at the wheel."
+  customer_name: "Megan & Josh"
+  customer_origin: "Seattle, USA"
+  finer_details: |
     The first stop is Positano, its houses stacked down the cliff to a pebble beach. Then on to Amalfi, once a maritime republic that rivalled Venice, for its striped cathedral and a lemon granita in the piazza.
 
     The day ends high above the sea in Ravello, where the gardens of Villa Rufolo and Villa Cimbrone look out over the coast from the terraces that inspired Wagner.
@@ -2266,17 +2442,20 @@
   code: 46
   title: Pompeii and Amalfi Coast
   tagline: From Pompeii’s Ruins to Italy’s Most Beautiful Coastline
-  headline: A guided morning in Pompeii, then the cliffside villages of the Amalfi Coast.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: A guided morning in Pompeii, then the cliffside villages of the Amalfi Coast.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 8
   transport: car
   meeting_point: Pickup from your hotel in Naples or Sorrento
   languages: [en, es, fr, it, de]
   tags: []
   photos: [positano.webp, herculaneum.webp, capri_coastline.webp]
-  description: |
+  what_we_think: |
     The two most famous sights south of Naples, in one comfortable day by private car. The morning is about how the Romans lived; the afternoon is about how good life on this coast can be.
-
+  what_customers_think: "Ruins in the morning, sea views in the afternoon. We want the best of both in one day from Naples."
+  customer_name: "Femke & Ruben"
+  customer_origin: "Antwerp, Belgium"
+  finer_details: |
     The day starts in Pompeii with an archaeologist guide, walking the Forum, the baths, and the House of the Faun before the midday heat.
 
     Then over the Lattari mountains to the coast for lunch in Positano, and a slow drive along the cliffs to Amalfi, with stops at the viewpoints and time to wander the town before heading back.
@@ -2304,17 +2483,20 @@
   code: 47
   title: Pompeii, Sorrento and Capri
   tagline: Ancient Wonders, Coastal Charm & Island Glamour
-  headline: Pompeii’s ruins, lunch in Sorrento, and an afternoon on the island of Capri.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: Pompeii’s ruins, lunch in Sorrento, and an afternoon on the island of Capri.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 9
   transport: car
   meeting_point: Pickup from your hotel in Naples
   languages: [en, es, fr, it, de]
   tags: []
   photos: [capri_coastline.webp, positano.webp, herculaneum.webp]
-  description: |
+  what_we_think: |
     A long, full day around the Bay of Naples, by car, by boat, and on foot. Three places that would each make a fine day out, joined up by a driver who handles the timing.
-
+  what_customers_think: "A big day for us: Pompeii, a lunch in Sorrento, and finally Capri. We want it organised so we are not running."
+  customer_name: "Laura & Marco"
+  customer_origin: "São Paulo, Brazil"
+  finer_details: |
     It starts with a guided morning in Pompeii, before the crowds and the heat. Then a short drive along the coast to Sorrento for lunch on a terrace above the sea.
 
     In the afternoon, a fast ferry takes you to Capri. Ride the funicular up to the Piazzetta, walk to the Gardens of Augustus for the view of the Faraglioni rocks, and catch the evening boat back to the mainland.
@@ -2344,17 +2526,20 @@
   code: 48
   title: Capri Island
   tagline: Azure Waters, Dramatic Cliffs & Mediterranean Charm
-  headline: A day on Capri by boat and on foot, from the Faraglioni rocks to the heights of Anacapri.
-  location: Naples, Pompeii and Amalfi Coast
+  subtitle: A day on Capri by boat and on foot, from the Faraglioni rocks to the heights of Anacapri.
+  region: Naples, Pompeii and Amalfi Coast
   hours: 6
   transport: walking
   meeting_point: Molo Beverello ferry terminal, Naples, at the ticket office
   languages: [en, es, it]
   tags: [with_kids]
   photos: [capri_coastline.webp, positano.webp]
-  description: |
+  what_we_think: |
     Capri has drawn emperors, writers, and film stars for two thousand years, and it’s easy to see why. Limestone cliffs rise straight out of a sea so blue it barely looks real.
-
+  what_customers_think: "We want to go around Capri by boat, see the Faraglioni, and have time up in Anacapri. The kids love boats."
+  customer_name: "The Hendersons"
+  customer_origin: "Dublin, Ireland"
+  finer_details: |
     The day starts with a boat trip around the island, past the Faraglioni rocks, the White Grotto, and the Green Grotto, with a swim stop in summer. Back on land, your guide takes you up to the Piazzetta and along the path to the Gardens of Augustus.
 
     After lunch, a minibus climbs to Anacapri, the quieter half of the island, for the chairlift up Monte Solaro and the best view on Capri.
@@ -2386,17 +2571,20 @@
   code: 49
   title: Essential Venice
   tagline: St. Mark’s, the Doge’s Palace, and the Rialto
-  headline: The city’s timeless landmarks around San Marco.
-  location: Venice
+  subtitle: The city’s timeless landmarks around San Marco.
+  region: Venice
   hours: 2
   transport: walking
   meeting_point: Piazza San Marco, under the Clock Tower
   languages: [en, es, fr, it, de]
   tags: [with_kids]
   photos: [essential-venice.webp]
-  description: |
+  what_we_think: |
     For a thousand years Venice was a republic of merchants, and everything around Piazza San Marco was built to show it off. This walk is the best introduction to the city: two hours, the great landmarks, and the stories that explain them.
-
+  what_customers_think: "Our first hours in Venice. We want San Marco and the Doge’s Palace explained, so we can explore alone after."
+  customer_name: "Emily & Sam"
+  customer_origin: "Wellington, New Zealand"
+  finer_details: |
     Your guide starts under the Clock Tower and walks you round the square Napoleon called the finest drawing room in Europe, with the golden mosaics of St. Mark’s Basilica and the pink-and-white Doge’s Palace beside it.
 
     From the Bridge of Sighs, the route winds through the lanes of the Mercerie to the Rialto Bridge, where the city’s market has traded since the 1100s.
@@ -2422,17 +2610,20 @@
   code: 50
   title: Hidden Venice
   tagline: The Venice Venetians Live In
-  headline: Quiet lanes and the local corners most visitors miss.
-  location: Venice
+  subtitle: Quiet lanes and the local corners most visitors miss.
+  region: Venice
   hours: 2
   transport: walking
   meeting_point: Campo Santa Maria Formosa, by the church steps
   languages: [en, es, fr, it]
   tags: [with_kids]
   photos: [hidden-venice.webp]
-  description: |
+  what_we_think: |
     Two streets away from the crowds of San Marco, Venice goes quiet. Washing hangs over the canals, children play football in the squares, and the bacari pour a glass of wine for a couple of euros. This walk takes you there.
-
+  what_customers_think: "We want the Venice where people still live, quiet canals, small bars, not the selfie spots."
+  customer_name: "Giulia"
+  customer_origin: "Milan, Italy"
+  finer_details: |
     Your guide leads you through Castello and Cannaregio, past the hidden courtyard of the Corte Seconda del Milion where Marco Polo was born, the bookshop that keeps its books in a gondola, and the Jewish Ghetto, the first in the world.
 
     Along the way you’ll stop at a bacaro for a cicchetto and an ombra, the small glass of wine Venetians drink standing at the bar.
@@ -2458,17 +2649,20 @@
   code: 51
   title: Venice in Depth with Canale Grande
   tagline: The City on Foot and by Water
-  headline: Venice’s history and landmarks, with the Grand Canal from the water by private water taxi.
-  location: Venice
+  subtitle: Venice’s history and landmarks, with the Grand Canal from the water by private water taxi.
+  region: Venice
   hours: 4
   transport: walking
   meeting_point: Piazza San Marco, under the Clock Tower
   languages: [en, es, fr, it, de]
   tags: []
   photos: [canale-grande.webp]
-  description: |
+  what_we_think: |
     Venice was built to be seen from the water, and the palaces of the Grand Canal still turn their best faces to it. This tour shows you the city both ways: on foot through its lanes, and by private water taxi along its main street.
-
+  what_customers_think: "We want to understand how this city was built on water, and see the Grand Canal palaces from a boat, not a crowded vaporetto."
+  customer_name: "Victoria & Alan"
+  customer_origin: "Cambridge, UK"
+  finer_details: |
     The first half is a walk from San Marco through the old city, with your guide explaining how a republic of merchants built an empire on a lagoon, then visiting St. Mark’s Basilica with its thousand-year-old mosaics.
 
     Then you board a polished wooden water taxi for the length of the Grand Canal, past the Ca’ d’Oro, the Rialto, and the palaces where Byron and Wagner lived, to the railway station and back.
@@ -2496,17 +2690,20 @@
   code: 52
   title: Murano and Burano by Water Taxi
   tagline: Glass Furnaces and Painted Houses
-  headline: Murano and Burano for glassmaking traditions and colourful island streets, by private water taxi.
-  location: Venice
+  subtitle: Murano and Burano for glassmaking traditions and colourful island streets, by private water taxi.
+  region: Venice
   hours: 4
   transport: boat
   meeting_point: Fondamenta Nove water taxi stand, Cannaregio
   languages: [en, es, fr, it, de, pt]
   tags: [with_kids]
   photos: [murano.webp, burano.webp]
-  description: |
+  what_we_think: |
     The islands of the northern lagoon are a world apart from Venice, and a private water taxi gets you there in a fraction of the time the public boats take.
-
+  what_customers_think: "The colourful houses of Burano and a glass master working in Murano. Our private boat, our time."
+  customer_name: "The Moreaus"
+  customer_origin: "Paris, France"
+  finer_details: |
     On Murano, glassmakers have worked since 1291, when the Republic moved its furnaces off the main island for fear of fire. You’ll watch a master shape molten glass in a working furnace and stroll the canal lined with workshops.
 
     Then on to Burano, where every house is painted a different colour and lacemakers still work by hand. Wander the streets, try the butter biscuits called bussolai, and take the water taxi back when you’re ready.
@@ -2534,17 +2731,20 @@
   code: 53
   title: "Venice Lagoon: Murano, Burano and Torcello"
   tagline: Three Islands, One Lagoon
-  headline: Murano’s glass, Burano’s colours, and Torcello’s Byzantine mosaics, by private water taxi.
-  location: Venice
+  subtitle: Murano’s glass, Burano’s colours, and Torcello’s Byzantine mosaics, by private water taxi.
+  region: Venice
   hours: 6
   transport: boat
   meeting_point: Fondamenta Nove water taxi stand, Cannaregio
   languages: [en, es, fr, it, de]
   tags: [with_kids]
   photos: [burano.webp, murano.webp]
-  description: |
+  what_we_think: |
     Before there was Venice, there was Torcello. Refugees from the mainland settled the island in the 400s, and at its height 20,000 people lived there. Today it has a dozen residents, a cathedral, and some of the finest mosaics in Italy.
-
+  what_customers_think: "We want the whole lagoon in one day, including Torcello and its mosaics, which our friends said we must not miss."
+  customer_name: "Diane & Walter"
+  customer_origin: "Minneapolis, USA"
+  finer_details: |
     This full day by private water taxi visits the three great islands of the northern lagoon. It starts on Murano with a glassblowing demonstration, then crosses to Burano for its painted houses, its lace, and a seafood lunch.
 
     In the afternoon the boat takes you through the salt marshes to Torcello, where the Cathedral of Santa Maria Assunta holds a vast golden Last Judgment, older than St. Mark’s.
@@ -2573,8 +2773,8 @@
   code: 54
   title: Venice Lagoon and Winery
   tagline: Wine Grown on the Water
-  headline: Discover the Venetian lagoon and enjoy a taste of local wine country.
-  location: Venice
+  subtitle: Discover the Venetian lagoon and enjoy a taste of local wine country.
+  region: Venice
   hours: 6
   transport: boat
   badge: wine
@@ -2582,9 +2782,12 @@
   languages: [en, es, fr, it]
   tags: [wine]
   photos: [venice-vinery.webp, burano.webp]
-  description: |
+  what_we_think: |
     Vines have grown in the Venetian lagoon since the Middle Ages, when monasteries and noble families planted them on the islands for their own tables. A few still do, and the wine they make tastes of salt and sea air.
-
+  what_customers_think: "After three days of city we want water, islands, and a glass of local wine where it is made."
+  customer_name: "Sarah & Noah"
+  customer_origin: "Haifa, Israel"
+  finer_details: |
     By private water taxi, you cross the lagoon to Burano for its painted houses and lace, then walk over the wooden bridge to the island of Mazzorbo and a walled vineyard replanted with Dorona, the golden grape of the old Republic.
 
     After a tour of the vines, sit down to a tasting of lagoon wines with cicchetti, then take the long way back to Venice past the abandoned islands of the northern lagoon.
@@ -2613,17 +2816,20 @@
   code: 55
   title: Arrival Transfer from Santa Lucia Train Station with Assistance
   tagline: Met on the Platform, Taken to Your Door
-  headline: Meet your assistant at the station and enjoy a smooth, supported arrival in Venice.
-  location: Venice
+  subtitle: Meet your assistant at the station and enjoy a smooth, supported arrival in Venice.
+  region: Venice
   hours: 1
   transport: boat
   meeting_point: Venezia Santa Lucia station, at the end of your train’s platform
   languages: [en, es, fr, it, de, pt]
   tags: [transfers, with_kids]
   photos: [santa-lucia-train-station.webp]
-  description: |
+  what_we_think: |
     Arriving in Venice by train is magical: you step out of the station and the Grand Canal is right in front of you. Getting your suitcases from there to your hotel, over bridges and down narrow lanes, is less so.
-
+  what_customers_think: "We arrive by train with heavy luggage and two small children. We need someone at the platform to help us to the hotel."
+  customer_name: "The Wongs"
+  customer_origin: "Singapore"
+  finer_details: |
     Your assistant meets you on the platform with a name sign, helps with your bags, and walks you to the water taxi waiting at the station dock.
 
     The boat takes you down the Grand Canal to the nearest landing to your hotel, and your assistant sees you and your luggage to the front desk.
@@ -2651,17 +2857,20 @@
   code: 56
   title: Marco Polo Airport to Hotel Transfer
   tagline: Across the Lagoon by Water Taxi
-  headline: Private water taxi transfer from Venice Marco Polo airport to your hotel.
-  location: Venice
+  subtitle: Private water taxi transfer from Venice Marco Polo airport to your hotel.
+  region: Venice
   hours: 1
   transport: boat
   meeting_point: Marco Polo airport arrivals hall, by the water taxi desk
   languages: [en, es, fr, it, de, pt]
   tags: [transfers, with_kids]
   photos: [marcopolo-airport-transfer.webp]
-  description: |
+  what_we_think: |
     There is no better way to arrive in Venice than across the lagoon. A private water taxi from Marco Polo airport takes about thirty minutes and brings you as close to your hotel as the canals allow.
-
+  what_customers_think: "Late flight, tired kids. We just want to step off the plane and onto a boat straight to our hotel."
+  customer_name: "Jennifer & Paul"
+  customer_origin: "Houston, USA"
+  finer_details: |
     Our driver meets you in the arrivals hall with a name sign and walks you to the airport dock, five minutes away along a covered walkway. Your bags go on board and you set off across the open lagoon.
 
     The first sight of Venice comes as the boat swings into the city’s canals, and you step off at the landing nearest your hotel.
@@ -2689,8 +2898,8 @@
   code: 57
   title: Cruise Transfer to Venice from Ravenna Pier
   tagline: From the Ship to the Lagoon
-  headline: Connect from Ravenna’s cruise pier to Venice with a comfortable transfer.
-  location: Venice
+  subtitle: Connect from Ravenna’s cruise pier to Venice with a comfortable transfer.
+  region: Venice
   hours: 4
   transport: car
   badge: cruise
@@ -2698,9 +2907,12 @@
   languages: [en, es, fr, it, de]
   tags: [transfers, cruises]
   photos: [ravenna-pier.webp]
-  description: |
+  what_we_think: |
     Many cruises that sail to Venice now dock in Ravenna, a long way down the coast. This private transfer takes you from the ship to Venice in comfort, without the shuttle-bus queue.
-
+  what_customers_think: "Our cruise ends in Ravenna but our hotel is in Venice. We need a reliable car with space for all our bags."
+  customer_name: "Barbara & Ron"
+  customer_origin: "Orlando, USA"
+  finer_details: |
     Your driver meets you at the passenger exit with a name sign, loads your luggage, and sets off north along the coast road through the Po Delta, with a coffee stop on the way.
 
     The car drops you at Piazzale Roma, the last point a car can reach in Venice, where a porter or water taxi can take you on to your hotel.
@@ -2728,17 +2940,20 @@
   code: 58
   title: From Venice to Milan Direct Transfer
   tagline: Lagoon to Lombardy, Door to Door
-  headline: A direct, comfortable journey from Venice to Milan.
-  location: Venice
+  subtitle: A direct, comfortable journey from Venice to Milan.
+  region: Venice
   hours: 4
   transport: car
   meeting_point: Piazzale Roma, Venice, at the car terminal
   languages: [en, es, fr, it, de]
   tags: [transfers]
   photos: [milan-transfer.webp]
-  description: |
+  what_we_think: |
     The road from Venice to Milan runs across the whole of the Po Valley, past Padua, Vicenza, Verona, and Lake Garda. This private transfer gets you there directly, with room for your luggage and no trains to change.
-
+  what_customers_think: "Our flight leaves from Milan. We prefer a car door to door rather than trains with all our suitcases."
+  customer_name: "Hiroshi"
+  customer_origin: "Yokohama, Japan"
+  finer_details: |
     Your driver meets you at Piazzale Roma, the last point a car can reach in Venice, and takes you straight to your hotel in Milan, with a stop on the way if you want one.
 
     We can also book a water taxi to bring you and your bags from your Venice hotel to the car.
@@ -2766,17 +2981,20 @@
   code: 59
   title: From Venice to Lake Como Direct Transfer
   tagline: From the Lagoon to the Lake
-  headline: A direct, comfortable journey from Venice to the shores of Lake Como.
-  location: Venice
+  subtitle: A direct, comfortable journey from Venice to the shores of Lake Como.
+  region: Venice
   hours: 4
   transport: car
   meeting_point: Piazzale Roma, Venice, at the car terminal
   languages: [en, es, fr, it, de]
   tags: [transfers]
   photos: [como.webp]
-  description: |
+  what_we_think: |
     Lake Como is one of the hardest places in Italy to reach by public transport from Venice: two trains, a change in Milan, and a bus or ferry at the end. This private transfer does it in one go.
-
+  what_customers_think: "From Venice straight to our hotel on Lake Como, no train changes. Comfort is the priority."
+  customer_name: "Mr & Mrs Patel"
+  customer_origin: "Leicester, UK"
+  finer_details: |
     Your driver meets you at Piazzale Roma, loads your luggage, and drives across the Po Valley and up into the hills to the lake. You’re dropped at your hotel’s door, whether it’s in Como, Cernobbio, or Bellagio.
 
     We can also book a water taxi to bring you and your bags from your Venice hotel to the car.
@@ -2804,8 +3022,8 @@
   code: 60
   title: From Venice to Milan with Stops at Verona and a Franciacorta Winery
   tagline: The Scenic Way to Milan
-  headline: From Venice to Milan, with time to explore Verona and the Franciacorta wine region.
-  location: Venice
+  subtitle: From Venice to Milan, with time to explore Verona and the Franciacorta wine region.
+  region: Venice
   hours: 8
   transport: car
   badge: wine
@@ -2813,9 +3031,12 @@
   languages: [en, es, fr, it, de]
   tags: [transfers, wine]
   photos: [franciacorta-winery.webp, milan-transfer.webp]
-  description: |
+  what_we_think: |
     Why spend three hours on the motorway when you could spend a day seeing northern Italy? This transfer takes you from Venice to Milan by way of Verona and the vineyards of Franciacorta.
-
+  what_customers_think: "We have to get to Milan anyway, so why not stop in Verona for Juliet’s balcony and taste some Franciacorta on the way?"
+  customer_name: "Chloe & Matt"
+  customer_origin: "Perth, Australia"
+  finer_details: |
     The first stop is Verona, for a walk with a local guide past the Roman Arena, Piazza delle Erbe, and the courtyard of Juliet’s house. Time for lunch, then back in the car.
 
     In the afternoon, you stop in Franciacorta, Italy’s answer to Champagne, for a cellar tour and tasting of its sparkling wines, before the last hour into Milan and your hotel.
@@ -2845,17 +3066,20 @@
   code: 61
   title: Essential Palermo
   tagline: Palermo in a Morning
-  headline: Best of Palermo in half a day.
-  location: Sicily
+  subtitle: Best of Palermo in half a day.
+  region: Sicily
   hours: 3
   transport: walking
   meeting_point: Piazza Pretoria, by the Fontana Pretoria
   languages: [en, es, fr, it, de]
   tags: [with_kids]
   photos: [essential-palermo.webp, palermo-in-depth.webp, palermo-port.webp]
-  description: |
+  what_we_think: |
     Palermo has been ruled by Phoenicians, Romans, Arabs, Normans, and Spaniards, and every one of them left something behind. This walk is the quickest way to make sense of it: three hours, the great landmarks, and the stories that tie them together.
-
+  what_customers_think: "Only half a day in Palermo. Show us the cathedral, the markets, and the most beautiful churches."
+  customer_name: "Brigitte"
+  customer_origin: "Geneva, Switzerland"
+  finer_details: |
     Your guide starts at the Fontana Pretoria, the “Fountain of Shame”, and leads you to the Quattro Canti, the Baroque crossroads at the heart of the old city, and the churches of La Martorana and San Cataldo, where Byzantine mosaics sit under red Arab domes.
 
     The walk ends at the Cathedral, a building that is part mosque, part Norman fortress, and part Baroque church, with the tombs of Sicily’s kings inside.
@@ -2880,17 +3104,20 @@
   code: 62
   title: Palermo in Depth
   tagline: Arab, Norman, and Baroque Palermo
-  headline: Palermo’s layered history, vibrant culture, and authentic Sicilian character.
-  location: Sicily
+  subtitle: Palermo’s layered history, vibrant culture, and authentic Sicilian character.
+  region: Sicily
   hours: 5
   transport: walking
   meeting_point: Piazza della Vittoria, at the entrance to the Royal Palace
   languages: [en, es, fr, it, de]
   tags: []
   photos: [palermo-in-depth.webp, essential-palermo.webp, jewish-palermo.webp]
-  description: |
+  what_we_think: |
     Three hours shows you Palermo’s landmarks; five lets you understand them. This in-depth walk covers the whole of the old city, from the palace of its Norman kings to the markets that have fed it since the Arabs ran them.
-
+  what_customers_think: "Arab, Norman, Baroque, we read that Palermo has everything. We want a full day to understand all the layers."
+  customer_name: "Thomas & Julie"
+  customer_origin: "Brussels, Belgium"
+  finer_details: |
     It starts at the Royal Palace and the Palatine Chapel, where Norman kings hired Byzantine mosaicists and Arab carpenters to build the most beautiful room in Sicily. From there, your guide leads you to the Cathedral, the Quattro Canti, and La Martorana.
 
     The afternoon takes you into the Ballarò market and the backstreets of the Kalsa, where the city’s Arab street plan survives, with a stop for an arancina along the way.
@@ -2917,17 +3144,20 @@
   code: 63
   title: Jewish Palermo
   tagline: The Giudecca Rediscovered
-  headline: Palermo’s Jewish heritage.
-  location: Sicily
+  subtitle: Palermo’s Jewish heritage.
+  region: Sicily
   hours: 3
   transport: walking
   meeting_point: Piazza Bellini, in front of the church of San Cataldo
   languages: [en, es, fr, it, de]
   tags: []
   photos: [jewish-palermo.webp, palermo-in-depth.webp, essential-palermo.webp]
-  description: |
+  what_we_think: |
     For more than a thousand years, Palermo had one of the largest Jewish communities in Europe, until the Spanish expulsion of 1492 forced it out. This walk traces what it left behind in the old quarter of the Giudecca.
-
+  what_customers_think: "Few people know there was a big Jewish community in Palermo. I want to see where they lived and learn their story."
+  customer_name: "Rebecca"
+  customer_origin: "Philadelphia, USA"
+  finer_details: |
     Your guide takes you through the streets where Jewish merchants, doctors, and craftsmen lived and worked, to the site of the Great Synagogue, the mikveh discovered beneath a Baroque palace, and the church of Santa Maria del Sabato.
 
     Along the way, you’ll hear how Arab, Norman, and Jewish Palermo lived side by side, and how the city is rediscovering this part of its past.
@@ -2952,8 +3182,8 @@
   code: 64
   title: Palermo Food Tour
   tagline: Europe’s Street Food Capital
-  headline: Palermo’s vibrant street food and the traditions behind its local flavours.
-  location: Sicily
+  subtitle: Palermo’s vibrant street food and the traditions behind its local flavours.
+  region: Sicily
   hours: 3
   transport: walking
   badge: food
@@ -2961,9 +3191,12 @@
   languages: [en, es, fr, it, de]
   tags: [food_and_cooking, with_kids]
   photos: [palermo-restaurants.webp, essential-palermo.webp, palermo-in-depth.webp]
-  description: |
+  what_we_think: |
     Palermo eats on the street, and has done for centuries. Its markets are among the oldest in Europe, and the food they sell tells the story of everyone who has ruled the island.
-
+  what_customers_think: "We came to Sicily to eat. Arancine, panelle, sfincione, the markets. The kids are adventurous eaters too."
+  customer_name: "The Russos"
+  customer_origin: "New Jersey, USA"
+  finer_details: |
     Your guide leads you through the Capo and Ballarò markets, stopping for arancine, panelle, and sfincione, then for pane con la milza if you’re brave enough to try Palermo’s favourite sandwich.
 
     The tour finishes with a cannolo filled to order and a granita, the Sicilian way to end any meal.
@@ -2990,8 +3223,8 @@
   code: 65
   title: Marsala Wine Tour from Palermo
   tagline: Salt Pans and Fortified Wine
-  headline: Marsala’s historic wine culture and the distinctive flavours of western Sicily.
-  location: Sicily
+  subtitle: Marsala’s historic wine culture and the distinctive flavours of western Sicily.
+  region: Sicily
   hours: 8
   transport: car
   badge: wine
@@ -2999,9 +3232,12 @@
   languages: [en, es, fr, it, de]
   tags: [wine]
   photos: [marsala-wine-tour.webp, essential-palermo.webp, palermo-port.webp]
-  description: |
+  what_we_think: |
     In 1773, an English merchant tasted the wine of Marsala and shipped it home fortified with brandy so it would survive the voyage. Within decades it was drunk across the British Empire, and Marsala became Sicily’s most famous wine.
-
+  what_customers_think: "We want to taste real Marsala, not the cooking kind, and see the salt pans at sunset."
+  customer_name: "Jean-Luc"
+  customer_origin: "Dijon, France"
+  finer_details: |
     Your driver collects you from your hotel in Palermo for the drive to the west coast. In Marsala, you visit a historic cellar for a tour of the barrels and a tasting of its wines, from dry to sweet, with local cheeses.
 
     On the way back, you stop at the salt pans between Marsala and Trapani, where windmills still pump seawater into the shallow pools, glowing pink at the end of the day.
@@ -3028,17 +3264,20 @@
   code: 66
   title: Norman Monreale and Medieval Cefalù from Palermo
   tagline: Mosaics and a Seaside Cathedral
-  headline: Sicily’s Norman heritage, from Monreale’s mosaics to Cefalù’s medieval charm.
-  location: Sicily
+  subtitle: Sicily’s Norman heritage, from Monreale’s mosaics to Cefalù’s medieval charm.
+  region: Sicily
   hours: 6
   transport: car
   meeting_point: Pickup from your Palermo hotel
   languages: [en, es, fr, it, de]
   tags: [with_kids]
   photos: [cefalu.webp, palermo-in-depth.webp, essential-palermo.webp]
-  description: |
+  what_we_think: |
     The Norman kings of Sicily built two of the greatest cathedrals in Europe within a day’s ride of Palermo. This tour visits both.
-
+  what_customers_think: "The golden mosaics of Monreale in the morning, the beach town of Cefalù in the afternoon. Perfect for us."
+  customer_name: "Ewa & Piotr"
+  customer_origin: "Gdańsk, Poland"
+  finer_details: |
     First, Monreale, on the hill above the city, where the cathedral’s walls are covered in more than 6,000 square metres of golden mosaics, and the cloister has 228 carved columns, no two alike.
 
     Then along the coast to Cefalù, a fishing town under a great rock, where King Roger II built his cathedral after surviving a storm at sea. There’s time for lunch and a walk on the beach before the drive back.
@@ -3065,8 +3304,8 @@
   code: 67
   title: Best of Palermo Port of Call
   tagline: Palermo in One Port Day
-  headline: Palermo’s highlights, rich history, and vibrant local culture in one memorable port day.
-  location: Sicily
+  subtitle: Palermo’s highlights, rich history, and vibrant local culture in one memorable port day.
+  region: Sicily
   hours: 7
   transport: car
   badge: cruise
@@ -3074,9 +3313,12 @@
   languages: [en, es, fr, it, de]
   tags: [cruises, with_kids]
   photos: [palermo-port.webp, essential-palermo.webp, palermo-in-depth.webp]
-  description: |
+  what_we_think: |
     Palermo’s port sits right next to the old city, but with only a day ashore it pays to know where you’re going. This shore excursion makes the most of every hour and gets you back to the ship on time.
-
+  what_customers_think: "Our ship docks at 8 and leaves at 5. We want to see the best of Palermo and be back on board without stress."
+  customer_name: "Carol & Dennis"
+  customer_origin: "Vancouver, Canada"
+  finer_details: |
     Your guide and driver meet you at the terminal. The morning takes in Monreale and its golden mosaics on the hill above the city, then drops down into Palermo for the Cathedral and the Palatine Chapel.
 
     After lunch, you walk the Quattro Canti and the Ballarò market, with a taste of street food, before the car takes you back to the ship.
@@ -3103,8 +3345,8 @@
   code: 68
   title: Catania and Taormina Port of Call
   tagline: Baroque Streets and Clifftop Views
-  headline: Catania’s baroque charm and Taormina’s breathtaking coastal views in one unforgettable port day.
-  location: Sicily
+  subtitle: Catania’s baroque charm and Taormina’s breathtaking coastal views in one unforgettable port day.
+  region: Sicily
   hours: 7
   transport: car
   badge: cruise
@@ -3112,9 +3354,12 @@
   languages: [en, es, fr, it, de]
   tags: [cruises, with_kids]
   photos: [catania.webp, taormina.webp, taormina-2.webp]
-  description: |
+  what_we_think: |
     Catania was rebuilt in black lava stone after the earthquake of 1693, and Taormina has looked down on the Ionian Sea since the Greeks founded it. This shore excursion shows you both.
-
+  what_customers_think: "One day from the ship. We want Taormina’s view over the sea and a little of Catania, back on time for sure."
+  customer_name: "Lisa & Mark"
+  customer_origin: "Southampton, UK"
+  finer_details: |
     Your guide meets you at the terminal for a walk through Catania’s Baroque centre: the Cathedral of Sant’Agata, the elephant fountain, and the fish market, loud and theatrical every morning.
 
     Then the car climbs to Taormina, where the Greek theatre frames Mount Etna and the sea. There’s time for lunch and the shops of Corso Umberto before the drive back to the ship.
@@ -3141,8 +3386,8 @@
   code: 69
   title: Catania, Syracuse and Baroque Noto Port of Call
   tagline: Greek Syracuse and Golden Noto
-  headline: Syracuse’s historic heart and Noto’s Baroque beauty on a shore excursion from Catania.
-  location: Sicily
+  subtitle: Syracuse’s historic heart and Noto’s Baroque beauty on a shore excursion from Catania.
+  region: Sicily
   hours: 8
   transport: car
   badge: cruise
@@ -3150,9 +3395,12 @@
   languages: [en, es, fr, it, de]
   tags: [cruises]
   photos: [syracuse.webp, baroque-noto.webp, catania.webp]
-  description: |
+  what_we_think: |
     Syracuse was once the largest city in the Greek world, a rival to Athens. Noto, just inland, was rebuilt after the earthquake of 1693 as a Baroque stage set in golden stone. This shore excursion from Catania covers both.
-
+  what_customers_think: "We love Greek history and Baroque towns. Syracuse and Noto in one shore day, if it is possible."
+  customer_name: "Nikos & Eleni"
+  customer_origin: "Athens, Greece"
+  finer_details: |
     Your driver meets you at the terminal for the drive south to Syracuse and the island of Ortigia, where the cathedral was built around a Greek temple and its Doric columns still stand in the walls. Your guide leads you to the Fountain of Arethusa and through the old streets.
 
     After lunch, the car takes you to Noto, for a walk along Corso Vittorio Emanuele past churches and palaces glowing honey-gold, before the drive back to Catania.
@@ -3179,8 +3427,8 @@
   code: 70
   title: Catania and Etna Wineries Port of Call
   tagline: Wine from the Volcano
-  headline: Mount Etna’s volcanic landscapes and wines from its hillside vineyards.
-  location: Sicily
+  subtitle: Mount Etna’s volcanic landscapes and wines from its hillside vineyards.
+  region: Sicily
   hours: 8
   transport: car
   badge: wine
@@ -3188,9 +3436,12 @@
   languages: [en, es, fr, it, de]
   tags: [cruises, wine]
   photos: [catania-wineries.webp, etna-wineries.webp, catania.webp]
-  description: |
+  what_we_think: |
     Mount Etna is Europe’s highest active volcano, and its black soil makes some of Italy’s most exciting wines. This shore excursion takes you from the port of Catania up its slopes.
-
+  what_customers_think: "Volcano and wine, this is our port day. We want to see Etna up close and taste wines grown on it."
+  customer_name: "Frank & Judy"
+  customer_origin: "San Diego, USA"
+  finer_details: |
     Your driver meets you at the terminal and climbs through the lava fields to the Silvestri craters, where you can walk the rim of a crater formed in 1892.
 
     Then down to the vineyards on the northern slope, for a cellar visit and a tasting of Etna Rosso and Bianco with a lunch of local produce, before the drive back to the ship.
@@ -3218,17 +3469,20 @@
   code: 71
   title: Transfer from Catania to Taormina
   tagline: Airport to Hilltop, Door to Door
-  headline: From Catania to Taormina with a private transfer tailored to your schedule.
-  location: Sicily
+  subtitle: From Catania to Taormina with a private transfer tailored to your schedule.
+  region: Sicily
   hours: 1
   transport: car
   meeting_point: Catania airport arrivals hall, or your Catania hotel
   languages: [en, es, fr, it, de, pt]
   tags: [transfers, with_kids]
   photos: [taormina-2.webp, catania.webp, taormina.webp]
-  description: |
+  what_we_think: |
     Taormina sits on a cliff above the sea, and the road up to it is steep, narrow, and short on parking. This private transfer takes you there from Catania airport, the station, or your hotel, without the bus.
-
+  what_customers_think: "Landing in Catania with a baby and a lot of luggage. We need a driver waiting for us and a car seat."
+  customer_name: "Aisha & Omar"
+  customer_origin: "Dubai, UAE"
+  finer_details: |
     Your driver meets you with a name sign, loads your luggage, and drives up the coast with Etna on one side and the sea on the other.
 
     You’re dropped at your hotel’s door, or as close as the town’s limited traffic zone allows.
@@ -3254,17 +3508,20 @@
   code: 72
   title: Godfather Tour from Taormina
   tagline: Savoca, Forza d’Agrò, and Bar Vitelli
-  headline: Visit Savoca and Forza d’Agrò, the Sicilian villages featured in The Godfather.
-  location: Sicily
+  subtitle: Visit Savoca and Forza d’Agrò, the Sicilian villages featured in The Godfather.
+  region: Sicily
   hours: 6
   transport: car
   meeting_point: Pickup from your Taormina hotel
   languages: [en, es, fr, it, de]
   tags: []
   photos: [taormina.webp, taormina-2.webp, catania.webp]
-  description: |
+  what_we_think: |
     When Francis Ford Coppola came to film The Godfather in 1971, Corleone had grown too modern, so he shot Michael’s Sicilian exile in two hill villages north of Taormina instead. Both look much as they did on screen.
-
+  what_customers_think: "My husband has seen The Godfather fifty times. He wants to drink at Bar Vitelli and see the church from the wedding."
+  customer_name: "Donna"
+  customer_origin: "Brooklyn, USA"
+  finer_details: |
     Your driver collects you from your hotel for the drive to Savoca, where you’ll sit at Bar Vitelli, where Michael asks for Apollonia’s hand, and see the church where they married.
 
     Then on to Forza d’Agrò, a village of stone lanes and views over the sea, which stood in for Corleone in The Godfather Part II.
@@ -3290,17 +3547,20 @@
   code: 73
   title: Catania, Syracuse and Baroque Noto from Taormina
   tagline: Eastern Sicily in a Day
-  headline: Eastern Sicily’s ancient heritage and Baroque architecture on a full-day trip from Taormina.
-  location: Sicily
+  subtitle: Eastern Sicily’s ancient heritage and Baroque architecture on a full-day trip from Taormina.
+  region: Sicily
   hours: 6
   transport: car
   meeting_point: Pickup from your Taormina hotel
   languages: [en, es, fr, it, de]
   tags: []
   photos: [baroque-noto.webp, syracuse.webp, catania.webp]
-  description: |
+  what_we_think: |
     South of Taormina lies the Sicily of postcards: Greek Syracuse on its island, and Noto, a town of golden Baroque stone. This private day trip takes you to both, by way of Catania.
-
+  what_customers_think: "We are staying in Taormina all week. One day we want the Greek theatre in Syracuse and the golden stone of Noto."
+  customer_name: "Heather & Ian"
+  customer_origin: "Belfast, UK"
+  finer_details: |
     Your driver collects you from your hotel and heads south past Etna. In Syracuse, your guide leads you around the island of Ortigia, to the cathedral built around a Greek temple and the Fountain of Arethusa.
 
     Then on to Noto, for a walk along Corso Vittorio Emanuele past churches and palaces glowing honey-gold, before the drive back to Taormina.
@@ -3327,8 +3587,8 @@
   code: 74
   title: Etna Wineries from Taormina
   tagline: Vineyards on the Volcano
-  headline: Taste volcanic wines and explore Etna’s scenic vineyards on a day trip from Taormina.
-  location: Sicily
+  subtitle: Taste volcanic wines and explore Etna’s scenic vineyards on a day trip from Taormina.
+  region: Sicily
   hours: 6
   transport: car
   badge: wine
@@ -3336,9 +3596,12 @@
   languages: [en, es, fr, it, de]
   tags: [wine]
   photos: [etna-wineries.webp, catania-wineries.webp, taormina.webp]
-  description: |
+  what_we_think: |
     Etna’s northern slope, a short drive from Taormina, is one of the most exciting wine regions in Italy. Its vines grow on old lava terraces, some of them ungrafted and more than a century old.
-
+  what_customers_think: "We want to visit small wineries on Etna, taste with the winemakers, and have a driver so we can both drink."
+  customer_name: "Marcus & Tanya"
+  customer_origin: "Cape Town, South Africa"
+  finer_details: |
     Your driver collects you from your hotel and drives into the hills around Castiglione di Sicilia and Randazzo, where the vineyards run up the side of the volcano.
 
     You’ll visit two wineries for a tour of the vines and cellars and a tasting of Etna Rosso, Bianco, and Rosato, with lunch of local produce at one of them.
@@ -3365,17 +3628,20 @@
   code: 75
   title: Transfer from Taormina to Amalfi Coast
   tagline: Sicily to the Mainland, Door to Door
-  headline: Travel in comfort with a private, door-to-door transfer.
-  location: Sicily
+  subtitle: Travel in comfort with a private, door-to-door transfer.
+  region: Sicily
   hours: 8
   transport: car
   meeting_point: Pickup from your Taormina hotel
   languages: [en, es, fr, it, de, pt]
   tags: [transfers]
   photos: [amalfi-coast.webp, taormina-2.webp, positano.webp]
-  description: |
+  what_we_think: |
     Getting from Taormina to the Amalfi Coast by public transport means a train, a ferry across the Strait of Messina, another train, and a bus at the end. This private transfer does it in one go.
-
+  what_customers_think: "From Sicily to the Amalfi Coast in one go. A comfortable car, a driver who knows the road, stops when we need."
+  customer_name: "Sven & Karin"
+  customer_origin: "Gothenburg, Sweden"
+  finer_details: |
     Your driver collects you from your hotel, drives you onto the ferry across the Strait, and heads north up the length of Calabria, with stops for coffee and lunch when you want them.
 
     You’re dropped at your hotel’s door in Positano, Amalfi, Ravello, or Sorrento.

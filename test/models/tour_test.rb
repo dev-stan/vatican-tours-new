@@ -5,11 +5,11 @@ class TourTest < ActiveSupport::TestCase
     assert tours(:ancient_rome).valid?
   end
 
-  test "requires title, location and slug" do
+  test "requires title, region and slug" do
     tour = Tour.new
     assert_not tour.valid?
     assert_includes tour.errors[:title], "can't be blank"
-    assert_includes tour.errors[:location], "can't be blank"
+    assert_includes tour.errors[:region], "can't be blank"
     assert_includes tour.errors[:slug], "can't be blank"
   end
 

@@ -4,7 +4,7 @@ class Avo::Resources::Tour < Avo::BaseResource
   self.attachments = [ :photos ]
   self.search = {
     query: -> {
-      scope = query.where("tours.title LIKE :q OR tours.slug LIKE :q OR tours.location LIKE :q", q: "%#{q}%")
+      scope = query.where("tours.title LIKE :q OR tours.slug LIKE :q OR tours.region LIKE :q", q: "%#{q}%")
       q.strip.match?(/\A\d+\z/) ? scope.or(query.where(code: q.strip.to_i)) : scope
     }
   }
@@ -20,11 +20,15 @@ class Avo::Resources::Tour < Avo::BaseResource
     field :status, as: :select, options: ::Tour.statuses.keys.index_by(&:humanize), format_display_using: -> { value.to_s.humanize },
           help: "Only published tours appear on the site."
     field :slug, as: :text, hide_on: :index, help: "The tour's web address: /tours/<slug>. Changing it breaks old links."
-    field :location, as: :select, options: PagesController::LOCATIONS.excluding("All Locations").index_by(&:itself)
+    field :region, as: :select, options: PagesController::REGIONS.excluding("All Regions").index_by(&:itself)
     field :duration_minutes, as: :number, name: "Duration (minutes)"
-    field :headline, as: :text, hide_on: :index
+    field :subtitle, as: :text, hide_on: :index
     field :tagline, as: :text, hide_on: :index
-    field :description, as: :textarea, hide_on: :index, help: "Leave a blank line between paragraphs."
+    field :what_we_think, as: :textarea, hide_on: :index, help: "Our take on the tour, shown in the orange card on the tour page."
+    field :what_customers_think, as: :textarea, hide_on: :index, help: "A traveller quote for the same card. Leave out the quotation marks."
+    field :customer_name, as: :text, hide_on: :index, help: "Who said it, e.g. Betty & Peter."
+    field :customer_origin, as: :text, hide_on: :index, help: "Where they are from, e.g. London, UK."
+    field :finer_details, as: :textarea, hide_on: :index, help: "Shown under \"The Finer Details\". Leave a blank line between paragraphs."
     field :meeting_point, as: :text, hide_on: :index
     field :languages, as: :select, multiple: true, hide_on: :index,
           options: ToursHelper::LANGUAGE_NAMES.invert.slice(*ToursHelper::LANGUAGE_NAMES.values_at(*::Tour::LANGUAGES))

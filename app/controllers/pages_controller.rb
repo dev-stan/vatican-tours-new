@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  LOCATIONS = [
-    "All Locations", "Vatican City", "Rome", "Rome Day Trips", "Florence", "Tuscany", "Umbria",
+  REGIONS = [
+    "All Regions", "Vatican City", "Rome", "Rome Day Trips", "Florence", "Tuscany", "Umbria",
     "Naples, Pompeii and Amalfi Coast", "Puglia and Basilicata", "Venice", "Milan and Lake Como", "Sicily"
   ].freeze
 
@@ -9,16 +9,16 @@ class PagesController < ApplicationController
     "Transfers", "Cruises", "Food and Cooking", "Wine Tours", "Active"
   ].freeze
 
-  # Short place names for the hero title ("Vatican Seen Up Close"); unlisted locations use their tab label.
+  # Short place names for the hero title ("Vatican Seen Up Close"); unlisted regions use their tab label.
   HERO_PLACES = {
-    "All Locations" => "Italy",
+    "All Regions" => "Italy",
     "Vatican City" => "Vatican",
     "Rome Day Trips" => "Rome",
     "Naples, Pompeii and Amalfi Coast" => "Naples"
   }.freeze
 
   HERO_SUBTITLES = {
-    "All Locations" => "Small-group and private tours across Italy, planned by people who live here",
+    "All Regions" => "Small-group and private tours across Italy, planned by people who live here",
     "Vatican City" => "Skip-the-line access to the Museums, Sistine Chapel, and St. Peter’s",
     "Rome" => "Ancient ruins, Baroque piazzas, and the lanes between them",
     "Rome Day Trips" => "Easy escapes from Rome to hill towns, villas, and the coast",
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
   # Subtitles under the "Italy, seen up close" heading above the tour browser.
   SECTION_SUBTITLES = {
-    "All Locations" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
+    "All Regions" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
     "Vatican City" => "Sacred art, Renaissance grandeur, and the treasures of Vatican City.",
     "Rome" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
     "Rome Day Trips" => "Easy escapes from Rome to hill towns, villas, and the coast.",
@@ -50,9 +50,9 @@ class PagesController < ApplicationController
 
   FEATURE_ICONS = %i[arrow clock house person].freeze
 
-  # The four feature blocks under the section heading, per location (paired with FEATURE_ICONS by position).
+  # The four feature blocks under the section heading, per region (paired with FEATURE_ICONS by position).
   FEATURES = {
-    "All Locations" => [
+    "All Regions" => [
       { title: "Straight past the line", body: "Reserved entry at Italy’s busiest sights means more time inside and less in the queue." },
       { title: "Your pace, your route", body: "Self-guided, small-group, or private: choose how much guiding you want, city by city." },
       { title: "Beyond the big names", body: "Hill towns, vineyards, islands, and kitchens most visitors never find." },
@@ -126,9 +126,9 @@ class PagesController < ApplicationController
     ]
   }.freeze
 
-  # The floating guide's advice pill and its modal, per location: a short teaser title and a few local tips.
+  # The floating guide's advice pill and its modal, per region: a short teaser title and a few local tips.
   GUIDE_ADVICE = {
-    "All Locations" => {
+    "All Regions" => {
       title: "Where to start in Italy",
       tips: [
         "Pick two or three bases rather than a new town every night; trains between Rome, Florence, and Venice take under four hours.",
@@ -227,7 +227,7 @@ class PagesController < ApplicationController
   }.freeze
 
   def home
-    @locations = LOCATIONS
+    @regions = REGIONS
     @categories = CATEGORIES
     @hero_places = HERO_PLACES
     @hero_subtitles = HERO_SUBTITLES
@@ -236,7 +236,7 @@ class PagesController < ApplicationController
     @features = FEATURES
     @guide_advice = GUIDE_ADVICE
     @tours = Tour.published.with_attached_photos.includes(:ticket_types)
-                 .sort_by { |tour| [ LOCATIONS.index(tour.location) || LOCATIONS.size, tour.id ] }
+                 .sort_by { |tour| [ REGIONS.index(tour.region) || REGIONS.size, tour.id ] }
   end
 
   def about
