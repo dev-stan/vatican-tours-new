@@ -16,10 +16,9 @@ module ToursHelper
 
   LANGUAGE_NAMES = { "en" => "English", "es" => "Spanish", "fr" => "French", "it" => "Italian", "de" => "German", "pt" => "Portuguese" }.freeze
 
-  CARD_TINTS = { "Vatican City" => "bg-vatican-soft", "Rome" => "bg-rome-soft", "Rome Day Trips" => "bg-rome-soft" }.freeze
-
-  def tour_card_tint(tour)
-    CARD_TINTS.fetch(tour.region, "bg-white")
+  # Sets the --region CSS variable behind the `region` and `region-soft` colours (see application.css).
+  def region_style(tour)
+    "--region: #{tour.region_color}"
   end
 
   # 180 => "3 hours", 150 => "2 hours 30 min"

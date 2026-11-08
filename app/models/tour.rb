@@ -2,6 +2,14 @@ class Tour < ApplicationRecord
   LANGUAGES = %w[en es fr it de pt].freeze
   TAGS = %w[self_guided with_kids wheelchair transfers day_trip cruises food_and_cooking wine active].freeze
 
+  # Each region's accent: the tour card tint on the home page, the quick-facts strip and accents on the tour page.
+  REGION_COLORS = {
+    "Vatican City" => "#8C2A24", "Rome" => "#C0643A", "Rome Day Trips" => "#D4895C", "Florence" => "#6E8466",
+    "Tuscany" => "#8C9150", "Umbria" => "#4F6B4A", "Naples, Pompeii and Amalfi Coast" => "#B38A2B",
+    "Puglia and Basilicata" => "#9C6B1F", "Venice" => "#2E6BA8", "Milan and Lake Como" => "#7A6A5A", "Sicily" => "#2F7F7E"
+  }.freeze
+  DEFAULT_REGION_COLOR = "#93421F"
+
   has_many_attached :photos
 
   has_many :highlights, -> { order(:position) }, dependent: :destroy
@@ -50,6 +58,8 @@ class Tour < ApplicationRecord
   end
 
   def to_param = slug
+
+  def region_color = REGION_COLORS.fetch(region, DEFAULT_REGION_COLOR)
 
   # The lowest price to join: the cheapest adult group ticket or the private price, optionally of one kind only.
   # Nil until the tour has prices.

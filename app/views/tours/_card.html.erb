@@ -1,4 +1,5 @@
-<article class="relative flex flex-col rounded-[14px] shadow-[0_1px_2px_rgba(0,0,0,.04)] <%= tour_card_tint(tour) %>"
+<article class="relative flex flex-col rounded-[14px] bg-region-soft shadow-[0_1px_2px_rgba(0,0,0,.04)]"
+         style="<%= region_style(tour) %>"
          data-tour-filter-target="card"
          data-region="<%= tour.region %>"
          data-categories="<%= tour_categories(tour).to_json %>">
@@ -34,7 +35,7 @@
     </div>
   </div>
 
-  <div class="absolute right-0 -bottom-2 flex size-[35px] items-center justify-center rounded-full bg-forest" title="<%= tour.transport.humanize %>">
+  <div class="absolute right-0 -bottom-2 flex size-[35px] items-center justify-center rounded-full bg-region" title="<%= tour.transport.humanize %>">
     <%= render "tours/transport_icon", transport: tour.transport %>
   </div>
 </article>

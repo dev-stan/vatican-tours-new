@@ -12,11 +12,11 @@ const CLOCK_ICON = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" 
 export default class extends Controller {
   static targets = [
     "card", "mode", "fromPrice", "count", "step", "note",
-    "month", "prev", "next", "days", "dateLabel", "slots", "total", "totalLabel", "save",
+    "month", "prev", "next", "days", "dateLabel", "slots", "total", "totalLabel",
     "bookButton", "details", "form", "fields", "name", "submitTotal",
     "bar", "barTotal", "barDate"
   ]
-  static values = { options: Object, today: String, saveKey: String }
+  static values = { options: Object, today: String }
 
   connect() {
     this.options = this.optionsValue
@@ -30,7 +30,6 @@ export default class extends Controller {
 
     // A page restored from Turbo's cache may still have the form open, or busy from the last submit.
     this.collapseDetails()
-    this.saveTarget.setAttribute("aria-pressed", this.readSaved())
     this.render()
 
     this.stick = this.stick.bind(this)
@@ -98,12 +97,6 @@ export default class extends Controller {
     const id = Number(event.currentTarget.dataset.departureId)
     this.departure = this.departuresOn(this.date).find(departure => departure.id === id)
     this.render()
-  }
-
-  toggleSave() {
-    const saved = this.saveTarget.getAttribute("aria-pressed") !== "true"
-    this.saveTarget.setAttribute("aria-pressed", saved)
-    try { localStorage.setItem(this.saveKeyValue, saved) } catch {}
   }
 
   book() {
@@ -186,8 +179,8 @@ export default class extends Controller {
       html += `<button type="button" class="group flex h-12 cursor-pointer flex-col items-center pt-1 text-[15px]"
         data-action="booking#selectDate" data-date="${formatDate(day)}" aria-pressed="${selected}"
         aria-label="${day.toLocaleDateString("en-US", DAY_LABEL)}">
-        <span class="flex size-8 items-center justify-center rounded-full transition-colors group-hover:bg-stepper group-aria-pressed:bg-ink group-aria-pressed:text-white">${day.getDate()}</span>
-        <span class="mt-[3px] size-1 rounded-full bg-terracotta-deep group-aria-pressed:invisible"></span>
+        <span class="flex size-8 items-center justify-center rounded-full transition-colors group-hover:bg-stepper group-aria-pressed:bg-region group-aria-pressed:text-white">${day.getDate()}</span>
+        <span class="mt-[3px] size-1 rounded-full bg-region group-aria-pressed:invisible"></span>
       </button>`
     }
     this.daysTarget.innerHTML = html
@@ -207,11 +200,11 @@ export default class extends Controller {
       const note = departure.seats_left === 0 ? (group ? "Sold out" : "Booked")
         : group && (!fits || departure.seats_left <= FEW_LEFT) ? `Only ${departure.seats_left} left` : ""
 
-      return `<button type="button" class="flex h-[52px] w-full cursor-pointer items-center gap-3 rounded-[12px] border border-line bg-white px-4 text-base transition-colors hover:border-ink/40 aria-pressed:border-terracotta-deep aria-pressed:bg-rome-soft disabled:cursor-default disabled:text-muted disabled:hover:border-line"
+      return `<button type="button" class="flex h-[52px] w-full cursor-pointer items-center gap-3 rounded-[12px] border border-line bg-white px-4 text-base transition-colors hover:border-ink/40 aria-pressed:border-region aria-pressed:bg-region-soft disabled:cursor-default disabled:text-muted disabled:hover:border-line"
         aria-pressed="${departure.id === this.departure?.id}" data-departure-id="${departure.id}"
         data-action="booking#selectSlot" ${fits ? "" : "disabled"}>
         ${CLOCK_ICON} ${departure.time}
-        ${note ? `<span class="ml-auto text-[13px] text-terracotta-deep">${note}</span>` : ""}
+        ${note ? `<span class="ml-auto text-[13px] text-region">${note}</span>` : ""}
       </button>`
     }).join("")
   }
@@ -321,10 +314,6 @@ export default class extends Controller {
   // A private departure is one slot for the whole party.
   fits(departure) {
     return departure.seats_left >= (this.mode === "group" ? this.partySize : 1)
-  }
-
-  readSaved() {
-    try { return localStorage.getItem(this.saveKeyValue) === "true" } catch { return false }
   }
 }
 

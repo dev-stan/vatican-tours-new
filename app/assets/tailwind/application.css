@@ -13,10 +13,16 @@
   --color-checkbox: #8a847e;
   --color-forest: #2f6b4f;
   --color-star: #d9b630;
-  --color-vatican-soft: #fdf8e6;
   --color-rome-soft: #fdf1e7;
   --color-terracotta: #dc9a72;
   --color-terracotta-deep: #93421f;
+}
+
+/* A tour's region accent, from Tour::REGION_COLORS via style="--region: …" (ToursHelper#region_style). */
+@theme inline {
+  --color-region: var(--region, #93421f);
+  --color-region-soft: color-mix(in oklab, var(--region, #93421f) 18%, white);
+  --color-region-deep: color-mix(in oklab, var(--region, #93421f) 80%, black);
 }
 
 @layer base {

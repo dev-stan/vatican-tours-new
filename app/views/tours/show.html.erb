@@ -8,43 +8,34 @@
 <% included, excluded = @tour.inclusions.partition(&:included) %>
 <% gallery_widths = %w[w-[420px] w-[380px] w-[380px]] %>
 
-<% clock_icon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>'.html_safe %>
-<% divider = '<li class="mx-7 h-7 w-px shrink-0 bg-ink/25" aria-hidden="true"></li>'.html_safe %>
+<%# Quick facts: [label, icon, value], shown in the region-coloured strip under the header %>
+<% quick_facts = [
+     (["Format", '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4"/><path d="M10.5 2.7a2.5 2.5 0 0 1 0 4.6"/><path d="M12.3 10.3c1.1.6 1.9 1.8 2.2 3.7"/></svg>', tour_format(@tour)] if tour_format(@tour)),
+     ["Duration", '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M8 4v4.3l2.6 1.6"/></svg>', tour_duration(@tour)],
+     ["Location", '<svg width="14" height="16" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>', @tour.region],
+     (["Languages", '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>', "Live guide in #{tour_languages(@tour)}"] if @tour.languages.any?)
+   ].compact %>
 
 <%# Header %>
 <%= render "shared/header" %>
 
 <%# Quick facts %>
-<div class="bg-terracotta">
-  <ul class="no-scrollbar mx-auto flex h-[68px] max-w-[1180px] items-center overflow-x-auto px-6 text-base whitespace-nowrap">
-    <% if (format = tour_format(@tour)) %>
-      <li class="flex items-center gap-4">
-        <span class="flex size-10 items-center justify-center rounded-full bg-white/35">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="6" cy="5" r="2.5"/><path d="M1.5 14c.6-2.6 2.3-4 4.5-4s3.9 1.4 4.5 4"/><path d="M10.5 2.7a2.5 2.5 0 0 1 0 4.6"/><path d="M12.3 10.3c1.1.6 1.9 1.8 2.2 3.7"/></svg>
-        </span>
-        <%= format %>
-      </li>
-      <%= divider %>
-    <% end %>
-    <li class="flex items-center gap-2.5"><%= clock_icon %> <%= tour_duration(@tour) %></li>
-    <%= divider %>
-    <li class="flex items-center gap-2.5">
-      <svg width="14" height="16" viewBox="0 0 14 15" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M7 14s5-4.6 5-8.2A5 5 0 0 0 2 5.8C2 9.4 7 14 7 14z"/><circle cx="7" cy="6" r="1.8"/></svg>
-      <%= @tour.region %>
-    </li>
-    <% if @tour.languages.any? %>
-      <%= divider %>
-      <li class="flex items-center gap-2.5">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M8 1.5c3.6 0 6.5 2.6 6.5 5.8S11.6 13 8 13c-.8 0-1.6-.1-2.3-.4L2 14.5l1-3.2C2.1 10.2 1.5 8.8 1.5 7.3 1.5 4.1 4.4 1.5 8 1.5z"/></svg>
-        Live guide in <%= tour_languages(@tour) %>
+<div class="bg-region text-white" style="<%= region_style(@tour) %>">
+  <ul class="no-scrollbar mx-auto flex max-w-[1180px] items-center overflow-x-auto px-6 py-3.5 text-[15px] whitespace-nowrap max-md:[mask-image:linear-gradient(to_right,#000_85%,transparent)]" aria-label="Tour at a glance">
+    <% quick_facts.each_with_index do |(label, icon, value), i| %>
+      <% if i > 0 %><li class="mx-6 h-6 w-px shrink-0 bg-white/30" aria-hidden="true"></li><% end %>
+      <li class="flex shrink-0 items-center gap-3">
+        <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15"><%= icon.html_safe %></span>
+        <span><span class="sr-only"><%= label %>: </span><%= value %></span>
       </li>
     <% end %>
+    <li class="w-6 shrink-0 md:hidden" aria-hidden="true"></li>
   </ul>
 </div>
 
-<%= tag.div class: "mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] px-6 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-14",
+<%= tag.div class: "mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] px-6 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-14", style: region_style(@tour),
             data: (@booking_options ? { controller: "booking", booking_options_value: @booking_options.to_json,
-                                        booking_today_value: Date.current.iso8601, booking_save_key_value: "saved:#{@tour.slug}" } : {}) do %>
+                                        booking_today_value: Date.current.iso8601 } : {}) do %>
 
   <%# Tour details %>
   <div class="pt-10 pb-16 lg:pt-20 lg:pb-28">
@@ -58,14 +49,14 @@
       </ol>
     </nav>
 
-    <p class="mt-7 text-sm font-semibold tracking-[.16em] text-terracotta-deep uppercase"><%= @tour.title %></p>
+    <p class="mt-7 text-sm font-semibold tracking-[.16em] text-region uppercase"><%= @tour.title %></p>
     <h1 class="mt-6 font-serif text-[clamp(34px,4.4vw,50px)] leading-[1.1] font-medium tracking-[-.5px] text-pretty">
       <%= @tour.subtitle.presence || @tour.title %>
     </h1>
 
     <%# Highlights %>
     <% if @tour.highlights.any? %>
-      <section class="mt-20 lg:mt-24" aria-labelledby="highlights-heading">
+      <section class="mt-16 lg:mt-20" aria-labelledby="highlights-heading">
         <h2 id="highlights-heading" class="border-b border-ink/25 pb-4 font-serif text-[23px] font-medium text-muted-serif">Tour Highlights</h2>
         <div class="mt-12 grid gap-x-14 gap-y-10 sm:grid-cols-2">
           <% @tour.highlights.each do |highlight| %>
@@ -80,23 +71,40 @@
 
     <%# What we think, and what travellers told us %>
     <% if @tour.what_we_think.present? || @tour.what_customers_think.present? %>
-      <section class="mt-16 rounded-[24px] bg-terracotta px-8 py-10 sm:px-11" aria-label="Our take on this tour">
+      <section class="relative mt-16 overflow-hidden rounded-[24px] bg-region-soft px-6 pt-8 pb-6 sm:px-9 sm:pt-10 sm:pb-8" aria-label="Our take on this tour">
+        <%# A Roman arch, drawn faintly behind the copy %>
+        <svg class="pointer-events-none absolute -top-8 -right-14 h-[240px] w-[212px] text-region/20 sm:-right-4" viewBox="0 0 300 340" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M30 340V150a120 120 0 0 1 240 0v190"/>
+          <path d="M70 340V155a80 80 0 0 1 160 0v185"/>
+          <path d="M110 340V160a40 40 0 0 1 80 0v180"/>
+        </svg>
+
         <% if @tour.what_we_think.present? %>
-          <div>
-            <h2 class="text-[13px] font-semibold tracking-[.16em] text-ink/75 uppercase">What we think about this tour</h2>
-            <p class="mt-4 text-base leading-[1.6] whitespace-pre-line"><%= @tour.what_we_think %></p>
+          <div class="relative max-w-[620px]">
+            <p class="flex items-center gap-3 text-[13px] font-semibold tracking-[.16em] text-ink/70 uppercase">
+              <span class="h-px w-8 bg-region" aria-hidden="true"></span>Our take
+            </p>
+            <h2 class="mt-3 font-serif text-[clamp(24px,2.6vw,30px)] leading-[1.15] font-medium tracking-[-.4px] text-balance">What we think about this tour</h2>
+            <p class="mt-3 text-base leading-[1.6] whitespace-pre-line"><%= @tour.what_we_think %></p>
           </div>
         <% end %>
+
         <% if @tour.what_customers_think.present? %>
-          <figure class="<%= "mt-8 border-t border-ink/25 pt-8" if @tour.what_we_think.present? %>">
-            <h2 class="text-[13px] font-semibold tracking-[.16em] text-ink/75 uppercase">What travellers shared with us about this tour</h2>
-            <blockquote class="mt-4 font-serif text-[clamp(22px,2.4vw,27px)] leading-[1.4] text-pretty italic">
-              “<%= @tour.what_customers_think %>”
+          <figure class="relative rounded-[18px] bg-white px-5 pt-8 pb-5 sm:px-8 sm:pt-9 sm:pb-6 <%= @tour.what_we_think.present? ? "mt-8" : "mt-3" %>">
+            <span class="pointer-events-none absolute -top-7 left-4 font-serif text-[88px] leading-none text-region select-none sm:left-6" aria-hidden="true">“</span>
+            <h2 class="mt-3 font-serif text-[clamp(24px,2.6vw,30px)] leading-[1.15] font-medium tracking-[-.4px] text-balance">What travellers shared with us about this tour</h2>
+            <blockquote class="mt-3 border-l-2 border-region pl-4 text-base leading-[1.6] text-pretty italic">
+              <%= @tour.what_customers_think %>
             </blockquote>
             <% if @tour.customer_name.present? || @tour.customer_origin.present? %>
-              <figcaption class="mt-5">
-                <% if @tour.customer_name.present? %><p class="text-base font-semibold"><%= @tour.customer_name %></p><% end %>
-                <% if @tour.customer_origin.present? %><p class="mt-0.5 text-[15px] text-ink/75"><%= @tour.customer_origin %></p><% end %>
+              <figcaption class="mt-5 flex items-center gap-3">
+                <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-region font-serif text-base font-medium text-white" aria-hidden="true">
+                  <%= (@tour.customer_name.presence || @tour.customer_origin).strip.first.upcase %>
+                </span>
+                <div>
+                  <% if @tour.customer_name.present? %><p class="text-[15px] font-semibold"><%= @tour.customer_name %></p><% end %>
+                  <% if @tour.customer_origin.present? %><p class="text-sm text-muted"><%= @tour.customer_origin %></p><% end %>
+                </div>
               </figcaption>
             <% end %>
           </figure>
@@ -237,7 +245,7 @@
         <span class="text-[24px] font-semibold" aria-live="polite" data-booking-target="total"></span>
       </div>
 
-      <button type="button" class="mt-5 h-[52px] w-full cursor-pointer rounded-full bg-ink text-base text-white transition-colors hover:bg-black disabled:cursor-default disabled:opacity-40"
+      <button type="button" class="mt-5 h-[52px] w-full cursor-pointer rounded-full bg-region text-base text-white transition-colors hover:bg-region-deep disabled:cursor-default disabled:opacity-40"
               data-booking-target="bookButton" data-action="booking#book">Book Now</button>
 
       <%# Contact details, expanded by Book Now. Turbo sets aria-busy on the form while it submits. %>
@@ -265,7 +273,7 @@
 
             <p id="booking-error" class="mt-4 text-[14px] leading-[1.4] text-terracotta-deep empty:hidden" role="alert"></p>
 
-            <button type="submit" class="mt-5 flex h-[52px] w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-ink text-base text-white transition-colors hover:bg-black group-aria-busy:cursor-wait group-aria-busy:bg-ink/85">
+            <button type="submit" class="mt-5 flex h-[52px] w-full cursor-pointer items-center justify-center gap-3 rounded-full bg-region text-base text-white transition-colors hover:bg-region-deep group-aria-busy:cursor-wait group-aria-busy:bg-region/85">
               <svg class="hidden size-5 animate-spin group-aria-busy:block" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-opacity=".3" stroke-width="2.5"/>
                 <path d="M21.5 12A9.5 9.5 0 0 0 12 2.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
@@ -276,13 +284,6 @@
           <% end %>
         </div>
       </div>
-
-      <button type="button" class="group mt-4 flex cursor-pointer items-center gap-3 text-base"
-              aria-pressed="false" data-booking-target="save" data-action="booking#toggleSave">
-        <svg class="group-aria-pressed:hidden" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 1.5v13M1.5 8h13"/></svg>
-        <svg class="hidden group-aria-pressed:block" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg>
-        Save for Later
-      </button>
     </div>
   </aside>
 
@@ -292,7 +293,7 @@
       <p class="text-[17px] font-semibold" data-booking-target="barTotal"></p>
       <p class="text-[13px] text-muted" data-booking-target="barDate"></p>
     </div>
-    <button type="button" class="h-12 cursor-pointer rounded-full bg-ink px-7 text-base text-white" data-action="booking#reveal">Choose a time</button>
+    <button type="button" class="h-12 cursor-pointer rounded-full bg-region px-7 text-base text-white transition-colors hover:bg-region-deep" data-action="booking#reveal">Choose a time</button>
   </div>
   <% end %>
 <% end %>
