@@ -146,6 +146,8 @@ GEM
     ffi (1.17.4-x86_64-darwin)
     ffi (1.17.4-x86_64-linux-gnu)
     ffi (1.17.4-x86_64-linux-musl)
+    foreman (0.90.0)
+      thor (~> 1.4)
     fugit (1.14.0)
       et-orbi (~> 1.4)
       raabro (~> 1.4)
@@ -452,6 +454,7 @@ DEPENDENCIES
   bundler-audit
   capybara
   debug
+  foreman
   image_processing (~> 1.2)
   importmap-rails
   jbuilder

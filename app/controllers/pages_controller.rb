@@ -235,8 +235,7 @@ class PagesController < ApplicationController
     @feature_icons = FEATURE_ICONS
     @features = FEATURES
     @guide_advice = GUIDE_ADVICE
-    @tours = Tour.published.with_attached_photos.includes(:ticket_types)
-                 .sort_by { |tour| [ REGIONS.index(tour.region) || REGIONS.size, tour.id ] }
+    @tours = Tour.published.with_attached_photos.includes(:ticket_types).by_code
   end
 
   def about

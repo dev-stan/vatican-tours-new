@@ -43,6 +43,8 @@ class Tour < ApplicationRecord
       relation.where("EXISTS (SELECT 1 FROM json_each(tours.tags) WHERE json_each.value = ?)", tag)
     end
   }
+  # Ascending by tour ID (code: Vatican 100+, next region 200+, …); tours without a code go last.
+  scope :by_code, -> { order(Arel.sql("tours.code IS NULL"), :code, :id) }
   # "Private Tours" / "Small Group": the tour sells tickets of that kind.
   scope :offering, ->(kind) { where(id: TicketType.where(kind: kind).select(:tour_id)) }
   # "Group size N": a departure that can still be booked has N seats free.

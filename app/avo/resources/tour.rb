@@ -2,6 +2,8 @@ class Avo::Resources::Tour < Avo::BaseResource
   self.title = :title
   self.icon = "tabler/outline/map"
   self.attachments = [ :photos ]
+  self.default_sort_column = :code
+  self.default_sort_direction = :asc
   self.search = {
     query: -> {
       scope = query.where("tours.title LIKE :q OR tours.slug LIKE :q OR tours.region LIKE :q", q: "%#{q}%")
