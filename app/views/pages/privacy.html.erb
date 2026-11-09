@@ -38,11 +38,18 @@
   ] }
 ] %>
 
-<%= render "shared/header" %>
+<%= render "shared/header", nav_card: true %>
 
-<section class="mx-auto max-w-[1180px] px-6 pt-14 pb-12 md:pt-20">
-  <p class="text-[13px] font-semibold tracking-[.18em] text-terracotta-deep uppercase">Legal</p>
-  <h1 class="mt-4 font-serif text-[clamp(40px,6vw,72px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
+<section class="mx-auto max-w-[1180px] px-6 pt-10 pb-12 md:pt-14">
+  <nav aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
+      <li><%= link_to "Home", root_path, class: "hover:text-ink" %></li>
+      <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+      <li class="text-ink" aria-current="page">Privacy Policy</li>
+    </ol>
+  </nav>
+
+  <h1 class="mt-7 font-serif text-[clamp(40px,6vw,72px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
     Privacy <em class="font-normal">Policy</em>
   </h1>
   <p class="mt-5 text-[15px] text-muted">Last updated October 31, 2026</p>

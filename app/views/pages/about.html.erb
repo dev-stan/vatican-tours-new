@@ -7,12 +7,19 @@
   { title: "A real person, the same day", body: "Questions go straight to our team in Rome, not a call center. We usually answer the same day." }
 ] %>
 
-<%= render "shared/header" %>
+<%= render "shared/header", nav_card: true %>
 
 <%# Intro %>
-<section class="mx-auto max-w-[1180px] px-6 pt-14 pb-14 md:pt-20">
-  <p class="text-[13px] font-semibold tracking-[.18em] text-terracotta-deep uppercase">About Us</p>
-  <h1 class="mt-4 max-w-[900px] font-serif text-[clamp(40px,6vw,72px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
+<section class="mx-auto max-w-[1180px] px-6 pt-10 pb-14 md:pt-14">
+  <nav aria-label="Breadcrumb">
+    <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
+      <li><%= link_to "Home", root_path, class: "hover:text-ink" %></li>
+      <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+      <li class="text-ink" aria-current="page">About</li>
+    </ol>
+  </nav>
+
+  <h1 class="mt-7 max-w-[900px] font-serif text-[clamp(40px,6vw,72px)] leading-[1.02] font-medium tracking-[-1px] text-balance">
     Italy, Shown by <em class="font-normal">People Who Live Here</em>
   </h1>
   <p class="mt-5 max-w-[640px] text-[17px] leading-[1.5] text-pretty text-muted">
