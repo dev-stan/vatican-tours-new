@@ -18,7 +18,7 @@
            style="background-image: url('<%= image_path("bar-hero.jpg") %>')">
     <div class="pointer-events-none absolute inset-0 bg-[rgba(20,30,40,.32)]"></div>
 
-    <%= render "shared/header", on_photo: true, nav_card: true, wrapper_class: "px-6 md:px-16" %>
+    <%= render "shared/header" %>
 
     <div class="relative my-auto flex flex-col items-center px-6 pb-10 text-center md:px-16">
       <h1 class="mt-3.5 font-serif text-[clamp(48px,7.5vw,96px)] leading-none font-medium tracking-[-1px]"><span data-tour-filter-target="place"><%= @hero_places["All Regions"] %></span> Seen Up Close</h1>

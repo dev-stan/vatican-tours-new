@@ -4,7 +4,7 @@ class Tour < ApplicationRecord
 
   # Each region's accent: the tour card tint on the home page, the quick-facts strip and accents on the tour page.
   REGION_COLORS = {
-    "Vatican City" => "#8C2A24", "Rome" => "#C0643A", "Rome Day Trips" => "#D4895C", "Florence" => "#6E8466",
+    "Vatican City" => "#dbd007", "Rome" => "#C0643A", "Rome Day Trips" => "#D4895C", "Florence" => "#6E8466",
     "Tuscany" => "#8C9150", "Umbria" => "#4F6B4A", "Naples, Pompeii and Amalfi Coast" => "#B38A2B",
     "Puglia and Basilicata" => "#9C6B1F", "Venice" => "#2E6BA8", "Milan and Lake Como" => "#7A6A5A", "Sicily" => "#2F7F7E"
   }.freeze

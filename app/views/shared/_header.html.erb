@@ -1,6 +1,11 @@
-<%# locals: (on_photo: false, nav_card: false, wrapper_class: "mx-auto w-full max-w-[1180px] px-6") -%>
-<%# on_photo: white text for headers laid over a hero photo; otherwise ink on the cream page.
-    nav_card: sets the nav links on a cream pill, so they read as ink even over a photo. %>
+<%# locals: (variant: :floating, accent: nil) -%>
+<%# Two variants:
+    :floating (default) — transparent; nav links sit on a cream card. The logo inherits the surrounding
+                          text color, so it reads white inside a hero photo and ink on the cream page.
+    :band               — solid strip in the tour's region color (accent), white text, no card. Tour pages only.
+    Both use the 1180px content column, so the logo and links sit in the same place on every page. %>
+<% band = variant == :band %>
+<% raise ArgumentError, "unknown header variant: #{variant.inspect}" unless band || variant == :floating %>
 <% nav_links = [
   { label: "Home", path: root_path },
   { label: "Blog", path: articles_path },
@@ -8,20 +13,24 @@
   { label: "Contact", path: contact_path }
 ] %>
 
-<header class="relative flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 <%= wrapper_class %> <%= on_photo ? "text-white" : "text-ink" %>">
-  <%= link_to root_path, class: "flex items-center gap-3" do %>
-    <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
-  <% end %>
+<%= tag.header class: ["relative", ("bg-region text-white" if band)],
+               style: ("--region: #{accent}" if band && accent) do %>
+  <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-2 py-4 mx-auto w-full max-w-[1180px] px-6">
+    <%= link_to root_path, class: "flex items-center gap-3" do %>
+      <span class="text-[15px] font-medium tracking-[3px]">VATICAN TOURS INC</span>
+    <% end %>
 
-  <nav aria-label="Main" class="<%= "rounded-full bg-cream px-4 py-1.5 shadow-[0_4px_20px_rgba(0,0,0,.12)]" if nav_card %>">
-    <ul class="-mx-3 flex flex-wrap items-center text-[15px]">
-      <% nav_links.each do |link| %>
-        <li>
-          <%= link_to link[:label], link[:path],
-                class: "block rounded-full px-3 py-1.5 underline-offset-[6px] decoration-1 hover:underline aria-[current=page]:underline #{on_photo && !nav_card ? "text-white/90 hover:text-white" : "text-ink/80 hover:text-ink"}",
-                aria: { current: ("page" if current_page?(link[:path])) } %>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
-</header>
+    <%# Same padding in both variants so the links never shift between pages; only :floating paints the card. %>
+    <nav aria-label="Main" class="rounded-full px-4 py-1.5 <%= "bg-cream shadow-[0_4px_20px_rgba(0,0,0,.12)]" unless band %>">
+      <ul class="-mx-3 flex flex-wrap items-center text-[15px]">
+        <% nav_links.each do |link| %>
+          <li>
+            <%= link_to link[:label], link[:path],
+                  class: "block rounded-full px-3 py-1.5 underline-offset-[6px] decoration-1 hover:underline aria-[current=page]:underline #{band ? "text-white/90 hover:text-white" : "text-ink/80 hover:text-ink"}",
+                  aria: { current: ("page" if current_page?(link[:path])) } %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+<% end %>

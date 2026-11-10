@@ -24,9 +24,7 @@
    ].compact %>
 
 <%# Header %>
-<div class="bg-region" style="<%= region_style(@tour) %>">
-  <%= render "shared/header", on_photo: true %>
-</div>
+<%= render "shared/header", variant: :band, accent: @tour.region_color %>
 
 <%= tag.div class: "mx-auto grid max-w-[1180px] grid-cols-[minmax(0,1fr)] px-6 lg:grid-cols-[minmax(0,1fr)_430px] lg:gap-x-14", style: region_style(@tour),
             data: (@booking_options ? { controller: "booking", booking_options_value: @booking_options.to_json,

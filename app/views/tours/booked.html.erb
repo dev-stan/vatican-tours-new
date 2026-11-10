@@ -63,7 +63,7 @@
          <% if hero_photo %>style="background-image: url('<%= url_for(hero_photo) %>')"<% end %>>
   <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,22,28,.55),rgba(18,22,28,.45)_50%,rgba(18,22,28,.7))]"></div>
 
-  <%= render "shared/header", on_photo: true, nav_card: true %>
+  <%= render "shared/header" %>
 
   <div class="relative my-auto flex flex-col items-center px-6 pt-8 pb-28 text-center sm:pt-4 sm:pb-32">
     <span class="flex size-12 items-center justify-center rounded-full ring-[6px] ring-white/10 <%= page[:icon] == :check ? "bg-forest" : "bg-white/15" %>" aria-hidden="true">
