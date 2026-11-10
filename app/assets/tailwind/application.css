@@ -21,7 +21,7 @@
 /* A tour's region accent, from Tour::REGION_COLORS via style="--region: …" (ToursHelper#region_style). */
 @theme inline {
   --color-region: var(--region, #93421f);
-  --color-region-soft: color-mix(in oklab, var(--region, #93421f) 18%, white);
+  --color-region-soft: color-mix(in oklab, var(--region, #93421f) 40%, white);
   --color-region-deep: color-mix(in oklab, var(--region, #93421f) 80%, black);
 }
 
