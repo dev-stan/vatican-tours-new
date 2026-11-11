@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get "privacy" => "pages#privacy", as: :privacy
   resource :contact, only: %i[show create]
 
-  # The travel blog: /blog and /blog/<slug>.
-  resources :articles, path: "blog", only: %i[index show], param: :slug
+  # The travel newsletter: /newsletter and /newsletter/<slug>.
+  resources :articles, path: "newsletter", only: %i[index show], param: :slug
 
   resources :tours, only: :show, param: :slug do
     get "booked/:token", action: :booked, on: :member, as: :booked

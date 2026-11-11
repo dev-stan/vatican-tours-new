@@ -1,4 +1,4 @@
-# Blog posts. body is HTML for the ActionText rich text; images live in app/assets/images/tours.
+# Newsletter articles. body is HTML for the ActionText rich text; images live in app/assets/images/tours.
 - slug: venetian-lagoon-wineries
   title: The Wineries of the Venetian Lagoon
   published_at: 2026-11-07 09:00

@@ -1,4 +1,4 @@
-# Adds the first blog post to databases that already exist, without re-running the seeds. The content is frozen
+# Adds the first newsletter article to databases that already exist, without re-running the seeds. The content is frozen
 # here rather than read from db/seeds/articles.yml, so later edits to that file can't change what this migration
 # does. If the post already exists (e.g. it was seeded), it is left alone. The promoted tour is linked only if it
 # exists in this database.

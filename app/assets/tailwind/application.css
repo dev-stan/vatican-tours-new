@@ -21,7 +21,7 @@
 /* A tour's region accent, from Tour::REGION_COLORS via style="--region: …" (ToursHelper#region_style). */
 @theme inline {
   --color-region: var(--region, #93421f);
-  --color-region-soft: color-mix(in oklab, var(--region, #93421f) 40%, white);
+  --color-region-soft: color-mix(in oklab, var(--region, #93421f) 48%, white);
   --color-region-deep: color-mix(in oklab, var(--region, #93421f) 80%, black);
 }
 
@@ -31,7 +31,7 @@
   }
 }
 
-/* Blog post bodies, written in Avo's rich text editor (ActionText). */
+/* Newsletter article bodies, written in Avo's rich text editor (ActionText). */
 .article-body {
   @apply text-[17px] leading-[1.7] text-ink/85;
 

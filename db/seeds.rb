@@ -102,7 +102,7 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
   puts "#{tour.title}: #{created} departures created"
 end
 
-# Blog articles. Images are replaced only when the file name in articles.yml changes.
+# Newsletter articles. Images are replaced only when the file name in articles.yml changes.
 YAML.load_file(Rails.root.join("db/seeds/articles.yml")).each do |data|
   article = Article.find_or_initialize_by(slug: data["slug"])
   article.update!(

@@ -1,4 +1,4 @@
-# Blog posts at /blog. The body is ActionText rich text; the hero and tour photos are Active Storage attachments.
+# Newsletter articles at /newsletter. The body is ActionText rich text; the hero and tour photos are Active Storage attachments.
 class CreateArticles < ActiveRecord::Migration[8.1]
   def change
     create_table :articles do |t|

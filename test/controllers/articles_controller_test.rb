@@ -1,13 +1,13 @@
 require "test_helper"
 
 class ArticlesControllerTest < ActionDispatch::IntegrationTest
-  test "the blog lists live articles with a breadcrumb" do
+  test "the newsletter lists live articles with a breadcrumb" do
     get articles_path
     assert_response :success
 
-    assert_select "h1", /Travel Blog \/\s*Stories/
+    assert_select "h1", /Travel Newsletter \/\s*Stories/
     assert_select "nav[aria-label=Breadcrumb] a[href=?]", root_path, text: "Home"
-    assert_select "nav[aria-label=Breadcrumb] [aria-current=page]", "Blog"
+    assert_select "nav[aria-label=Breadcrumb] [aria-current=page]", "Newsletter"
     assert_select "article a[href=?]", article_path(articles(:lagoon_wineries)), text: articles(:lagoon_wineries).title
     assert_select "article", count: 1
     assert_select "header nav a[aria-current=page][href=?]", articles_path

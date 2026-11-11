@@ -15,11 +15,11 @@ class Avo::Resources::Article < Avo::BaseResource
   def fields
     field :title, as: :text, link_to_record: true
     field :status, as: :select, options: ::Article.statuses.keys.index_by(&:humanize), format_display_using: -> { value.to_s.humanize },
-          help: "Only published articles appear on the blog."
+          help: "Only published articles appear in the newsletter."
     field :published_at, as: :date_time, sortable: true, name: "Published",
           help: "Set automatically when first published. A future date keeps the article hidden until then."
-    field :slug, as: :text, hide_on: :index, help: "The article's web address: /blog/<slug>. Changing it breaks old links."
-    field :excerpt, as: :textarea, hide_on: :index, help: "One or two sentences for the card on the /blog page."
+    field :slug, as: :text, hide_on: :index, help: "The article's web address: /newsletter/<slug>. Changing it breaks old links."
+    field :excerpt, as: :textarea, hide_on: :index, help: "One or two sentences for the card on the /newsletter page."
     field :hero_image, as: :file, is_image: true, hide_on: :index, help: "The large photo behind the title."
     field :body, as: :trix, help: "The story. Headings, links, lists and inline photos are all fine."
     field :tour, as: :belongs_to, searchable: false, help: "The tour advertised at the end of the article (optional)."
