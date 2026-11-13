@@ -18,7 +18,10 @@ Rails.application.routes.draw do
   resource :contact, only: %i[show create]
 
   # The travel newsletter: /newsletter and /newsletter/<slug>.
-  resources :articles, path: "newsletter", only: %i[index show], param: :slug
+  resources :newsletter_articles, path: "newsletter", only: %i[index show], param: :slug
+  # Travel tips guides (header) and the blog (footer), whose posts each support a guide.
+  resources :travel_tips, path: "travel-tips", only: %i[index show], param: :slug
+  resources :blog_posts, path: "blog", only: %i[index show], param: :slug
 
   resources :tours, only: :show, param: :slug do
     get "booked/:token", action: :booked, on: :member, as: :booked

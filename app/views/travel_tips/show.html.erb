@@ -1,0 +1,18 @@
+<% post_page_meta @post %>
+
+<%= render "posts/hero", post: @post, kicker: "Travel Tips" %>
+<%= render layout: "posts/story", locals: { post: @post } do %>
+  <%= render "posts/booking", post: @post %>
+<% end %>
+
+<%# Blog posts written for this guide, once they're live %>
+<% if @blog_posts.any? %>
+  <section class="mx-auto max-w-[1180px] px-6 pb-28" aria-labelledby="more-heading">
+    <h2 id="more-heading" class="font-serif text-[clamp(32px,4vw,46px)] leading-[1.08] font-medium text-balance">
+      More on this <em class="font-normal">topic</em>
+    </h2>
+    <div class="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      <%= render partial: "posts/card", collection: @blog_posts, as: :post, locals: { cta: "Read the article" } %>
+    </div>
+  </section>
+<% end %>

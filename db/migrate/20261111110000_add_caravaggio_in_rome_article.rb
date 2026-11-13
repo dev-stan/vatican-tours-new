@@ -3,6 +3,22 @@
 # database. Photos live in app/assets/images/newsletter. In the body, a line {{name}} becomes an inline photo: the
 # image is uploaded as an Active Storage blob and embedded as an ActionText attachment with its caption.
 class AddCaravaggioInRomeArticle < ActiveRecord::Migration[8.1]
+  # The model as it was when this migration was written. The app model has since been renamed to NewsletterArticle
+  # (and the table to newsletter_articles, in a later migration), so this one keeps the old table and record_type.
+  class Article < ActiveRecord::Base
+    self.table_name = "articles"
+    def self.polymorphic_name = "Article"
+
+    belongs_to :tour, optional: true
+    has_rich_text :body
+    has_one_attached :hero_image
+    has_one_attached :tour_image
+  end
+
+  # Attachments and rich text find their owner by record_type ("Article"), including in after-commit callbacks, so that
+  # name has to resolve while migrations run. Nothing in the app is called Article any more.
+  Object.const_set(:Article, Article) unless Object.const_defined?(:Article)
+
   IMAGE_DIR = "app/assets/images/newsletter"
 
   ARTICLE = YAML.safe_load(<<~'YAML')

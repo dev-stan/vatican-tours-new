@@ -36,7 +36,11 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "header links to about and contact; footer also links to privacy" do
     [ root_path, about_path, privacy_path, contact_path, tour_path(tours(:ancient_rome)) ].each do |path|
       get path
-      assert_select "header nav a[href=?]", articles_path
+      assert_select "header nav a[href=?]", travel_tips_path
+      assert_select "header nav a[href=?]", newsletter_articles_path
+      assert_select "header nav a[href=?]", blog_posts_path, count: 0
+      assert_select "footer a[href=?]", travel_tips_path
+      assert_select "footer a[href=?]", blog_posts_path
       assert_select "header nav a[href=?]", about_path
       assert_select "header nav a[href=?]", contact_path
       assert_select "header nav a[href=?]", privacy_path, count: 0

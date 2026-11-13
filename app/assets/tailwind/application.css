@@ -31,7 +31,7 @@
   }
 }
 
-/* Newsletter article bodies, written in Avo's rich text editor (ActionText). */
+/* Post bodies (newsletter, blog, travel tips), written in Avo's rich text editor (ActionText). */
 .article-body {
   @apply text-[17px] leading-[1.7] text-ink/85;
 

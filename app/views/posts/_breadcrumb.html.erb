@@ -1,0 +1,11 @@
+<%# locals: (crumbs:) -%>
+<%# [name, path] pairs; the last one is the current page and isn't linked. %>
+<nav aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-3 text-sm text-muted">
+    <% crumbs[..-2].each do |name, path| %>
+      <li><%= link_to name, path, class: "hover:text-ink" %></li>
+      <li aria-hidden="true" class="text-[#c4bdb5]">/</li>
+    <% end %>
+    <li class="text-ink" aria-current="page"><%= crumbs.last.first %></li>
+  </ol>
+</nav>

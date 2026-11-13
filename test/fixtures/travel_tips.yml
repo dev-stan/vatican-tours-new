@@ -1,0 +1,13 @@
+meet_the_pope:
+  title: How to Meet the Pope in Rome
+  slug: how-to-meet-the-pope-in-rome
+  excerpt: Wednesday audiences, the Sunday Angelus and free tickets.
+  meta_title: "How to Meet the Pope in Rome: Audience, Angelus & Tips"
+  meta_description: See Pope Leo XIV in Rome.
+  status: published
+  published_at: <%= 5.days.ago.to_fs(:db) %>
+
+draft_tip:
+  title: An Unfinished Guide
+  slug: unfinished-guide
+  status: draft

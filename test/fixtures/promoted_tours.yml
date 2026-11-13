@@ -1,0 +1,15 @@
+guide_main:
+  post: meet_the_pope (TravelTip)
+  tour: ancient_rome
+  position: 1
+  label: Book Papal Audience Tickets & Assistance
+
+guide_unpublished:
+  post: meet_the_pope (TravelTip)
+  tour: draft_tour
+  position: 2
+
+post_main:
+  post: papal_tickets (BlogPost)
+  tour: ancient_rome
+  position: 1

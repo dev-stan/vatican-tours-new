@@ -1,0 +1,5 @@
+<% content_for :title, "Travel Newsletter — Vatican Tours Inc" %>
+
+<%= render "posts/index", posts: @posts, section: "Newsletter", cta: "Read the story",
+      heading: safe_join([ "Travel Newsletter / ", tag.em("Stories", class: "font-normal") ]),
+      intro: "Notes from our guides on the places we love, the people who keep them going, and the corners most visitors never find." %>

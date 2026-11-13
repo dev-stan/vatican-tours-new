@@ -1,0 +1,19 @@
+<%# locals: (post:) -%>
+<%# Rendered as a layout: breadcrumb, dates and body, then whatever the block adds in the same column. %>
+<div class="mx-auto max-w-[760px] px-6 pt-10 pb-28 md:pt-14">
+  <%= render "posts/breadcrumb", crumbs: post_breadcrumbs(post) %>
+
+  <p class="mt-7 text-sm text-muted">
+    <time datetime="<%= post.published_at.to_date.iso8601 %>"><%= post.published_at.strftime("%B %-d, %Y") %></time>
+    <% if (revised = post.revised_on) %>
+      <span aria-hidden="true" class="mx-2 text-[#c4bdb5]">·</span>
+      Updated <time datetime="<%= revised.iso8601 %>"><%= revised.strftime("%B %-d, %Y") %></time>
+    <% end %>
+  </p>
+
+  <div class="article-body mt-8">
+    <%= post.body %>
+  </div>
+
+  <%= yield %>
+</div>

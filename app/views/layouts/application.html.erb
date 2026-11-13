@@ -2,6 +2,9 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Vatican Tours" %></title>
+    <% if content_for?(:description) %>
+      <%= tag.meta name: "description", content: content_for(:description) %>
+    <% end %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Vatican Tours">

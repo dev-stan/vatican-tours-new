@@ -1,0 +1,14 @@
+papal_tickets:
+  title: "Papal Audience Tickets: Skip the Paperwork with Our Help"
+  slug: papal-audience-tickets
+  excerpt: Papal audience tickets are free but required.
+  status: published
+  published_at: <%= 2.days.ago.to_fs(:db) %>
+  travel_tip: meet_the_pope
+
+future_post:
+  title: A Post Coming Soon
+  slug: post-coming-soon
+  status: published
+  published_at: <%= 3.days.from_now.to_fs(:db) %>
+  travel_tip: meet_the_pope

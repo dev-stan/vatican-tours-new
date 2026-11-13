@@ -103,8 +103,8 @@ YAML.load_file(Rails.root.join("db/seeds/tours.yml")).each do |data|
 end
 
 # Newsletter articles. Images are replaced only when the file name in articles.yml changes.
-YAML.load_file(Rails.root.join("db/seeds/articles.yml")).each do |data|
-  article = Article.find_or_initialize_by(slug: data["slug"])
+YAML.load_file(Rails.root.join("db/seeds/newsletter_articles.yml")).each do |data|
+  article = NewsletterArticle.find_or_initialize_by(slug: data["slug"])
   article.update!(
     **data.slice("title", "excerpt", "body").symbolize_keys,
     published_at: Time.zone.parse(data["published_at"].to_s),

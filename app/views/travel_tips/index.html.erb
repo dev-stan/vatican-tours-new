@@ -1,0 +1,6 @@
+<% content_for :title, "Travel Tips — Vatican Tours Inc" %>
+<% content_for :description, "Practical guides for Rome and the Vatican from the people who live here: when to go, what to book and how to make the most of your visit." %>
+
+<%= render "posts/index", posts: @posts, section: "Travel Tips", cta: "Read the guide",
+      heading: safe_join([ "Travel Tips / ", tag.em("Before You Go", class: "font-normal") ]),
+      intro: "Practical guides for Rome and the Vatican from the people who live here: when to go, what to book and how to make the most of your visit." %>

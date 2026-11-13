@@ -1,4 +1,14 @@
 lagoon_wineries_body:
-  record: lagoon_wineries (Article)
+  record: lagoon_wineries (NewsletterArticle)
   name: body
   body: <h2>The golden grape</h2><div>Vines have grown in the lagoon since the Middle Ages.</div>
+
+meet_the_pope_body:
+  record: meet_the_pope (TravelTip)
+  name: body
+  body: <h2>The Wednesday General Audience</h2><div>Tickets are free but required.</div>
+
+papal_tickets_body:
+  record: papal_tickets (BlogPost)
+  name: body
+  body: <h2>What a papal audience ticket gets you</h2><div>A seat in your sector.</div>

@@ -18,7 +18,8 @@ class Tour < ApplicationRecord
   has_many :ticket_types, -> { order(:position) }, dependent: :destroy
   has_many :departures, dependent: :restrict_with_error
   has_many :bookings, dependent: :restrict_with_error
-  has_many :articles, dependent: :nullify
+  has_many :newsletter_articles, dependent: :nullify
+  has_many :promoted_tours, dependent: :destroy
 
   enum :status, { draft: "draft", published: "published" }, validate: true
   # How the tour gets around; picks the icon on the tour card.

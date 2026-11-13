@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_13_090000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_14_120000) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -49,19 +49,21 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_13_090000) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "articles", force: :cascade do |t|
+  create_table "blog_posts", force: :cascade do |t|
     t.string "title", null: false
     t.string "slug", null: false
     t.string "status", default: "draft", null: false
     t.datetime "published_at"
     t.text "excerpt"
-    t.integer "tour_id"
+    t.string "meta_title"
+    t.string "meta_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_articles_on_slug", unique: true
-    t.index ["status", "published_at"], name: "index_articles_on_status_and_published_at"
-    t.index ["tour_id"], name: "index_articles_on_tour_id"
-    t.check_constraint "status IN ('draft', 'published')", name: "articles_status_valid"
+    t.integer "travel_tip_id"
+    t.index ["slug"], name: "index_blog_posts_on_slug", unique: true
+    t.index ["status", "published_at"], name: "index_blog_posts_on_status_and_published_at"
+    t.index ["travel_tip_id"], name: "index_blog_posts_on_travel_tip_id"
+    t.check_constraint "status IN ('draft', 'published')", name: "blog_posts_status_valid"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -123,6 +125,35 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_13_090000) do
     t.index ["tour_id", "position"], name: "index_inclusions_on_tour_id_and_position"
   end
 
+  create_table "newsletter_articles", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.string "status", default: "draft", null: false
+    t.datetime "published_at"
+    t.text "excerpt"
+    t.integer "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "meta_title"
+    t.string "meta_description"
+    t.index ["slug"], name: "index_newsletter_articles_on_slug", unique: true
+    t.index ["status", "published_at"], name: "index_newsletter_articles_on_status_and_published_at"
+    t.index ["tour_id"], name: "index_newsletter_articles_on_tour_id"
+    t.check_constraint "status IN ('draft', 'published')", name: "newsletter_articles_status_valid"
+  end
+
+  create_table "promoted_tours", force: :cascade do |t|
+    t.string "post_type", null: false
+    t.integer "post_id", null: false
+    t.integer "tour_id", null: false
+    t.integer "position", default: 0, null: false
+    t.string "label"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_type", "post_id", "position"], name: "index_promoted_tours_on_post_type_and_post_id_and_position"
+    t.index ["tour_id"], name: "index_promoted_tours_on_tour_id"
+  end
+
   create_table "ticket_types", force: :cascade do |t|
     t.integer "tour_id", null: false
     t.string "kind", null: false
@@ -182,14 +213,31 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_13_090000) do
     t.check_constraint "transport IN ('walking', 'boat', 'car')", name: "tours_transport_valid"
   end
 
+  create_table "travel_tips", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.string "status", default: "draft", null: false
+    t.datetime "published_at"
+    t.text "excerpt"
+    t.string "meta_title"
+    t.string "meta_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_travel_tips_on_slug", unique: true
+    t.index ["status", "published_at"], name: "index_travel_tips_on_status_and_published_at"
+    t.check_constraint "status IN ('draft', 'published')", name: "travel_tips_status_valid"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "articles", "tours", on_delete: :nullify
+  add_foreign_key "blog_posts", "travel_tips", on_delete: :nullify
   add_foreign_key "bookings", "departures"
   add_foreign_key "bookings", "tours"
   add_foreign_key "departures", "tours"
   add_foreign_key "highlights", "tours"
   add_foreign_key "inclusions", "tours"
+  add_foreign_key "newsletter_articles", "tours", on_delete: :nullify
+  add_foreign_key "promoted_tours", "tours", on_delete: :cascade
   add_foreign_key "ticket_types", "tours"
   add_foreign_key "tour_facts", "tours"
 end

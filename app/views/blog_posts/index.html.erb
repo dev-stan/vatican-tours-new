@@ -1,0 +1,6 @@
+<% content_for :title, "Blog — Vatican Tours Inc" %>
+<% content_for :description, "Answers to the questions travellers ask us most about Rome and the Vatican, from papal audience tickets to dress codes." %>
+
+<%= render "posts/index", posts: @posts, section: "Blog", cta: "Read the article",
+      heading: safe_join([ "Blog / ", tag.em("Rome & the Vatican", class: "font-normal") ]),
+      intro: "Answers to the questions travellers ask us most about Rome and the Vatican, from papal audience tickets to dress codes." %>

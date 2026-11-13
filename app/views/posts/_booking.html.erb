@@ -1,0 +1,12 @@
+<%# locals: (post:) -%>
+<%# Booking buttons for the tours picked in the admin. The first is the main one. %>
+<% promotions = post.bookable_promotions %>
+<% if promotions.any? %>
+  <div class="mt-10 flex flex-col items-start gap-3" aria-label="Book">
+    <% promotions.each_with_index do |promotion, i| %>
+      <%= link_to promotion.button_label, tour_path(promotion.tour),
+            class: ["inline-flex min-h-[52px] items-center rounded-[26px] px-8 py-3 text-base text-balance transition-colors",
+                    i.zero? ? "bg-ink text-white hover:bg-black" : "border border-ink/25 text-ink hover:border-ink"] %>
+    <% end %>
+  </div>
+<% end %>

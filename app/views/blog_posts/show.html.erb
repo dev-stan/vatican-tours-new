@@ -1,0 +1,19 @@
+<% post_page_meta @post %>
+
+<%= render "posts/hero", post: @post, kicker: "Blog" %>
+<%= render layout: "posts/story", locals: { post: @post } do %>
+  <%= render "posts/booking", post: @post %>
+
+  <%# The travel tips guide this post supports %>
+  <% if (guide = @post.guide) %>
+    <aside class="relative mt-14 rounded-[18px] bg-white/70 p-6 md:p-8" aria-labelledby="guide-heading">
+      <p class="text-[13px] font-semibold tracking-[.18em] text-terracotta-deep uppercase">Part of our guide</p>
+      <h2 id="guide-heading" class="mt-3 font-serif text-[26px] leading-[1.15] font-medium text-pretty">
+        <%= link_to guide.title, travel_tip_path(guide), class: "after:absolute after:inset-0 after:rounded-[18px] hover:text-terracotta-deep" %>
+      </h2>
+      <% if guide.excerpt.present? %>
+        <p class="mt-3 text-[15px] leading-[1.55] text-pretty text-ink/75"><%= guide.excerpt %></p>
+      <% end %>
+    </aside>
+  <% end %>
+<% end %>
