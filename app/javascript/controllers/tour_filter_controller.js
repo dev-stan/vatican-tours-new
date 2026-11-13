@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Filters the home page tour cards by region tab and category checkboxes,
 // and swaps the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected region.
 export default class extends Controller {
-  static targets = ["tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
+  static targets = ["tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionTitleSuffix", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
   static values = { places: Object, subtitles: Object, sectionSubtitles: Object, features: Object, adviceTitles: Object, region: { type: String, default: "All Regions" }, size: { type: Number, default: 1 } }
 
   selectRegion(event) {
@@ -18,7 +18,10 @@ export default class extends Controller {
       this.subtitleTarget.textContent = this.subtitlesValue[this.regionValue] || `Expert-led tours in ${this.regionValue}`
     }
     if (this.hasSectionTitleTarget) {
-      this.sectionTitleTarget.textContent = this.regionValue === "All Regions" ? this.placesValue[this.regionValue] : this.regionValue
+      this.sectionTitleTarget.textContent = this.regionValue === "All Regions" ? "All Italy" : this.regionValue
+    }
+    if (this.hasSectionTitleSuffixTarget) {
+      this.sectionTitleSuffixTarget.hidden = this.regionValue !== "All Regions"
     }
     if (this.hasSectionSubtitleTarget) {
       this.sectionSubtitleTarget.textContent = this.sectionSubtitlesValue[this.regionValue] || ""

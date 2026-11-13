@@ -1,4 +1,4 @@
-<% content_for :title, "Vatican Tours Inc — Italy Seen Up Close" %>
+<% content_for :title, "Vatican Tours Inc — Italy, Seen Up Close" %>
 
 <% feature_icons = {
   arrow: '<path d="M1 8h14"/><path d="M10 3l5 5-5 5"/>',
@@ -21,14 +21,14 @@
     <%= render "shared/header" %>
 
     <div class="relative my-auto flex flex-col items-center px-6 pb-10 text-center md:px-16">
-      <h1 class="mt-3.5 font-serif text-[clamp(48px,7.5vw,96px)] leading-none font-medium tracking-[-1px]"><span data-tour-filter-target="place"><%= @hero_places["All Regions"] %></span> Seen Up Close</h1>
+      <h1 class="mt-3.5 font-serif text-[clamp(48px,7.5vw,96px)] leading-none font-medium tracking-[-1px]"><span data-tour-filter-target="place"><%= @hero_places["All Regions"] %></span>, Seen Up Close</h1>
       <p class="mt-3 max-w-[760px] text-base" data-tour-filter-target="subtitle"><%= @hero_subtitles["All Regions"] %></p>
     </div>
   </section>
 
   <%# Intro + features %>
   <section class="mx-auto max-w-[1100px] px-6 pt-[54px] pb-2.5 text-center">
-    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium"><span data-tour-filter-target="sectionTitle"><%= @hero_places["All Regions"] %></span>, <em class="font-normal">seen up close</em></h2>
+    <h2 class="font-serif text-[clamp(30px,3.6vw,42px)] leading-[1.1] font-medium"><span data-tour-filter-target="sectionTitle">All Italy</span><em class="font-normal" data-tour-filter-target="sectionTitleSuffix"> by region</em></h2>
     <p class="mx-auto mt-3.5 max-w-[620px] text-[15px] leading-[1.4] text-pretty text-muted" data-tour-filter-target="sectionSubtitle"><%= @section_subtitles["All Regions"] %></p>
 
     <div class="mt-12 grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-7 text-left">

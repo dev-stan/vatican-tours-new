@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     "Transfers", "Day Trips", "Cruises", "Food and Cooking", "Wine Tours", "Active"
   ].freeze
 
-  # Short place names for the hero title ("Vatican Seen Up Close"); unlisted regions use their tab label.
+  # Short place names for the hero title ("Vatican, Seen Up Close"); unlisted regions use their tab label.
   HERO_PLACES = {
     "All Regions" => "Italy",
     "Vatican City" => "Vatican",
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     "Sicily" => "Greek temples, Baroque towns, and Mount Etna’s slopes"
   }.freeze
 
-  # Subtitles under the "Italy, seen up close" heading above the tour browser.
+  # Subtitles under the "All Italy by region" / region-name heading above the tour browser.
   SECTION_SUBTITLES = {
     "All Regions" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
     "Vatican City" => "Sacred art, Renaissance grandeur, and the treasures of Vatican City.",
