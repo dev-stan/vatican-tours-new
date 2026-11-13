@@ -10,12 +10,14 @@
 <div data-controller="tour-filter"
      data-tour-filter-places-value="<%= @hero_places.to_json %>"
      data-tour-filter-subtitles-value="<%= @hero_subtitles.to_json %>"
+     data-tour-filter-hero-images-value="<%= @hero_images.to_json %>"
      data-tour-filter-section-subtitles-value="<%= @section_subtitles.to_json %>"
      data-tour-filter-features-value="<%= @features.to_json %>"
      data-tour-filter-advice-titles-value="<%= @guide_advice.transform_values { _1[:title] }.to_json %>">
   <%# Hero %>
   <section class="relative flex min-h-[540px] flex-col bg-[#3a3a36] bg-cover bg-[center_40%] bg-no-repeat text-white"
-           style="background-image: url('<%= image_path("bar-hero.jpg") %>')">
+           style="background-image: url('<%= @hero_images["All Regions"] %>')"
+           data-tour-filter-target="hero">
     <div class="pointer-events-none absolute inset-0 bg-[rgba(20,30,40,.32)]"></div>
 
     <%= render "shared/header" %>

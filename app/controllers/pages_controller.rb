@@ -17,6 +17,22 @@ class PagesController < ApplicationController
     "Naples, Pompeii and Amalfi Coast" => "Naples"
   }.freeze
 
+  # Hero background per region (app/assets/images/hero-images); unlisted regions fall back to "All Regions".
+  HERO_IMAGES = {
+    "All Regions" => "bar-hero.jpg",
+    "Vatican City" => "hero-images/vatican-city.webp",
+    "Rome" => "hero-images/rome.webp",
+    "Rome Day Trips" => "hero-images/rome.webp",
+    "Florence" => "hero-images/florence.webp",
+    "Tuscany" => "hero-images/tuscany.webp",
+    "Umbria" => "hero-images/umbria.webp",
+    "Naples, Pompeii and Amalfi Coast" => "hero-images/naples.webp",
+    "Puglia and Basilicata" => "hero-images/puglia.webp",
+    "Venice" => "hero-images/venice.webp",
+    "Milan and Lake Como" => "hero-images/milan-lake-como.webp",
+    "Sicily" => "hero-images/sicily.webp"
+  }.freeze
+
   HERO_SUBTITLES = {
     "All Regions" => "Small-group and private tours across Italy, planned by people who live here",
     "Vatican City" => "Skip-the-line access to the Museums, Sistine Chapel, and St. Peter’s",
@@ -231,6 +247,7 @@ class PagesController < ApplicationController
     @categories = CATEGORIES
     @hero_places = HERO_PLACES
     @hero_subtitles = HERO_SUBTITLES
+    @hero_images = HERO_IMAGES.transform_values { helpers.image_path(_1) }
     @section_subtitles = SECTION_SUBTITLES
     @feature_icons = FEATURE_ICONS
     @features = FEATURES

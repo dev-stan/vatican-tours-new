@@ -1,10 +1,16 @@
 import { Controller } from "@hotwired/stimulus"
 
 // Filters the home page tour cards by region tab and category checkboxes,
-// and swaps the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected region.
+// and swaps the hero photo, the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected region.
 export default class extends Controller {
-  static targets = ["tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionTitleSuffix", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
-  static values = { places: Object, subtitles: Object, sectionSubtitles: Object, features: Object, adviceTitles: Object, region: { type: String, default: "All Regions" }, size: { type: Number, default: 1 } }
+  static targets = ["hero", "tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionTitleSuffix", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
+  static values = { places: Object, subtitles: Object, heroImages: Object, sectionSubtitles: Object, features: Object, adviceTitles: Object, region: { type: String, default: "All Regions" }, size: { type: Number, default: 1 } }
+
+  connect() {
+    // Warm the cache with every region's hero photo once the page has loaded, so switching tabs is instant.
+    const preload = () => Object.values(this.heroImagesValue).forEach(src => { new Image().src = src })
+    document.readyState === "complete" ? preload() : window.addEventListener("load", preload, { once: true })
+  }
 
   selectRegion(event) {
     this.regionValue = event.currentTarget.dataset.region
@@ -12,6 +18,10 @@ export default class extends Controller {
 
   regionValueChanged() {
     this.tabTargets.forEach(tab => tab.setAttribute("aria-pressed", tab.dataset.region === this.regionValue))
+    if (this.hasHeroTarget) {
+      const image = this.heroImagesValue[this.regionValue] || this.heroImagesValue["All Regions"]
+      if (image) this.heroTarget.style.backgroundImage = `url('${image}')`
+    }
     const place = this.placesValue[this.regionValue] || this.regionValue
     this.placeTargets.forEach(target => target.textContent = place)
     if (this.hasSubtitleTarget) {
