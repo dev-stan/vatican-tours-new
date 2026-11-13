@@ -9,14 +9,14 @@
 # - 207 "Rome All the Sights with English Speaking Driver" is new: its content and photos are copied from 206.
 # - "On the Path of Angels and Demons Tour" isn't on the sheet: it's unpublished and loses its code.
 #
-# Tours are found by slug. The data is frozen here, so later edits to db/seeds/tours.yml can't change this migration.
+# Tours are found by slug; a tour whose slug differs between environments lists every known slug (first match wins). The data is frozen here, so later edits to db/seeds/tours.yml can't change this migration.
 class UpdateRomeToursFromPriceList < ActiveRecord::Migration[8.1]
   ACCESSIBILITY_TAGS = %w[wheelchair with_kids].freeze
 
   TOURS = [
     { code: 201, slug: "ancient-rome-walking-tour", title: "Ancient Rome Walking Tour", transport: "walking", tags: [],
       private: [ 360, 360, 360, 420, 420, 420, 480, 480 ], adult: 120 },
-    { code: 202, slug: "ancient-rome-in-depth-underground-colosseum", title: "Ancient Rome in Depth", transport: "walking", tags: [],
+    { code: 202, slug: %w[ancient-rome-in-depth ancient-rome-in-depth-underground-colosseum], title: "Ancient Rome in Depth", transport: "walking", tags: [],
       private: [ 480, 480, 560, 560, 560, 560, 640, 640 ] },
     { code: 203, slug: "old-rome-walking-tour", title: "Old Rome Walking Tour", transport: "walking", tags: [],
       private: [ 360, 360, 420, 420, 420, 420, 480, 480 ], adult: 120 },
@@ -26,7 +26,7 @@ class UpdateRomeToursFromPriceList < ActiveRecord::Migration[8.1]
       private: [ 240, 240, 280, 280, 280, 280, 320, 320 ], adult: 80 },
     { code: 206, slug: "rome-all-the-sights", title: "Rome, All the Sights Walking Tour", transport: "walking", tags: [],
       private: [ 720, 720, 960, 960, 960, 960, 1040, 1040 ], adult: 240 },
-    { code: 207, slug: "rome-all-the-sights-with-driver", title: "Rome All the Sights with English Speaking Driver",
+    { code: 207, slug: %w[english-speaking-driver-rome-tour rome-all-the-sights-with-driver], title: "Rome All the Sights with English Speaking Driver",
       transport: "car", tags: [], copy_from: "rome-all-the-sights",
       private: [ 1160, 1160, 1280, 1280, 1280, 1280, 1560, 1560 ] },
     { code: 208, slug: "appian-way-and-catacombs", title: "Appian Way and the Catacombs Tour", transport: "car", tags: [],
@@ -49,18 +49,21 @@ class UpdateRomeToursFromPriceList < ActiveRecord::Migration[8.1]
       tour.update!(code: nil, status: "draft")
       say "#{tour.title}: unpublished, code cleared"
     end
-    clashing = Tour.where(code: TOURS.pluck(:code)).where.not(slug: TOURS.pluck(:slug))
+    found = TOURS.to_h { |data| [ data[:code], find_tour(data) ] }
+    clashing = Tour.where(code: TOURS.pluck(:code)).where.not(id: found.values.compact.map(&:id))
     raise "Codes already used by other tours: #{clashing.pluck(:slug, :code).inspect}" if clashing.exists?
 
     TOURS.each do |data|
-      tour = data[:copy_from] ? find_or_copy(data) : Tour.find_by!(slug: data[:slug])
+      tour = found[data[:code]]
+      created = tour.nil?
+      tour ||= data[:copy_from] ? copy_tour(data) : raise(ActiveRecord::RecordNotFound, "No tour with slug #{data[:slug].inspect}")
 
       tags = (tour.tags - ACCESSIBILITY_TAGS) + data[:tags]
       tour.update!(code: data[:code], title: data[:title], transport: data[:transport], tags:,
                    badge: (tour.badge if tags.include?(tour.badge)), region: "Rome")
 
       update_ticket_types(tour, data)
-      sync_departures(tour, data, source: data[:copy_from] && Tour.find_by!(slug: data[:copy_from]))
+      sync_departures(tour, data, source: (Tour.find_by!(slug: data[:copy_from]) if created))
       say "#{data[:code]} #{tour.title}: updated"
     end
   end
@@ -111,16 +114,17 @@ class UpdateRomeToursFromPriceList < ActiveRecord::Migration[8.1]
       say "#{tour.title}: #{created} departures created"
     end
 
-    # A new tour built from an existing one: same content, photos and meeting point, published.
-    def find_or_copy(data)
-      existing = Tour.find_by(slug: data[:slug])
-      return existing if existing
+    def find_tour(data)
+      Array(data[:slug]).lazy.filter_map { |slug| Tour.find_by(slug:) }.first
+    end
 
+    # A new tour built from an existing one: same content, photos and meeting point, published.
+    def copy_tour(data)
       source = Tour.find_by!(slug: data[:copy_from])
       tour = Tour.create!(
         **source.attributes.symbolize_keys.slice(:subtitle, :tagline, :finer_details, :region, :duration_minutes, :meeting_point,
                                                  :languages, :what_we_think, :what_customers_think, :customer_name, :customer_origin),
-        slug: data[:slug], title: data[:title], transport: data[:transport], tags: [], status: "published"
+        slug: Array(data[:slug]).first, title: data[:title], transport: data[:transport], tags: [], status: "published"
       )
       source.highlights.each { |row| tour.highlights.create!(row.attributes.slice("title", "body", "position")) }
       source.inclusions.each { |row| tour.inclusions.create!(row.attributes.slice("label", "included", "position")) }
