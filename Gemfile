@@ -69,4 +69,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "avo", "~> 4.3"
+gem "avo", "~> 4.4"
