@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   HERO_PLACES = {
     "All Regions" => "Italy",
     "Vatican City" => "Vatican",
-    "Rome Day Trips" => "Rome",
+    "Rome Day Trips" => "Rome Countryside",
     "Naples, Pompeii and Amalfi Coast" => "Naples"
   }.freeze
 
@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     "All Regions" => "bar-hero.jpg",
     "Vatican City" => "hero-images/vatican-city.webp",
     "Rome" => "hero-images/rome.webp",
-    "Rome Day Trips" => "hero-images/rome.webp",
+    "Rome Day Trips" => "hero-images/rome-day-trips.webp",
     "Florence" => "hero-images/florence.webp",
     "Tuscany" => "hero-images/tuscany.webp",
     "Umbria" => "hero-images/umbria.webp",
@@ -50,7 +50,7 @@ class PagesController < ApplicationController
 
   # Subtitles under the "All Italy by region" / region-name heading above the tour browser.
   SECTION_SUBTITLES = {
-    "All Regions" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
+    "All Regions" => "Ancient wonders, Renaissance masterpieces, charming villages and breathtaking landscapes in the most beautiful country in the world.",
     "Vatican City" => "Sacred art, Renaissance grandeur, and the treasures of Vatican City.",
     "Rome" => "Ancient ruins, Baroque piazzas, and the lanes between them.",
     "Rome Day Trips" => "Easy escapes from Rome to hill towns, villas, and the coast.",
