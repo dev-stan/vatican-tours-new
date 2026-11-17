@@ -11,8 +11,9 @@ class Avo::Resources::Tour < Avo::BaseResource
     }
   }
   # Tours use their slug in URLs (Tour#to_param).
+  # Forms opened from a parent record send its numeric id instead, so take either.
   self.find_record_method = -> {
-    id.is_a?(Array) ? query.where(slug: id) : query.find_by!(slug: id)
+    id.is_a?(Array) ? query.where(slug: id).or(query.where(id:)) : query.find_by(slug: id) || query.find_by!(id: id.to_s[/\A\d+\z/])
   }
   self.external_link = -> { main_app.tour_path(record) if record.published? }
 

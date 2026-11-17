@@ -8,8 +8,9 @@ module Avo::PostResource
       query: -> { query.where("title LIKE :q OR slug LIKE :q", q: "%#{q}%") }
     }
     # Posts use their slug in URLs (Publishable#to_param).
+    # Forms opened from a parent record send its numeric id instead, so take either.
     resource.find_record_method = -> {
-      id.is_a?(Array) ? query.where(slug: id) : query.find_by!(slug: id)
+      id.is_a?(Array) ? query.where(slug: id).or(query.where(id:)) : query.find_by(slug: id) || query.find_by!(id: id.to_s[/\A\d+\z/])
     }
     resource.external_link = -> { main_app.polymorphic_path(record) if record.live? }
     resource.default_sort_column = :published_at

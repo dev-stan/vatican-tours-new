@@ -64,6 +64,21 @@ class AdminTest < ActionDispatch::IntegrationTest
     assert_equal 10, departure.reload.seats_booked
   end
 
+  test "a booking button is added from its travel tip, which the form sends by id" do
+    tip = travel_tips(:meet_the_pope)
+    via = { via_record_id: tip.slug, via_relation: "post", via_relation_class: "TravelTip", via_resource_class: "Avo::Resources::TravelTip" }
+
+    get "/admin/resources/promoted_tours/new", params: via, headers: AUTH
+    assert_select "input[type=hidden][name='promoted_tour[post_id]'][value='#{tip.id}']"
+
+    assert_difference -> { tip.promoted_tours.count } do
+      post "/admin/resources/promoted_tours", headers: AUTH, params: via.merge(
+        promoted_tour: { post_type: "TravelTip", post_id: tip.id, tour_id: tours(:food_tour).slug, position: 3 }
+      )
+    end
+    assert_response :redirect
+  end
+
   test "prices are edited in euros and stored in cents" do
     ticket = ticket_types(:adult)
     patch "/admin/resources/ticket_types/#{ticket.id}", headers: AUTH, params: { ticket_type: { price_cents: "72.50" } }
