@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_11_17_100000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_19_110000) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -136,6 +136,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_17_100000) do
     t.datetime "updated_at", null: false
     t.string "meta_title"
     t.string "meta_description"
+    t.string "promo_url"
+    t.string "promo_title"
+    t.text "promo_text"
+    t.string "promo_button"
     t.index ["slug"], name: "index_newsletter_articles_on_slug", unique: true
     t.index ["status", "published_at"], name: "index_newsletter_articles_on_status_and_published_at"
     t.index ["tour_id"], name: "index_newsletter_articles_on_tour_id"
@@ -210,7 +214,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_11_17_100000) do
     t.check_constraint "badge IS NULL OR ( badge IN ('wine', 'day_trip', 'transfers', 'wheelchair', 'with_kids', 'cruises', 'active') AND instr(tags, '\"' || badge || '\"') > 0 )", name: "tours_badge_valid"
     t.check_constraint "duration_minutes > 0", name: "tours_duration_positive"
     t.check_constraint "status IN ('draft', 'published')", name: "tours_status_valid"
-    t.check_constraint "transport IN ('walking', 'boat', 'car')", name: "tours_transport_valid"
+    t.check_constraint "transport IN ('walking', 'boat', 'car', 'train')", name: "tours_transport_valid"
   end
 
   create_table "travel_tips", force: :cascade do |t|

@@ -244,6 +244,7 @@ class PagesController < ApplicationController
 
   def home
     @regions = REGIONS
+    @region = region_from_param
     @categories = CATEGORIES
     @hero_places = HERO_PLACES
     @hero_subtitles = HERO_SUBTITLES
@@ -259,5 +260,13 @@ class PagesController < ApplicationController
   end
 
   def privacy
+  end
+
+  private
+
+  # The region tab named by ?region=, in its URL form (?region=tuscany, ?region=rome-day-trips). Anything else shows
+  # all regions. The tour-filter controller keeps the parameter in step as visitors switch tabs.
+  def region_from_param
+    REGIONS.find { _1.parameterize == params[:region].to_s.parameterize } || REGIONS.first
   end
 end

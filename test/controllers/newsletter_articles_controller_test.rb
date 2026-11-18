@@ -19,7 +19,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "h1", newsletter_articles(:lagoon_wineries).title
     assert_select ".article-body h2", "The golden grape"
-    assert_select "#tour-heading", "#{tours(:ancient_rome).title} tour"
+    assert_select "#promo-heading", "#{tours(:ancient_rome).title} tour"
     assert_select "a[href=?]", tour_path(tours(:ancient_rome)), text: "Learn more about the tour"
   end
 
@@ -27,7 +27,20 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     newsletter_articles(:lagoon_wineries).update!(tour: tours(:draft_tour))
 
     get newsletter_article_path(newsletter_articles(:lagoon_wineries))
-    assert_select "#tour-heading", count: 0
+    assert_select "#promo-heading", count: 0
+    assert_select "a", text: "Learn more about the tour", count: 0
+  end
+
+  test "an article can promote a link instead of a tour" do
+    newsletter_articles(:lagoon_wineries).update!(
+      tour: nil, promo_url: "/?region=tuscany", promo_title: "Private Tuscany Tours",
+      promo_text: "Chianti and the Val d’Orcia.\n\nDay trips from Florence or Rome.", promo_button: "Explore our Tuscany tours"
+    )
+
+    get newsletter_article_path(newsletter_articles(:lagoon_wineries))
+    assert_select "#promo-heading", "Private Tuscany Tours"
+    assert_select "section[aria-labelledby=promo-heading] p", text: /Day trips from Florence/
+    assert_select "a[href=?]", "/?region=tuscany", text: "Explore our Tuscany tours"
     assert_select "a", text: "Learn more about the tour", count: 0
   end
 

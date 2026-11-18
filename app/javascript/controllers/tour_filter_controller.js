@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 // Filters the home page tour cards by region tab and category checkboxes,
-// and swaps the hero photo, the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected region.
+// keeps ?region= in the address bar in step with the tab, and swaps the hero photo, the hero place name, the section title, the subtitles, the feature blocks, and the guide's advice title and tips for the selected region.
 export default class extends Controller {
   static targets = ["hero", "tab", "category", "card", "empty", "place", "subtitle", "sectionTitle", "sectionTitleSuffix", "sectionSubtitle", "featureTitle", "featureBody", "adviceTitle", "advicePanel", "size"]
   static values = { places: Object, subtitles: Object, heroImages: Object, sectionSubtitles: Object, features: Object, adviceTitles: Object, region: { type: String, default: "All Regions" }, size: { type: Number, default: 1 } }
@@ -47,6 +47,19 @@ export default class extends Controller {
       if (this.featureBodyTargets[i]) this.featureBodyTargets[i].textContent = feature.body
     })
     this.filter()
+    this.syncUrl()
+  }
+
+  // Mirror the selected tab in ?region= (e.g. ?region=tuscany), so the address can be shared or linked to.
+  syncUrl() {
+    const url = new URL(window.location.href)
+    const tab = this.tabTargets.find(tab => tab.dataset.region === this.regionValue)
+    if (tab && this.regionValue !== "All Regions") {
+      url.searchParams.set("region", tab.dataset.regionParam)
+    } else {
+      url.searchParams.delete("region")
+    }
+    if (url.href !== window.location.href) history.replaceState(history.state, "", url)
   }
 
   filter() {

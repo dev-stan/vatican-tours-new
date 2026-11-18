@@ -112,7 +112,7 @@ YAML.load_file(Rails.root.join("db/seeds/newsletter_articles.yml")).each do |dat
     status: "published"
   )
 
-  %w[hero_image tour_image].each do |name|
+  %w[hero_image promo_image].each do |name|
     attachment = article.public_send(name)
     next if attachment.attached? && attachment.filename.to_s == data[name]
 

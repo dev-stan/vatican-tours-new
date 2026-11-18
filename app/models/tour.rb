@@ -23,7 +23,7 @@ class Tour < ApplicationRecord
 
   enum :status, { draft: "draft", published: "published" }, validate: true
   # How the tour gets around; picks the icon on the tour card.
-  enum :transport, { walking: "walking", boat: "boat", car: "car" }, prefix: true, validate: true
+  enum :transport, { walking: "walking", boat: "boat", car: "car", train: "train" }, prefix: true, validate: true
   # Optional pill on the tour card photo: one of the tour's own tags, featured. The tours_badge_valid
   # check constraint enforces both rules in the database too.
   enum :badge, { wine: "wine", day_trip: "day_trip", transfers: "transfers", wheelchair: "wheelchair",

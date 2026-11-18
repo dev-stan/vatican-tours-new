@@ -4,7 +4,7 @@ class NewsletterArticlesController < ApplicationController
   end
 
   def show
-    @post = NewsletterArticle.live.with_rich_text_body_and_embeds.with_attached_hero_image.with_attached_tour_image
+    @post = NewsletterArticle.live.with_rich_text_body_and_embeds.with_attached_hero_image.with_attached_promo_image
                              .includes(:tour).find_by!(slug: params[:slug])
   end
 end

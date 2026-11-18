@@ -39,4 +39,22 @@ class NewsletterArticleTest < ActiveSupport::TestCase
 
     assert_nil article.reload.tour
   end
+
+  test "a link promo needs a heading and a path or web address, and replaces the tour" do
+    article = NewsletterArticle.new(title: "Promo", slug: "link-promo", promo_url: "/?region=tuscany")
+    assert_not article.valid?
+    assert article.errors.of_kind?(:promo_title, :blank)
+
+    article.promo_title = "Tuscany tours"
+    assert article.valid?
+    assert article.promoted_link?
+
+    article.promo_url = "javascript:alert(1)"
+    assert_not article.valid?
+
+    article.promo_url = "https://example.com/tuscany"
+    article.tour = tours(:ancient_rome)
+    assert_not article.valid?
+    assert_not article.promoted_link?
+  end
 end

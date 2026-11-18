@@ -23,6 +23,20 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "?region= opens the home page on that region's tab" do
+    get root_path(region: "rome-day-trips")
+    assert_select "[data-tour-filter-region-value=?]", "Rome Day Trips"
+    assert_select "button[data-region='Rome Day Trips'][aria-pressed=true]"
+    assert_select "button[aria-pressed=true]", count: 1
+    assert_select "[data-tour-filter-target=sectionTitle]", "Rome Day Trips"
+
+    get root_path(region: "Tuscany")
+    assert_select "button[data-region=Tuscany][aria-pressed=true][data-region-param=tuscany]"
+
+    get root_path(region: "atlantis")
+    assert_select "button[data-region='All Regions'][aria-pressed=true]"
+  end
+
   test "about and privacy pages render" do
     get about_path
     assert_response :success
