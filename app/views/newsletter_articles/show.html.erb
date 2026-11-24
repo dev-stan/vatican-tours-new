@@ -31,3 +31,20 @@
     </div>
   </section>
 <% end %>
+
+<%# Linked tours, as cards side by side %>
+<% linked_tours = @post.bookable_promotions.map(&:tour) %>
+<% if linked_tours.any? %>
+  <section class="mx-auto max-w-[1180px] px-6 pb-28" aria-labelledby="linked-tours-heading">
+    <div class="mx-auto max-w-[760px]">
+      <p class="text-[13px] font-semibold tracking-[.18em] text-terracotta-deep uppercase">Visit with us</p>
+      <h2 id="linked-tours-heading" class="mt-4 font-serif text-[clamp(32px,4vw,46px)] leading-[1.08] font-medium text-balance">
+        <%= linked_tours.one? ? "The tour from this story" : "Tours from this story" %>
+      </h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-[30px]">
+      <%= render partial: "tours/card", collection: linked_tours, as: :tour %>
+    </div>
+  </section>
+<% end %>

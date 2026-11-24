@@ -5,6 +5,7 @@ class NewsletterArticlesController < ApplicationController
 
   def show
     @post = NewsletterArticle.live.with_rich_text_body_and_embeds.with_attached_hero_image.with_attached_promo_image
-                             .includes(:tour).find_by!(slug: params[:slug])
+                             .includes(:tour, promoted_tours: { tour: [ :ticket_types, { photos_attachments: :blob } ] })
+                             .find_by!(slug: params[:slug])
   end
 end

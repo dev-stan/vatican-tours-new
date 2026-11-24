@@ -14,5 +14,7 @@ class Avo::Resources::NewsletterArticle < Avo::BaseResource
     field :promo_text, as: :textarea, hide_on: :index, help: "A few sentences under the heading. A blank line starts a new paragraph."
     field :promo_button, as: :text, hide_on: :index, help: "The button's text. Leave blank for “Learn more”."
     field :promo_image, as: :file, is_image: true, hide_on: :index, help: "The photo at the top of the promo, e.g. the winery."
+    # Tours shown as cards side by side at the very bottom of the article.
+    field :promoted_tours, as: :has_many, name: "Tour cards"
   end
 end

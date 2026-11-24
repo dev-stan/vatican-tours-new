@@ -44,6 +44,22 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a", text: "Learn more about the tour", count: 0
   end
 
+  test "linked tours appear as cards side by side, published ones only" do
+    article = newsletter_articles(:lagoon_wineries)
+    article.promoted_tours.create!(tour: tours(:ancient_rome), position: 1)
+    article.promoted_tours.create!(tour: tours(:draft_tour), position: 2)
+
+    get newsletter_article_path(article)
+    assert_select "#linked-tours-heading", "The tour from this story"
+    assert_select "section[aria-labelledby=linked-tours-heading] article", count: 1
+    assert_select "section[aria-labelledby=linked-tours-heading] article a[href=?]", tour_path(tours(:ancient_rome))
+  end
+
+  test "an article without linked tours has no tour cards" do
+    get newsletter_article_path(newsletter_articles(:lagoon_wineries))
+    assert_select "#linked-tours-heading", count: 0
+  end
+
   test "drafts and future articles are not found" do
     get newsletter_article_path(newsletter_articles(:draft_story))
     assert_response :not_found

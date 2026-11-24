@@ -1,8 +1,9 @@
 # A newsletter story at /newsletter/<slug>, ending with a promo box. The box advertises either a tour (its title, finer
 # details and a "Learn more about the tour" button) or any other page, ours (e.g. /?region=tuscany) or another site's,
-# described by the promo_* fields. Never both.
+# described by the promo_* fields. Never both. Under the box, any number of linked tours appear as a row of tour cards.
 class NewsletterArticle < ApplicationRecord
   include Publishable
+  include PromotesTours
 
   belongs_to :tour, optional: true
   # The photo shown at the top of the promo box.
