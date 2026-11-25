@@ -5,8 +5,8 @@ class TravelTipsControllerTest < ActionDispatch::IntegrationTest
     get travel_tips_path
     assert_response :success
 
-    assert_select "h1", /Travel Tips/
-    assert_select "nav[aria-label=Breadcrumb] [aria-current=page]", "Travel Tips"
+    assert_select "h1", /Travel Advisor/
+    assert_select "nav[aria-label=Breadcrumb] [aria-current=page]", "Travel Advisor"
     assert_select "article", count: 1
     assert_select "article a[href=?]", travel_tip_path(travel_tips(:meet_the_pope))
     assert_select "header nav a[aria-current=page][href=?]", travel_tips_path
@@ -22,7 +22,7 @@ class TravelTipsControllerTest < ActionDispatch::IntegrationTest
     assert_select "link[rel=canonical][href=?]", travel_tip_url(tip)
     assert_select "h1", tip.title
     assert_select ".article-body h2", "The Wednesday General Audience"
-    assert_select "nav[aria-label=Breadcrumb] a[href=?]", travel_tips_url, text: "Travel Tips"
+    assert_select "nav[aria-label=Breadcrumb] a[href=?]", travel_tips_url, text: "Travel Advisor"
 
     assert_select "a[href=?]", tour_path(tours(:ancient_rome)), text: "Book Papal Audience Tickets & Assistance"
     assert_select "a[href=?]", tour_path(tours(:draft_tour)), count: 0
@@ -38,7 +38,7 @@ class TravelTipsControllerTest < ActionDispatch::IntegrationTest
 
     assert_equal "Article", article["@type"]
     assert_equal travel_tips(:meet_the_pope).title, article["headline"]
-    assert_equal %w[Home Travel\ Tips] << travel_tips(:meet_the_pope).title, breadcrumbs["itemListElement"].pluck("name")
+    assert_equal %w[Home Travel\ Advisor] << travel_tips(:meet_the_pope).title, breadcrumbs["itemListElement"].pluck("name")
   end
 
   test "drafts are not found" do

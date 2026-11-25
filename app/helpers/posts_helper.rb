@@ -1,9 +1,9 @@
 # Shared by the newsletter, blog and travel tips pages.
 module PostsHelper
   SITE_NAME = "Vatican Tours Inc"
-  SECTION_NAMES = { "NewsletterArticle" => "Newsletter", "BlogPost" => "Blog", "TravelTip" => "Travel Tips" }.freeze
+  SECTION_NAMES = { "NewsletterArticle" => "Newsletter", "BlogPost" => "Blog", "TravelTip" => "Travel Advisor" }.freeze
 
-  # The section's name in breadcrumbs, e.g. "Travel Tips".
+  # The section's name in breadcrumbs, e.g. "Travel Advisor".
   def post_section_name(post) = SECTION_NAMES.fetch(post.class.name)
 
   # Home / Section / Post, as [name, url] pairs; the last one is the current page.
