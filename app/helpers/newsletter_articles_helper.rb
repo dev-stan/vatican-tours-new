@@ -1,15 +1,17 @@
 module NewsletterArticlesHelper
-  Promo = Data.define(:kicker, :title, :paragraphs, :url, :button)
+  Callout = Data.define(:paragraphs, :buttons)
+  Button = Data.define(:label, :url)
 
-  # What the box under a newsletter article shows: its tour while on sale, else its link, else nothing.
-  def newsletter_promo(article)
-    if (tour = article.promoted_tour)
-      Promo.new(kicker: "Visit with us", title: "#{tour.title} tour", paragraphs: tour_finer_details(tour),
-                url: tour_path(tour), button: "Learn more about the tour")
-    elsif article.promoted_link?
-      Promo.new(kicker: "Travel with us", title: article.promo_title,
-                paragraphs: article.promo_text.to_s.split(/\R{2,}/).map(&:strip).compact_blank,
-                url: article.promo_url, button: article.promo_button.presence || "Learn more")
-    end
+  # The box under a newsletter article, always headed "Travel with us": a few lines of text, then one button per thing it promotes — its link,
+  # its tour and its linked tours, each tour named on its button. Only tours on sale count. Nil when there's nothing.
+  def newsletter_callout(article)
+    buttons = []
+    buttons << Button.new(article.promo_button.presence || "Learn more", article.promo_url) if article.promoted_link?
+    tours = [ article.promoted_tour, *article.bookable_promotions.map(&:tour) ].compact.uniq
+    buttons.concat(tours.map { |tour| Button.new(tour.title, tour_path(tour)) })
+    return if buttons.empty?
+
+    Callout.new(paragraphs: article.promo_text.to_s.split(/\R{2,}/).map(&:strip).compact_blank,
+                buttons:)
   end
 end

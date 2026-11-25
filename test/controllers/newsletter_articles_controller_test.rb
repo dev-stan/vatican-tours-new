@@ -19,8 +19,8 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
     assert_select "h1", newsletter_articles(:lagoon_wineries).title
     assert_select ".article-body h2", "The golden grape"
-    assert_select "#promo-heading", "#{tours(:ancient_rome).title} tour"
-    assert_select "a[href=?]", tour_path(tours(:ancient_rome)), text: "Learn more about the tour"
+    assert_select "#promo-heading", "Travel with us"
+    assert_select "section[aria-labelledby=promo-heading] a[href=?]", tour_path(tours(:ancient_rome)), text: /#{tours(:ancient_rome).title}/
   end
 
   test "an article without a published tour has no promo" do
@@ -28,7 +28,6 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
 
     get newsletter_article_path(newsletter_articles(:lagoon_wineries))
     assert_select "#promo-heading", count: 0
-    assert_select "a", text: "Learn more about the tour", count: 0
   end
 
   test "an article can promote a link instead of a tour" do
@@ -38,26 +37,29 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     )
 
     get newsletter_article_path(newsletter_articles(:lagoon_wineries))
-    assert_select "#promo-heading", "Private Tuscany Tours"
+    assert_select "#promo-heading", "Travel with us"
     assert_select "section[aria-labelledby=promo-heading] p", text: /Day trips from Florence/
-    assert_select "a[href=?]", "/?region=tuscany", text: "Explore our Tuscany tours"
-    assert_select "a", text: "Learn more about the tour", count: 0
+    assert_select "section[aria-labelledby=promo-heading] a[href=?]", "/?region=tuscany", text: /Explore our Tuscany tours/
+    assert_select "section[aria-labelledby=promo-heading] a", count: 1
   end
 
-  test "linked tours appear as cards side by side, published ones only" do
+  test "the tour and linked tours each get a button named after the tour, published ones only" do
     article = newsletter_articles(:lagoon_wineries)
     article.promoted_tours.create!(tour: tours(:ancient_rome), position: 1)
     article.promoted_tours.create!(tour: tours(:draft_tour), position: 2)
+    article.promoted_tours.create!(tour: tours(:food_tour), position: 3)
 
     get newsletter_article_path(article)
-    assert_select "#linked-tours-heading", "The tour from this story"
-    assert_select "section[aria-labelledby=linked-tours-heading] article", count: 1
-    assert_select "section[aria-labelledby=linked-tours-heading] article a[href=?]", tour_path(tours(:ancient_rome))
+    assert_select "section[aria-labelledby=promo-heading] a", count: 2
+    assert_select "section[aria-labelledby=promo-heading] a[href=?]", tour_path(tours(:ancient_rome)), count: 1
+    assert_select "section[aria-labelledby=promo-heading] a[href=?]", tour_path(tours(:food_tour)), text: /#{tours(:food_tour).title}/
   end
 
-  test "an article without linked tours has no tour cards" do
+  test "an article without a tour or link has no callout" do
+    newsletter_articles(:lagoon_wineries).update!(tour: nil)
+
     get newsletter_article_path(newsletter_articles(:lagoon_wineries))
-    assert_select "#linked-tours-heading", count: 0
+    assert_select "#promo-heading", count: 0
   end
 
   test "drafts and future articles are not found" do
