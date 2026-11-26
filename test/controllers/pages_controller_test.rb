@@ -15,6 +15,33 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_no_match "★", response.body
   end
 
+  test "?guests= prices the cards for that group size" do
+    get root_path(guests: 4)
+    assert_select "[data-tour-filter-adults-value='4'][data-tour-filter-children-value='0']"
+    assert_select "[data-tour-filter-target=travellersLabel]", "4 travellers"
+    ancient = "article[data-prices=?]"
+    assert_select ancient, { group: 6500, private: [ [ 8, 39000 ] ] }.to_json, text: /Private\s*€390\s*\|\s*Group\s*€260/
+    assert_select "article", text: /Trastevere Food Tour.*Private\s*€500/m
+
+    # Too large for any private tier: Private says how many it takes.
+    get root_path(guests: 10)
+    assert_select "article", text: /Private\s*max 8\s*\|\s*Group\s*€650/
+    assert_select "article", text: /Trastevere Food Tour.*Private\s*max 6/m
+
+    # ?children= is part of the party, which always keeps one adult.
+    get root_path(guests: 8, children: 2)
+    assert_select "[data-tour-filter-adults-value='6'][data-tour-filter-children-value='2']"
+    assert_select "[data-tour-filter-target=adultsCount]", "6"
+    assert_select "[data-tour-filter-target=childrenCount]", "2"
+    get root_path(guests: 3, children: 9)
+    assert_select "[data-tour-filter-adults-value='1'][data-tour-filter-children-value='2']"
+
+    get root_path(guests: 99)
+    assert_select "[data-tour-filter-adults-value='20']"
+    get root_path(guests: "lots")
+    assert_select "[data-tour-filter-adults-value='1']"
+  end
+
   test "every card links to its tour page" do
     get root_path
 

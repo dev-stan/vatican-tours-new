@@ -2,7 +2,8 @@
          style="<%= region_style(tour) %>"
          data-tour-filter-target="card"
          data-region="<%= tour.region %>"
-         data-categories="<%= tour_categories(tour).to_json %>">
+         data-categories="<%= tour_categories(tour).to_json %>"
+         data-prices="<%= tour_card_price_data(tour).to_json %>">
   <div class="relative h-52 overflow-hidden rounded-t-[14px] bg-black/[.04]">
     <% if (photo = tour.photos.first) %>
       <%= image_tag photo, alt: "", loading: "lazy", class: "absolute inset-0 block size-full object-cover" %>
@@ -28,9 +29,12 @@
     </h3>
     <p class="mt-3 font-serif text-sm leading-[1.15] text-pretty text-muted-serif italic"><%= tour.subtitle %></p>
     <div class="mt-auto flex items-baseline gap-2 pt-[46px] text-[15px]">
-      <% tour_card_prices(tour).each_with_index do |(label, price), index| %>
+      <% prices = tour_card_prices(tour, local_assigns.fetch(:guests, 1)) %>
+      <% prices.each_with_index do |price, index| %>
         <% if index.positive? %><span class="text-muted" aria-hidden="true">|</span><% end %>
-        <span><%= label %></span><strong class="font-semibold"><%= price %></strong>
+        <span class="flex items-baseline gap-2" <%= tag.attributes(data: { price_kind: price[:kind] }) %>>
+          <span><%= price[:label] %></span><strong class="font-semibold" data-price-amount><%= price[:price] %></strong>
+        </span>
       <% end %>
     </div>
   </div>

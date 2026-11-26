@@ -64,6 +64,9 @@ class PagesController < ApplicationController
     "Sicily" => "Ancient temples, volcanic peaks, and sunlit Mediterranean shores."
   }.freeze
 
+  # The most travellers (adults + children) the home page's picker allows.
+  MAX_GROUP_SIZE = 20
+
   FEATURE_ICONS = %i[arrow clock house person].freeze
 
   # The four feature blocks under the section heading, per region (paired with FEATURE_ICONS by position).
@@ -245,6 +248,8 @@ class PagesController < ApplicationController
   def home
     @regions = REGIONS
     @region = region_from_param
+    @guests = guests_from_param
+    @children = params[:children].to_i.clamp(0, @guests - 1)
     @categories = CATEGORIES
     @hero_places = HERO_PLACES
     @hero_subtitles = HERO_SUBTITLES
@@ -268,5 +273,12 @@ class PagesController < ApplicationController
   # all regions. The tour-filter controller keeps the parameter in step as visitors switch tabs.
   def region_from_param
     REGIONS.find { _1.parameterize == params[:region].to_s.parameterize } || REGIONS.first
+  end
+
+  # The whole party (adults + children) from ?guests=, which prices the tour cards; 1 when missing. ?children= says how
+  # many of them are children (there is always at least one adult). The tour-filter controller keeps both in step with
+  # the travellers picker, whose bounds these are.
+  def guests_from_param
+    params[:guests].to_i.clamp(1, MAX_GROUP_SIZE)
   end
 end

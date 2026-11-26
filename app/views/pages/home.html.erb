@@ -7,8 +7,25 @@
   person: '<circle cx="8" cy="5" r="3"/><path d="M2.5 14.5c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/>'
 } %>
 
+<% category_icons = {
+  "Self Guided" => '<circle cx="8" cy="8" r="6.5"/><path d="M10.6 5.4L9.2 9.2 5.4 10.6 6.8 6.8z"/>',
+  "Private Tours" => '<circle cx="8" cy="5" r="2.7"/><path d="M3 14c.6-2.7 2.6-4.2 5-4.2s4.4 1.5 5 4.2"/>',
+  "Small Group" => '<circle cx="6" cy="5.2" r="2.4"/><path d="M1.5 13.5c.5-2.4 2.2-3.8 4.5-3.8s4 1.4 4.5 3.8"/><path d="M10.3 3a2.4 2.4 0 010 4.4"/><path d="M12 9.9c1.4.5 2.2 1.7 2.5 3.6"/>',
+  "With Kids" => '<circle cx="8" cy="8" r="6.5"/><path d="M5.5 9.6c.6.9 1.5 1.4 2.5 1.4s1.9-.5 2.5-1.4"/><path d="M6 6.3h.01M10 6.3h.01" stroke-width="1.8"/>',
+  "Wheelchair" => '<circle cx="8.5" cy="2.3" r="1.1"/><path d="M8.5 4.5v4h3.5l1.5 4"/><path d="M8.5 6.5H11"/><path d="M6.2 7.3a3.6 3.6 0 105.3 4.4"/>',
+  "Transfers" => '<path d="M2.5 11.5V8l1.4-3.6c.2-.5.6-.9 1.2-.9h5.8c.6 0 1 .4 1.2.9L13.5 8v3.5z"/><path d="M2.5 8h11"/><path d="M4 11.5V13M12 11.5V13"/><path d="M5 9.8h.01M11 9.8h.01" stroke-width="1.8"/>',
+  "Day Trips" => '<circle cx="8" cy="8" r="2.8"/><path d="M8 1.5v1.3M8 13.2v1.3M1.5 8h1.3M13.2 8h1.3M3.4 3.4l.9.9M11.7 11.7l.9.9M3.4 12.6l.9-.9M11.7 4.3l.9-.9"/>',
+  "Cruises" => '<path d="M2 10.5l1.5 3h9l1.5-3z"/><path d="M4 10.5V7h8v3.5"/><path d="M8 7V3.5M6.5 4.5h3"/>',
+  "Food and Cooking" => '<path d="M4.5 1.5v13M2.8 1.5v3.8c0 1 .8 1.7 1.7 1.7s1.7-.7 1.7-1.7V1.5"/><path d="M11.5 14.5v-13c-1.6.7-2.4 2.6-2.4 5 0 1.6.9 2.5 2.4 2.5"/>',
+  "Wine Tours" => '<path d="M5 1.5h6l-.3 4a2.7 2.7 0 01-5.4 0z"/><path d="M8 8.3v6.2M5.5 14.5h5"/>',
+  "Active" => '<path d="M1.5 8.5h3l2-5 3 9 2-4h3"/>'
+} %>
+
 <div data-controller="tour-filter"
      data-tour-filter-region-value="<%= @region %>"
+     data-tour-filter-adults-value="<%= @guests - @children %>"
+     data-tour-filter-children-value="<%= @children %>"
+     data-tour-filter-max-size-value="<%= PagesController::MAX_GROUP_SIZE %>"
      data-tour-filter-places-value="<%= @hero_places.to_json %>"
      data-tour-filter-subtitles-value="<%= @hero_subtitles.to_json %>"
      data-tour-filter-hero-images-value="<%= @hero_images.to_json %>"
@@ -52,47 +69,82 @@
 
   <%# Tour browser %>
   <section id="tours" class="mx-auto max-w-[1260px] scroll-mt-6 px-3 pt-7 pb-[60px]">
-    <div class="no-scrollbar flex items-center overflow-x-auto px-3.5 [mask-image:linear-gradient(90deg,#000_92%,transparent)]" role="group" aria-label="Regions">
-      <% @regions.each_with_index do |region, i| %>
-        <div class="flex shrink-0 items-center">
-          <% if i > 0 %><div class="h-[60px] w-px bg-line"></div><% end %>
-          <button type="button"
-                  class="mx-5 cursor-pointer rounded-full px-[15px] py-[9px] text-[15px] whitespace-nowrap aria-pressed:bg-ink aria-pressed:text-white"
-                  aria-pressed="<%= region == @region %>"
-                  data-tour-filter-target="tab"
-                  data-region="<%= region %>"
-                  data-region-param="<%= region.parameterize %>"
-                  data-action="tour-filter#selectRegion"><%= region %></button>
-        </div>
+    <div class="no-scrollbar flex items-center gap-1 overflow-x-auto px-3.5 py-1" role="group" aria-label="Regions"
+         data-tour-filter-target="regions" data-action="scroll->tour-filter#updateRegionFade resize@window->tour-filter#updateRegionFade">
+      <% @regions.each do |region| %>
+        <button type="button"
+                class="shrink-0 cursor-pointer rounded-full px-5 py-[11px] text-[15px] whitespace-nowrap transition-colors hover:bg-black/[.05] aria-pressed:bg-ink aria-pressed:text-white"
+                aria-pressed="<%= region == @region %>"
+                data-tour-filter-target="tab"
+                data-region="<%= region %>"
+                data-region-param="<%= region.parameterize %>"
+                data-action="tour-filter#selectRegion"><%= region %></button>
       <% end %>
     </div>
 
-    <div class="mt-5 flex flex-wrap items-center justify-between gap-4 px-[15px]">
-      <div class="flex flex-wrap items-center gap-x-[18px] gap-y-2.5">
-        <% @categories.each do |category| %>
-          <label class="flex cursor-pointer items-center gap-2.5 text-[13px] text-muted select-none">
-            <input type="checkbox" class="peer sr-only" value="<%= category %>"
-                   data-tour-filter-target="category" data-action="tour-filter#filter">
-            <span class="flex size-[15px] items-center justify-center rounded-[2px] border border-checkbox bg-white peer-checked:bg-ink peer-checked:[&>svg]:block peer-focus-visible:ring-2 peer-focus-visible:ring-ink/40">
-              <svg class="hidden" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#fff" stroke-width="1.6" aria-hidden="true"><path d="M1.5 5.2l2.3 2.3 4.7-5"/></svg>
-            </span>
-            <%= category %>
-          </label>
-        <% end %>
+    <div class="mt-5 flex items-center gap-3 px-3.5">
+      <div class="relative min-w-0 flex-1">
+        <div class="no-scrollbar flex items-center gap-2.5 overflow-x-auto py-1 pr-12"
+             role="group" aria-label="Tour types"
+             data-tour-filter-target="chips" data-action="scroll->tour-filter#updateChipArrow resize@window->tour-filter#updateChipArrow">
+          <% @categories.each do |category| %>
+            <button type="button"
+                    class="flex shrink-0 cursor-pointer items-center gap-2 rounded-full border border-black/[.09] bg-white py-[9px] pr-[17px] pl-[15px] text-[13px] font-medium whitespace-nowrap transition hover:border-black/20 aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-white"
+                    aria-pressed="false"
+                    value="<%= category %>"
+                    data-tour-filter-target="category"
+                    data-action="tour-filter#toggleCategory">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><%= category_icons.fetch(category, category_icons["Self Guided"]).html_safe %></svg>
+              <%= category %>
+            </button>
+          <% end %>
+        </div>
+        <button type="button"
+                class="absolute top-1/2 right-0 flex size-[31px] -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-black/[.09] bg-white shadow-[0_1px_3px_rgba(0,0,0,.06)] hover:border-black/20"
+                aria-label="More tour types"
+                data-tour-filter-target="chipArrow" data-action="tour-filter#scrollChips">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3l5 5-5 5"/></svg>
+        </button>
       </div>
 
-      <div class="flex items-center gap-[15px] text-[15px]">
-        <span id="group-size-label">Your Group Size</span>
-        <div class="flex items-center" role="group" aria-labelledby="group-size-label">
-          <button type="button" class="flex size-[25px] cursor-pointer items-center justify-center bg-stepper text-base" aria-label="Decrease group size" data-action="tour-filter#decrement">–</button>
-          <span class="w-[26px] text-center" aria-live="polite" data-tour-filter-target="size">1</span>
-          <button type="button" class="flex size-[25px] cursor-pointer items-center justify-center bg-stepper text-base" aria-label="Increase group size" data-action="tour-filter#increment">+</button>
+      <div class="h-[34px] w-px shrink-0 bg-black/10"></div>
+
+      <div class="relative shrink-0" data-action="click@window->tour-filter#closeTravellers keydown.esc@window->tour-filter#closeTravellers">
+        <button type="button"
+                class="flex cursor-pointer items-center gap-2.5 rounded-full border border-black/[.09] bg-white py-[11px] pr-[17px] pl-[17px] text-sm font-semibold whitespace-nowrap shadow-[0_1px_3px_rgba(0,0,0,.05)] hover:border-black/20"
+                aria-haspopup="dialog" aria-expanded="false" aria-controls="travellers-panel"
+                data-tour-filter-target="travellersButton" data-action="tour-filter#toggleTravellers">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><%= category_icons["Small Group"].html_safe %></svg>
+          <span data-tour-filter-target="travellersLabel"><%= pluralize(@guests, "traveller") %></span>
+          <svg class="transition-transform [[aria-expanded=false]>&]:rotate-180" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5l5-5 5 5"/></svg>
+        </button>
+
+        <div id="travellers-panel" role="dialog" aria-label="Travellers" hidden
+             class="absolute top-[calc(100%+12px)] right-0 z-20 w-[309px] rounded-2xl bg-white px-[18px] pt-3.5 pb-[18px] shadow-[0_12px_32px_rgba(0,0,0,.12)]"
+             data-tour-filter-target="travellersPanel">
+          <% [["adults", "Adults", "Age 13 and over", @guests - @children], ["children", "Children", "Age 2–12", @children]].each do |key, label, age, count| %>
+            <div class="flex items-center justify-between border-b border-black/[.08] py-3.5">
+              <div>
+                <p class="text-sm font-semibold" id="<%= key %>-label"><%= label %></p>
+                <p class="mt-0.5 text-[11px] text-muted"><%= age %></p>
+              </div>
+              <div class="flex items-center gap-3" role="group" aria-labelledby="<%= key %>-label">
+                <button type="button" class="flex size-9 cursor-pointer items-center justify-center rounded-full border border-black/20 text-base hover:border-ink disabled:cursor-default disabled:opacity-35"
+                        aria-label="Fewer <%= key %>" data-tour-filter-target="<%= key %>Decrement" data-action="tour-filter#decrement" data-tour-filter-kind-param="<%= key %>">–</button>
+                <span class="w-7 text-center text-[15px] font-semibold" aria-live="polite" data-tour-filter-target="<%= key %>Count"><%= count %></span>
+                <button type="button" class="flex size-9 cursor-pointer items-center justify-center rounded-full border border-black/20 text-base hover:border-ink disabled:cursor-default disabled:opacity-35"
+                        aria-label="More <%= key %>" data-tour-filter-target="<%= key %>Increment" data-action="tour-filter#increment" data-tour-filter-kind-param="<%= key %>">+</button>
+              </div>
+            </div>
+          <% end %>
+          <button type="button" class="mt-4 w-full cursor-pointer rounded-full bg-ink py-3 text-sm font-semibold text-white hover:bg-black"
+                  data-action="tour-filter#closeTravellers">Done</button>
         </div>
       </div>
     </div>
 
     <div class="mt-9 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-[30px]">
-      <%= render partial: "tours/card", collection: @tours, as: :tour %>
+      <%= render partial: "tours/card", collection: @tours, as: :tour, locals: { guests: @guests } %>
     </div>
 
     <p class="my-[60px] text-center font-serif text-lg text-muted-serif italic" data-tour-filter-target="empty" hidden>

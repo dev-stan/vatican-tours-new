@@ -27,6 +27,17 @@ module ToursHelper
     [ (pluralize(hours, "hour") if hours.positive?), ("#{minutes} min" if minutes.positive?) ].compact.join(" ")
   end
 
+  # One card price for a party of `guests`; see tour_card_prices.
+  def tour_card_price(tour, label, kind, guests)
+    if kind == "group"
+      { label: label, kind: kind, price: euros(tour.starting_price_cents("group") * guests) }
+    elsif (ticket = tour.private_ticket_for(guests))
+      { label: label, kind: kind, price: euros(ticket.price_cents) }
+    else
+      { label: label, kind: kind, price: "max #{tour.private_tickets.last.max_guests}" }
+    end
+  end
+
   # "Private or Group", "Private", "Small Group", "Self-Guided"; nil until the tour has ticket types.
   def tour_format(tour)
     kinds = tour.offered_kinds
@@ -45,15 +56,31 @@ module ToursHelper
     euros(tour.starting_price_cents || DEFAULT_PRICE_CENTS)
   end
 
-  # Label and price pairs for a tour card: [["Private", "€390"], ["Group", "€65"]] when it sells both, else one pair.
-  def tour_card_prices(tour)
+  # The prices on a tour card for a party of `guests` (the home page's "Your Group Size"): Private and Group when the
+  # tour sells both, else one. Group is the adult ticket times the party; Private is the tier the party fits. A pair
+  # with a kind is repriced in the browser by the tour-filter controller from tour_card_price_data, so the two must agree.
+  #   [{ label: "Private", kind: "private", price: "€420" }, { label: "Group", kind: "group", price: "€260" }]
+  # A party too large for every private tier shows "max 8" in place of the Private price.
+  def tour_card_prices(tour, guests = 1)
     if tour_format(tour) == "Private or Group"
       both = { "Private" => "private", "Group" => "group" }.filter_map do |label, kind|
-        (cents = tour.starting_price_cents(kind)) && [ label, euros(cents) ]
+        tour.starting_price_cents(kind) && tour_card_price(tour, label, kind, guests)
       end
       return both if both.size == 2
     end
-    [ [ tour_price_label(tour), tour_price(tour) ] ]
+    kinds = tour.offered_kinds
+    if kinds.one? && tour.starting_price_cents(kinds.first)
+      [ tour_card_price(tour, tour_price_label(tour), kinds.first, guests) ]
+    else
+      [ { label: tour_price_label(tour), kind: nil, price: tour_price(tour) } ]
+    end
+  end
+
+  # What the tour-filter controller needs to reprice a card: the adult group ticket and the private tiers,
+  # smallest first, as [max_guests, price_cents] (max_guests nil on a flat-priced private tour).
+  def tour_card_price_data(tour)
+    { group: tour.starting_price_cents("group"),
+      private: tour.private_tickets.map { |ticket| [ ticket.max_guests, ticket.price_cents ] } }
   end
 
   def tour_categories(tour)

@@ -82,6 +82,8 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
   config.hosts << "vaticantoursinc.com"
   config.hosts << "www.vaticantoursinc.com"
+  config.hosts << "vatican.95.217.14.131.sslip.io"
+  config.hosts << "www.vatican.95.217.14.131.sslip.io"
   config.assume_ssl = ENV["FORCE_SSL"] == "true"
   config.force_ssl  = ENV["FORCE_SSL"] == "true"
   # Enable DNS rebinding protection and other `Host` header attacks.
